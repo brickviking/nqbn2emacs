@@ -84,17 +84,41 @@ When in buffer selection window
 ** magit
 There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
 have magit installed.
-
-***  Adding untracked file      s (stage)
+From the magit buffer, you can do the following things. Most of them will prompt for other
+things if they need them. Usually you put your cursor on the object you want to affect, or
+on the header if you wish to affect all files in that category.
+*** Adding untracked file      s (stage)
 Simply put your cursor on the file you want to stage, hit s. The file should then shift into "Staged
 changes", ready for you to commit. This roughly duplicates "git add file.blah".
 
 TODO: No idea how to add a directory from magit yet.
-***  Staging an unstaged file   s (stage)
+*** Staging an unstaged file   s (stage)
 Same as above, except for a file that's already part of the git repository.
-***  Committing staged files    c (commit)
-***  Show diff against files    d (diff)
+*** Committing staged files    c (commit)
+Will request how you want to commit, hit c again to bring up an editor window. Provide a single line
+commit message. If you want to add more lines, leave a blank line after the single line as follows:
+#+BEGIN_EXAMPLE diff
+Initial commit message
 
+This is the next line for a multi-line comment.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   notes.org
+#
+# Untracked files:
+#	notes.org~
+#
+
+#+END_EXAMPLE
+*** Show diff against files    d (diff)
+
+*** Refresh magit buffer       g (magit-refresh)
+This refreshes the magit status buffer once you've made some changes within the project.
 ** erc
    + quit server: C-c C-x
    + Join channel:  C-c C-j
@@ -194,6 +218,8 @@ Same as above, except for a file that's already part of the git repository.
   + Rimworld Royalty complete soundtrack  https://www.youtube.com/watch?v=PG-phyoElKU
   + Sid Meier's Civilization 6 Complete Soundtrack (4'21"21) https://www.youtube.com/watch?v=cb922Sry_DI
   + Sid Meier's Civilization: Beyond Earth (2'59"31) https://www.youtube.com/watch?v=N4mPA-tPvtc
+  + Sim CITY 3000 Soundtrack (1'02"01) https://www.youtube.com/watch?v=qkXOxLpdMds
+  + Complete Sim CITY 3000 Soundtrack (1'52"21) https://www.youtube.com/watch?v=k3FsVvwbAlw
 ** Social
   + Uncomfortable conversations with a black man - Petuma Police Force (22"32) https://www.youtube.com/watch?v=pM-HpZQWKT4
 * Programming
