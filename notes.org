@@ -1,0 +1,210 @@
+#+TITLE: Notes for anything I think of
+#+AUTHOR: brickviking (yes, me!)
+#+TAGS: emacs vim cheatsheet keys
+* header stuff. Why do I need this?
+
+* Emacs
+** Cock-ups
+   When starting a remote file access, don't run M-x tramp  first. Things will break.
+   A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
+** Help
+   | Info for emacs                        | C-h r |                     |
+   | Global info dir                       | C-h i |                     |
+   | Describe current major mode           | C-h m |                     |
+   | Describe key                          | C-h c | Mode sensitive      |
+   | Describe binding                      | C-h b | Also mode sensitive |
+   | Info Doc Search (word list or regexp) | C-h d |                     |
+   |                                       |       |                     |
+
+** Windows/Frames
+   Cycle through visible windows  C-x o
+   Focus buffer to whole window C-x 1
+   Split window Top/Bottom C-x 2
+   Split window Left/Right C-x 3
+   Open new file in another window C-x 4 f
+   Scroll other window: down C-M-v, up C-M-S-v
+   Close frame  C-x 5 0
+** Buffers
+   + Swap buffer  C-x b
+   + List All Buffers  C-x C-b
+When in buffer selection window 
+   m marks, k marks for delete, x deletes, u undoes mark
+   + Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
+    -:@---      UNIX (LF 0x0A)
+    -(DOS)@---  Dos encoding (CRLF 0x0D 0x0A)
+    -(Mac)@---  Mac OS X encoding (CR  0x0D)
+   + Also check [[How to set a buffer's line-encoding from text mode]]
+** org mode
++ Tab on */+ line expands/compacts tree
+  1) First time: expand one level below point without exposing text
+  2) Second time: expand all levels below point including text
+  3) Third time: compact all levels below point back to heading
++ S-tab   global expansion
+  1) expand all headings without exposing text
+  2) expand entire document (headings, text, etc)
+  3) compact entire document to top headings
++ Shift-Right on list: +/*/1./1)/-
++ Shift-Up/Down on header (change priority #A/#B/#C, to customize this: #+PRIORITIES A E E)
++ M-Up/Down Shift line above/below
++ M-Left/Right Promote/demote heading
++ M-S-Left/Right Promote/demote heading and everything below
++ Some tags don't appear to work except for export/archive mode, including #+TAGS
++ Checkboxes [ ] [X]
++ demarcate block (wrap it in BEGIN_SRC..END_SRC)   C-c C-v d	(org-babel-demarcate-block)
++ export C-c C-e, will ask for format
++ Shift-right/left (on header) Cycle through TODO/DONE/nothing or defined tags, see [[header_tags]]
++ For tables, expand the header_tags section.
+*** header_tags
+  | Name          | Type                   | Description                          |
+  |---------------+------------------------+--------------------------------------|
+  | #+TITLE       | <string>               | Title of document                    |
+  | #+AUTHOR      | <string>               | Who wrote this originally            |
+  | #+CREATOR     | <string>               | No idea why this differs from AUTHOR |
+  | #+TAGS        | <words>{1,}            | tag categories                       |
+  | #+DATE        | <timestamp>            | date of document                     |
+  | #+DESCRIPTION | <string>               | Short precis of what it is           |
+  | #+SEQ_TODO    | <string> [<string>]... | Before pipe, one colour.             |
+  |               |                        | After pipe, completed colour         |
+  
+*** tags
+  | Name        | Description |                                     |
+  |-------------+-------------+-------------------------------------|
+  | #+BEGIN_SRC | [lang]      | Source code block - can be tangled  |
+  | #+END_SRC   |             | Closes it                           |
+  | #+SCHEDULED | <timestamp> | When is this meant to be started    |
+  | #+COMPLETED | <timestamp> | When this actually got completed    |
+  | #+DEADLINE  | <timestamp> | When it's absolutely got to be done |
+  |-------------+-------------+-------------------------------------|
+  |             |             |                                     |
+*** inline images
++ Inline images in org mode: toggle visibility with C-c C-x C-v
++ Change size of inline org images
+  + Don't forget to eval (setq org-image-actual-width nil)
+  + with #+ATTR_ORG: :height ... :width ...
+** erc
+   + quit server: C-c C-x
+   + Join channel:  C-c C-j
+   + Change to channel with activity: C-c C-Space
+** Recommended Plugins
+  flyspell - expensive on computation
+  wc-mode
+  writegood
+** Snippets from freenode#emacs
+*** How to search/replace all * at B.O.L. with the same number of #
+<laertus> i need some search and replace help...  [19:53]
+<laertus> i'd like to replace all the leading *'s in a buffer with the same number of #'s
+<laertus> so if a line starts with *** i'd like to replace that part of the line with ###
+<laertus> and if it starts with ** i'd like to replace the ** with ## etc
+<laertus> i can write a function to do this, but was hoping there'd be an easier way  [19:54]
+<Viking667> not really sure. I'd have done it in vim with :%s/***/###/cg  [19:55]
+<Viking667> but that's not the emacs way, and that's not taking account of the escaping too.
+<laertus> yeah, that'll only work for exactly 3 ***'s and it can be done exactly that way in evil
+<laertus> i'm looking for a more general solution that'll work for any number of leading *'s
+<dale> laertus: How about: M-x query-replace-regexp RET ^\*+ RET \,(make-string (length (match-string 0)) ?#) RET  [20:08]
+<Qudit314159> It works here  [20:13]
+<Viking667> I'll have to check that on my buffer.
+<laertus> someone gave me a vim solution on #vim:  %s/^\*\+/\=substitute(submatch(0), '*', '#', 'g')  [20:14]
+<laertus> unfortunately, i don't think that'll work with evil, as evil doesn't implement vim's regex engine, and instead just uses emacs' regex engine  [20:15]
+<Qudit314159> Well, dale's should work. If it doesn't, something else is wrong I'd say
+<dale> laertus: Yeah, I tested mine here, it works.  Point was before the text you wanted to replace, right?
+<laertus> it's probably something to do with my emacs config  [20:17]
+<Viking667> and it works fine for me (I'm pretty much vanilla emacs)
+<dale> laertus: I can't think of another way to do it with Emacs regexps.
+<laertus> well, thank you, dale, it's a good solution
+<dale> You... might be able to do it if you had PCRE and a look-behind assertion, but I'm not sure since I can't remember if PCRE does variable-width look-behind.  [20:19]
+<Viking667> i.e. copy query-replace-regexp, paste it into M-x, type in ^\*+, hit RET, copy the last long bit, paste it in etc etc.
+<piyo> in elisp: (query-replace-regexp "^\\*+" '(replace-eval-replacement replace-quote (make-string (length (match-string 0)) 35)) nil nil nil nil nil)  [20:23]
+<piyo> also, works for me if I turn off pcre-mode and on, as well. yeah  [20:25]
+<Viking667> I might snip that and stuff it into my notes.org  [20:26]
+<laertus> piyo: that works for me but it prompts me to confirm every replacement  [20:27]
+<piyo> press ! to confirm all
+<laertus> ah, ok.. thanks  [20:28]
+<piyo> press ? for more info in the query-replace-regexp
+<laertus> this vim solution:  :g/^\*/norm! vt r#  [20:29]
+<piyo> to me, doing that (make-string...) thing in the minibuffer makes me want more guided help.
+<laertus> makes me realize that this could be done with a macro
+<laertus> just search for a * at the beginning of the line, and then replace all *'s until the first space with #'s  [20:30]
+<laertus> and repeat the macro until done
+<piyo> the same thing with tramp, can't remember the incantation. Can't you just transient/dialog box the url for me?
+*** How to split frame into four, don't forget to keybind this, say to C-x 4 w
+(defun window-split-four ()
+  (interactive)
+  (delete-other-windows)
+  (with-selected-window (split-window-right)
+    (split-window))
+  (split-window))
+*** How to set a buffer's line-encoding from text mode
+<spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
+<spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
+* Vim
+** Exiting
+   Quitting                       :q
+   Quitting with multiple files   :qa
+   Write file and quit            :wq
+   Quitting without writing       :q!
+** Opening files
+   Edit new file in buffer        :e <filename>
+   Insert file at cursor          :r <filename>
+   Insert command output          :r !command (won't take inputo)
+** Diffing files
+   two ways. First, from commandline:
+     vimdiff firstfile secondfile
+   and within vim:
+   :vert diffsplit other-file
+   [c    jump to next change
+   ]c    jump to previous change
+** Windows
+   Split window below   :sp
+   Split window beside  :vsp
+   Switch windows down/up/left/right  C-w <down>/...
+   Swap windows    C-w C-w
+** Help
+  Top of help   :help
+  Help on a topic    :help "searchterm"
+* Music
+** Classical
+** Programming music
+***  Channel: https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
+  + List: https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5
+  + Programming BIOHAZARD edition #14 (1'01'01) https://www.youtube.com/watch?v=ZzRnX4UNJso
+  + Programming LIQUID edition #21 (56"31) https://www.youtube.com/watch?v=GOaohYSg0m4
+  + FOCUS Coding Music #15 (1'13"04) https://www.youtube.com/watch?v=cQ-a18zEBmI
+  + 
+** Soundtracks
+  + Age of Mythology soundtrack (46"32) https://www.youtube.com/watch?v=TGXwvLupP5A
+  + Factorio complete soundtrack (1'00"53) https://www.youtube.com/watch?v=T6OZrUbLJ1M
+  + Hyper Light Drifter - complete OST (2'19"21) https://www.youtube.com/watch?v=bq7a_ktfYck
+  + Mirror's Edge - Catalyst (5'13"10) https://www.youtube.com/watch?v=2fb5_zVk2gY
+  + Ori and the Will of the Wisps (3'02") https://www.youtube.com/watch?v=eCbyqm9jcBA
+  + Rimworld Complete Soundtrack https://www.youtube.com/watch?v=TXQBHblSCIc
+  + Rimworld Royalty complete soundtrack  https://www.youtube.com/watch?v=PG-phyoElKU
+  + Sid Meier's Civilization 6 Complete Soundtrack (4'21"21) https://www.youtube.com/watch?v=cb922Sry_DI
+  + Sid Meier's Civilization: Beyond Earth (2'59"31) https://www.youtube.com/watch?v=N4mPA-tPvtc
+** Social
+  + Uncomfortable conversations with a black man - Petuma Police Force (22"32) https://www.youtube.com/watch?v=pM-HpZQWKT4
+* Programming
+** Codemy (normally payware)
+    + Using MySQL Databases With Python Course (1'10"09) https://www.youtube.com/watch?v=yOmxJbZjTnU
+** FreeCodeCamp.org
+   Youtube Channel:  https://youtube.com/c/freecodecamp
+*** C++
+    + C++ Tutorial for beginners - Full Course (4'01"19) https://www.youtube.com/watch?v=vLnPwxZdW4Y
+*** C#
+    + C# Tutorial - full course for beginners (4'31"09) https://www.youtube.com/watch?v=GhQdlIFylQ8
+*** Git
+    + Git and Github for beginners - crash course () https://www.youtube.com/watch?v=RGOj5yH7evk&t=228s
+*** HTML 5
+    + HTML 5 full course - design website in two hours (2'02"32) https://www.youtube.com/watch?v=pQN-pnXPaVg
+*** Java
+    + Learn Java 8 - Full tutorial for beginners (9'32"32) https://www.youtube.com/watch?v=grEKMHGYyns
+*** Javascript
+    + Learn Javascript - Full course for beginners, (3'26"43) https://www.youtube.com/watch?v=PkZNo7MFNFg 
+*** Penetration Testing
+    + Full Ethical Hacking course (14'51"14) https://www.youtube.com/watch?v=3Kq1MIfTWCE
+*** Python
+    + Learn Python - Full course for beginners, (4'26"52) https://www.youtube.com/watch?v=rfscVS0vtbw
+    + Python for everybody - Full university python course (13'40"10) https://www.youtube.com/watch?v=8DvywoWv6fI
+*** SQL
+    + SQL tutorial - Full database course for beginners (4'20"39) https://www.youtube.com/watch?v=HXV3zeQKqGY 
+**** Postgresql
+     + Learn PostGreSQL Tutorial (4'19"34)  https://www.youtube.com/watch?v=qw--VYLpxG4
