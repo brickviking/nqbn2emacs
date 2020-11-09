@@ -28,7 +28,7 @@
    + Swap buffer  C-x b
    + List All Buffers  C-x C-b
 When in buffer selection window 
-   m marks, k marks for delete, x deletes, u undoes mark
+   m marks, k marks for delete, x deletes, u undoes mark, U undoes all marking
    + Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     -:@---      UNIX (LF 0x0A)
     -(DOS)@---  Dos encoding (CRLF 0x0D 0x0A)
@@ -81,6 +81,20 @@ When in buffer selection window
 + Change size of inline org images
   + Don't forget to eval (setq org-image-actual-width nil)
   + with #+ATTR_ORG: :height ... :width ...
+** magit
+There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
+have magit installed.
+
+***  Adding untracked file      s (stage)
+Simply put your cursor on the file you want to stage, hit s. The file should then shift into "Staged
+changes", ready for you to commit. This roughly duplicates "git add file.blah".
+
+TODO: No idea how to add a directory from magit yet.
+***  Staging an unstaged file   s (stage)
+Same as above, except for a file that's already part of the git repository.
+***  Committing staged files    c (commit)
+***  Show diff against files    d (diff)
+
 ** erc
    + quit server: C-c C-x
    + Join channel:  C-c C-j
