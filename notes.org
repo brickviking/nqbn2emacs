@@ -189,29 +189,62 @@ Type RET to visit the change or commit at point.
 #+END_QUOTE
 * Vim
 ** Exiting
-  + Quitting                       :q
-  + Quitting with multiple files   :qa
-  + Write file and quit            :wq
-  + Quitting without writing       :q!
+Check :help exiting
+  |--------------------------------+------+-----------+-------------------------------------|
+  | Commands                       | Keys | Long form | Notes                               |
+  |--------------------------------+------+-----------+-------------------------------------|
+  | Quitting                       | :q   | :quit     | Only works if no changes            |
+  | Quitting with multiple files   | :qa  | :qall     | Only works if no changes            |
+  | Write file and quit            | :wq  |           | Will confirm if file exists already |
+  | Quitting without writing       | :q!  |           |                                     |
+  | Quit all files without writing | :qa! | :qall!    |                                     |
+  |--------------------------------+------+-----------+-------------------------------------|
 ** Opening files
-   Edit new file in buffer        :e <filename>
-   Insert file at cursor          :r <filename>
-   Insert command output          :r !command (won't take inputo)
+Check :help edit
+   |---------------------------------+---------------+--------------------------------------------|
+   | Commands                        | Keys          | Notes                                      |
+   |---------------------------------+---------------+--------------------------------------------|
+   | Edit new file in buffer         | :e <filename> | Will fail if existing buffer isn't written |
+   | Insert file at cursor           | :r <filename> |                                            |
+   | Insert command output at cursor | :r !command   | (won't take input)                         |
+   |---------------------------------+---------------+--------------------------------------------|
 ** Diffing files
-   two ways. First, from commandline:
+Check :help diff
+There are two ways to diff files with vimdiff. 
+  + First, from commandline: 
+#+BEGIN_SRC sh
      vimdiff firstfile secondfile
-   and within vim:
-   :vert diffsplit other-file
-   [c    jump to next change
-   ]c    jump to previous change
+#+END_SRC
+  + and within vim (side-by-side):
+  |-------------------------------+------------------------+----------------------------+-------------------------------------|
+  | Commands                      | Keys                   | Long form                  | Notes                               |
+  |-------------------------------+------------------------+----------------------------+-------------------------------------|
+  | Show two files side by side   | :vert diffs other-file | :vert diffsplit other-file | Quote the filename if it has spaces |
+  | Show two files top and bottom | :diffs other-file      | :diffsplit other-file      | Quote the filename if it has spaces |
+  |-------------------------------+------------------------+----------------------------+-------------------------------------|
+  + Within vim, you can also use these commands
+  |-------------------------+------+-------|
+  | Commands                | Keys | Notes |
+  |-------------------------+------+-------|
+  | jump to next change     | [c   |       |
+  | jump to previous change | ]c   |       |
 ** Windows
-   Split window below   :sp
-   Split window beside  :vsp
-   Switch windows down/up/left/right  C-w <down>/...
-   Swap windows    C-w C-w
+  |-----------------------------------+--------------------------------+-------------|
+  | Commands                          | Keys                           | Variables   |
+  |-----------------------------------+--------------------------------+-------------|
+  | Split window below                | :sp                            | :splitbelow |
+  | Split window beside               | :vsp                           | :splitright |
+  | Switch windows down/up/left/right | C-w <down>/<Up>/<Left>/<Right> |             |
+  | Swap windows                      | C-w C-w                        |             |
+  |-----------------------------------+--------------------------------+-------------|
 ** Help
-  Top of help   :help
-  Help on a topic    :help "searchterm"
+  |-----------------+--------------------+---------------------------------------------------------|
+  | Commands        | Keys               | Notes                                                   |
+  |-----------------+--------------------+---------------------------------------------------------|
+  | Top of help     | :help              |                                                         |
+  | Help on a topic | :help "searchterm" | Search term needs to be in quotes if you include spaces |
+  |                 |                    |                                                         |
+  |-----------------+--------------------+---------------------------------------------------------|
 * Music
 ** Classical
   + Erik Satie: Gymnopedies, gnossiennes et sarabandes (1:05:19) https://www.youtube.com/watch?v=5pyhBJzuixM
