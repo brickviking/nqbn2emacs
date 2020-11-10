@@ -187,18 +187,49 @@ Type RET to visit the change or commit at point.
 - <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
 - <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
 #+END_QUOTE
+** vterm
+Doesn't come as standard with emacs, but is well worth the install. Running other programs inside vterm
+can come with a couple of pitfalls though, especially if you're expecting to run vim, which actually
+works, by the way. If you want to copy stuff from a vterm buffer, toggle vterm-copy-mode with C-c C-t,
+make your selection, copy it to the killring (or is it yank ring?), then toggle vterm-copy-mode back off
+again. Toggling it back off allows commands such as M-w to be passed through to the program you're
+running inside vterm—for example, the vim editor.
 * Vim
-** Exiting
-Check :help exiting
-  |--------------------------------+------+-----------+-------------------------------------|
-  | Commands                       | Keys | Long form | Notes                               |
-  |--------------------------------+------+-----------+-------------------------------------|
-  | Quitting                       | :q   | :quit     | Only works if no changes            |
-  | Quitting with multiple files   | :qa  | :qall     | Only works if no changes            |
-  | Write file and quit            | :wq  |           | Will confirm if file exists already |
-  | Quitting without writing       | :q!  |           |                                     |
-  | Quit all files without writing | :qa! | :qall!    |                                     |
-  |--------------------------------+------+-----------+-------------------------------------|
+You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
+focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
+try to be anything else. However, even it has a scripting language underneath, called vimscript.
+Because the editor is focussed so tightly on editing text, it has a wide commandset for editing, and
+you can do some really compact and powerful commands in just a few keys.
+
+One example I like to quote so often, because I haven't found an equivalent that's any shorter, or
+even the same size.
+
+#+BEGIN_SRC vim
+ma013yy41j14p`a
+#+END_SRC
+This does the following:
+| Keys | Description                                              |
+|------+----------------------------------------------------------|
+| ma   | :mark, using the a letter. :help mark for more details.  |
+| 0    | step to column 0, the left hand side of the screen.      |
+| 13yy | copy 13 lines to the copy buffer, check :help yank       |
+| 41j  | step forward 41 lines                                    |
+| 14p  | paste 14 copies of the 13 lines each, giving you a total |
+|      | of 182 new lines                                         |
+| `a   | Go back to where you were                                |
+|------+----------------------------------------------------------|
+
+And that's just one example. It's only 15 characters long, with quite a kick in its tail.
+
+I don't describe more detailed vimscript here, basically because I don't know how to use it myself.
+
+** Help
+  |-----------------+--------------------+---------------------------------------------------------|
+  | Commands        | Keys               | Notes                                                   |
+  |-----------------+--------------------+---------------------------------------------------------|
+  | Top of help     | :help              |                                                         |
+  | Help on a topic | :help "searchterm" | Search term needs to be in quotes if you include spaces |
+  |-----------------+--------------------+---------------------------------------------------------|
 ** Opening files
 Check :help edit
    |---------------------------------+---------------+--------------------------------------------|
@@ -228,7 +259,10 @@ There are two ways to diff files with vimdiff.
   |-------------------------+------+-------|
   | jump to next change     | [c   |       |
   | jump to previous change | ]c   |       |
-** Windows
+** Copying commands
+Check out :help copy
+** Window commands
+Check :help window
   |-----------------------------------+--------------------------------+-------------|
   | Commands                          | Keys                           | Variables   |
   |-----------------------------------+--------------------------------+-------------|
@@ -237,14 +271,33 @@ There are two ways to diff files with vimdiff.
   | Switch windows down/up/left/right | C-w <down>/<Up>/<Left>/<Right> |             |
   | Swap windows                      | C-w C-w                        |             |
   |-----------------------------------+--------------------------------+-------------|
-** Help
-  |-----------------+--------------------+---------------------------------------------------------|
-  | Commands        | Keys               | Notes                                                   |
-  |-----------------+--------------------+---------------------------------------------------------|
-  | Top of help     | :help              |                                                         |
-  | Help on a topic | :help "searchterm" | Search term needs to be in quotes if you include spaces |
-  |                 |                    |                                                         |
-  |-----------------+--------------------+---------------------------------------------------------|
+** Macro commands
+Check :help macro
+Key mapping is used to change the meaning of typed keys.  The most common use
+is to define a sequence of commands for a function key.  Example:
+#+BEGIN_SRC vim
+        :map <F2> a<C-R>=strftime("%c")<CR><Esc>
+#+END_SRC
+This appends the current date and time after the cursor (in <> notation, see :help <> for details).
+Picking this apart, you have the command :map. This command takes two (or more) arguments. 
++ First argument is the key to bind, delimited by <>, which you may need to specify. If it's just a straight
+  key, such as I, you probably don't need to put that into <>, but you will for things like C-c, F2 and
+  anything where the symbol takes more than 1 character to type the whole key definition.
+  + NB: you can often hit the key itself after typing :map in which case, vim will turn F2 into <F2>.
+  For example, if you want to bind F2 (as in the case above), then you type <F2> as the key.
++ The second argument is what you want to type when you hit F2. In this case, it's generally vim
+  commands in command mode. You can bind keys in insert mode, but that comes with a bit more to do.
+** Exit commands
+Check :help exiting
+  |--------------------------------+------+-----------+-------------------------------------|
+  | Commands                       | Keys | Long form | Notes                               |
+  |--------------------------------+------+-----------+-------------------------------------|
+  | Quitting                       | :q   | :quit     | Only works if no changes            |
+  | Quitting with multiple files   | :qa  | :qall     | Only works if no changes            |
+  | Write file and quit            | :wq  |           | Will confirm if file exists already |
+  | Quitting without writing       | :q!  |           |                                     |
+  | Quit all files without writing | :qa! | :qall!    |                                     |
+  |--------------------------------+------+-----------+-------------------------------------|
 * Music
 ** Classical
   + Erik Satie: Gymnopedies, gnossiennes et sarabandes (1:05:19) https://www.youtube.com/watch?v=5pyhBJzuixM
@@ -395,3 +448,6 @@ There are two ways to diff files with vimdiff.
     + SQL tutorial - Full database course for beginners (4'20"39) https://www.youtube.com/watch?v=HXV3zeQKqGY 
 **** Postgresql
      + Learn PostGreSQL Tutorial (4'19"34)  https://www.youtube.com/watch?v=qw--VYLpxG4
+** Other
+*** Javascript
+    + Java Swing GUI Full course—Bro Code (4'48"34) https://www.youtube.com/watch?v=Kmgo00avvEw
