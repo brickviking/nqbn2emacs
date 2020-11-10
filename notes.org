@@ -2,11 +2,27 @@
 #+AUTHOR: brickviking (yes, me!)
 #+TAGS: emacs vim cheatsheet keys
 * header stuff. Why do I need this?
+[# 
+(defun c () (interactive) (find-blogme3-sh0-if "emacsconf2019"))
+(defun u () (interactive) (find-blogme-upload-links "emacsconf2019"))
+;;    http://angg.twu.net/emacsconf2019.html
+;; file:///home/edrx/TH/L/emacsconf2019.html
+;; (eco)
+;;
+#]
+[lua:
+  require "sexp"   -- (find-blogme3 "sexp.lua")
+  def [[ ECS0 1 time youtube_make_url("86yiRG8YJD0", time) ]]
+  def [[ ECS  2 time,text BR()..R(ECS0(time), time).." "..text ]]
+  def [[ ECSQ 2 time,text ECS(time, Q(text)) ]]
+]
+
+
 
 * Emacs
 ** Cock-ups
-   When starting a remote file access, don't run M-x tramp  first. Things will break.
-   A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
+   * When starting a remote file access, don't run M-x tramp  first. Things will break.
+   * A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
 ** Help
    | Info for emacs                        | C-h r |                     |
    | Global info dir                       | C-h i |                     |
@@ -17,22 +33,22 @@
    |                                       |       |                     |
 
 ** Windows/Frames
-   Cycle through visible windows  C-x o
-   Focus buffer to whole window C-x 1
-   Split window Top/Bottom C-x 2
-   Split window Left/Right C-x 3
-   Open new file in another window C-x 4 f
-   Scroll other window: down C-M-v, up C-M-S-v
-   Close frame  C-x 5 0
+   + Cycle through visible windows  C-x o
+   + Focus buffer to whole window C-x 1
+   + Split window Top/Bottom C-x 2
+   + Split window Left/Right C-x 3
+   + Open new file in another window C-x 4 f
+   + Scroll other window: down C-M-v, up C-M-S-v
+   + Close frame  C-x 5 0
 ** Buffers
    + Swap buffer  C-x b
    + List All Buffers  C-x C-b
 When in buffer selection window 
    m marks, k marks for delete, x deletes, u undoes mark, U undoes all marking
    + Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
-    -:@---      UNIX (LF 0x0A)
-    -(DOS)@---  Dos encoding (CRLF 0x0D 0x0A)
-    -(Mac)@---  Mac OS X encoding (CR  0x0D)
+     + -:@---      UNIX (LF 0x0A)
+     + -(DOS)@---  Dos encoding (CRLF 0x0D 0x0A)
+     + -(Mac)@---  Mac OS X encoding (CR  0x0D)
    + Also check [[How to set a buffer's line-encoding from text mode]]
 ** org mode
 + Tab on */+ line expands/compacts tree
@@ -201,6 +217,31 @@ This refreshes the magit status buffer once you've made some changes within the 
   Help on a topic    :help "searchterm"
 * Music
 ** Classical
+  + Erik Satie: Gymnopedies, gnossiennes et sarabandes (1:05:19) https://www.youtube.com/watch?v=5pyhBJzuixM
+    + [P Tracklist:
+       [ECSQ 00:00:00 3 Sarabandes (1887): No. 1 ]
+       [ECSQ 00:05:33 3 Sarabandes (1887): No. 2 ]
+       [ECSQ 00:10:33 3 Sarabandes (1887): No. 3 ]
+       [ECSQ 00:14:47 3 Gymnopédies (1889): No. 1: Lent et douloureux ]
+       [ECSQ 00:18:27 3 Gymnopédies (1889): No. 2: Lent et triste ]
+       [ECSQ 00:21:45 3 Gymnopédies (1889): No. 3: Lent et grave ]
+       [ECSQ 00:24:38 Gnossiennes 1-3 (1890): No. 1 ]
+       [ECSQ 00:28:45 Gnossiennes 1-3 (1890): No. 2 ]
+       [ECSQ 00:30:45 Gnossiennes 1-3 (1890): No. 3 ]
+       [ECSQ 00:34:11 Gnossiennes 4-6 (1889-1897): No. 4 ]
+       [ECSQ 00:37:02 Gnossiennes 4-6 (1889-1897): No. 5 ]
+       [ECSQ 00:39:53 Gnossiennes 4-6 (1889-1897): No. 6 ]
+       [ECSQ 00:41:27 2 Préludes du nazaréen (1892): No. 1, assez lent ]
+       [ECSQ 00:46:09 2 Préludes du nazaréen (1892): No. 2, assez lent ]
+       [ECSQ 00:49:15 2 Prélude de la porte Héroique du ciel (1894) ]
+       [ECSQ 00:53:00 2 Pièces froides (1897), No. 1: Airs a faire fuir: D’une manière très particulaire ]
+       [ECSQ 00:55:59 2 Pièces froides (1897), No. 1: Airs a faire fuir: Modestemente ]
+       [ECSQ 00:57:42 2 Pièces froides (1897), No. 1: Airs a faire fuir: S’inviter ]
+       [ECSQ 01:00:45 No 2: Danses de travers: En y regardent à deux fois ]
+       [ECSQ 01:01:39 No 2: Danses de travers: Passer ]
+       [ECSQ 01:02:25 No 2: Danses de travers: Encore ]
+       [ECSQ 01:03:47 Petite ouverture à danser (1900) ]
+      ]
 ** Programming music
 ***  Channel: https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
   + List: https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5
@@ -220,6 +261,82 @@ This refreshes the magit status buffer once you've made some changes within the 
   + Sid Meier's Civilization: Beyond Earth (2'59"31) https://www.youtube.com/watch?v=N4mPA-tPvtc
   + Sim CITY 3000 Soundtrack (1'02"01) https://www.youtube.com/watch?v=qkXOxLpdMds
   + Complete Sim CITY 3000 Soundtrack (1'52"21) https://www.youtube.com/watch?v=k3FsVvwbAlw
+
+*** Starbound soundtrack
+Tracklist:
+Horsehead Nebula - 0:00
+Stellar Formation - 7:36
+Eridanus Supervoid - 15:25
+Haiku - 7:36 - 0:22:59
+Cygnus X1 - 30:34
+Psyche - 43:57
+Large Magellanic Cloud - 49:22
+Epsilon Indi - 0:55:36
+Hymn to the Stars - 1:06:34
+Europa - 1:11:12
+Atlas - 1:17:16
+Casiopeia - 1:21:23
+Mercury - 1:27:28
+Temple of Kluex - 1:33:54
+Mira - 1:42:30
+Procyon - 2:02:35
+Blue Straggler - 2:11:44
+Nomads (Passacaglia) - 2:17:27
+Accretion Disc - 2:27:35
+Tranquility Base - 2:32:33
+Vast, Immortal Suns - 2:44:28
+The Apex - 2:48:33
+The Deep - 2:55:47
+Drosera - 3:02:56
+Error 0xBFAF000  - 3:11:14
+Event Horizon - 3:14:24
+Gravitational Collapse - 3:21:40
+I Was the Sun (Before it was Cool) - 3:26:12
+Impact Event - 3:31:10
+M54 - 3:38:06
+Starbound - 3:48:44
+Ultramarine - 3:59:14
+Via Aurora - 4:01:48
+Glacial Horizon - 4:04:19
+Scorian Flow - 4:07:55
+Forsaken Grotto - 4:11:00
+Stellar Acclimation - 4:14:27
+Jupiter - 5:56 - 4:17:46
+Arctic Battle 1 - 4:23:42
+Arctic Battle 2 - 4:26:06
+Arctic Battle 3 - 4:28:01
+Arctic Constellation 1 - 4:29:40
+Arctic Constellation 2 - 4:40:44
+Arctic Exploration 1 - 4:50:09
+Arctic Exploration 2 - 4:54:25
+Crystal Battle 1 - 4:58:25
+Crystal Exploration 1 - 5:01:34
+Crystal Exploration 2 - 5:04:38
+Desert Battle 2 - 5:08:59
+Desert Exploration 1 - 5:12:37
+Desert Exploration 2 - 5:15:07
+Forest Battle 1 - 5:18:13
+Forest Battle 2 - 5:20:39
+Forest Battle 2 (alternative) - 5:24:16
+Forest Exploration 1 - 5:27:52
+Forest Exploration 2 - 5:31:52
+Forest - 5:35:49
+Glitch - 5:37:01
+Ice Constellation 2 demo - 5:40:21
+Inviolate - 5:49:46
+Lava Exploration 1 - 5:52:33
+Lava Exploration 2 - 5:55:53
+Ocean Battle 1 - 6:00:41
+Ocean Exploration 1 - 6:02:03
+Ocean Exploration 2 - 6:06:06
+On the Beach at Night - 6:09:29
+Planetarium -  6:13:46
+Tentacle Battle 1 - 6:18:04
+Tentacle Exploration 1 - 6:19:30
+Tentacle Exploration 2 - 6:22:10
+Constellation 1 (8 different versions) - 6:25:16
+** Weird stuff
+  + Philip Glass - Music From The Hours (42"44) https://www.youtube.com/watch?v=heu9tD0dzkY
 ** Social
   + Uncomfortable conversations with a black man - Petuma Police Force (22"32) https://www.youtube.com/watch?v=pM-HpZQWKT4
 * Programming
