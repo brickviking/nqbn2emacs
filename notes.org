@@ -188,12 +188,14 @@ Type RET to visit the change or commit at point.
 <laertus> and repeat the macro until done
 <piyo> the same thing with tramp, can't remember the incantation. Can't you just transient/dialog box the url for me?
 *** How to split frame into four, don't forget to keybind this, say to C-x 4 w
+#+BEGIN_SRC emacs-lisp
 (defun window-split-four ()
   (interactive)
   (delete-other-windows)
   (with-selected-window (split-window-right)
     (split-window))
   (split-window))
+#+END_SRC
 *** How to set a buffer's line-encoding from text mode
 <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
 <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
