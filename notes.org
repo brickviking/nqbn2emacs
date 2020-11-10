@@ -152,6 +152,7 @@ Type RET to visit the change or commit at point.
   writegood
 ** Snippets from freenode#emacs
 *** How to search/replace all * at B.O.L. with the same number of #
+#+BEGIN_QUOTE
 <laertus> i need some search and replace help...  [19:53]
 <laertus> i'd like to replace all the leading *'s in a buffer with the same number of #'s
 <laertus> so if a line starts with *** i'd like to replace that part of the line with ###
@@ -187,6 +188,7 @@ Type RET to visit the change or commit at point.
 <laertus> just search for a * at the beginning of the line, and then replace all *'s until the first space with #'s  [20:30]
 <laertus> and repeat the macro until done
 <piyo> the same thing with tramp, can't remember the incantation. Can't you just transient/dialog box the url for me?
+#+END_QUOTE
 *** How to split frame into four, don't forget to keybind this, say to C-x 4 w
 #+BEGIN_SRC emacs-lisp
 (defun window-split-four ()
@@ -197,8 +199,10 @@ Type RET to visit the change or commit at point.
   (split-window))
 #+END_SRC
 *** How to set a buffer's line-encoding from text mode
+#+BEGIN_QUOTE
 <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
 <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
+#+END_QUOTE
 * Vim
 ** Exiting
    Quitting                       :q
