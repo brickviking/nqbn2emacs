@@ -140,6 +140,8 @@ This refreshes the magit status buffer once you've made some changes within the 
 Type TAB to expand or hide the section at point.
 *** Visit change/commit          <RET>
 Type RET to visit the change or commit at point.
+*** Turn region into list        C-c -
+*** Turn region into headers     C-c *
 ** erc
    + quit server: C-c C-x
    + Join channel:  C-c C-j
