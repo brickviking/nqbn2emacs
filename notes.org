@@ -175,6 +175,7 @@ Type RET to visit the change or commit at point.
 *** How to split frame into four, don't forget to keybind this, say to C-x 4 w
 #+BEGIN_SRC emacs-lisp
 (defun window-split-four ()
+ " Splits frame into four equal sized windows"
   (interactive)
   (delete-other-windows)
   (with-selected-window (split-window-right)
