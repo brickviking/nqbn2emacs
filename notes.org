@@ -153,41 +153,41 @@ Type RET to visit the change or commit at point.
 ** Snippets from freenode#emacs
 *** How to search/replace all * at B.O.L. with the same number of #
 #+BEGIN_QUOTE
-<laertus> i need some search and replace help...  [19:53]
-<laertus> i'd like to replace all the leading *'s in a buffer with the same number of #'s
-<laertus> so if a line starts with *** i'd like to replace that part of the line with ###
-<laertus> and if it starts with ** i'd like to replace the ** with ## etc
-<laertus> i can write a function to do this, but was hoping there'd be an easier way  [19:54]
-<Viking667> not really sure. I'd have done it in vim with :%s/***/###/cg  [19:55]
-<Viking667> but that's not the emacs way, and that's not taking account of the escaping too.
-<laertus> yeah, that'll only work for exactly 3 ***'s and it can be done exactly that way in evil
-<laertus> i'm looking for a more general solution that'll work for any number of leading *'s
-<dale> laertus: How about: M-x query-replace-regexp RET ^\*+ RET \,(make-string (length (match-string 0)) ?#) RET  [20:08]
-<Qudit314159> It works here  [20:13]
-<Viking667> I'll have to check that on my buffer.
-<laertus> someone gave me a vim solution on #vim:  %s/^\*\+/\=substitute(submatch(0), '*', '#', 'g')  [20:14]
-<laertus> unfortunately, i don't think that'll work with evil, as evil doesn't implement vim's regex engine, and instead just uses emacs' regex engine  [20:15]
-<Qudit314159> Well, dale's should work. If it doesn't, something else is wrong I'd say
-<dale> laertus: Yeah, I tested mine here, it works.  Point was before the text you wanted to replace, right?
-<laertus> it's probably something to do with my emacs config  [20:17]
-<Viking667> and it works fine for me (I'm pretty much vanilla emacs)
-<dale> laertus: I can't think of another way to do it with Emacs regexps.
-<laertus> well, thank you, dale, it's a good solution
-<dale> You... might be able to do it if you had PCRE and a look-behind assertion, but I'm not sure since I can't remember if PCRE does variable-width look-behind.  [20:19]
-<Viking667> i.e. copy query-replace-regexp, paste it into M-x, type in ^\*+, hit RET, copy the last long bit, paste it in etc etc.
-<piyo> in elisp: (query-replace-regexp "^\\*+" '(replace-eval-replacement replace-quote (make-string (length (match-string 0)) 35)) nil nil nil nil nil)  [20:23]
-<piyo> also, works for me if I turn off pcre-mode and on, as well. yeah  [20:25]
-<Viking667> I might snip that and stuff it into my notes.org  [20:26]
-<laertus> piyo: that works for me but it prompts me to confirm every replacement  [20:27]
-<piyo> press ! to confirm all
-<laertus> ah, ok.. thanks  [20:28]
-<piyo> press ? for more info in the query-replace-regexp
-<laertus> this vim solution:  :g/^\*/norm! vt r#  [20:29]
-<piyo> to me, doing that (make-string...) thing in the minibuffer makes me want more guided help.
-<laertus> makes me realize that this could be done with a macro
-<laertus> just search for a * at the beginning of the line, and then replace all *'s until the first space with #'s  [20:30]
-<laertus> and repeat the macro until done
-<piyo> the same thing with tramp, can't remember the incantation. Can't you just transient/dialog box the url for me?
+- <laertus> i need some search and replace help...  [19:53]
+- <laertus> i'd like to replace all the leading *'s in a buffer with the same number of #'s
+- <laertus> so if a line starts with *** i'd like to replace that part of the line with ###
+- <laertus> and if it starts with ** i'd like to replace the ** with ## etc
+- <laertus> i can write a function to do this, but was hoping there'd be an easier way  [19:54]
+- <Viking667> not really sure. I'd have done it in vim with :%s/***/###/cg  [19:55]
+- <Viking667> but that's not the emacs way, and that's not taking account of the escaping too.
+- <laertus> yeah, that'll only work for exactly 3 ***'s and it can be done exactly that way in evil
+- <laertus> i'm looking for a more general solution that'll work for any number of leading *'s
+- <dale> laertus: How about: M-x query-replace-regexp RET ^\*+ RET \,(make-string (length (match-string 0)) ?#) RET  [20:08]
+- <Qudit314159> It works here  [20:13]
+- <Viking667> I'll have to check that on my buffer.
+- <laertus> someone gave me a vim solution on #vim:  %s/^\*\+/\=substitute(submatch(0), '*', '#', 'g')  [20:14]
+- <laertus> unfortunately, i don't think that'll work with evil, as evil doesn't implement vim's regex engine, and instead just uses emacs' regex engine  [20:15]
+- <Qudit314159> Well, dale's should work. If it doesn't, something else is wrong I'd say
+- <dale> laertus: Yeah, I tested mine here, it works.  Point was before the text you wanted to replace, right?
+- <laertus> it's probably something to do with my emacs config  [20:17]
+- <Viking667> and it works fine for me (I'm pretty much vanilla emacs)
+- <dale> laertus: I can't think of another way to do it with Emacs regexps.
+- <laertus> well, thank you, dale, it's a good solution
+- <dale> You... might be able to do it if you had PCRE and a look-behind assertion, but I'm not sure since I can't remember if PCRE does variable-width look-behind.  [20:19]
+- <Viking667> i.e. copy query-replace-regexp, paste it into M-x, type in ^\*+, hit RET, copy the last long bit, paste it in etc etc.
+- <piyo> in elisp: (query-replace-regexp "^\\*+" '(replace-eval-replacement replace-quote (make-string (length (match-string 0)) 35)) nil nil nil nil nil)  [20:23]
+- <piyo> also, works for me if I turn off pcre-mode and on, as well. yeah  [20:25]
+- <Viking667> I might snip that and stuff it into my notes.org  [20:26]
+- <laertus> piyo: that works for me but it prompts me to confirm every replacement  [20:27]
+- <piyo> press ! to confirm all
+- <laertus> ah, ok.. thanks  [20:28]
+- <piyo> press ? for more info in the query-replace-regexp
+- <laertus> this vim solution:  :g/^\*/norm! vt r#  [20:29]
+- <piyo> to me, doing that (make-string...) thing in the minibuffer makes me want more guided help.
+- <laertus> makes me realize that this could be done with a macro
+- <laertus> just search for a * at the beginning of the line, and then replace all *'s until the first space with #'s  [20:30]
+- <laertus> and repeat the macro until done
+- <piyo> the same thing with tramp, can't remember the incantation. Can't you just transient/dialog box the url for me?
 #+END_QUOTE
 *** How to split frame into four, don't forget to keybind this, say to C-x 4 w
 #+BEGIN_SRC emacs-lisp
@@ -200,8 +200,8 @@ Type RET to visit the change or commit at point.
 #+END_SRC
 *** How to set a buffer's line-encoding from text mode
 #+BEGIN_QUOTE
-<spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
-<spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
+- <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
+- <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
 #+END_QUOTE
 * Vim
 ** Exiting
