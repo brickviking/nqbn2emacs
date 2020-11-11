@@ -348,12 +348,14 @@ Check :help exiting
       + 01:03:47 Petite ouverture à danser (1900)
       ]
 ** Programming music
-***  Channel: https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
+*** Channel: Fil Far https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
   + List: https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5
   + Programming BIOHAZARD edition #14 (1'01'01) https://www.youtube.com/watch?v=ZzRnX4UNJso
   + Programming LIQUID edition #21 (56"31) https://www.youtube.com/watch?v=GOaohYSg0m4
   + FOCUS Coding Music #15 (1'13"04) https://www.youtube.com/watch?v=cQ-a18zEBmI
   + 
+*** Channel: JimTV https://www.youtube.com/c/JimTVmusic
+  + Programming/coding/hacking music #7 - CYBORG CAN NOT DIE (1'01"53)  https://www.youtube.com/watch?v=do7Jl_4_d5w
 ** Soundtracks
   + Age of Mythology soundtrack (46"32) https://www.youtube.com/watch?v=TGXwvLupP5A
   + Factorio complete soundtrack (1'00"53) https://www.youtube.com/watch?v=T6OZrUbLJ1M
