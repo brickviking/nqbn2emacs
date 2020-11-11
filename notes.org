@@ -7,6 +7,9 @@
    * When starting a remote file access, don't run M-x tramp  first. Things will break.
    * A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
 ** Help
+   |---------------------------------------+-------+---------------------|
+   | Command                               | Keys  | Notes               |
+   |---------------------------------------+-------+---------------------|
    | Info for emacs                        | C-h r |                     |
    | Global info dir                       | C-h i |                     |
    | Describe current major mode           | C-h m |                     |
@@ -14,15 +17,16 @@
    | Describe binding                      | C-h b | Also mode sensitive |
    | Info Doc Search (word list or regexp) | C-h d |                     |
    |                                       |       |                     |
+   |---------------------------------------+-------+---------------------|
 
 ** Windows/Frames
-   + Cycle through visible windows  C-x o
-   + Focus buffer to whole window C-x 1
-   + Split window Top/Bottom C-x 2
-   + Split window Left/Right C-x 3
+   + Cycle through visible windows:  C-x o
+   + Focus buffer to whole window:  C-x 1
+   + Split window Top/Bottom: C-x 2
+   + Split window Left/Right: C-x 3
    + Open new file in another window C-x 4 f
    + Scroll other window: down C-M-v, up C-M-S-v
-   + Close frame  C-x 5 0
+   + Close frame:  C-x 5 0
 ** Buffers
    + Swap buffer  C-x b
    + List All Buffers  C-x C-b
@@ -87,14 +91,14 @@ From the magit buffer, you can do the following things. Most of them will prompt
 things if they need them. Usually you put your cursor on the object you want to affect, or
 on the section header if you wish to affect all files in that category.
 NB: the section header often has a > in the fringe, but this is not visible in textmode.
-*** Adding untracked file        s (stage)
+*** Adding untracked file:        s (stage)
 Simply put your cursor on the file you want to stage, hit s. The file should then shift into "Staged
 changes", ready for you to commit. This roughly duplicates "git add file.blah".
 
 TODO: No idea how to add a directory from magit yet.
-*** Staging an unstaged file     s (stage)
+*** Staging an unstaged file:     s (stage)
 Same as above, except for a file that's already part of the git repository.
-*** Committing staged files      c (commit)
+*** Committing staged files:      c (commit)
 Will request how you want to commit, hit c again to bring up an editor window. Provide a single line
 commit message. If you want to add more lines, leave a blank line after the single line as follows:
 #+BEGIN_EXAMPLE diff
@@ -115,16 +119,16 @@ This is the next line for a multi-line comment.
 #
 
 #+END_EXAMPLE
-*** Show diff against files      d (diff)
+*** Show diff against files:      d (diff)
 
-*** Refresh magit buffer         g (magit-refresh)
+*** Refresh magit buffer:         g (magit-refresh)
 This refreshes the magit status buffer once you've made some changes within the project.
-*** Expand/hide section          <TAB>
+*** Expand/hide section:          <TAB>
 Type TAB to expand or hide the section at point.
-*** Visit change/commit          <RET>
+*** Visit change/commit:          <RET>
 Type RET to visit the change or commit at point.
-*** Turn region into list        C-c -
-*** Turn region into headers     C-c *
+*** Turn region into list:        C-c -
+*** Turn region into headers:     C-c *
 ** erc
    + quit server: C-c C-x
    + Join channel:  C-c C-j
