@@ -1,5 +1,6 @@
 #+TITLE: Notes for anything I think of
 #+AUTHOR: brickviking (yes, me!)
+#+DATE: <2020-11-12 Thu 22:41>
 #+TAGS: emacs vim cheatsheet keys
 
 * Emacs
