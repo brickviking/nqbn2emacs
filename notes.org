@@ -220,6 +220,33 @@ running inside vterm—for example, the vim editor.
 - <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
 - <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
 #+END_QUOTE
+*** How to clean up a referred URL from duckduckgo - jamzattack from freenode#emacs
+Duckduckgo does a very sinful thing -- instead of linking to
+=https://url.com=, it links to:
+: https://duckduckgo.com/l/?kh=-1&uddg=https%3A%2F%2Furl.com
+
+Here, I define a function that removes all this junk, and use [[info:elisp#Advising Named Functions][advice]]
+to filter the arguments given to [[help:shr-urlify][shr-urlify]].  Because this is
+relatively low-level, all occurences of duckduckgo's redirects that
+are parsed with =shr= are replaced with the clean version.
+
+#+name: un-duckduckgo-url
+#+begin_src emacs-lisp :tangle no
+  (defun un-duckduckgo-url (args)
+    "Cleanse a url from duckduckgo's janky redirect.
+  This takes the same args as `shr-urlify', passed as a list."
+    (let ((start (nth 0 args))
+          (url (nth 1 args))
+          (title (nth 2 args)))
+      (list start
+            (let ((unhexed (url-unhex-string url)))
+              (if (string-match "\\`.*[&\\?]uddg=" unhexed)
+                  (replace-match "" nil nil unhexed)
+                url))
+            title)))
+
+  (advice-add 'shr-urlify :filter-args #'un-duckduckgo-url)
+#+end_src
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
@@ -371,6 +398,7 @@ Check :help exiting
   + Sid Meier's Civilization 6 Complete Soundtrack (4'21"21) https://www.youtube.com/watch?v=cb922Sry_DI
   + Sid Meier's Civilization: Beyond Earth (2'59"31) https://www.youtube.com/watch?v=N4mPA-tPvtc
   + Sim CITY 3000 Soundtrack (1'02"01) https://www.youtube.com/watch?v=qkXOxLpdMds
+  + Sim City 4 Soundtrack (3'15"14) https://www.youtube.com/watch?v=PSv37HwwojU
   + Complete Sim CITY 3000 Soundtrack (1'52"21) https://www.youtube.com/watch?v=k3FsVvwbAlw
 
 *** Starbound soundtrack
