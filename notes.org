@@ -42,6 +42,8 @@ When in buffer selection window
   1) First time: expand one level below point without exposing text
   2) Second time: expand all levels below point including text
   3) Third time: compact all levels below point back to heading
+   NB: if you put your cursor AFTER the ... of an unexpanded heading then you'll perhaps see
+   "EMPTY ENTRY" in the minibuffer
 + S-tab   global expansion
   1) expand all headings without exposing text
   2) expand entire document (headings, text, etc)
