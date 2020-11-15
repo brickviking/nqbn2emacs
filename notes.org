@@ -319,22 +319,28 @@ There are two ways to diff files with vimdiff.
   | jump to previous change | ]c   |       |
 ** Copying commands
 Check out :help copy
-|-----------------------------------------+--------|
-| Command                                 | Key(s) |
-|-----------------------------------------+--------|
-| Copy line                               | yy     |
-| Copy multiple lines (6 in this example) | y6y    |
-| Alternative to above                    | 6yy    |
-| Copy word                               | yw     |
-| Copy to end of line                     | y$     |
-| Copy to beginning of line               | y0     |
-|                                         |        |
-|-----------------------------------------+--------|
+|-----------------------------------------+----------|
+| Command                                 | Key(s)   |
+|-----------------------------------------+----------|
+| Copy line                               | yy       |
+| Copy multiple lines (6 in this example) | 6yy      |
+| Alternative to above                    | 6Y       |
+| Alternative to above                    | y6y      |
+| Copy word                               | yw       |
+| Copy char                               | y<Space> |
+| Copy to end of line                     | y$       |
+| Copy to beginning of line               | y0       |
+| Paste content at cursor location        | p        |
+| Paste content above cursor location     | P        |
+|-----------------------------------------+----------|
 
 As you can tell, many vim commands take an optional numeric argument, either before in the case
 of =6yy= or embedded in the command in the case of =y6y=. In this case at least, they both give
 you the same result. At least one opinion holds that you should probably prefer the 6yy form, as
-it's simply for n times, repeat x item.
+it's simply for n times, repeat x item. A special note about the y<Space>, means literally hit
+the y key, followed by the Spacebar. You may often see special notes about keys in <> throughout
+the Vim help.
+
 ** Window commands
 Check :help window
   |-----------------------------------+--------------------------------+-------------|
