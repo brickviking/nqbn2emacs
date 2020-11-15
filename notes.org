@@ -275,7 +275,9 @@ This does the following:
 | `a   | Go back to where you were                                |
 |------+----------------------------------------------------------|
 
-And that's just one example. It's only 15 characters long, with quite a kick in its tail.
+And that's just one example. It's only 15 characters long, with quite a kick in its tail. And if you
+don't find what you want just in vimscript, it even has a plugin system that rocks. I don't tend to
+use them, so I don't include much here about it.
 
 I don't describe more detailed vimscript here, basically because I don't know how to use it myself.
 
@@ -317,6 +319,22 @@ There are two ways to diff files with vimdiff.
   | jump to previous change | ]c   |       |
 ** Copying commands
 Check out :help copy
+|-----------------------------------------+--------|
+| Command                                 | Key(s) |
+|-----------------------------------------+--------|
+| Copy line                               | yy     |
+| Copy multiple lines (6 in this example) | y6y    |
+| Alternative to above                    | 6yy    |
+| Copy word                               | yw     |
+| Copy to end of line                     | y$     |
+| Copy to beginning of line               | y0     |
+|                                         |        |
+|-----------------------------------------+--------|
+
+As you can tell, many vim commands take an optional numeric argument, either before in the case
+of =6yy= or embedded in the command in the case of =y6y=. In this case at least, they both give
+you the same result. At least one opinion holds that you should probably prefer the 6yy form, as
+it's simply for n times, repeat x item.
 ** Window commands
 Check :help window
   |-----------------------------------+--------------------------------+-------------|
@@ -382,6 +400,8 @@ Check :help exiting
       + 01:03:47 Petite ouverture à danser (1900)
       ]
 ** Programming music
+*** Other channels
+  + Starterra - Celestial (Space Ambient) [Full Album] https://www.youtube.com/watch?v=nPM_teVT07Y
 *** Channel: Fil Far https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
   + List: https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5
   + Programming BIOHAZARD edition #14 (1'01'01) https://www.youtube.com/watch?v=ZzRnX4UNJso
@@ -395,7 +415,7 @@ Check :help exiting
   + Factorio complete soundtrack (1'00"53) https://www.youtube.com/watch?v=T6OZrUbLJ1M
   + Hyper Light Drifter - complete OST (2'19"21) https://www.youtube.com/watch?v=bq7a_ktfYck
   + Mirror's Edge - Catalyst (5'13"10) https://www.youtube.com/watch?v=2fb5_zVk2gY
-  + Ori and the Will of the Wisps (3'02") https://www.youtube.com/watch?v=eCbyqm9jcBA
+  + Ori and the Will of the Wisps (3'02"02) https://www.youtube.com/watch?v=eCbyqm9jcBA
   + Rimworld Complete Soundtrack https://www.youtube.com/watch?v=TXQBHblSCIc
   + Rimworld Royalty complete soundtrack  https://www.youtube.com/watch?v=PG-phyoElKU
   + Sid Meier's Civilization 6 Complete Soundtrack (4'21"21) https://www.youtube.com/watch?v=cb922Sry_DI
