@@ -337,8 +337,8 @@ Check out :help copy
 As you can tell, many vim commands take an optional numeric argument, either before in the case
 of =6yy= or embedded in the command in the case of =y6y=. In this case at least, they both give
 you the same result. At least one opinion holds that you should probably prefer the 6yy form, as
-it's simply for n times, repeat x item. A special note about the y<Space>, means literally hit
-the y key, followed by the Spacebar. You may often see special notes about keys in <> throughout
+it's simply for n times, repeat x item. A special note about the =y<Space>=, means literally hit
+the =y= key, followed by the =Spacebar=. You may often see special notes about keys in <> throughout
 the Vim help.
 
 ** Window commands
