@@ -250,6 +250,26 @@ are parsed with =shr= are replaced with the clean version.
 
   (advice-add 'shr-urlify :filter-args #'un-duckduckgo-url)
 #+end_src
+*** #emacs@freenode:grym's head-of-file
+[17:20:44]<grym> Viking667: i have a little orgtbl at the top of my notes.org that is ~ this: https://dpaste.org/qxxr  
+[17:23:48]<grym> e.g. "ugh how did i..."
+[17:24:25]<grym> leaving myself breadcrumbs has saved my ass more than i can count so i tend to do it reflexively now 
+
+|----------------------------------+--------------------------------+-------------------------+------------|
+| effect                           | key                            | function                | source     |
+|----------------------------------+--------------------------------+-------------------------+------------|
+| delete entire buffer             | C-x h <delete>                 |                         | [[https://stackoverflow.com/questions/4886745/emacs-what-is-the-shortcut-key-to-clear-buffer][SO]]         |
+| open project in magit            | C-c p w F3                     |                         |            |
+| convert org list to headings     | C-c *                          |                         | [[https://emacs.stackexchange.com/questions/7856/how-to-turn-a-heading-into-a-list-item-in-org-mode][SO]]         |
+| cycle org list styles            | C-c -                          |                         | ibid       |
+| split view on same buffer        | C-x 4 c                        |                         | irc        |
+| org convert block to list        | C-c - on region                |                         | [[https://stackoverflow.com/a/3850846][SO]]         |
+| view and interact with kill ring | C-c y                          | helm-show-kill-ring     |            |
+| redo selection i just lost       | C-x C-x                        | exchange-point-and-mark | [[https://stackoverflow.com/a/11479725][SO]]         |
+| select paragraph dwim            | M-h                            | mark-paragraph          | org manual |
+| interactively replace            | ESC C-s (regex) ESC % \1 RET   |                         |            |
+| open in magit                    | C-c p p [select project] M-o v |                         |            |
+|----------------------------------+--------------------------------+-------------------------+------------|
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
@@ -405,6 +425,8 @@ Check :help exiting
       + 01:02:25 No 2: Danses de travers: Encore
       + 01:03:47 Petite ouverture à danser (1900)
       ]
+** Atmospheric/ambient/Dark
+  + Outer Darkness (10+ Hours Dark Ambient-1'04"41 looped) (10'46"47) https://www.youtube.com/watch?v=rc-XgxwIMFM
 ** Programming music
 *** Other channels
   + Starterra - Celestial (Space Ambient) [Full Album] https://www.youtube.com/watch?v=nPM_teVT07Y
