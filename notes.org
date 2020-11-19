@@ -1,33 +1,107 @@
 #+TITLE: Notes for anything I think of
 #+AUTHOR: brickviking (yes, me!)
 #+DATE: <2020-11-12 Thu 22:41>
-#+TAGS: emacs vim cheatsheet keys
+#+TAGS: emacs vim cheatsheet keys soundtracks programming
 
 * Emacs
+** What different keys mean
+Throughout this documentation, and indeed most of the documents about Emacs that I've read, they abbreviate key prefixes
+according to the following list:
+   |-------+-----------+----------------------+----------------------------------------------------------------------------|
+   | Key   | Long name | Alternative          | Notes                                                                      |
+   |-------+-----------+----------------------+----------------------------------------------------------------------------|
+   | C-    | Control   | Ctl- / Ctrl          | Both usable, and generally mean the same thing                             |
+   | S-    | Shift     | Sh-                  | Both usable                                                                |
+   | M-    | Meta      | Alt                  | Left alt differs from right alt on some installations                      |
+   | ESC   | Escape    |                      | Can be used in place of Alt, though you hit this and then let it go before |
+   |       |           |                      | using the next key                                                         |
+   | s-    | Super     | Windows              | Often used by the operating system, especially on Windows                  |
+   | H-    | Hyper     | No modern equivalent | Sometimes bound to Fn or Menu                                              |
+   | <RET> | Return    | Enter                | In emacs docs, shown as RET                                                |
+   |-------+-----------+----------------------+----------------------------------------------------------------------------|
+This means that instead of having to type Control-Meta-V, emacs will do what you want as long as you hold down 
+=Control= and =Alt= and then tap the =V= key. In the minibuffer, the keystrokes will show up in their abbreviated form.
+
+If a key is shown as <F2> that means to hit the F2 keyboard at the top of the keyboard, not the two keys F and 2.
+<Tab> means the Tab key on the left hand side, not the three characters T, a and b.
+
+In addition, all letters are usually shown in their lowercase form, even though most keyboards show the uppercase on their
+keycaps.
+** Movement keys
+Vim has them. Most modern editors have Up/Down/Left/Right, but emacs and vim both have far richer ways of moving the
+cursor around a text file, by either a character (or multiple characters at once), a word or a line.
+
+| Command            | Key    | Alternatives | Notes                                                     |
+|--------------------+--------+--------------+-----------------------------------------------------------|
+| right-char         | Right  |              |                                                           |
+| left-char          | Left   |              |                                                           |
+| next-line          | Down   | C-n          |                                                           |
+| previous-line      | Up     | C-p          |                                                           |
+| right-word         | M-f    | C-<Right>    | Forward to the next non-alphanumeric character            |
+| left-word          | M-b    | C-<Left>     | Back to the first alpha-numeric character of the word     |
+| forward-paragraph  | C-Down |              | Forward to the first character of the next paragraph      |
+| backward-paragraph | C-Up   |              | Backward to the first character of the previous paragraph |
+|                    |        |              |                                                           |
+|--------------------+--------+--------------+-----------------------------------------------------------|
 ** Cock-ups
    * When starting a remote file access, don't run M-x tramp  first. Things will break.
    * A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
+   * Don't blindly accept local variable exec sections, emacs could break when trying to save or quit.
 ** Help
-   |---------------------------------------+-------+---------------------|
-   | Command                               | Keys  | Notes               |
-   |---------------------------------------+-------+---------------------|
-   | Info for emacs                        | C-h r |                     |
-   | Global info dir                       | C-h i |                     |
-   | Describe current major mode           | C-h m |                     |
-   | Describe key                          | C-h c | Mode sensitive      |
-   | Describe binding                      | C-h b | Also mode sensitive |
-   | Info Doc Search (word list or regexp) | C-h d |                     |
-   |                                       |       |                     |
-   |---------------------------------------+-------+---------------------|
+   |-----------------------------------------+---------+-------------------------------------------|
+   | Command                                 | Keys    | Notes                                     |
+   |-----------------------------------------+---------+-------------------------------------------|
+   | Metahelp (front page to help functions) | C-h C-h |                                           |
+   | Info for emacs                          | C-h r   |                                           |
+   | Global info dir                         | C-h i   |                                           |
+   | Describe current major mode             | C-h m   |                                           |
+   | Describe key                            | C-h c   | Mode sensitive                            |
+   | Describe binding                        | C-h b   | Also mode sensitive                       |
+   | Info Doc Search (word list or regexp)   | C-h d   |                                           |
+   | Describe function                       | C-h f   |                                           |
+   | The Hello page                          | C-h h   | Hello in multiple languages and scripts   |
+   |                                         |         | Needs good fonts with wide glyph coverage |
+   |-----------------------------------------+---------+-------------------------------------------|
+** Recommended Plugins
+I can't personally vouch for these plugins, I haven't used them myself. They come as a recommendation
+from someone in #emacs@chat.freenode.org
+  + flyspell - expensive on computation
+  + wc-mode
+  + writegood
 
+On the other hand, these are plugins I use a lot of the time. They're either already built into Emacs,
+or they can be installed from ELPA/MELPA.
+*** magit
+This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info documents
+for this is a really good idea, to make better use of magit.
+*** erc
+This IRC client comes native with Emacs. It can be quite powerful, although there are alternatives that
+I haven't used yet such as ircle.
+*** Org mode
+One of the most highly recommended things that Emacs offers, there are a lot of things you can do with it,
+including literate programming. If you want to avoid the loaded-with-emacs version and go with the
+absolutely latest version of org mode, there are instructions at https://orgmode.org
+
+I tend to use it for literate configuration of emacs, as I can "tangle" the source sections into a config
+file that emacs can use directly. The non-source sections describe the rest of it. I won't go into
+the whole literate programming idea, but it started with Donald Knuth in his seminal work
+The Art of Computer Programming.
+*** vterm
+Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
+programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
+what it does. Check the vterm section below for the few hints I have.
 ** Windows/Frames
-   + Cycle through visible windows:  C-x o
-   + Focus buffer to whole window:  C-x 1
-   + Split window Top/Bottom: C-x 2
-   + Split window Left/Right: C-x 3
-   + Open new file in another window C-x 4 f
-   + Scroll other window: down C-M-v, up C-M-S-v
-   + Close frame:  C-x 5 0
+   | Command                            | Key                    |
+   |------------------------------------+------------------------|
+   | Cycle through visible windows      | C-x o                  |
+   | Focus buffer to whole window       | C-x 1                  |
+   | Split window Top/Bottom            | C-x 2                  |
+   | Split window Left/Right            | C-x 3                  |
+   | Open new file in another window    | C-x 4 f                |
+   | Scroll other window                | down C-M-v, up C-M-S-v |
+   | Close frame                        | C-x 5 0                |
+   | clone-indirect-buffer-other-window | C-x 4 c                |
+   |------------------------------------+------------------------|
 ** Buffers
    + Swap buffer  C-x b
    + List All Buffers  C-x C-b
@@ -136,32 +210,6 @@ Type RET to visit the change or commit at point.
    + quit server: C-c C-x
    + Join channel:  C-c C-j
    + Change to channel with activity: C-c C-Space
-** Recommended Plugins
-I can't personally vouch for these plugins, I haven't used them myself. They come as a recommendation
-from someone in freenode#emacs.
-  + flyspell - expensive on computation
-  + wc-mode
-  + writegood
-
-However, these plugins I use a lot of the time. They're either already built into Emacs, or they 
-can be installed from ELPA/MELPA.
-*** magit
-This isn't native, but is a good front end for git commands. Reading the info documents for this is a
-really good idea, that way you can make better use of magit.
-*** erc
-This comes native with Emacs, it can be quite powerful.
-*** Org mode
-One of the most highly recommended additions to Emacs, there are a lot of things you can do with it,
-including literate programming.
-
-I tend to use it for literate configuration of emacs, as I can "tangle" the source sections into a config
-file that emacs can use directly. The non-source sections describe the rest of it. I won't go into
-the whole literate programming idea, but it started with Donald Knuth in his seminal work
-The Art of Computer Programming.
-*** vterm
-Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
-programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
-what it does. Check the vterm section below for the few hints I have.
 ** vterm
 Doesn't come as standard with emacs, but is well worth the install. Running other programs inside vterm
 can come with a couple of pitfalls though, especially if you're expecting to run vim, which actually
@@ -223,7 +271,7 @@ running inside vterm—for example, the vim editor.
 - <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
 - <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
 #+END_QUOTE
-*** How to clean up a referred URL from duckduckgo - jamzattack from freenode#emacs
+*** How to clean up a referred URL from duckduckgo - jamzattack from #emacs@freenode
 Duckduckgo does a very sinful thing -- instead of linking to
 =https://url.com=, it links to:
 : https://duckduckgo.com/l/?kh=-1&uddg=https%3A%2F%2Furl.com
@@ -270,6 +318,9 @@ are parsed with =shr= are replaced with the clean version.
 | interactively replace            | ESC C-s (regex) ESC % \1 RET   |                         |            |
 | open in magit                    | C-c p p [select project] M-o v |                         |            |
 |----------------------------------+--------------------------------+-------------------------+------------|
+*** How to create a second buffer on the same file with a separate point/mark
+[11:41:32]<Viking667> Hi all. Wanted to know if I could have a second buffer on a file with its own point/mark? I notice that if I move the point in the first buffer, that'll be mirrored in the second buffer. That's not quite what I want.
+[11:41:58]<jamzattack> Viking667: C-x 4 c runs the command clone-indirect-buffer-other-window
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
@@ -281,7 +332,7 @@ One example I like to quote so often, because I haven't found an equivalent that
 even the same size.
 
 #+BEGIN_SRC vim
-ma013yy41j14p`a
+ma013yy41j14p`a  (15 characters)
 #+END_SRC
 This does the following:
 | Keys | Description                                              |
@@ -300,6 +351,19 @@ don't find what you want just in vimscript, it even has a plugin system that roc
 use them, so I don't include much here about it.
 
 I don't describe more detailed vimscript here, basically because I don't know how to use it myself.
+** Movement keys
+|-------------------+-------+--------------+-------------------------------------------------------|
+| Command           | Key   | Alternatives | Notes                                                 |
+|-------------------+-------+--------------+-------------------------------------------------------|
+| right-char        | Right | l            |                                                       |
+| left-char         | Left  | h            |                                                       |
+| next-line         | Down  | k/C-n        |                                                       |
+| previous-line     | Up    | j/C-p        |                                                       |
+| right-word        | w     |              | Forward to the beginning of the next word             |
+| left-word         | b     |              | Back to the first alpha-numeric character of the word |
+| Beginning of line | 0     |              |                                                       |
+| End of line       | $     |              |                                                       |
+|-------------------+-------+--------------+-------------------------------------------------------|
 
 ** Help
   |-----------------+--------------------+---------------------------------------------------------|
@@ -307,6 +371,7 @@ I don't describe more detailed vimscript here, basically because I don't know ho
   |-----------------+--------------------+---------------------------------------------------------|
   | Top of help     | :help              |                                                         |
   | Help on a topic | :help "searchterm" | Search term needs to be in quotes if you include spaces |
+  | Help section    | :help usr_08       | Jump to usr_08.txt                                      |
   |-----------------+--------------------+---------------------------------------------------------|
 ** Opening files
 Check :help edit
@@ -361,16 +426,23 @@ it's simply for n times, repeat x item. A special note about the =y<Space>=, mea
 the =y= key, followed by the =Spacebar=. You may often see special notes about keys in <> throughout
 the Vim help.
 
+** Movement keys
+   | Command | Key | Notes |
+   |---------+-----+-------|
+   |         |     |       |
 ** Window commands
 Check :help window
-  |-----------------------------------+--------------------------------+-------------|
-  | Commands                          | Keys                           | Variables   |
-  |-----------------------------------+--------------------------------+-------------|
-  | Split window below                | :sp                            | :splitbelow |
-  | Split window beside               | :vsp                           | :splitright |
-  | Switch windows down/up/left/right | C-w <down>/<Up>/<Left>/<Right> |             |
-  | Swap windows                      | C-w C-w                        |             |
-  |-----------------------------------+--------------------------------+-------------|
+  |-----------------------------------+--------------------------------+---------------------------------------------------|
+  | Commands                          | Keys                           | Variables                                         |
+  |-----------------------------------+--------------------------------+---------------------------------------------------|
+  | Split window below                | :sp                            | :splitbelow                                       |
+  | Split window beside               | :vsp                           | :splitright                                       |
+  | Switch windows down/up/left/right | C-w <down>/<Up>/<Left>/<Right> |                                                   |
+  | Swap windows                      | C-w C-w                        |                                                   |
+  | Grow window                       | C-w +                          | Can take a numeric prefix                         |
+  | Shrink window                     | C-w -                          | Can take a numeric prefix                         |
+  | Maximise window                   | C-w _                          | With numeric prefix, sets the window to that size |
+  |-----------------------------------+--------------------------------+---------------------------------------------------|
 ** Macro commands
 Check :help macro
 Key mapping is used to change the meaning of typed keys.  The most common use
@@ -558,3 +630,4 @@ Check :help exiting
 ** Other
 *** Javascript
     + Java Swing GUI Full course—Bro Code (4'48"34) https://www.youtube.com/watch?v=Kmgo00avvEw
+
