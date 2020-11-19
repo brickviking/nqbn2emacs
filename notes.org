@@ -29,7 +29,8 @@ In addition, all letters are usually shown in their lowercase form, even though 
 keycaps.
 ** Movement keys
 Vim has them. Most modern editors have Up/Down/Left/Right, but emacs and vim both have far richer ways of moving the
-cursor around a text file, by either a character (or multiple characters at once), a word or a line.
+cursor around a text file, by either a character (or multiple characters at once), a word or a line. In the table
+below, Left/Right refer to keys on the keyboard, not mouse buttons.Buttons will be indicated as RMB/LMB.
 
 | Command            | Key    | Alternatives | Notes                                                     |
 |--------------------+--------+--------------+-----------------------------------------------------------|
