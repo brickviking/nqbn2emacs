@@ -7,18 +7,21 @@
 ** What different keys mean
 Throughout this documentation, and indeed most of the documents about Emacs that I've read, they abbreviate key prefixes
 according to the following list:
-   |-------+-----------+----------------------+----------------------------------------------------------------------------|
-   | Key   | Long name | Alternative          | Notes                                                                      |
-   |-------+-----------+----------------------+----------------------------------------------------------------------------|
-   | C-    | Control   | Ctl- / Ctrl          | Both usable, and generally mean the same thing                             |
-   | S-    | Shift     | Sh-                  | Both usable                                                                |
-   | M-    | Meta      | Alt                  | Left alt differs from right alt on some installations                      |
-   | ESC   | Escape    |                      | Can be used in place of Alt, though you hit this and then let it go before |
-   |       |           |                      | using the next key                                                         |
-   | s-    | Super     | Windows              | Often used by the operating system, especially on Windows                  |
-   | H-    | Hyper     | No modern equivalent | Sometimes bound to Fn or Menu                                              |
-   | <RET> | Return    | Enter                | In emacs docs, shown as RET                                                |
-   |-------+-----------+----------------------+----------------------------------------------------------------------------|
+   |-------+---------------------+----------------------+----------------------------------------------------------------------------|
+   | Key   | Long name           | Alternative          | Notes                                                                      |
+   |-------+---------------------+----------------------+----------------------------------------------------------------------------|
+   | C-    | Control             | Ctl- / Ctrl          | Both usable, and generally mean the same thing                             |
+   | S-    | Shift               | Sh-                  | Both usable                                                                |
+   | M-    | Meta                | Alt                  | Left alt differs from right alt on some installations                      |
+   | ESC   | Escape              |                      | Can be used in place of Alt, though you hit this and then let it go before |
+   |       |                     |                      | using the next key                                                         |
+   | s-    | Super               | Windows              | Often used by the operating system, especially on Windows                  |
+   | H-    | Hyper               | No modern equivalent | Sometimes bound to Fn or Menu                                              |
+   | <RET> | Return              | Enter                | In emacs docs, shown as RET                                                |
+   | LMB   | Left Mouse Button   |                      |                                                                            |
+   | RMB   | Right Mouse Button  |                      |                                                                            |
+   | MMB   | Middle Mouse Button |                      |                                                                            |
+   |-------+---------------------+----------------------+----------------------------------------------------------------------------|
 This means that instead of having to type Control-Meta-V, emacs will do what you want as long as you hold down 
 =Control= and =Alt= and then tap the =V= key. In the minibuffer, the keystrokes will show up in their abbreviated form.
 
