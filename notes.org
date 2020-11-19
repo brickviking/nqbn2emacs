@@ -2,28 +2,34 @@
 #+AUTHOR: brickviking (yes, me!)
 #+DATE: <2020-11-12 Thu 22:41>
 #+TAGS: emacs vim cheatsheet keys soundtracks programming
+#+OPTIONS: _:nil
+#+OPTIONS: ^:{}
 
 * Emacs
 ** What different keys mean
-Throughout this documentation, and indeed most of the documents about Emacs that I've read, they abbreviate key prefixes
+Throughout this documentation, and indeed most Emacs documents that I've read, they abbreviate key prefixes
 according to the following list:
-   |-------+---------------------+----------------------+----------------------------------------------------------------------------|
-   | Key   | Long name           | Alternative          | Notes                                                                      |
-   |-------+---------------------+----------------------+----------------------------------------------------------------------------|
-   | C-    | Control             | Ctl- / Ctrl          | Both usable, and generally mean the same thing                             |
-   | S-    | Shift               | Sh-                  | Both usable                                                                |
-   | M-    | Meta                | Alt                  | Left alt differs from right alt on some installations                      |
-   | ESC   | Escape              |                      | Can be used in place of Alt, though you hit this and then let it go before |
-   |       |                     |                      | using the next key                                                         |
-   | s-    | Super               | Windows              | Often used by the operating system, especially on Windows                  |
-   | H-    | Hyper               | No modern equivalent | Sometimes bound to Fn or Menu                                              |
-   | <RET> | Return              | Enter                | In emacs docs, shown as RET                                                |
-   | LMB   | Left Mouse Button   |                      |                                                                            |
-   | RMB   | Right Mouse Button  |                      |                                                                            |
-   | MMB   | Middle Mouse Button |                      |                                                                            |
-   |-------+---------------------+----------------------+----------------------------------------------------------------------------|
+   |-------+---------------------+----------------------+--------------------------------------|
+   | Key   | Long name           | Alternative          | Notes                                |
+   |-------+---------------------+----------------------+--------------------------------------|
+   | C-    | Control             | Ctl- / Ctrl          | Both usable, and generally mean      |
+   |       |                     |                      | the same thing                       |
+   | S-    | Shift               | Sh-                  | Both usable                          |
+   | M-    | Meta                | Alt                  | Left alt differs from right alt      |
+   |       |                     |                      | on some installations                |
+   | ESC   | Escape              |                      | Can be used in place of Alt, though  |
+   |       |                     |                      | you hit this and then let it go      |
+   |       |                     |                      | before using the next key            |
+   | s-    | Super               | Windows              | Often used by the operating system   |
+   |       |                     |                      | especially on Windows                |
+   | H-    | Hyper               | No modern equivalent | Sometimes bound to Fn or Menu        |
+   | <RET> | Return              | Enter                | In emacs docs, shown as RET          |
+   | LMB   | Left Mouse Button   |                      |                                      |
+   | RMB   | Right Mouse Button  |                      |                                      |
+   | MMB   | Middle Mouse Button |                      |                                      |
+   |-------+---------------------+----------------------+--------------------------------------|
 This means that instead of having to type Control-Meta-V, emacs will do what you want as long as you hold down 
-=Control= and =Alt= and then tap the =V= key. In the minibuffer, the keystrokes will show up in their abbreviated form.
+=Control= and =Alt= and then tap the =V= key (and let everything go). In the minibuffer, the keystrokes will show up in their abbreviated form.
 
 If a key is shown as <F2> that means to hit the F2 keyboard at the top of the keyboard, not the two keys F and 2.
 <Tab> means the Tab key on the left hand side, not the three characters T, a and b.
@@ -31,10 +37,11 @@ If a key is shown as <F2> that means to hit the F2 keyboard at the top of the ke
 In addition, all letters are usually shown in their lowercase form, even though most keyboards show the uppercase on their
 keycaps.
 ** Movement keys
-Vim has them. Most modern editors have Up/Down/Left/Right, but emacs and vim both have far richer ways of moving the
+Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both have far richer ways of moving the
 cursor around a text file, by either a character (or multiple characters at once), a word or a line. In the table
-below, Left/Right refer to keys on the keyboard, not mouse buttons.Buttons will be indicated as RMB/LMB.
+below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will be indicated as RMB/LMB.
 
+|--------------------+--------+--------------+-----------------------------------------------------------|
 | Command            | Key    | Alternatives | Notes                                                     |
 |--------------------+--------+--------------+-----------------------------------------------------------|
 | right-char         | Right  |              |                                                           |
@@ -45,8 +52,10 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons.Buttons will 
 | left-word          | M-b    | C-<Left>     | Back to the first alpha-numeric character of the word     |
 | forward-paragraph  | C-Down |              | Forward to the first character of the next paragraph      |
 | backward-paragraph | C-Up   |              | Backward to the first character of the previous paragraph |
-|                    |        |              |                                                           |
 |--------------------+--------+--------------+-----------------------------------------------------------|
+
+Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental mode, though a lot of it is
+also relevant for most other modes that aren't org-mode.
 ** Cock-ups
    * When starting a remote file access, don't run M-x tramp  first. Things will break.
    * A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
@@ -95,6 +104,7 @@ Again, this isn't native, but is a more powerful (in some ways) terminal, offeri
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
 ** Windows/Frames
+   |------------------------------------+------------------------|
    | Command                            | Key                    |
    |------------------------------------+------------------------|
    | Cycle through visible windows      | C-x o                  |
@@ -107,37 +117,72 @@ what it does. Check the vterm section below for the few hints I have.
    | clone-indirect-buffer-other-window | C-x 4 c                |
    |------------------------------------+------------------------|
 ** Buffers
-   + Swap buffer  C-x b
-   + List All Buffers  C-x C-b
-When in buffer selection window 
-   m marks, k marks for delete, x deletes, u undoes mark, U undoes all marking
-   + Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
-     + -:@---      UNIX (LF 0x0A)
-     + -(DOS)@---  Dos encoding (CRLF 0x0D 0x0A)
-     + -(Mac)@---  Mac OS X encoding (CR  0x0D)
-   + Also check [[How to set a buffer's line-encoding from text mode]]
+These keys work with open buffers and allow you to change between them.
+   |-------------------------------+---------+-----------------------------------------------------|
+   | Command                       | key     | Description                                         |
+   |-------------------------------+---------+-----------------------------------------------------|
+   | switch-to-buffer              | C-x b   | Switch to provided buffer                           |
+   | list-buffers                  | C-x C-b | Splits the window and displays list of open buffers |
+   | switch-to-buffer-other-window | C-x 4 b | Swap to buffer in other window                      |
+   |                               |         | creating new window if necessary                    |
+   |-------------------------------+---------+-----------------------------------------------------|
+
+When in buffer selection window:
+   |-------------------+-----|
+   | Command           | key |
+   |-------------------+-----|
+   | Mark              | m   |
+   | Mark for deletion | k   |
+   | Delete marked     | x   |
+   | Undo mark         | u   |
+   | Undo all marks    | U   |
+   |-------------------+-----|
+
+Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
+    |------------+-------------------------------|
+    | Modeline   | Encoding                      |
+    |------------+-------------------------------|
+    | -:@---     | UNIX (LF 0x0A)                |
+    | -(DOS)@--- | Dos encoding (CRLF 0x0D 0x0A) |
+    | -(Mac)@--- | Mac OS X encoding (CR  0x0D)  |
+    |------------+-------------------------------|
+Also check [[How to set a buffer's line-encoding from text mode]]
+
 ** org mode
 + Tab on */+ line expands/compacts tree
   1) First time: expand one level below point without exposing text
   2) Second time: expand all levels below point including text
   3) Third time: compact all levels below point back to heading
-   NB: if you put your cursor AFTER the ... of an unexpanded heading then you'll perhaps see
-   "EMPTY ENTRY" in the minibuffer
+   NB: if you put your cursor AFTER the ... of an unexpanded heading and then hit Tab
+   then you'll perhaps see "EMPTY ENTRY" in the minibuffer
 + S-tab   global expansion
   1) expand all headings without exposing text
   2) expand entire document (headings, text, etc)
   3) compact entire document to top headings
-+ Shift-Right on list: +/*/1./1)/-
++ Shift-Right on list cycles between bullet settings: +/*/1./1)/-
 + Shift-Up/Down on header (change priority #A/#B/#C, to customize this: #+PRIORITIES A E E)
 + M-Up/Down Shift line above/below
-+ M-Left/Right Promote/demote heading
++ M-Left/Right Promote/demote entry for headings and list members
 + M-S-Left/Right Promote/demote heading and everything below
 + Some tags don't appear to work except for export/archive mode, including #+TAGS
 + Checkboxes [ ] [X]
-+ demarcate block (wrap it in BEGIN_SRC..END_SRC)   C-c C-v d	(org-babel-demarcate-block)
-+ export C-c C-e, will ask for format
++ demarcate block (wrap it in #+BEGIN_SRC ... #+END_SRC)   C-c C-v d	(org-babel-demarcate-block)
++ C-c C-v C-t  Tangle source code blocks to relevant file.
+    This means different things depending on how you've demarcated your source blocks. I use it
+    to generate .emacs.el from a .emacs.org file, with all the bits I want to fire out to there
+    inside #+BEGIN_SRC emacs-lisp ... #+END_SRC markers, and the surrounding text describes the
+    source blocks.
++ export C-c C-e, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
+     or \LaTeX.
 + Shift-right/left (on header) Cycle through TODO/DONE/nothing or defined tags, see [[header_tags]]
-+ For tables, expand the header_tags section.
+*** Table syntax
+#+BEGIN_SRC
+|--------------+-------------------|  <-- divider line, start with |- and hit tab
+| First Header | Second header ... |
+|--------------+-------------------|  <-- divider line
+| First cell   | Second cell       |  <-- hit Tab, creates new table row
+| . . .        | . . .             |
+#+END_SRC
 *** header_tags
   | Name          | Type                   | Description                          |
   |---------------+------------------------+--------------------------------------|
@@ -165,6 +210,8 @@ When in buffer selection window
 + Change size of inline org images
   + Don't forget to eval (setq org-image-actual-width nil)
   + with #+ATTR_ORG: :height ... :width ...
+*** Turn region into list:        C-c -
+*** Turn region into headers:     C-c *
 ** magit
 There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
 have magit installed.
@@ -182,7 +229,7 @@ Same as above, except for a file that's already part of the git repository.
 *** Committing staged files:      c (commit)
 Will request how you want to commit, hit c again to bring up an editor window. Provide a single line
 commit message. If you want to add more lines, leave a blank line after the single line as follows:
-#+BEGIN_EXAMPLE diff
+#+BEGIN_EXAMPLE diff -n
 Initial commit message
 
 This is the next line for a multi-line comment.
@@ -198,7 +245,6 @@ This is the next line for a multi-line comment.
 # Untracked files:
 #	notes.org~
 #
-
 #+END_EXAMPLE
 *** Show diff against files:      d (diff)
 
@@ -208,8 +254,6 @@ This refreshes the magit status buffer once you've made some changes within the 
 Type TAB to expand or hide the section at point.
 *** Visit change/commit:          <RET>
 Type RET to visit the change or commit at point.
-*** Turn region into list:        C-c -
-*** Turn region into headers:     C-c *
 ** erc
    + quit server: C-c C-x
    + Join channel:  C-c C-j
@@ -303,10 +347,10 @@ are parsed with =shr= are replaced with the clean version.
   (advice-add 'shr-urlify :filter-args #'un-duckduckgo-url)
 #+end_src
 *** #emacs@freenode:grym's head-of-file
-[17:20:44]<grym> Viking667: i have a little orgtbl at the top of my notes.org that is ~ this: https://dpaste.org/qxxr  
-[17:23:48]<grym> e.g. "ugh how did i..."
-[17:24:25]<grym> leaving myself breadcrumbs has saved my ass more than i can count so i tend to do it reflexively now 
-
+#+BEGIN_QUOTE
++ [17:20:44]<grym> Viking667: i have a little orgtbl at the top of my notes.org e.g. "ugh how did i..."
++ [17:24:25]<grym> leaving myself breadcrumbs has saved my ass more than i can count so i tend to do it reflexively now 
+#+END_QUOTE
 |----------------------------------+--------------------------------+-------------------------+------------|
 | effect                           | key                            | function                | source     |
 |----------------------------------+--------------------------------+-------------------------+------------|
@@ -322,6 +366,9 @@ are parsed with =shr= are replaced with the clean version.
 | interactively replace            | ESC C-s (regex) ESC % \1 RET   |                         |            |
 | open in magit                    | C-c p p [select project] M-o v |                         |            |
 |----------------------------------+--------------------------------+-------------------------+------------|
+
+SO = StackOverflow
+
 *** How to create a second buffer on the same file with a separate point/mark
 [11:41:32]<Viking667> Hi all. Wanted to know if I could have a second buffer on a file with its own point/mark? I notice that if I move the point in the first buffer, that'll be mirrored in the second buffer. That's not quite what I want.
 [11:41:58]<jamzattack> Viking667: C-x 4 c runs the command clone-indirect-buffer-other-window
