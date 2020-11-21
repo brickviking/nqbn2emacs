@@ -104,6 +104,9 @@ Again, this isn't native, but is a more powerful (in some ways) terminal, offeri
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
 ** Windows/Frames
+These commands all work with windows and frames. A frame is a collection of one or more buffers, divided
+among one or more windows. A window is a "division" of the frame, usually showing the contents of a
+buffer.
    |------------------------------------+------------------------|
    | Command                            | Key                    |
    |------------------------------------+------------------------|
@@ -116,28 +119,38 @@ what it does. Check the vterm section below for the few hints I have.
    | Close frame                        | C-x 5 0                |
    | clone-indirect-buffer-other-window | C-x 4 c                |
    |------------------------------------+------------------------|
+Note on the clone-indirect-buffer-other-window: this is a way to get a new buffer with its own separate
+point and mark. This is useful if you want to show another section of the same file without scrolling
+the other buffer in the process.
 ** Buffers
+A buffer holds the contents of a file, whether an on-disk file or a on-the-fly buffer containing a 
+command's output, such as the *Messages* buffer, the *Completions* buffer, or the *Help* buffer.
 These keys work with open buffers and allow you to change between them.
-   |-------------------------------+---------+-----------------------------------------------------|
-   | Command                       | key     | Description                                         |
-   |-------------------------------+---------+-----------------------------------------------------|
-   | switch-to-buffer              | C-x b   | Switch to provided buffer                           |
-   | list-buffers                  | C-x C-b | Splits the window and displays list of open buffers |
-   | switch-to-buffer-other-window | C-x 4 b | Swap to buffer in other window                      |
-   |                               |         | creating new window if necessary                    |
-   |-------------------------------+---------+-----------------------------------------------------|
+   |-------------------------------+---------+--------------------------------------------------------|
+   | Command                       | key     | Description                                            |
+   |-------------------------------+---------+--------------------------------------------------------|
+   | switch-to-buffer              | C-x b   | Switch to provided buffer, creating it if needed       |
+   | list-buffers                  | C-x C-b | Splits the window and displays buffer selection window |
+   |                               |         | containing a list of open buffers                      |
+   | switch-to-buffer-other-window | C-x 4 b | Swap to buffer in other window                         |
+   |                               |         | creating new window if necessary                       |
+   |-------------------------------+---------+--------------------------------------------------------|
 
+*** Buffer selection window
 When in buffer selection window:
-   |-------------------+-----|
-   | Command           | key |
-   |-------------------+-----|
-   | Mark              | m   |
-   | Mark for deletion | k   |
-   | Delete marked     | x   |
-   | Undo mark         | u   |
-   | Undo all marks    | U   |
-   |-------------------+-----|
+   |----------------------+-----+-----------------------------------------------|
+   | Command              | Key | Notes                                         |
+   |----------------------+-----+-----------------------------------------------|
+   | Mark                 | m   | Mark file for future commands                 |
+   | Mark for deletion    | k   |                                               |
+   | Delete marked        | x   | Asks for confirmation if buffer is not saved  |
+   | Undo mark            | u   |                                               |
+   | Undo all marks       | U   |                                               |
+   | Open in window       | 1   | Removes buffer selection window, opens buffer |
+   | Open in other window | o   | Opens buffer in other window beside list      |
+   |----------------------+-----+-----------------------------------------------|
 
+*** Buffer encoding
 Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     |------------+-------------------------------|
     | Modeline   | Encoding                      |
@@ -197,10 +210,11 @@ subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move be
 |--------------+-------------------|  <-- divider line, start with |- and hit tab
 | First Header | Second header ... |
 |--------------+-------------------|  <-- divider line
-| First cell   | Second cell       |  <-- hit Tab, creates new table row
-| . . .        | . . .             |
+| First cell   | Second cell      _|  <-- hit Tab at cursor location, creates new
+| . . .        | . . .             |      table row if there isn't one
 #+END_SRC
 *** header_tags
+  |---------------+------------------------+--------------------------------------|
   | Name          | Type                   | Description                          |
   |---------------+------------------------+--------------------------------------|
   | #+TITLE       | <string>               | Title of document                    |
@@ -213,15 +227,17 @@ subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move be
   |               |                        | After pipe, completed colour         |
   
 *** tags
-  | Name        | Description |                                     |
-  |-------------+-------------+-------------------------------------|
-  | #+BEGIN_SRC | [lang]      | Source code block - can be tangled  |
-  | #+END_SRC   |             | Closes it                           |
-  | #+SCHEDULED | <timestamp> | When is this meant to be started    |
-  | #+COMPLETED | <timestamp> | When this actually got completed    |
-  | #+DEADLINE  | <timestamp> | When it's absolutely got to be done |
-  |-------------+-------------+-------------------------------------|
-  |             |             |                                     |
+  |---------------+-------------+-------------------------------------|
+  | Name          | Description |                                     |
+  |---------------+-------------+-------------------------------------|
+  | #+BEGIN_SRC   | [lang]      | Source code block - can be tangled  |
+  | #+END_SRC     |             | Closes it                           |
+  | #+SCHEDULED   | <timestamp> | When is this meant to be started    |
+  | #+COMPLETED   | <timestamp> | When this actually got completed    |
+  | #+DEADLINE    | <timestamp> | When it's absolutely got to be done |
+  | #+BEGIN_QUOTE |             | An inline quote                     |
+  | #+END_QUOTE   |             | Closes inline quote                 |
+  |---------------+-------------+-------------------------------------|
 *** inline images
 + Inline images in org mode: toggle visibility with C-c C-x C-v
 + Change size of inline org images
