@@ -411,6 +411,7 @@ mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin: this did i
 *** Mike Zamansky - Using Emacs https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
 That has a complete list of all the "Using Emacs" videos so far. It seems to be regularly updated, so
 check back every so often.
+*** EmacsWiki screencasts: https://www.emacswiki.org/emacs/EmacsScreencasts
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
