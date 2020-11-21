@@ -163,7 +163,8 @@ subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move be
 |-------------------+------+----------------------------------------------------|
 | mark for deletion | d    | Once you've marked files, use x to delete them all |
 | Delete now        | D    | Will ask for confirmation                          |
-|                   |      |                                                    |
+| Unmark one/all    | u    |                                                    |
+|-------------------+------+----------------------------------------------------|
 ** org mode
 + Tab on */+ line expands/compacts tree
   1) First time: expand one level below point without exposing text
@@ -390,6 +391,10 @@ SO = StackOverflow
 [11:41:58]<jamzattack> Viking667: C-x 4 c runs the command clone-indirect-buffer-other-window
 *** How to get exwm working (temporary, remove when tested)
 mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin: this did it for me: emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name . "notmuch"))' --display $DISPLAY
+** Other useful links, channels and the like
+*** Mike Zamansky - Using Emacs https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
+That has a complete list of all the "Using Emacs" videos so far. It seems to be regularly updated, so
+check back every so often.
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
