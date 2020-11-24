@@ -177,8 +177,24 @@ subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move be
 | mark for deletion | d    | Once you've marked files, use x to delete them all |
 | Delete now        | D    | Will ask for confirmation                          |
 | Unmark one/all    | u    |                                                    |
+| Mark by extension | *.   | Requests an extension to apply marks with          |
+| Kill              | k    | Remove marked files from listing                   |
+| Toggle marks      | t    | Invert whatever marks are present                  |
 |-------------------+------+----------------------------------------------------|
+
+To remove certain files from the listing (this does not delete them from the disk), mark them first, then
+select k. You can also remove file patterns by first selecting by regexp as follows: 
+#+BEGIN_SRC emacs-lisp
+M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
+#+END_SRC
+This marks everything that matches the *.xml pattern. Then hit k to remove the xml files from the listing. 
+The same thing can be done (if you wish to remove files with a matching extension) with *. as follows:
+=*.xml=
 ** org mode
+[[https://orgmode.org/manual/][Link to online manual]]
+[[http://org-mode.org/][Link to home page]]
+Link to local manual (only works inside emacs): (info "(org)Top")
+
 + Tab on */+ line expands/compacts tree
   1) First time: expand one level below point without exposing text
   2) Second time: expand all levels below point including text
@@ -238,6 +254,25 @@ subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move be
   | #+BEGIN_QUOTE |             | An inline quote                     |
   | #+END_QUOTE   |             | Closes inline quote                 |
   |---------------+-------------+-------------------------------------|
+*** Link syntax
+Generally, links work well within org mode, and don't quite work so well outside once you
+try to export the org document to other formats.  Links look like this:
+#+BEGIN_SRC org
+[[URL][Description]]
+#+END_SRC
+or alternatively simply
+#+BEGIN_SRC org
+[[URL]]
+#+END_SRC
+Description (if you provide it) should be short, no more than perhaps five words.
+URL is anything supported by the Org internals, this can include:
+#+BEGIN_SRC org
++ http links: http://example.com/ 
++ info links: (info "(org)Top")
++ internal org-mode links [[magit]]
+#+END_SRC
+
+Other link formats are described in Org [[info:org#External links][External links]]
 *** inline images
 + Inline images in org mode: toggle visibility with C-c C-x C-v
 + Change size of inline org images
@@ -291,6 +326,12 @@ Type RET to visit the change or commit at point.
    + quit server: C-c C-x
    + Join channel:  C-c C-j
    + Change to channel with activity: C-c C-Space
+** EXWM
+EXWM is an X window manager, written to use emacs as the controlling window.
+[18:51:34]<oni-on-ion> for EXWM, does anyone know how to "unfloat" a window ?
+[18:52:18]<oni-on-ion> i am using an external API that throws the window right in the middle of the screen over top of everything =/
+[18:53:36]<jamzattack> oni-on-ion: C-c C-t C-f runs the command exwm-floating-toggle-floating
+
 ** vterm
 Doesn't come as standard with emacs, but is well worth the install. Running other programs inside vterm
 can come with a couple of pitfalls though, especially if you're expecting to run vim, which actually
@@ -406,7 +447,10 @@ SO = StackOverflow
 [11:41:32]<Viking667> Hi all. Wanted to know if I could have a second buffer on a file with its own point/mark? I notice that if I move the point in the first buffer, that'll be mirrored in the second buffer. That's not quite what I want.
 [11:41:58]<jamzattack> Viking667: C-x 4 c runs the command clone-indirect-buffer-other-window
 *** How to get exwm working (temporary, remove when tested)
-mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin: this did it for me: emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name . "notmuch"))' --display $DISPLAY
+mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin: this did it for me: 
+#+BEGIN_SRC
+emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name . "notmuch"))' --display $DISPLAY
+#+END_SRC
 ** Other useful links, channels and the like
 *** Mike Zamansky - Using Emacs
 https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
