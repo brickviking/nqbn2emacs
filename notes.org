@@ -636,37 +636,50 @@ Check :help exiting
       + 01:03:47 Petite ouverture à danser (1900)
       ]
 ** Atmospheric/ambient/Dark
-  + Outer Darkness (10+ Hours Dark Ambient-1'04"41 looped) (10'46"47)
-  https://www.youtube.com/watch?v=rc-XgxwIMFM
-  + 'Afterglow' Ambient mix (2'02"33)
-  https://www.youtube.com/watch?v=MgApT3VHtZY
-  + 'Daydream' Ambient mix (2'01"13)
-  https://www.youtube.com/watch?v=xApldi2rbk8
+  + Outer Darkness (10+ Hours Dark Ambient-1:04:41 looped) (10:46:47)
+    https://www.youtube.com/watch?v=rc-XgxwIMFM
+  + 'Afterglow' Ambient mix (2:02:33)
+    https://www.youtube.com/watch?v=MgApT3VHtZY
+  + 'Daydream' Ambient mix (2:01:13)
+    https://www.youtube.com/watch?v=xApldi2rbk8
 ** Programming music
+*** Fil Far 
+  + Channel: https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
+  + List: https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5
+  + Programming BIOHAZARD edition #14 (1:01:01) https://www.youtube.com/watch?v=ZzRnX4UNJso
+  + Programming LIQUID edition #21 (56:31) https://www.youtube.com/watch?v=GOaohYSg0m4
+  + FOCUS Coding Music #15 (1:13:04) https://www.youtube.com/watch?v=cQ-a18zEBmI
+*** JimTV 
+  + Channel: https://www.youtube.com/c/JimTVmusic
+  + Programming/coding/hacking music #7 - CYBORG CAN NOT DIE (1:01:53)
+  https://www.youtube.com/watch?v=do7Jl_4_d5w
 *** Other channels
   + Starterra - Celestial (Space Ambient) [Full Album] https://www.youtube.com/watch?v=nPM_teVT07Y
-*** Channel: Fil Far https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
-  + List: https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5
-  + Programming BIOHAZARD edition #14 (1'01'01) https://www.youtube.com/watch?v=ZzRnX4UNJso
-  + Programming LIQUID edition #21 (56"31) https://www.youtube.com/watch?v=GOaohYSg0m4
-  + FOCUS Coding Music #15 (1'13"04) https://www.youtube.com/watch?v=cQ-a18zEBmI
-  + 
-*** Channel: JimTV https://www.youtube.com/c/JimTVmusic
-  + Programming/coding/hacking music #7 - CYBORG CAN NOT DIE (1'01"53)
-  https://www.youtube.com/watch?v=do7Jl_4_d5w
 ** Soundtracks
-  + Age of Mythology soundtrack (46"32) https://www.youtube.com/watch?v=TGXwvLupP5A
-  + Factorio complete soundtrack (1'00"53) https://www.youtube.com/watch?v=T6OZrUbLJ1M
-  + Hyper Light Drifter - complete OST (2'19"21) https://www.youtube.com/watch?v=bq7a_ktfYck
-  + Mirror's Edge - Catalyst (5'13"10) https://www.youtube.com/watch?v=2fb5_zVk2gY
-  + Ori and the Will of the Wisps (3'02"02) https://www.youtube.com/watch?v=eCbyqm9jcBA
-  + Rimworld Complete Soundtrack https://www.youtube.com/watch?v=TXQBHblSCIc
-  + Rimworld Royalty complete soundtrack  https://www.youtube.com/watch?v=PG-phyoElKU
-  + Sid Meier's Civilization 6 Complete Soundtrack (4'21"21) https://www.youtube.com/watch?v=cb922Sry_DI
-  + Sid Meier's Civilization: Beyond Earth (2'59"31) https://www.youtube.com/watch?v=N4mPA-tPvtc
-  + Sim CITY 3000 Soundtrack (1'02"01) https://www.youtube.com/watch?v=qkXOxLpdMds
-  + Sim City 4 Soundtrack (3'15"14) https://www.youtube.com/watch?v=PSv37HwwojU
-  + Complete Sim CITY 3000 Soundtrack (1'52"21) https://www.youtube.com/watch?v=k3FsVvwbAlw
+  + Age of Mythology soundtrack (46:32)
+    https://www.youtube.com/watch?v=TGXwvLupP5A
+  + Factorio complete soundtrack (1:00:53)
+    https://www.youtube.com/watch?v=T6OZrUbLJ1M
+  + Hyper Light Drifter - complete OST (2:19:21)
+    https://www.youtube.com/watch?v=bq7a_ktfYck
+  + Mirror's Edge - Catalyst (5:13:10)
+    https://www.youtube.com/watch?v=2fb5_zVk2gY
+  + Ori and the Will of the Wisps (3:02:02)
+    https://www.youtube.com/watch?v=eCbyqm9jcBA
+  + Rimworld Complete Soundtrack
+    https://www.youtube.com/watch?v=TXQBHblSCIc
+  + Rimworld Royalty complete soundtrack
+    https://www.youtube.com/watch?v=PG-phyoElKU
+  + Sid Meier's Civilization 6 Complete Soundtrack (4:21:21)
+    https://www.youtube.com/watch?v=cb922Sry_DI
+  + Sid Meier's Civilization: Beyond Earth (2:59:31)
+    https://www.youtube.com/watch?v=N4mPA-tPvtc
+  + Sim CITY 3000 Soundtrack (1:02:01)
+    https://www.youtube.com/watch?v=qkXOxLpdMds
+  + Complete Sim CITY 3000 Soundtrack (1:52:21)
+    https://www.youtube.com/watch?v=k3FsVvwbAlw
+  + Sim City 4 Soundtrack (3:15:14)
+    https://www.youtube.com/watch?v=PSv37HwwojU
 
 *** Starbound soundtrack
   + Tracklist:
@@ -742,48 +755,48 @@ Check :help exiting
     + Tentacle Exploration 2 - 6:22:10
     + Constellation 1 (8 different versions) - 6:25:16
 ** Weird stuff
-  + Philip Glass - Music From The Hours (42"44) https://www.youtube.com/watch?v=heu9tD0dzkY
+  + Philip Glass - Music From The Hours (42:44) https://www.youtube.com/watch?v=heu9tD0dzkY
 ** Social
-  + Uncomfortable conversations with a black man - Petuma Police Force (22"32) https://www.youtube.com/watch?v=pM-HpZQWKT4
+  + Uncomfortable conversations with a black man - Petuma Police Force (22:32) https://www.youtube.com/watch?v=pM-HpZQWKT4
 * Programming
 ** Codemy (normally payware)
-    + Using MySQL Databases With Python Course (1'10"09)
+    + Using MySQL Databases With Python Course (1:10:09)
     https://www.youtube.com/watch?v=yOmxJbZjTnU
 ** FreeCodeCamp.org
    Youtube Channel:  https://youtube.com/c/freecodecamp
 *** C++
-    + C++ Tutorial for beginners - Full Course (4'01"19)
+    + C++ Tutorial for beginners - Full Course (4:01:19)
     https://www.youtube.com/watch?v=vLnPwxZdW4Y
 *** C#
-    + C# Tutorial - full course for beginners (4'31"09) 
+    + C# Tutorial - full course for beginners (4:31:09) 
     https://www.youtube.com/watch?v=GhQdlIFylQ8
 *** Git
     + Git and Github for beginners - crash course () 
     https://www.youtube.com/watch?v=RGOj5yH7evk&t=228s
 *** HTML 5
-    + HTML 5 full course - design website in two hours (2'02"32) 
+    + HTML 5 full course - design website in two hours (2:02:32) 
     https://www.youtube.com/watch?v=pQN-pnXPaVg
 *** Java
-    + Learn Java 8 - Full tutorial for beginners (9'32"32)
+    + Learn Java 8 - Full tutorial for beginners (9:32:32)
     https://www.youtube.com/watch?v=grEKMHGYyns
 *** Javascript
-    + Learn Javascript - Full course for beginners, (3'26"43)
+    + Learn Javascript - Full course for beginners, (3:26:43)
     https://www.youtube.com/watch?v=PkZNo7MFNFg 
 *** Penetration Testing
-    + Full Ethical Hacking course (14'51"14) https://www.youtube.com/watch?v=3Kq1MIfTWCE
+    + Full Ethical Hacking course (14:51:14) https://www.youtube.com/watch?v=3Kq1MIfTWCE
 *** Python
-    + Learn Python - Full course for beginners, (4'26"52)
+    + Learn Python - Full course for beginners, (4:26:52)
       https://www.youtube.com/watch?v=rfscVS0vtbw
-    + Python for everybody - Full university python course (13'40"10) 
+    + Python for everybody - Full university python course (13:40:10) 
       https://www.youtube.com/watch?v=8DvywoWv6fI
 *** SQL
-    + SQL tutorial - Full database course for beginners (4'20"39)
+    + SQL tutorial - Full database course for beginners (4:20:39)
       https://www.youtube.com/watch?v=HXV3zeQKqGY 
 **** Postgresql
-     + Learn PostGreSQL Tutorial (4'19"34)
+     + Learn PostGreSQL Tutorial (4:19:34)
      https://www.youtube.com/watch?v=qw--VYLpxG4
 ** Other
 *** Javascript
-    + Java Swing GUI Full course—Bro Code (4'48"34)
+    + Java Swing GUI Full course—Bro Code (4:48:34)
     https://www.youtube.com/watch?v=Kmgo00avvEw
 
