@@ -241,7 +241,9 @@ The same thing can be done (if you wish to remove files with a matching extensio
 =*.xml=
 ** org mode
 [[https://orgmode.org/manual/][Link to online manual]]
-[[http://org-mode.org/][Link to home page]]
+
+[[http://orgmode.org/][Link to home page]]
+
 Link to local manual (only works inside emacs): (info "(org)Top")
 
 + Tab on */+ line expands/compacts tree
