@@ -8,51 +8,95 @@
 * Emacs
 ** What different keys mean
 Throughout this documentation, and indeed most Emacs documents that I've read, they abbreviate key prefixes
-according to the following list:
-   |-------+---------------------+----------------------+--------------------------------------|
-   | Key   | Long name           | Alternative          | Notes                                |
-   |-------+---------------------+----------------------+--------------------------------------|
-   | C-    | Control             | Ctl- / Ctrl          | Both usable, and generally mean      |
-   |       |                     |                      | the same thing                       |
-   | S-    | Shift               | Sh-                  | Both usable                          |
-   | M-    | Meta                | Alt                  | Left alt differs from right alt      |
-   |       |                     |                      | on some installations                |
-   | ESC   | Escape              |                      | Can be used in place of Alt, though  |
-   |       |                     |                      | you hit this and then let it go      |
-   |       |                     |                      | before using the next key            |
-   | s-    | Super               | Windows              | Often used by the operating system   |
-   |       |                     |                      | especially on Windows                |
-   | H-    | Hyper               | No modern equivalent | Sometimes bound to Fn or Menu        |
-   | <RET> | Return              | Enter                | In emacs docs, shown as RET          |
-   | LMB   | Left Mouse Button   |                      |                                      |
-   | RMB   | Right Mouse Button  |                      |                                      |
-   | MMB   | Middle Mouse Button |                      |                                      |
-   |-------+---------------------+----------------------+--------------------------------------|
-This means that instead of having to type Control-Meta-V, emacs will do what you want as long as you hold down 
-=Control= and =Alt= and then tap the =V= key (and let everything go). In the minibuffer, the keystrokes will show up in their abbreviated form.
+according to the following list. This was basically cribbed from the following document in the manual:
+[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Modifier-Keys.html][Listing of modifier keys]]
 
 If a key is shown as <F2> that means to hit the F2 keyboard at the top of the keyboard, not the two keys F and 2.
-<Tab> means the Tab key on the left hand side, not the three characters T, a and b.
+<Tab> means the Tab key on the left hand side, not the three characters T, a and b. <RET> is simply the Return
+key, or Enter on most modern keyboards.
 
-In addition, all letters are usually shown in their lowercase form, even though most keyboards show the uppercase on their
-keycaps.
+This means that instead of having to type the words Control-Meta-V, Emacs will do what you want
+as long as you hold down the =Control= and =Alt= keys and then tap the =V= key (and let everything go).
+In the minibuffer (the blank section right at the bottom of the Emacs program), the keystrokes will show
+up in their abbreviated form.
+
+In addition, all letters are usually shown in their lowercase form, even though most keyboards show the
+uppercase letters on their keycaps.
+
+*** Key: =C-=
+ + Long name: Control
+ + Alternatives: Ctl-/Ctrl
+ + Notes: Both usable, and generally mean the same thing
+*** Key: =S-=
+ + Long name: Shift
+ + Alternative: Sh-
+ + Note: Both shift keys usable
+*** Key: =M-=
+ + Long name: Meta
+ + Alternative: Alt
+ + Note: Left alt differs from right alt, which is often AltGr on non-US keyboards
+*** Key: =Esc=
+ + Long name: Escape
+ + Note: Can be used in place of Alt, but you hit this and then let it go before using the next key
+*** Key: =<RET>=
+  + Long name: Return
+  + Alternatives: Enter/Ent
+  + Note: In emacs docs, shown as RET
+*** Key: =s-=
+  + Long name: Super
+  + Alternative: Windows
+  + Note: Often used by the operating system especially on Windows
+*** Key: =H-=
+  + Long name: Hyper
+  + Alternative: No modern equivalent
+  + Note: Sometimes bound to Fn or Menu
+*** Key: =A-=
+  + Long name: Alt
+  + Note: This key on the keyboard actually issues =Meta= keystroke, not an =Alt= keystroke. As a result, there aren't many Emacs keybindings (if any) that use Alt-something. They generally get shown as Meta-something.
+
+** And the mouse buttons:
+   |-----+---------------------+----------------------------------|
+   | Key | Long name           | Notes                            |
+   |-----+---------------------+----------------------------------|
+   | LMB | Left Mouse Button   |                                  |
+   | RMB | Right Mouse Button  |                                  |
+   | MMB | Middle Mouse Button | Often Scrollwheel on modern mice |
+   |-----+---------------------+----------------------------------|
+
 ** Movement keys
 Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both have far richer ways of moving the
 cursor around a text file, by either a character (or multiple characters at once), a word or a line. In the table
-below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will be indicated as RMB/LMB.
+below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will be indicated as RMB/LMB. Lines look like this:
 
-|--------------------+--------+--------------+-----------------------------------------------------------|
-| Command            | Key    | Alternatives | Notes                                                     |
-|--------------------+--------+--------------+-----------------------------------------------------------|
-| right-char         | Right  |              |                                                           |
-| left-char          | Left   |              |                                                           |
-| next-line          | Down   | C-n          |                                                           |
-| previous-line      | Up     | C-p          |                                                           |
-| right-word         | M-f    | C-<Right>    | Forward to the next non-alphanumeric character            |
-| left-word          | M-b    | C-<Left>     | Back to the first alpha-numeric character of the word     |
-| forward-paragraph  | C-Down |              | Forward to the first character of the next paragraph      |
-| backward-paragraph | C-Up   |              | Backward to the first character of the previous paragraph |
-|--------------------+--------+--------------+-----------------------------------------------------------|
+=Key= - =what-it-will-do= 
+ + Description of the Emacs command that the key will trigger.
+ + Alternate binding: =other-key=
+*** =Right= - =right-char=
+  + Moves the cursor to the right of its previous position on the line.
+*** =Left= - =left-char=
+  + Moves the cursor to the left of its previous position on the line.
+*** =Down= - =next-line=                                                                   
+  + Steps to the next line and the same character position, if possible, otherwise it will step
+    to the last character on that line.
+  + Alternate binding: =C-n=
+*** =Up= - =previous-line=
+  + Steps to the previous line and the same character position, if possible, otherwise it will step
+    to the last character on that line.
+  + Alternate binding: =C-p=
+*** =M-f= - =right-word=
+  + Step forward to the next non-alphanumeric character.
+  + Alternate binding: =C-<Right>=
+*** =M-b= - =left-word=
+  + Back to the first alpha-numeric character of the word.
+  + Alternate binding: =C-<Left>=
+*** =C-a= - =beginning-of-line=
+  + Puts the cursor at the left-most position of the current line.
+*** =C-e= - =end-of-line=
+  + Puts the cursor at the right-most position of the current line, usually the last character even if that is a space.
+*** =C-Down= - =forward-paragraph=     
+  + Steps the cursor forward to the first character of the next paragraph
+*** =C-Up= - =backward-paragraph=
+  + Step the cursor backward to the first character of the previous paragraph
 
 Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental mode, though a lot of it is
 also relevant for most other modes that aren't org-mode.
@@ -61,28 +105,26 @@ also relevant for most other modes that aren't org-mode.
    * A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
    * Don't blindly accept local variable exec sections, emacs could break when trying to save or quit.
 ** Help
-   |-----------------------------------------+---------+-------------------------------------------|
-   | Command                                 | Keys    | Notes                                     |
-   |-----------------------------------------+---------+-------------------------------------------|
-   | Metahelp (front page to help functions) | C-h C-h | As such, a front page to other help pages |
-   | Info for emacs                          | C-h r   |                                           |
-   | Global info dir                         | C-h i   |                                           |
-   | Describe current major mode             | C-h m   | Shows what keys are bound                 |
-   | Describe key                            | C-h c   | Mode sensitive                            |
-   | Describe binding                        | C-h b   | Also mode sensitive                       |
-   | Info Doc Search (word list or regexp)   | C-h d   |                                           |
-   | Describe function                       | C-h f   |                                           |
-   | The Hello page                          | C-h h   | Hello in multiple languages and scripts   |
-   |                                         |         | Needs good fonts with wide glyph coverage |
-   |-----------------------------------------+---------+-------------------------------------------|
+*** =C-h C-h=
+Metahelp: a front page to other help pages.
+*** =C-h r=
+The front page for the Emacs manual.
+*** =C-h i=
+The front page for all info documents shown in the infodir.
+*** =C-h d=
+Info Doc Search: this will request a search term and look through all of the info documents on your system.
+*** =C-h m=
+Describe current major mode, and shows what keys are bound to Emacs commands. Also shows other minor modes in effect.
+*** =C-h b=
+Describe binding, mode-sensitive.
+*** =C-h c=
+Describe key, mode-sensitive.
+*** =C-h f=
+Describe function.
+*** =C-h h=
+Hello in multiple languages and scripts, needs good fonts with wide glyph coverage.
 ** Recommended Plugins
-I can't personally vouch for these plugins, I haven't used them myself. They come as a recommendation
-from someone in #emacs@chat.freenode.org
-  + flyspell - expensive on computation
-  + wc-mode
-  + writegood
-
-On the other hand, these are plugins I use a lot of the time. They're either already built into Emacs,
+These are plugins I use a lot of the time. They're either already built into Emacs,
 or they can be installed from ELPA/MELPA.
 *** magit
 This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info documents
@@ -103,6 +145,13 @@ The Art of Computer Programming.
 Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
+
+On the other hand, these are some plugins that come as a recommendation from someone in
+ irc:#emacs@chat.freenode.org, I can't personally vouch for these plugins, I haven't used them myself.
+  + flyspell - expensive on computation
+  + wc-mode
+  + writegood
+
 ** Windows/Frames
 These commands all work with windows and frames. A frame is a collection of one or more buffers, divided
 among one or more windows. A window is a "division" of the frame, usually showing the contents of a
@@ -637,50 +686,37 @@ Check :help exiting
       ]
 ** Atmospheric/ambient/Dark
   + Outer Darkness (10+ Hours Dark Ambient-1:04:41 looped) (10:46:47)
-    https://www.youtube.com/watch?v=rc-XgxwIMFM
+   + https://www.youtube.com/watch?v=rc-XgxwIMFM
   + 'Afterglow' Ambient mix (2:02:33)
-    https://www.youtube.com/watch?v=MgApT3VHtZY
+   + https://www.youtube.com/watch?v=MgApT3VHtZY
   + 'Daydream' Ambient mix (2:01:13)
-    https://www.youtube.com/watch?v=xApldi2rbk8
+   + https://www.youtube.com/watch?v=xApldi2rbk8
 ** Programming music
-*** Fil Far 
-  + Channel: https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g
-  + List: https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5
-  + Programming BIOHAZARD edition #14 (1:01:01) https://www.youtube.com/watch?v=ZzRnX4UNJso
-  + Programming LIQUID edition #21 (56:31) https://www.youtube.com/watch?v=GOaohYSg0m4
-  + FOCUS Coding Music #15 (1:13:04) https://www.youtube.com/watch?v=cQ-a18zEBmI
+*** Fil Far
+  + [[https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g][Fil Far channel]]
+  + [[https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5][List of videos]]
+  + [[https://www.youtube.com/watch?v=ZzRnX4UNJso][Programming BIOHAZARD edition #14 (1:01:01)]]
+  + [[https://www.youtube.com/watch?v=GOaohYSg0m4][Programming LIQUID edition #21 (56:31)]]
+  + [[https://www.youtube.com/watch?v=cQ-a18zEBmI][FOCUS Coding Music #15 (1:13:04)]]
 *** JimTV 
   + Channel: https://www.youtube.com/c/JimTVmusic
   + Programming/coding/hacking music #7 - CYBORG CAN NOT DIE (1:01:53)
   https://www.youtube.com/watch?v=do7Jl_4_d5w
 *** Other channels
-  + Starterra - Celestial (Space Ambient) [Full Album] https://www.youtube.com/watch?v=nPM_teVT07Y
+  + [[https://www.youtube.com/watch?v=nPM_teVT07Y][Starterra - Celestial (Space Ambient) [Full Album]]]
 ** Soundtracks
-  + Age of Mythology soundtrack (46:32)
-    https://www.youtube.com/watch?v=TGXwvLupP5A
-  + Factorio complete soundtrack (1:00:53)
-    https://www.youtube.com/watch?v=T6OZrUbLJ1M
-  + Hyper Light Drifter - complete OST (2:19:21)
-    https://www.youtube.com/watch?v=bq7a_ktfYck
-  + Mirror's Edge - Catalyst (5:13:10)
-    https://www.youtube.com/watch?v=2fb5_zVk2gY
-  + Ori and the Will of the Wisps (3:02:02)
-    https://www.youtube.com/watch?v=eCbyqm9jcBA
-  + Rimworld Complete Soundtrack
-    https://www.youtube.com/watch?v=TXQBHblSCIc
-  + Rimworld Royalty complete soundtrack
-    https://www.youtube.com/watch?v=PG-phyoElKU
-  + Sid Meier's Civilization 6 Complete Soundtrack (4:21:21)
-    https://www.youtube.com/watch?v=cb922Sry_DI
-  + Sid Meier's Civilization: Beyond Earth (2:59:31)
-    https://www.youtube.com/watch?v=N4mPA-tPvtc
-  + Sim CITY 3000 Soundtrack (1:02:01)
-    https://www.youtube.com/watch?v=qkXOxLpdMds
-  + Complete Sim CITY 3000 Soundtrack (1:52:21)
-    https://www.youtube.com/watch?v=k3FsVvwbAlw
-  + Sim City 4 Soundtrack (3:15:14)
-    https://www.youtube.com/watch?v=PSv37HwwojU
-
+  + [[https://www.youtube.com/watch?v=TGXwvLupP5A][Age of Mythology soundtrack (46:32)]]
+  + [[https://www.youtube.com/watch?v=T6OZrUbLJ1M][Factorio complete soundtrack (1:00:53)]]
+  + [[https://www.youtube.com/watch?v=bq7a_ktfYck][Hyper Light Drifter - complete OST (2:19:21)]]
+  + [[https://www.youtube.com/watch?v=2fb5_zVk2gY][Mirror's Edge - Catalyst (5:13:10)]]
+  + [[https://www.youtube.com/watch?v=eCbyqm9jcBA][Ori and the Will of the Wisps (3:02:02)]]
+  + [[https://www.youtube.com/watch?v=TXQBHblSCIc][Rimworld Complete Soundtrack]]
+  + [[https://www.youtube.com/watch?v=PG-phyoElKU][Rimworld Royalty complete soundtrack]]
+  + [[https://www.youtube.com/watch?v=cb922Sry_DI][Sid Meier's Civilization 6 Complete Soundtrack (4:21:21)]]
+  + [[https://www.youtube.com/watch?v=N4mPA-tPvtc][Sid Meier's Civilization: Beyond Earth (2:59:31)]]
+  + [[https://www.youtube.com/watch?v=qkXOxLpdMds][Sim CITY 3000 Soundtrack (1:02:01)]]
+  + [[https://www.youtube.com/watch?v=k3FsVvwbAlw][Complete Sim CITY 3000 Soundtrack (1:52:21)]]
+  + [[https://www.youtube.com/watch?v=PSv37HwwojU][Sim City 4 Soundtrack (3:15:14)]]
 *** Starbound soundtrack
   + Tracklist:
     + Horsehead Nebula - 0:00
@@ -755,46 +791,35 @@ Check :help exiting
     + Tentacle Exploration 2 - 6:22:10
     + Constellation 1 (8 different versions) - 6:25:16
 ** Weird stuff
-  + Philip Glass - Music From The Hours (42:44) https://www.youtube.com/watch?v=heu9tD0dzkY
+  + [[https://www.youtube.com/watch?v=heu9tD0dzkY][Philip Glass - Music From The Hours (42:44)]]
 ** Social
-  + Uncomfortable conversations with a black man - Petuma Police Force (22:32) https://www.youtube.com/watch?v=pM-HpZQWKT4
+  + [[https://www.youtube.com/watch?v=pM-HpZQWKT4][Uncomfortable conversations with a black man - Petuma Police Force (22:32)]]
 * Programming
 ** Codemy (normally payware)
-    + Using MySQL Databases With Python Course (1:10:09)
-    https://www.youtube.com/watch?v=yOmxJbZjTnU
-** FreeCodeCamp.org
-   Youtube Channel:  https://youtube.com/c/freecodecamp
+    + [[https://www.youtube.com/watch?v=yOmxJbZjTnU][Using MySQL Databases With Python Course (1:10:09)]]
+    
+** FreeCodeCamp.org  [[https://youtube.com/c/freecodecamp][Youtube Channel]]
 *** C++
-    + C++ Tutorial for beginners - Full Course (4:01:19)
-    https://www.youtube.com/watch?v=vLnPwxZdW4Y
+    + [[https://www.youtube.com/watch?v=vLnPwxZdW4Y][C++ Tutorial for beginners - Full Course (4:01:19)]]
 *** C#
-    + C# Tutorial - full course for beginners (4:31:09) 
-    https://www.youtube.com/watch?v=GhQdlIFylQ8
+    + [[https://www.youtube.com/watch?v=GhQdlIFylQ8][C# Tutorial - full course for beginners (4:31:09)]]
 *** Git
-    + Git and Github for beginners - crash course () 
-    https://www.youtube.com/watch?v=RGOj5yH7evk&t=228s
+    + [[https://www.youtube.com/watch?v=RGOj5yH7evk][Git and Github for beginners - crash course (1:08:30)]]
 *** HTML 5
-    + HTML 5 full course - design website in two hours (2:02:32) 
-    https://www.youtube.com/watch?v=pQN-pnXPaVg
+    + [[https://www.youtube.com/watch?v=pQN-pnXPaVg][HTML 5 full course - design website in two hours (2:02:32)]]
 *** Java
-    + Learn Java 8 - Full tutorial for beginners (9:32:32)
-    https://www.youtube.com/watch?v=grEKMHGYyns
+    + [[https://www.youtube.com/watch?v=grEKMHGYyns][Learn Java 8 - Full tutorial for beginners (9:32:32)]]
 *** Javascript
-    + Learn Javascript - Full course for beginners, (3:26:43)
-    https://www.youtube.com/watch?v=PkZNo7MFNFg 
+    + [[https://www.youtube.com/watch?v=PkZNo7MFNFg][Learn Javascript - Full course for beginners, (3:26:43)]]
 *** Penetration Testing
-    + Full Ethical Hacking course (14:51:14) https://www.youtube.com/watch?v=3Kq1MIfTWCE
+    + [[https://www.youtube.com/watch?v=3Kq1MIfTWCE][Full Ethical Hacking course (14:51:14)]]
 *** Python
-    + Learn Python - Full course for beginners, (4:26:52)
-      https://www.youtube.com/watch?v=rfscVS0vtbw
-    + Python for everybody - Full university python course (13:40:10) 
-      https://www.youtube.com/watch?v=8DvywoWv6fI
+    + [[https://www.youtube.com/watch?v=rfscVS0vtbw][Learn Python - Full course for beginners, (4:26:52)]]
+    + [[https://www.youtube.com/watch?v=8DvywoWv6fI][Python for everybody - Full university python course (13:40:10)]]
 *** SQL
-    + SQL tutorial - Full database course for beginners (4:20:39)
-      https://www.youtube.com/watch?v=HXV3zeQKqGY 
+    + [[https://www.youtube.com/watch?v=HXV3zeQKqGY][SQL tutorial - Full database course for beginners (4:20:39)]]
 **** Postgresql
-     + Learn PostGreSQL Tutorial (4:19:34)
-     https://www.youtube.com/watch?v=qw--VYLpxG4
+     + [[https://www.youtube.com/watch?v=qw--VYLpxG4][Learn PostGreSQL Tutorial (4:19:34)]]
 ** Other
 *** Javascript
     + Java Swing GUI Full course—Bro Code (4:48:34)
