@@ -33,7 +33,7 @@ the differences between Emacs text mode and graphical mode much, as most of the 
 in Emacs don't /require/ the graphical client except for details of the fringe. I've also used a
 reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 
-#+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always">&nbsp;</div>@@
+#+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always">&nbsp;</div>@@ @@markdown:<div style="page-break-before: always">&nbsp;</div>@@
 
 {{{pagebreak}}}
 # \newpage
