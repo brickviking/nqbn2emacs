@@ -1,10 +1,39 @@
-#+TITLE: Notes for anything I think of
+#+TITLE: Not Quite Brand New To Emacs—or Vim
+#+SUBTITLE: Notes for anything I think of
 #+AUTHOR: brickviking (yes, me!)
-#+DATE: <2020-11-12 Thu 22:41>
 #+TAGS: emacs vim cheatsheet keys soundtracks programming
-#+OPTIONS: _:nil
+#+OPTIONS: _:nil toc:nil
 #+OPTIONS: ^:{}
+#+STARTUP: showeverything inlineimages
 
+#+BEGIN_abstract
+ Hints and aids for when you just want to know some stuff. Addresses Emacs and Vim.
+#+END_abstract
+
+* Introduction
+       :PROPERTIES:
+       :UNNUMBERED: notoc
+       :END:
+I was brand new to Emacs, once. Now I'm not quite so brand new, but there's still a lot I don't
+know about. The notes.org file is a condensing of some of the information available from Vim
+help and Emacs info documents; other information came from the [[irc://freenode#emacs][Freenode #emacs channel]], which
+requires an IRC client to connect to. Other information (in one instance) came from [[https://emacswiki.org/][the emacs wiki]].
+
+There's even some programming tips for plenty of other computer languages. 
+And if you just want to chill out, I've added some of the soundtracks I've come across. 
+
+** Disclaimer
+I haven't really explored exotic topics such as Tramp, gnus/mu4e, or the whole Elisp
+ecosystem that Emacs lives on. I also don't address Emacs variants such as XEmacs, spacemacs or
+Doom Emacs.
+
+This document was created in a development version of emacs (at this date, 28.0.50); as such it may
+have some items in here that haven't turned up in earlier versions of Emacs. I've also used a
+reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
+
+\page{}
+#+TOC: headlines 2
+\page{}
 * Emacs
 ** What different keys mean
 Throughout this documentation, and indeed most Emacs documents that I've read, they abbreviate key prefixes
@@ -42,6 +71,18 @@ uppercase letters on their keycaps.
   + Long name: Return
   + Alternatives: Enter/Ent
   + Note: In emacs docs, shown as RET
+** Rare modifier keys
+These keys aren't used very often, and in the case of Super and Hyper, aren't used at all in default Emacs.
+If you don't have the modifier keys (or you haven't already bound them to existing keys on your keyboard),
+you can enter each using =C-x @= followed by one of =a=, =h= or =s=.
+
+=C-x @ h= adds the Hyper flag to the next character, =C-x @ s= adds the Super flag, and =C-x @ a= adds 
+the Alt flag. 
+
+*** Key: =A-=
+  + Long name: Alt
+  + Note: This key on the keyboard actually issues =Meta= keystroke, not an Emacs =Alt= keystroke. As a result, there aren't many Emacs keybindings that use Alt-something, and most commands use Meta-something.
+
 *** Key: =s-=
   + Long name: Super
   + Alternative: Windows
@@ -50,10 +91,6 @@ uppercase letters on their keycaps.
   + Long name: Hyper
   + Alternative: No modern equivalent
   + Note: Sometimes bound to Fn or Menu
-*** Key: =A-=
-  + Long name: Alt
-  + Note: This key on the keyboard actually issues =Meta= keystroke, not an =Alt= keystroke. As a result, there aren't many Emacs keybindings (if any) that use Alt-something. They generally get shown as Meta-something.
-
 ** And the mouse buttons:
    |-----+---------------------+----------------------------------|
    | Key | Long name           | Notes                            |
@@ -98,15 +135,38 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
 *** =C-Up= - =backward-paragraph=
   + Step the cursor backward to the first character of the previous paragraph
 
+** Editing keys
+These are some of the keys responsible for deleting or copying text to a "kill-ring" to restore later. 
 Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental mode, though a lot of it is
 also relevant for most other modes that aren't org-mode.
+
+*** =C-x u= - =undo=
+  + Description: Undoes the last action, whether that was text insertion or deletion.
+  + Note: can use a numeric prefix =C-u <number> C-x u=, which undoes <number> of actions.
+*** =C-k= - =kill-line=
+  + Description: Removes from point until the end of the current line.
+*** =C-u 0 C-k=
+  + Description: Removes from point until the beginning of the current line.
+*** =Del= - =delete-char=
+  + Description: Removes single character.
+  + Alternative: =C-d=. 
+  + Note: This does not store to the kill-ring.
+*** =M-d= - =kill-word=
+  + Description: Deletes forward to the beginning of the next word.
+*** =M-Del= - =backward-kill-word=
+  + Alternative: M-BACKSPACE
+  + Note: Kill back to the beginning of the previous word (backward-kill-word).
+*** =C-y= - =yank=
+  + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= will restore earlier points on the kill-ring instead of the most recent entry.
 ** Cock-ups
-   * When starting a remote file access, don't run M-x tramp  first. Things will break.
-   * A docstring is not info documentation. C-h m gives you docstrings, but go to relevant info manual for details.
+   * When starting a remote file access, don't run M-x tramp first. Things will break.
+   * A docstring is not info documentation. =C-h f= gives you docstrings, but go to relevant info manual for details.
    * Don't blindly accept local variable exec sections, emacs could break when trying to save or quit.
 ** Help
 *** =C-h C-h=
 Metahelp: a front page to other help pages.
+*** =C-h C-C= - Copyright notice
+Displays the copyright notice for Emacs, in this case, the GNU General Public License version 3.
 *** =C-h r=
 The front page for the Emacs manual.
 *** =C-h i=
@@ -174,19 +234,19 @@ the other buffer in the process.
 ** Buffers
 A buffer holds the contents of a file, whether an on-disk file or a on-the-fly buffer containing a 
 command's output, such as the *Messages* buffer, the *Completions* buffer, or the *Help* buffer.
-These keys work with open buffers and allow you to change between them.
-   |-------------------------------+---------+--------------------------------------------------------|
-   | Command                       | key     | Description                                            |
-   |-------------------------------+---------+--------------------------------------------------------|
-   | switch-to-buffer              | C-x b   | Switch to provided buffer, creating it if needed       |
-   | list-buffers                  | C-x C-b | Splits the window and displays buffer selection window |
-   |                               |         | containing a list of open buffers                      |
-   | switch-to-buffer-other-window | C-x 4 b | Swap to buffer in other window                         |
-   |                               |         | creating new window if necessary                       |
-   |-------------------------------+---------+--------------------------------------------------------|
+These keys work with open buffers and allow you to change between them or even create new ones.
 
+*** =C-x b= - =switch-to-buffer=
+  + Description: Switch to named buffer, creating it if needed.
+  + Note: there's no requirement to have a physical disk file providing the contents for the buffer.
+*** =C-x C-b= - =list-buffers=
+  + Description: Splits the window into two and displays buffer selection window containing a list of open buffers in the newly-created window.
+  + Note: q closes the window, other keys are shown in the section about the Buffer Selection window.
+*** =C-x 4 b= - =switch-to-buffer-other-window=
+  + Description: Swap to buffer in other window, creating a new window (and perhaps buffer) if necessary
 *** Buffer selection window
-When in buffer selection window:
+These are keys that are only active when your cursor is in the buffer selection window:
+#+CAPTION: Buffer Selection Window keys
    |----------------------+-----+-----------------------------------------------|
    | Command              | Key | Notes                                         |
    |----------------------+-----+-----------------------------------------------|
@@ -197,6 +257,7 @@ When in buffer selection window:
    | Undo all marks       | U   |                                               |
    | Open in window       | 1   | Removes buffer selection window, opens buffer |
    | Open in other window | o   | Opens buffer in other window beside list      |
+   | Quit buffer list     | q   | Closes (quit-window) the buffer list window   |
    |----------------------+-----+-----------------------------------------------|
 
 *** Buffer encoding
@@ -658,6 +719,37 @@ Check :help exiting
   | Quitting without writing       | :q!  |           |                                     |
   | Quit all files without writing | :qa! | :qall!    |                                     |
   |--------------------------------+------+-----------+-------------------------------------|
+* Programming
+** Codemy (normally payware)
+    + [[https://www.youtube.com/watch?v=yOmxJbZjTnU][Using MySQL Databases With Python Course (1:10:09)]]
+    
+** FreeCodeCamp.org  [[https://youtube.com/c/freecodecamp][Youtube Channel]]
+*** C++
+    + [[https://www.youtube.com/watch?v=vLnPwxZdW4Y][C++ Tutorial for beginners - Full Course (4:01:19)]]
+*** C#
+    + [[https://www.youtube.com/watch?v=GhQdlIFylQ8][C# Tutorial - full course for beginners (4:31:09)]]
+*** Git
+    + [[https://www.youtube.com/watch?v=RGOj5yH7evk][Git and Github for beginners - crash course (1:08:30)]]
+*** HTML 5
+    + [[https://www.youtube.com/watch?v=pQN-pnXPaVg][HTML 5 full course - design website in two hours (2:02:32)]]
+*** Java
+    + [[https://www.youtube.com/watch?v=grEKMHGYyns][Learn Java 8 - Full tutorial for beginners (9:32:32)]]
+*** Javascript
+    + [[https://www.youtube.com/watch?v=PkZNo7MFNFg][Learn Javascript - Full course for beginners, (3:26:43)]]
+*** Penetration Testing
+    + [[https://www.youtube.com/watch?v=3Kq1MIfTWCE][Full Ethical Hacking course (14:51:14)]]
+*** Python
+    + [[https://www.youtube.com/watch?v=rfscVS0vtbw][Learn Python - Full course for beginners, (4:26:52)]]
+    + [[https://www.youtube.com/watch?v=8DvywoWv6fI][Python for everybody - Full university python course (13:40:10)]]
+*** SQL
+    + [[https://www.youtube.com/watch?v=HXV3zeQKqGY][SQL tutorial - Full database course for beginners (4:20:39)]]
+**** Postgresql
+     + [[https://www.youtube.com/watch?v=qw--VYLpxG4][Learn PostGreSQL Tutorial (4:19:34)]]
+** Other
+*** Javascript
+    + Java Swing GUI Full course—Bro Code (4:48:34)
+    https://www.youtube.com/watch?v=Kmgo00avvEw
+
 * Music
 ** Classical
   + Erik Satie: Gymnopedies, gnossiennes et sarabandes (1:05:19)
@@ -796,34 +888,3 @@ Check :help exiting
   + [[https://www.youtube.com/watch?v=heu9tD0dzkY][Philip Glass - Music From The Hours (42:44)]]
 ** Social
   + [[https://www.youtube.com/watch?v=pM-HpZQWKT4][Uncomfortable conversations with a black man - Petuma Police Force (22:32)]]
-* Programming
-** Codemy (normally payware)
-    + [[https://www.youtube.com/watch?v=yOmxJbZjTnU][Using MySQL Databases With Python Course (1:10:09)]]
-    
-** FreeCodeCamp.org  [[https://youtube.com/c/freecodecamp][Youtube Channel]]
-*** C++
-    + [[https://www.youtube.com/watch?v=vLnPwxZdW4Y][C++ Tutorial for beginners - Full Course (4:01:19)]]
-*** C#
-    + [[https://www.youtube.com/watch?v=GhQdlIFylQ8][C# Tutorial - full course for beginners (4:31:09)]]
-*** Git
-    + [[https://www.youtube.com/watch?v=RGOj5yH7evk][Git and Github for beginners - crash course (1:08:30)]]
-*** HTML 5
-    + [[https://www.youtube.com/watch?v=pQN-pnXPaVg][HTML 5 full course - design website in two hours (2:02:32)]]
-*** Java
-    + [[https://www.youtube.com/watch?v=grEKMHGYyns][Learn Java 8 - Full tutorial for beginners (9:32:32)]]
-*** Javascript
-    + [[https://www.youtube.com/watch?v=PkZNo7MFNFg][Learn Javascript - Full course for beginners, (3:26:43)]]
-*** Penetration Testing
-    + [[https://www.youtube.com/watch?v=3Kq1MIfTWCE][Full Ethical Hacking course (14:51:14)]]
-*** Python
-    + [[https://www.youtube.com/watch?v=rfscVS0vtbw][Learn Python - Full course for beginners, (4:26:52)]]
-    + [[https://www.youtube.com/watch?v=8DvywoWv6fI][Python for everybody - Full university python course (13:40:10)]]
-*** SQL
-    + [[https://www.youtube.com/watch?v=HXV3zeQKqGY][SQL tutorial - Full database course for beginners (4:20:39)]]
-**** Postgresql
-     + [[https://www.youtube.com/watch?v=qw--VYLpxG4][Learn PostGreSQL Tutorial (4:19:34)]]
-** Other
-*** Javascript
-    + Java Swing GUI Full course—Bro Code (4:48:34)
-    https://www.youtube.com/watch?v=Kmgo00avvEw
-
