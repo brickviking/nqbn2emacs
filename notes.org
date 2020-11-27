@@ -28,7 +28,9 @@ ecosystem that Emacs lives on. I also don't address Emacs variants such as XEmac
 Doom Emacs.
 
 This document was created in a development version of emacs (at this date, 28.0.50); as such it may
-have some items in here that haven't turned up in earlier versions of Emacs. I've also used a
+have some items in here that haven't turned up in earlier versions of Emacs. I also don't discuss
+the differences between Emacs text mode and graphical mode much, as most of the things you can do
+in Emacs don't /require/ the graphical client except for details of the fringe. I've also used a
 reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 
 \page{}
@@ -306,6 +308,8 @@ The same thing can be done (if you wish to remove files with a matching extensio
 [[http://orgmode.org/][Link to home page]]
 
 Link to local manual (only works inside emacs): (info "(org)Top")
+‘C-c C-x I’ in an Org file tries to open a suitable section of the Org
+manual depending on the syntax at point.
 
 + Tab on */+ line expands/compacts tree
   1) First time: expand one level below point without exposing text
@@ -351,7 +355,7 @@ Link to local manual (only works inside emacs): (info "(org)Top")
   | #+TAGS        | <words>{1,}            | tag categories                       |
   | #+DATE        | <timestamp>            | date of document                     |
   | #+DESCRIPTION | <string>               | Short precis of what it is           |
-  | #+SEQ_TODO    | <string> [<string>]... | Before pipe, one colour.             |
+  | #+SEQ_TODO    | <string> [<string>]... | Before pipe, uncompleted colour.     |
   |               |                        | After pipe, completed colour         |
   
 *** tags
