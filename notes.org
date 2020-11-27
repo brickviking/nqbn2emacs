@@ -33,18 +33,18 @@ the differences between Emacs text mode and graphical mode much, as most of the 
 in Emacs don't /require/ the graphical client except for details of the fringe. I've also used a
 reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 
-\page{}
+\newpage
 #+TOC: headlines 2
-\page{}
+\newpage
 * Emacs
 ** What different keys mean
 Throughout this documentation, and indeed most Emacs documents that I've read, they abbreviate key prefixes
 according to the following list. This was basically cribbed from the following document in the manual:
 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Modifier-Keys.html][Listing of modifier keys]]
 
-If a key is shown as <F2> that means to hit the F2 keyboard at the top of the keyboard, not the two keys F and 2.
-<Tab> means the Tab key on the left hand side, not the three characters T, a and b. <RET> is simply the Return
-key, or Enter on most modern keyboards.
+If a key is shown as <F2> that means to hit the =F2= keyboard at the top of the keyboard, not the two keys F and 2.
+<Tab> means the =Tab= key on the left hand side, not the three characters T, a and b. <RET> is simply the Return
+key, or =Enter= on most modern keyboards.
 
 This means that instead of having to type the words Control-Meta-V, Emacs will do what you want
 as long as you hold down the =Control= and =Alt= keys and then tap the =V= key (and let everything go).
