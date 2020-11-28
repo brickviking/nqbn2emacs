@@ -7,7 +7,7 @@
 #+STARTUP: showeverything inlineimages
 
 #+BEGIN_abstract
- Hints and aids for when you just want to know some stuff. Addresses Emacs and Vim.
+Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. Addresses Emacs and Vim.
 #+END_abstract
 
 * Introduction
@@ -33,13 +33,15 @@ the differences between Emacs text mode and graphical mode much, as most of the 
 in Emacs don't /require/ the graphical client except for details of the fringe. I've also used a
 reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 
-#+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always">&nbsp;</div>@@ @@markdown:<div style="page-break-before: always">&nbsp;</div>@@
+#+BEGIN_EXPORT latex
+\newpage
+#+END_EXPORT
 
-{{{pagebreak}}}
-# \newpage
 #+TOC: headlines 2
-# \newpage
-{{{pagebreak}}}
+
+#+BEGIN_EXPORT latex
+\newpage
+#+END_EXPORT
 
 * Emacs
 ** What different keys mean
