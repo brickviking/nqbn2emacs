@@ -167,6 +167,15 @@ also relevant for most other modes that aren't org-mode.
   + Note: Kill back to the beginning of the previous word (backward-kill-word).
 *** =C-y= - =yank=
   + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= will restore earlier points on the kill-ring instead of the most recent entry.
+** Display of long lines
+Reference: (info "(emacs)Continuation Lines")
+
+Emacs will display lines for text files in one of three ways, either line-truncated, with a symbol on the end to
+let you know there's more, or line-wrapped, with an arrow in the fringe (or a $ for text terminals) for lines that
+continue on the next line. Visual line mode is like line-wrapping, but with the break for the next line happening between
+words. This makes these long lines a bit more readable. Visual-line-mode is a minor mode, so it's toggled
+with =M-x visual-line-mode=. Ordinary line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
+
 ** Cock-ups
    * When starting a remote file access, don't run M-x tramp first. Things will break.
    * A docstring is not info documentation. =C-h f= gives you docstrings, but go to relevant info manual for details.
