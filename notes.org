@@ -601,6 +601,26 @@ mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin: this did i
 #+BEGIN_SRC
 emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name . "notmuch"))' --display $DISPLAY
 #+END_SRC
+*** How to grab an org-mode link to an info document
+[14:51:19]<Viking667> If I'm in an emacs info window, how do I grab the "link to that info page" for use somewhere else? for example, to include in an org-mode document?
+[14:51:49]<grym> Viking667: org-store-link maaaybe
+[14:51:52]<Viking667> Ordinarily in a web browser I'd go C-l C-c, and then paste the link from the address.
+[14:52:02]<TRS-80> Viking667: yes what grym said
+[14:52:29]<TRS-80> I have that command bound globally, because I use it everywhere all the time
+[14:52:46]<shoshin> yeah org-store-link works in everything emacs afaik
+[14:53:10]<shoshin> iirc i had to use bookmarks for specific places in a pdf tho?
+[14:53:17]<TRS-80> pretty much, and you can also write your own custom link types if needed
+[14:53:24]<shoshin> then i made a link to the bookmark or something
+[14:53:31]<Viking667> Right. how do I retrieve that link?
+[14:53:46]<Viking667> (without grubbing through the *Messages* window?
+[14:53:48]<shoshin> org-insert-link should have it
+[14:54:02]<grym> Viking667: C-c C-l and it'll be in the minibuffer, probably the default selection
+[14:54:51]<shoshin> lol org-store-link does *not* work in *scratch*
+[14:56:13]<wgreenhouse> Viking667: M-0 c in *Info* also grabs the location as an elisp sexp
+[15:04:55]<ryouma> Viking667: (with-no-warnings (add-hook 'Info-mode-hook (lambda () (define-key Info-mode-map (kbd "c") 'my-Info-copy-current-node-name))) (defun my-Info-copy-current-node-name () "produce sexp so that the recipient can just eval it." (interactive) (Info-copy-current-node-name 0)))
+[15:05:43]<ryouma> org-store-link perhaps does not do this, at least if the recipient doe snot run org-link-minor-mode [[info:dir#Top][info:dir#Top]]
+[15:08:29]<ryouma> it does work in org though
+[15:09:04]<ryouma> kinda redundant there isn't it where org puts label same as url
 ** Other useful links, channels and the like
 *** Mike Zamansky - Using Emacs
 https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
