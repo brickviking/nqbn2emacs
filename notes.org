@@ -463,13 +463,15 @@ NB: the section header often has a > in the fringe, but this is not visible in t
 **** Show diff against files:      =d= (diff)
 
 **** Refresh magit buffer:         =g= (magit-refresh)
- This refreshes the magit status buffer once you've made some changes within the project.
+ This refreshes the magit status buffer once you've made some changes within the project and saved those changes to disk. Installing =magit-filenotify= and enabling =magit-filenotify-mode= in the status window will automate this somewhat.
 **** Expand/hide section:          =<TAB>=
  Type TAB to expand or hide the section at point.
 **** Visit change/commit:          =<RET>=
  Type RET to visit the change or commit at point.
 **** Push changes to remote:       =P u=
 This takes any changes you have in your current repo and can push them to a remote repository if you have commit privileges there. I usually like to use =P u= (that's a P followed by a u, not a P-u), but there are other options available.
+**** Configure repo variables:     =P C=
+This seems to allow you to configure certain things about your current git repository, such as descriptions, further remotes, and some other details.
 **** Other movement keys
 The usual =n= and =p= keys move the cursor up and down between sections.
 *** Wrap up
