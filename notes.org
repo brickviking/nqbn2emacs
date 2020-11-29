@@ -145,13 +145,18 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
   + Step the cursor backward to the first character of the previous paragraph
 
 ** Editing keys
+Further reference: [[info:emacs#Basic Undo][info:emacs#Basic Undo]]
+
 These are some of the keys responsible for deleting or copying text to a "kill-ring" to restore later. 
 Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental mode, though a lot of it is
 also relevant for most other modes that aren't org-mode.
 
 *** =C-x u= - =undo=
   + Description: Undoes the last action, whether that was text insertion or deletion.
-  + Note: can use a numeric prefix =C-u <number> C-x u=, which undoes <number> of actions.
+  + Alternatives: =C-/=, =C-_=
+  + Note: can use a numeric prefix =C-u <number> C-x u=, which undoes <number> of actions. Can also undo
+only in a region.
+
 *** =C-k= - =kill-line=
   + Description: Removes from point until the end of the current line.
 *** =C-u 0 C-k=
