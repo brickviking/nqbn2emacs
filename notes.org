@@ -145,8 +145,7 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
   + Step the cursor backward to the first character of the previous paragraph
 
 ** Editing keys
-Further reference: [[info:emacs#Basic Undo][info:emacs#Basic Undo]]
-
+Further reference: [[info:emacs#Basic Undo][info:emacs#Basic Undo]] (info "(emacs) Basic Undo")
 These are some of the keys responsible for deleting or copying text to a "kill-ring" to restore later. 
 Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental mode, though a lot of it is
 also relevant for most other modes that aren't org-mode.
@@ -323,7 +322,7 @@ M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
 This marks everything that matches the *.xml pattern. Then hit k to remove the xml files from the listing. 
 The same thing can be done (if you wish to remove files with a matching extension) with *. as follows:
 =*.xml=
-** org mode
+** Org mode
 [[https://orgmode.org/manual/][Link to online manual]]
 
 [[http://orgmode.org/][Link to home page]]
@@ -415,8 +414,11 @@ Other link formats are described in Org [[info:org#External links][External link
 + Change size of inline org images
   + Don't forget to eval (setq org-image-actual-width nil)
   + with #+ATTR_ORG: :height ... :width ...
-*** Turn region into list:        C-c -
-*** Turn region into headers:     C-c *
+*** Turn region into list:        =C-c -=
+*** Turn region into headers:     =C-c *=
+*** Oddities
+    If you turn on—or you have defined in emacs startup—scroll-lock-mode, cursor movement within a
+collapsed org-mode document behaves slightly differently. 
 ** magit
 *** Requirements
 First, install and enable magit if you haven't already. These following instructions assume that
@@ -592,7 +594,7 @@ are parsed with =shr= are replaced with the clean version.
 SO = StackOverflow
 
 *** How to create a second buffer on the same file with a separate point/mark
-[11:41:32]<Viking667> Hi all. Wanted to know if I could have a second buffer on a file with its own point/mark? I notice that if I move the point in the first buffer, that'll be mirrored in the second buffer. That's not quite what I want.
+[11:41:32]<Viking667> Hi all. Wanted to know if I could have a second buffer on a file with its own point/mark? (Normally if I split the window to make two buffers) I notice that if I move the point in the first buffer, that'll be mirrored in the second buffer. That's not quite what I want.
 [11:41:58]<jamzattack> Viking667: C-x 4 c runs the command clone-indirect-buffer-other-window
 *** How to get exwm working (temporary, remove when tested)
 mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin: this did it for me: 
