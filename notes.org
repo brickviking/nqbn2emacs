@@ -460,14 +460,18 @@ NB: the section header often has a > in the fringe, but this is not visible in t
  #	notes.org~
  #
  #+END_EXAMPLE
-**** Show diff against files:      d (diff)
+**** Show diff against files:      =d= (diff)
 
-**** Refresh magit buffer:         g (magit-refresh)
+**** Refresh magit buffer:         =g= (magit-refresh)
  This refreshes the magit status buffer once you've made some changes within the project.
-**** Expand/hide section:          <TAB>
+**** Expand/hide section:          =<TAB>=
  Type TAB to expand or hide the section at point.
-**** Visit change/commit:          <RET>
+**** Visit change/commit:          =<RET>=
  Type RET to visit the change or commit at point.
+**** Push changes to remote:       =P u=
+This takes any changes you have in your current repo and can push them to a remote repository if you have commit privileges there. I usually like to use =P u= (that's a P followed by a u, not a P-u), but there are other options available.
+**** Other movement keys
+The usual =n= and =p= keys move the cursor up and down between sections.
 *** Wrap up
 There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
 have magit installed.
