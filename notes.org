@@ -413,47 +413,58 @@ Other link formats are described in Org [[info:org#External links][External link
 *** Turn region into list:        C-c -
 *** Turn region into headers:     C-c *
 ** magit
-There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
-have magit installed.
+*** Requirements
+First, install and enable magit if you haven't already. These following instructions assume that
+you've done so, and will also presume you have a working knowledge of common git commands.
+If a file you're editing is in a git repo, then =M-x magit= will open up a second
+window beside your file, and will show you some categories related to the repo. A shortcut is =C-x g=.
+
+*** Magit buffer commands
 From the magit buffer, you can do the following things. Most of them will prompt for other
 things if they need them. Usually you put your cursor on the object you want to affect, or
-on the section header if you wish to affect all files in that category.
+on the section header (usually indicated by a font of different colour) if you wish to affect
+all files in that category.
+
 NB: the section header often has a > in the fringe, but this is not visible in textmode.
-*** Adding untracked file:        s (stage)
-Simply put your cursor on the file you want to stage, hit s. The file should then shift into "Staged
-changes", ready for you to commit. This roughly duplicates "git add file.blah".
+**** Adding untracked file:        =s= (=M-x magit-stage-file=)
+ Simply put your cursor on the file you want to stage, hit s. The file should then shift into "Staged
+ changes", ready for you to commit. This roughly duplicates "git add file.blah".
 
-TODO: No idea how to add a directory from magit yet.
-*** Staging an unstaged file:     s (stage)
-Same as above, except for a file that's already part of the git repository.
-*** Committing staged files:      c (commit)
-Will request how you want to commit, hit c again to bring up an editor window. Provide a single line
-commit message. If you want to add more lines, leave a blank line after the single line as follows:
-#+BEGIN_EXAMPLE diff -n
-Initial commit message
+ TODO: No idea how to add a directory from magit yet.
+**** Staging changes in an unstaged file:     =s= (=M-x magit-stage-file=)
+ Same as above, except for a file that's already part of the git repository.
+**** Committing changes in staged files:      =c= (=M-x magit-commit=)
+ Will request how you want to commit, hit =c= again to bring up an editor window. Provide a single line
+ commit message. If you want to add more lines, leave a blank line after the single line as follows:
+ #+BEGIN_EXAMPLE diff -n
+ Initial commit message
 
-This is the next line for a multi-line comment.
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-#
-# On branch master
-# Your branch is up to date with 'origin/master'.
-#
-# Changes to be committed:
-#	modified:   notes.org
-#
-# Untracked files:
-#	notes.org~
-#
-#+END_EXAMPLE
-*** Show diff against files:      d (diff)
+ This is the next line for a multi-line comment.
+ # Please enter the commit message for your changes. Lines starting
+ # with '#' will be ignored, and an empty message aborts the commit.
+ #
+ # On branch master
+ # Your branch is up to date with 'origin/master'.
+ #
+ # Changes to be committed:
+ #	modified:   notes.org
+ #
+ # Untracked files:
+ #	notes.org~
+ #
+ #+END_EXAMPLE
+**** Show diff against files:      d (diff)
 
-*** Refresh magit buffer:         g (magit-refresh)
-This refreshes the magit status buffer once you've made some changes within the project.
-*** Expand/hide section:          <TAB>
-Type TAB to expand or hide the section at point.
-*** Visit change/commit:          <RET>
-Type RET to visit the change or commit at point.
+**** Refresh magit buffer:         g (magit-refresh)
+ This refreshes the magit status buffer once you've made some changes within the project.
+**** Expand/hide section:          <TAB>
+ Type TAB to expand or hide the section at point.
+**** Visit change/commit:          <RET>
+ Type RET to visit the change or commit at point.
+*** Wrap up
+There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
+have magit installed.
+
 ** erc
    + quit server: C-c C-x
    + Join channel:  C-c C-j
