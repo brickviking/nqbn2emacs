@@ -291,7 +291,8 @@ Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     | -(DOS)@--- | Dos encoding (CRLF 0x0D 0x0A) |
     | -(Mac)@--- | Mac OS X encoding (CR  0x0D)  |
     |------------+-------------------------------|
-Also check [[How to set a buffer's line-encoding from text mode]]
+Also check [[#how-to-set-a-buffers-line-encoding-from-text-mode][How to set a buffer’s line-encoding from text mode]]
+
 
 ** Dired
 These are some of the commands that can be used in a dired buffer. For all intents, you can do nearly
