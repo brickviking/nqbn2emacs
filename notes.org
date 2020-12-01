@@ -546,6 +546,9 @@ running inside vterm—for example, the vim editor.
   (split-window))
 #+END_SRC
 *** How to set a buffer's line-encoding from text mode
+:PROPERTIES:
+:CUSTOM_ID: how-to-set-a-buffers-line-encoding-from-text-mode
+:END:
 #+BEGIN_QUOTE
 - <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
 - <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
