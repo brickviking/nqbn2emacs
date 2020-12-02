@@ -544,6 +544,9 @@ running inside vterm—for example, the vim editor.
     (split-window))
   (split-window))
 #+END_SRC
+:PROPERTIES:
+:CUSTOM_ID: how-to-set-a-buffers-line-encoding-from-text-mode
+:END:
 *** How to set a buffer's line-encoding from text mode
 #+BEGIN_QUOTE
 - <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
@@ -556,7 +559,7 @@ Duckduckgo does a very sinful thing -- instead of linking to
 
 Here, I define a function that removes all this junk, and use [[info:elisp#Advising Named Functions][advice]]
 to filter the arguments given to [[help:shr-urlify][shr-urlify]].  Because this is
-relatively low-level, all occurences of duckduckgo's redirects that
+relatively low-level, all occurrences of duckduckgo's redirects that
 are parsed with =shr= are replaced with the clean version.
 
 #+name: un-duckduckgo-url
