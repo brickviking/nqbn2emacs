@@ -291,8 +291,9 @@ Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     | -(DOS)@--- | Dos encoding (CRLF 0x0D 0x0A) |
     | -(Mac)@--- | Mac OS X encoding (CR  0x0D)  |
     |------------+-------------------------------|
-Also check [[#how-to-set-a-buffers-line-encoding-from-text-mode][How to set a buffer's line-encoding from text mode]]
+Also check [[How to set a buffer's line-encoding from text mode]]
  
+
 ** Dired
 These are some of the commands that can be used in a dired buffer. For all intents, you can do nearly
 everything in here that you could do from a commandline—deletion, moving or renaming. Of course, creation
@@ -545,9 +546,6 @@ running inside vterm—for example, the vim editor.
   (split-window))
 #+END_SRC
 *** How to set a buffer's line-encoding from text mode
-:PROPERTIES:
-:CUSTOM_ID: how-to-set-a-buffers-line-encoding-from-text-mode
-:END:
 #+BEGIN_QUOTE
 - <spudpnds> C-x RET f {unix,mac,dos}  M-x set-buffer-file-coding-system
 - <spudpnds> https://www.emacswiki.org/emacs/EndOfLineTips
