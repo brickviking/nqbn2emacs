@@ -45,7 +45,7 @@ reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 
 * Emacs
 ** What different keys mean
-Throughout this documentation, and indeed most Emacs documents that I've read, they abbreviate key prefixes
+Throughout this documentation, and indeed most Emacs documents that I've read, key prefixes are abbreviated
 according to the following list. This was basically cribbed from the following document in the manual:
 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Modifier-Keys.html][Listing of modifier keys]]
 
