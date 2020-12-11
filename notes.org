@@ -324,7 +324,7 @@ select k. You can also remove file patterns by first selecting by regexp as foll
 M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
 #+END_SRC
 This marks everything that matches the =*.xml= pattern. Then hit =k= to remove the xml files from the listing. 
-The same thing can be done (if you wish to remove files with a matching extension) with \*. as follows:
+The same thing can be done (if you wish to remove files with a matching extension) with =*.= as follows:
 =*.xml=
 ** Org Mode
 :PROPERTIES:
