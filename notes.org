@@ -2,9 +2,10 @@
 #+SUBTITLE: Notes for anything I think of
 #+AUTHOR: brickviking (yes, me!)
 #+TAGS: emacs vim cheatsheet keys soundtracks programming
-#+OPTIONS: _:nil toc:nil
+#+OPTIONS: _:nil toc:nil num:nil
 #+OPTIONS: ^:{}
 #+STARTUP: showeverything inlineimages
+#+UNNUMBERED: t
 
 #+BEGIN_abstract
 Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. Addresses Emacs and Vim.
@@ -114,7 +115,7 @@ the Alt flag.
    |-----+---------------------+----------------------------------|
 
 ** Movement keys
-Info link: [[info:Emacs#Moving point][Moving point]]
+Info link: [[info:emacs#Moving point][Moving point]]
 
 Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both have far richer ways of moving the
 cursor around a text file, by either a character (or multiple characters at once), a word or a line. In the table
