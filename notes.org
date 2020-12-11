@@ -225,7 +225,7 @@ file that emacs can use directly. The non-source sections describe the rest of i
 the whole literate programming idea, but it started with Donald Knuth in his seminal work
 The Art of Computer Programming.
 
-I describe further things down in the [[Org Mode]] section.
+I describe further things down in the [[#Org_Mode][Org Mode]] section.
 *** vterm
 Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
@@ -327,11 +327,14 @@ This marks everything that matches the *.xml pattern. Then hit k to remove the x
 The same thing can be done (if you wish to remove files with a matching extension) with *. as follows:
 =*.xml=
 ** Org Mode
+:PROPERTIES:
+:CUSTOM_ID: Org_Mode
+:END:
 [[http://orgmode.org/][Link to home page]]
 
 [[https://orgmode.org/manual/][Link to online manual]]
 
-Link to local manual (only works inside emacs): [[info:org#Top][Top of Org info document]]
+Link to local manual (only works inside emacs): [[info:org#Top][Org info document]]
 ‘C-c C-x I’ in an Org file tries to open a suitable section of the Org
 manual depending on the syntax at point.
 
