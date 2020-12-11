@@ -323,8 +323,8 @@ select k. You can also remove file patterns by first selecting by regexp as foll
 #+BEGIN_SRC emacs-lisp
 M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
 #+END_SRC
-This marks everything that matches the *.xml pattern. Then hit k to remove the xml files from the listing. 
-The same thing can be done (if you wish to remove files with a matching extension) with *. as follows:
+This marks everything that matches the =*.xml= pattern. Then hit =k= to remove the xml files from the listing. 
+The same thing can be done (if you wish to remove files with a matching extension) with \*. as follows:
 =*.xml=
 ** Org Mode
 :PROPERTIES:
@@ -334,8 +334,8 @@ The same thing can be done (if you wish to remove files with a matching extensio
 
 [[https://orgmode.org/manual/][Link to online manual]]
 
-Link to local manual (only works inside emacs): [[info:org#Top][Org info document]]
-‘C-c C-x I’ in an Org file tries to open a suitable section of the Org
+Link to the org-mode [[info:org#Top][local manual]].
+=C-c C-x I= in an Org file tries to open a suitable section of the Org
 manual depending on the syntax at point.
 
 + Tab on */+ line expands/compacts tree
