@@ -145,11 +145,12 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
   + Puts the cursor at the left-most position of the current line.
 *** =C-e= - =end-of-line=
   + Puts the cursor at the right-most position of the current line, usually the last character even if that is a space.
-*** =C-Down= - =forward-paragraph=     
+*** =C-Down= - =forward-paragraph=
   + Steps the cursor forward to the first character of the next paragraph
 *** =C-Up= - =backward-paragraph=
   + Step the cursor backward to the first character of the previous paragraph
-
+*** =M-g c <num>=  =goto-char=
+  + Step the cursor to the offset specified, i.e. =M-g c 2304= moves point to character 2304.
 ** Editing keys
 Info link: [[info:emacs#Basic Undo][Basic Undo]]
 
