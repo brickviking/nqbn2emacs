@@ -45,9 +45,9 @@ reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 
 * Emacs
 ** What different keys mean
-Throughout this documentation, and indeed most Emacs documents that I've read, key prefixes are abbreviated
-according to the following list. This was basically cribbed from the following document in the manual:
-[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Modifier-Keys.html][Listing of modifier keys]]
+Throughout this documentation, and indeed most Emacs documents that I've read, key prefixes are
+abbreviated according to the following list. This was basically cribbed from the following
+[[info:Emacs#Modifier Keys][listing of modifier keys]] in the manual.
 
 If a key is shown as <F2> that means to hit the =F2= keyboard at the top of the keyboard, not the two keys F and 2.
 <Tab> means the =Tab= key on the left hand side, not the three characters T, a and b. <RET> is simply the Return
@@ -58,8 +58,10 @@ as long as you hold down the =Control= and =Alt= keys and then tap the =V= key (
 In the minibuffer (the blank section right at the bottom of the Emacs program), the keystrokes will show
 up in their abbreviated form.
 
-In addition, all letters are usually shown in their lowercase form, even though most keyboards show the
-uppercase letters on their keycaps.
+In addition, all letters (aside from prefixes) are usually shown in their lowercase form, even though most
+keyboards show the uppercase letters on their keycaps. In most cases, unless you specify otherwise,
+Emacs will assume that the uppercase letters from A..Z are the same as lowercase when combined with any
+of the prefix keys.
 
 *** Key: =C-=
  + Long name: Control
@@ -91,12 +93,13 @@ the Alt flag.
 *** Key: =A-=
   + Long name: Alt
   + Note: This key on the keyboard actually issues =Meta= keystroke, not an Emacs =Alt= keystroke.
-    As a result, there aren't many Emacs keybindings that use Alt-something, and most commands use Meta-something.
-
+    As a result, there aren't many Emacs keybindings that use Alt-something, and most commands use
+    Meta-something.
 *** Key: =s-=
   + Long name: Super
   + Alternative: Windows
   + Note: Often used by the operating system especially on Windows
+  + This is not the uppercase S used for Shift keys, but a lowercase s.
 *** Key: =H-=
   + Long name: Hyper
   + Alternative: No modern equivalent
@@ -111,6 +114,8 @@ the Alt flag.
    |-----+---------------------+----------------------------------|
 
 ** Movement keys
+Info link: [[info:Emacs#Moving point][Moving point]]
+
 Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both have far richer ways of moving the
 cursor around a text file, by either a character (or multiple characters at once), a word or a line. In the table
 below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will be indicated as RMB/LMB. Lines look like this:
@@ -146,10 +151,11 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
   + Step the cursor backward to the first character of the previous paragraph
 
 ** Editing keys
-Further reference: [[info:emacs#Basic Undo][info:emacs#Basic Undo]] (info "(emacs) Basic Undo")
+Info link: [[info:emacs#Basic Undo][Basic Undo]]
+
 These are some of the keys responsible for deleting or copying text to a "kill-ring" to restore later. 
-Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental mode, though a lot of it is
-also relevant for most other modes that aren't org-mode.
+Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental
+mode, though a lot of it is also relevant for most other modes that aren't org-mode.
 
 *** =C-x u= - =undo=
   + Description: Undoes the last action, whether that was text insertion or deletion.
@@ -173,7 +179,7 @@ only in a region.
 *** =C-y= - =yank=
   + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= will restore earlier points on the kill-ring instead of the most recent entry.
 ** Display of long lines
-Reference: (info "(emacs)Continuation Lines")
+Info link: [[info:emacs#Continuation Lines][Continuation Lines]]
 
 Emacs will display lines for text files in one of three ways, either line-truncated, with a symbol on the end to
 let you know there's more, or line-wrapped, with an arrow in the fringe (or a $ for text terminals) for lines that
@@ -182,10 +188,19 @@ words. This makes these long lines a bit more readable. Visual-line-mode is a mi
 with =M-x visual-line-mode=. Ordinary line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 
 ** Cock-ups
+These are some of the few things I've found out so far that tend to break without obvious reasons, or
+not be obvious to the really new Emacs user.
    * When starting a remote file access, don't run M-x tramp first. Things will break.
-   * A docstring is not info documentation. =C-h f= gives you docstrings, but go to relevant info manual for details.
-   * Don't blindly accept local variable exec sections, emacs could break when trying to save or quit.
+   * A docstring is not info documentation. =C-h f= gives you docstrings, but go to relevant info manual
+     for details.
+   * Don't blindly accept local variable exec sections when loading a file, Emacs could break when 
+     trying to save or quit. I once got to the stage where I couldn't close Emacs down legitimately.
 ** Help
+Info link: [[info:emacs#Help][Help]]
+
+What follows is a rough summary of the available help commands. The first is pretty important. More
+complete details are available from the info manual.
+
 *** =C-h C-h=
 Metahelp: a front page to other help pages.
 *** =C-h C-C= - Copyright notice
@@ -230,36 +245,59 @@ I describe further things down in the [[#org-mode-1][Org Mode]] section.
 Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
-
+** Plugins recommended by others
 On the other hand, these are some plugins that come as a recommendation from someone in
- irc:#emacs@chat.freenode.org, I can't personally vouch for these plugins, I haven't used them myself.
+irc:#emacs@chat.freenode.org, I can't personally vouch for these plugins, I haven't used them myself.
   + flyspell - expensive on computation
   + wc-mode
   + writegood
 
-** Windows/Frames
-These commands all work with windows and frames. A frame is a collection of one or more buffers, divided
-among one or more windows. A window is a "division" of the frame, usually showing the contents of a
-buffer.
-   |------------------------------------+------------------------|
-   | Command                            | Key                    |
-   |------------------------------------+------------------------|
-   | Cycle through visible windows      | C-x o                  |
-   | Focus buffer to whole window       | C-x 1                  |
-   | Split window Top/Bottom            | C-x 2                  |
-   | Split window Left/Right            | C-x 3                  |
-   | Open new file in another window    | C-x 4 f                |
-   | Scroll other window                | down C-M-v, up C-M-S-v |
-   | Close frame                        | C-x 5 0                |
-   | clone-indirect-buffer-other-window | C-x 4 c                |
-   |------------------------------------+------------------------|
+** Windows
+Info link: [[info:Emacs#Windows][Window commands]]
+
+These commands all work with windows within a frame. A frame is a collection of one or more buffers,
+divided among one or more windows. A window is a "division" of the frame into one or more, usually
+showing the contents of a buffer. Not all buffers have to be visible, but loaded buffers can usually
+be displayed in a window.
+   |----------------------------------------+------------------------|
+   | Command                                | Key                    |
+   |----------------------------------------+------------------------|
+   | Cycle through visible windows          | C-x o                  |
+   | Focus buffer to single window in frame | C-x 1                  |
+   | Split window Top/Bottom                | C-x 2                  |
+   | Split window Left/Right                | C-x 3                  |
+   | Open new file in another window        | C-x 4 f                |
+   | clone-indirect-buffer-other-window     | C-x 4 c                |
+   | Scroll other window                    | down C-M-v, up C-M-S-v |
+   |----------------------------------------+------------------------|
 Note on the clone-indirect-buffer-other-window: this is a way to get a new buffer with its own separate
 point and mark. This is useful if you want to show another section of the same file without scrolling
-the other buffer in the process.
+the other buffer in the process. Changes in the content of the buffer will be duplicated in any other
+buffer pointing to that same content.
+** Frames
+Info link: [[info:Emacs#Frames][Frame commands]]
+
+These commands all relate to working with frames, as opposed to windows or buffers. As described above,
+frames are collections of buffers organised amongst one or more windows per frame. Most of these commands
+rely on a graphical display being present (either of Xorg/Wayland/Aqua/Windows) as opposed to a purely
+textual display (as in a terminal emulator).
+
+   |-----------------------------------+---------|
+   | Command                           | Key     |
+   |-----------------------------------+---------|
+   | Create new frame                  | C-x 5 2 |
+   | Cycle between available frames    | C-x 5 o |
+   | Minimize currently focussed frame | C-z     |
+   | Close frame altogether            | C-x 5 0 |
+   |                                   |         |
+   |-----------------------------------+---------|
 ** Buffers
+Info link: [[info:Emacs#Buffers][Buffer commands]]
+
 A buffer holds the contents of a file, whether an on-disk file or a on-the-fly buffer containing a 
 command's output, such as the *Messages* buffer, the *Completions* buffer, or the *Help* buffer.
 These keys work with open buffers and allow you to change between them or even create new ones.
+They are also great mates with the Window and Frame commands mentioned previously.
 
 *** =C-x b= - =switch-to-buffer=
   + Description: Switch to named buffer, creating it if needed.
@@ -295,9 +333,9 @@ Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     | -(Mac)@--- | Mac OS X encoding (CR  0x0D)  |
     |------------+-------------------------------|
 Also check [[#how-to-set-a-buffers-line-encoding-from-text-mode][How to set a buffer’s line-encoding from text mode]]
-
-
 ** Dired
+Info link: [[info:emacs#Dired][Dired]]
+
 These are some of the commands that can be used in a dired buffer. For all intents, you can do nearly
 everything in here that you could do from a commandline—deletion, moving or renaming. Of course, creation
 is done by simply opening a new buffer and saving it to a location that you enter when you type
@@ -330,15 +368,15 @@ The same thing can be done (if you wish to remove files with a matching extensio
 :PROPERTIES:
 :CUSTOM_ID: org-mode-1
 :END:
-[[http://orgmode.org/][Link to home page]]
+[[http://orgmode.org/][Org mode home page]]
 
-[[https://orgmode.org/manual/][Link to online manual]]
+[[https://orgmode.org/manual/][Online manual]]
 
-Link to the org-mode [[info:org#Top][local manual]].
+Info link: [[info:org#Top][local org-mode manual]].
 =C-c C-x I= in an Org file tries to open a suitable section of the Org
 manual depending on the syntax at point.
 
-+ =Tab= on */+ line expands/compacts tree:
++ =Tab= on */+/-/1 line expands/compacts tree (if present):
   1) First time: expand one level below point without exposing text.
   2) Second time: expand all levels below point including text.
   3) Third time: compact all levels below point back to heading.
@@ -360,7 +398,7 @@ manual depending on the syntax at point.
 + =C-c C-v C-t=  Tangle source code blocks to relevant file.
     This means different things depending on how you've demarcated your source blocks. I use it
     to generate =.emacs.el= from a =.emacs.org= file, with all the bits I want to fire out to there
-    inside =#+BEGIN_SRC emacs-lisp ... #+END_SRC= markers, and the surrounding text describes the
+    inside =#+BEGIN_SRC emacs-lisp ... #+END_SRC= markers, and I use surrounding text to describe the
     source blocks.
 + =C-c C-e=  Export, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
      or \LaTeX.
@@ -489,15 +527,27 @@ There's a lot more that I haven't added, perhaps (info "(magit)Top") will help o
 have magit installed.
 
 ** erc
-   + quit server: C-c C-x
-   + Join channel:  C-c C-j
-   + Change to channel with activity: C-c C-Space
+Info Link: [[info:erc#Top][Erc manual]]
+
+Erc is an Internet Relay Client that comes as delivered with Emacs. It allows access to any IRC server
+with suitable defaults set up for freenode. The #emacs community on Freenode is quite active, and will
+help you out with most of your questions. Be prepared to also do some reading.
+   |---------------------------------+-------------|
+   | Command                         | Key         |
+   |---------------------------------+-------------|
+   | quit server                     | C-c C-x     |
+   | Join channel                    | C-c C-j     |
+   | Change to channel with activity | C-c C-Space |
+   |---------------------------------+-------------|
 ** EXWM
-EXWM is an X window manager, written to use emacs as the controlling window.
+EXWM is an X window manager, that uses Emacs to control placement of frames or application windows.
+This needs to be expanded further, though I haven't had this in operation yet. Here's a snippet 
+from IRC log:
+#+BEGIN_QUOTE
 [18:51:34]<oni-on-ion> for EXWM, does anyone know how to "unfloat" a window ?
 [18:52:18]<oni-on-ion> i am using an external API that throws the window right in the middle of the screen over top of everything =/
 [18:53:36]<jamzattack> oni-on-ion: C-c C-t C-f runs the command exwm-floating-toggle-floating
-
+#+END_QUOTE
 ** vterm
 Doesn't come as standard with emacs, but is well worth the install. Running other programs inside vterm
 can come with a couple of pitfalls though, especially if you're expecting to run vim, which actually
@@ -506,6 +556,10 @@ make your selection, copy it to the killring (or is it yank ring?), then toggle 
 again. Toggling it back off allows commands such as M-w to be passed through to the program you're
 running inside vterm—for example, the vim editor.
 ** Snippets from freenode#emacs
+These are all questions that have turned up in the #Emacs channel, they've had varying responses. In
+some cases I've left the discussions mostly unaltered, sometimes I've compacted the conversation to
+address just the subject being discussed.
+
 *** How to search/replace all * at B.O.L. with the same number of #
 #+BEGIN_QUOTE
 - <laertus> i need some search and replace help...  [19:53]
