@@ -223,6 +223,8 @@ I tend to use it for literate configuration of emacs, as I can "tangle" the sour
 file that emacs can use directly. The non-source sections describe the rest of it. I won't go into
 the whole literate programming idea, but it started with Donald Knuth in his seminal work
 The Art of Computer Programming.
+
+I describe further things down in the [[Org Mode]] section.
 *** vterm
 Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
@@ -323,12 +325,12 @@ M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
 This marks everything that matches the *.xml pattern. Then hit k to remove the xml files from the listing. 
 The same thing can be done (if you wish to remove files with a matching extension) with *. as follows:
 =*.xml=
-** Org mode
-[[https://orgmode.org/manual/][Link to online manual]]
-
+** Org Mode
 [[http://orgmode.org/][Link to home page]]
 
-Link to local manual (only works inside emacs): (info "(org)Top")
+[[https://orgmode.org/manual/][Link to online manual]]
+
+Link to local manual (only works inside emacs): [[info:org#Top][Top of Org info document]]
 ‘C-c C-x I’ in an Org file tries to open a suitable section of the Org
 manual depending on the syntax at point.
 
@@ -358,13 +360,16 @@ manual depending on the syntax at point.
 + export C-c C-e, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
      or \LaTeX.
 + Shift-right/left (on header) Cycle through TODO/DONE/nothing or defined tags, see [[header_tags]]
++ C-c C-w (after having saved the file), Refile heading somewhere else 
+  + thanks to [[https://www.youtube.com/watch?v=LFO2UbzbZhA][Mike Zamansky's Org-mode video.]]
 *** Table syntax
 #+BEGIN_SRC
 |--------------+-------------------|  <-- divider line, start with |- and hit tab
 | First Header | Second header ... |
 |--------------+-------------------|  <-- divider line
-| First cell   | Second cell      _|  <-- hit Tab at cursor location, creates new
+| First cell   | Second cell       |  <-- hit Tab at cursor location, creates new
 | . . .        | . . .             |      table row if there isn't one
+| nth cell     | nth cell          |  <-- Continue as needed, or finish table.
 #+END_SRC
 *** header_tags
   |---------------+------------------------+--------------------------------------|
@@ -404,8 +409,8 @@ or alternatively simply
 Description (if you provide it) should be short, no more than perhaps five words.
 URL is anything supported by the Org internals, this can include:
 #+BEGIN_SRC org
-+ http links: http://example.com/ 
-+ info links: (info "(org)Top")
++ http links: http://example.com/
++ info links: [[info:org#Top]]
 + internal org-mode links [[magit]]
 #+END_SRC
 
@@ -647,6 +652,9 @@ https://www.emacswiki.org/emacs/EmacsScreencasts
     + [[https://sachachua.com/blog/wp-content/uploads/2013/05/How-to-Learn-Emacs-v2-Large.png][How to learn Emacs]] - a one-page image great for people completely new to Emacs who want to learn the basics.
     + [[https://sachachua.org/blog][Blog articles by a long-time Emacs user]]
     + [[https://emacslife.com/][An Emacs Life]]
+** Things to find out about
+*** org-pdfview and pdftools
+*** How to remove numbers from headers in HTML/PDF exports
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
