@@ -5,7 +5,6 @@
 #+OPTIONS: _:nil toc:nil num:nil
 #+OPTIONS: ^:{}
 #+STARTUP: showeverything inlineimages
-#+UNNUMBERED: t
 
 #+BEGIN_abstract
 Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. Addresses Emacs and Vim.
@@ -713,7 +712,12 @@ https://www.emacswiki.org/emacs/EmacsScreencasts
     + [[https://emacslife.com/][An Emacs Life]]
 ** Things to find out about
 *** org-pdfview and pdftools
+Looks like org-pdfview has been replaced by org-pdftools. I had warnings when I loaded that package.
+I think pdftools is the debian or fedora package texlive-pdftools.
 *** How to remove numbers from headers in HTML/PDF exports
+I seem to have run into a bit of a bug when exporting to PDF. I have a TOC header, but no list of
+headers in that TOC. Strange thing is, the HTML works and shows a full Contents list. Thankfully
+they don't have numbers.
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
