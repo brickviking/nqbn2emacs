@@ -338,33 +338,33 @@ Link to the org-mode [[info:org#Top][local manual]].
 =C-c C-x I= in an Org file tries to open a suitable section of the Org
 manual depending on the syntax at point.
 
-+ Tab on */+ line expands/compacts tree
-  1) First time: expand one level below point without exposing text
-  2) Second time: expand all levels below point including text
-  3) Third time: compact all levels below point back to heading
++ =Tab= on */+ line expands/compacts tree:
+  1) First time: expand one level below point without exposing text.
+  2) Second time: expand all levels below point including text.
+  3) Third time: compact all levels below point back to heading.
    NB: if you put your cursor AFTER the ... of an unexpanded heading and then hit Tab
-   then you'll perhaps see "EMPTY ENTRY" in the minibuffer
-+ S-tab   global expansion
-  1) expand all headings without exposing text
-  2) expand entire document (headings, text, etc)
-  3) compact entire document to top headings
-+ Shift-Right on list cycles between bullet settings: +/*/1./1)/-
-+ Shift-Up/Down on header (change priority #A/#B/#C, to customize this: #+PRIORITIES A E E)
-+ M-Up/Down Shift line above/below
-+ M-Left/Right Promote/demote entry for headings and list members
-+ M-S-Left/Right Promote/demote heading and everything below
+   then you'll perhaps see "EMPTY ENTRY" in the minibuffer.
++ =S-tab=   global expansion:
+  1) expand all headings without exposing text.
+  2) expand entire document (headings, text, etc).
+  3) compact entire document to top headings.
++ =S-Right/Left= on list cycles between bullet settings: +/*/1./1)/-
++ =S-Right/Left= (on header) Cycle through TODO/DONE/nothing or defined tags, see [[header_tags]]
++ =S-Up/Down= on header (change priority #A/#B/#C, to customize this: #+PRIORITIES A E E)
++ =M-Up/Down= Shift line above/below
++ =M-Left/Right= Promote/demote entry for headings and list members
++ =M-S-Left/Right= Promote/demote heading and everything below
 + Some tags don't appear to work except for export/archive mode, including #+TAGS
 + Checkboxes [ ] [X]
-+ demarcate block (wrap it in #+BEGIN_SRC ... #+END_SRC)   C-c C-v d	(org-babel-demarcate-block)
-+ C-c C-v C-t  Tangle source code blocks to relevant file.
++ demarcate block (wrap it in =#+BEGIN_SRC ... #+END_SRC=)   =C-c C-v d=	(org-babel-demarcate-block)
++ =C-c C-v C-t=  Tangle source code blocks to relevant file.
     This means different things depending on how you've demarcated your source blocks. I use it
-    to generate .emacs.el from a .emacs.org file, with all the bits I want to fire out to there
-    inside #+BEGIN_SRC emacs-lisp ... #+END_SRC markers, and the surrounding text describes the
+    to generate =.emacs.el= from a =.emacs.org= file, with all the bits I want to fire out to there
+    inside =#+BEGIN_SRC emacs-lisp ... #+END_SRC= markers, and the surrounding text describes the
     source blocks.
-+ export C-c C-e, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
++ =C-c C-e=  Export, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
      or \LaTeX.
-+ Shift-right/left (on header) Cycle through TODO/DONE/nothing or defined tags, see [[header_tags]]
-+ C-c C-w (after having saved the file), Refile heading somewhere else 
++ =C-c C-w= (after having saved the file), Refile heading somewhere else.
   + thanks to [[https://www.youtube.com/watch?v=LFO2UbzbZhA][Mike Zamansky's Org-mode video.]]
 *** Table syntax
 #+BEGIN_SRC
