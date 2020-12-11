@@ -90,7 +90,8 @@ the Alt flag.
 
 *** Key: =A-=
   + Long name: Alt
-  + Note: This key on the keyboard actually issues =Meta= keystroke, not an Emacs =Alt= keystroke. As a result, there aren't many Emacs keybindings that use Alt-something, and most commands use Meta-something.
+  + Note: This key on the keyboard actually issues =Meta= keystroke, not an Emacs =Alt= keystroke.
+    As a result, there aren't many Emacs keybindings that use Alt-something, and most commands use Meta-something.
 
 *** Key: =s-=
   + Long name: Super
