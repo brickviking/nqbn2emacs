@@ -151,6 +151,14 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
   + Step the cursor backward to the first character of the previous paragraph
 *** =M-g c <num>=  =goto-char=
   + Step the cursor to the offset specified, i.e. =M-g c 2304= moves point to character 2304.
+*** =C-Home= - =beginning-of-buffer=
+  + Moves the cursor to the beginning of the buffer
+  + With optional arg between 0 and 10, positions cursor arg*10 percent
+    from the beginning of the buffer
+*** =C-End= - =end-of-buffer=
+  + Moves the cursor to the beginning of the buffer
+  + With optional arg between 0 and 10, positions cursor arg*10 percent
+    from the end of the buffer
 ** Editing keys
 Info link: [[info:emacs#Basic Undo][Basic Undo]]
 
@@ -695,6 +703,8 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
 [15:05:43]<ryouma> org-store-link perhaps does not do this, at least if the recipient doe snot run org-link-minor-mode [[info:dir#Top][info:dir#Top]]
 [15:08:29]<ryouma> it does work in org though
 [15:09:04]<ryouma> kinda redundant there isn't it where org puts label same as url
+*** How to access the menubar from terminal
+    + Either of the following: <F10> or  <ESC> `
 ** tias moments (Try It And See)
 *** Resize images dynamically
 [16:52:32]<Viking667> Hm. I stumbled across something nice in org-mode, if inline-images are shown and they're all huge, put mouse pointer on one, and go Ctl-Scrollwheel-Down. WAIT between each resize, it can take a while on older computers.
