@@ -341,7 +341,20 @@ Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     | -(DOS)@--- | Dos encoding (CRLF 0x0D 0x0A) |
     | -(Mac)@--- | Mac OS X encoding (CR  0x0D)  |
     |------------+-------------------------------|
-Also check [[#how-to-set-a-buffers-line-encoding-from-text-mode][How to set a buffer’s line-encoding from text mode]]
+    Also check [[#how-to-set-a-buffers-line-encoding-from-text-mode][How to set a buffer’s line-encoding from text mode]]
+** Input
+Info link: [[info:emacs#Selecting Input Methods][Selecting input methods]]
+
+*** Changing input language character set.
+    Sometimes you have to change what language you input characters with, even if you only have a US keyboard and layout.
+Emacs supports input of multiple character sets, to change between them, use =C-x RET C-\=, which will then prompt you for an input method.
+Hitting =Tab= at this point will supply you with a list of everything that Emacs knows how to input. You will of course
+also need font support to display any of the characters you wish to input. A good Unicode font will help here. For normal use
+(inputting English or other latin-based text), a lot of people tend to use TeX input. You can also get a list of supported
+inputs with =M-x list-input-methods=.
+
+Examples of input include chinese-py (Simplified Chinese using pinyin), japanese-hiragana (hiragana using romaji), and greek
+(Greek characters). There are many more variants as well.
 ** Dired
 Info link: [[info:emacs#Dired][Dired]]
 
