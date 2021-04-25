@@ -50,8 +50,8 @@ abbreviated according to the following list. This was basically cribbed from the
 [[info:Emacs#Modifier Keys][listing of modifier keys]] in the manual.
 
 If a key is shown as <F2> that means to hit the =F2= keyboard at the top of the keyboard, not the two keys F and 2.
-<Tab> means the =Tab= key on the left hand side, not the three characters T, a and b. <RET> is simply the Return
-key, or =Enter= on most modern keyboards.
+<Tab> means the =Tab= key on the left hand side, not the three characters T, a and b. <RET> is simply the =Return=
+key, or =Enter= on most modern keyboards. 
 
 This means that instead of having to type the words Control-Meta-V, Emacs will do what you want
 as long as you hold down the =Control= and =Alt= keys and then tap the =V= key (and let everything go).
@@ -80,8 +80,11 @@ of the prefix keys.
  + Note: Can be used in place of Alt, but you hit this and then let it go before using the next key
 *** Key: =<RET>=
   + Long name: Return
+  + Other long name: =<return>=
   + Alternatives: Enter/Ent
-  + Note: In emacs docs, shown as RET
+  + Note: In emacs docs, shown as RET. =RET= is the same as =C-m= (or =C-j=).  The actual =<return>= key can only be
+    accessed in a graphical environment and is translated to =RET= but can be bound independently. (Thanks to
+    Jamie Beardslee for the extra information).
 ** Rare modifier keys
 These keys aren't used very often, and in the case of Super and Hyper, aren't used at all in default Emacs.
 If you don't have the modifier keys (or you haven't already bound them to existing keys on your keyboard),
