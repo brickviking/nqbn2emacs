@@ -701,9 +701,11 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
 #+END_SRC
 *** How to grab an org-mode link to an info document
 #+BEGIN_QUOTE
-- [14:51:19]<Viking667> If I'm in an emacs info window, how do I grab the "link to that info page" for use somewhere else? for example, to include in an org-mode document?
-- [14:51:49]<grym> Viking667: org-store-link maaaybe
-- [14:51:52]<Viking667> Ordinarily in a web browser I'd go C-l C-c, and then paste the link from the address.
+[14:51:19]<Viking667> If I'm in an emacs info window, how do I grab the "link to that info page" for use somewhere else? for example, to include in an org-mode document?
+
+[14:51:49]<grym> Viking667: org-store-link maaaybe
+
+[14:51:52]<Viking667> Ordinarily in a web browser I'd go C-l C-c, and then paste the link from the address.
 - [14:52:02]<TRS-80> Viking667: yes what grym said
 - [14:52:29]<TRS-80> I have that command bound globally, because I use it everywhere all the time
 - [14:52:46]<shoshin> yeah org-store-link works in everything emacs afaik
