@@ -727,8 +727,10 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
     + Either of the following: <F10> or  <ESC> `
 ** tias moments (Try It And See)
 *** Resize images dynamically
+#+BEGIN_SRC
 [16:52:32]<Viking667> Hm. I stumbled across something nice in org-mode, if inline-images are shown and they're all huge, put mouse pointer on one, and go Ctl-Scrollwheel-Down. WAIT between each resize, it can take a while on older computers.
 [16:53:09]<Viking667> I'm not sure if it's applicable in other places too. Nice thing about it is that only the image gets resized, not the buffer text.
+#+END_SRC
 ** Other useful links, channels and the like
 *** Mike Zamansky - Using Emacs
 https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
