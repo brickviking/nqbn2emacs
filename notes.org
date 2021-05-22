@@ -700,6 +700,7 @@ mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin: this did i
 emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name . "notmuch"))' --display $DISPLAY
 #+END_SRC
 *** How to grab an org-mode link to an info document
+#+BEGIN_QUOTE
 [14:51:19]<Viking667> If I'm in an emacs info window, how do I grab the "link to that info page" for use somewhere else? for example, to include in an org-mode document?
 [14:51:49]<grym> Viking667: org-store-link maaaybe
 [14:51:52]<Viking667> Ordinarily in a web browser I'd go C-l C-c, and then paste the link from the address.
@@ -719,6 +720,7 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
 [15:05:43]<ryouma> org-store-link perhaps does not do this, at least if the recipient doe snot run org-link-minor-mode [[info:dir#Top][info:dir#Top]]
 [15:08:29]<ryouma> it does work in org though
 [15:09:04]<ryouma> kinda redundant there isn't it where org puts label same as url
+#+END_QUOTE
 *** How to access the menubar from terminal
     + Either of the following: <F10> or  <ESC> `
 ** tias moments (Try It And See)
