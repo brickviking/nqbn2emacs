@@ -268,9 +268,10 @@ irc:#emacs@chat.freenode.org, I can't personally vouch for these plugins, I have
 Info link: [[info:Emacs#Windows][Window commands]]
 
 These commands all work with windows within a frame. A frame is a collection of one or more buffers,
-divided among one or more windows. A window is a "division" of the frame into one or more, usually
-showing the contents of a buffer. Not all buffers have to be visible, but loaded buffers can usually
-be displayed in a window.
+displayed in one or more windows. A window is a "division" of the frame into one or more sections,
+each one usually showing the contents of a buffer. Not all buffers have to be visible, but loaded
+buffers can usually be displayed in a window. Don't confuse buffers with windows, they are different,
+but windows effectively contain buffers.
    |----------------------------------------+------------------------|
    | Command                                | Key                    |
    |----------------------------------------+------------------------|
@@ -290,9 +291,11 @@ buffer pointing to that same content.
 Info link: [[info:Emacs#Frames][Frame commands]]
 
 These commands all relate to working with frames, as opposed to windows or buffers. As described above,
-frames are collections of buffers organised amongst one or more windows per frame. Most of these commands
-rely on a graphical display being present (either of Xorg/Wayland/Aqua/Windows) as opposed to a purely
-textual display (as in a terminal emulator).
+a frame is what most people would call a "window" in most other contexts. Frames are collections of
+buffers organised amongst one or more windows per frame.
+
+Most of these commands rely on a graphical display being present (either of Xorg/Wayland/Aqua/Windows)
+as opposed to a purely textual display (as in a terminal emulator). 
 
    |-----------------------------------+---------|
    | Command                           | Key     |
@@ -306,8 +309,11 @@ textual display (as in a terminal emulator).
 ** Buffers
 Info link: [[info:Emacs#Buffers][Buffer commands]]
 
-A buffer holds the contents of a file, whether an on-disk file or a on-the-fly buffer containing a 
-command's output, such as the *Messages* buffer, the *Completions* buffer, or the *Help* buffer.
+A buffer holds either:
+  + the contents of a file, perhaps an on-disk file,
+  + or an on-the-fly buffer perhaps containing a command's output or output from an emacs function.
+
+Examples of the latter include the *Messages* buffer, the *Completions* buffer, or the *Help* buffer.
 These keys work with open buffers and allow you to change between them or even create new ones.
 They are also great mates with the Window and Frame commands mentioned previously.
 
@@ -315,8 +321,10 @@ They are also great mates with the Window and Frame commands mentioned previousl
   + Description: Switch to named buffer, creating it if needed.
   + Note: there's no requirement to have a physical disk file providing the contents for the buffer.
 *** =C-x C-b= - =list-buffers=
-  + Description: Splits the window into two and displays buffer selection window containing a list of open buffers in the newly-created window.
-  + Note: q closes the window, other keys are shown in the section about the Buffer Selection window.
+  + Description: Splits the current window into two and displays the buffer selection window containing a
+    list of open buffers in the newly-created window.
+    Change to the window to work with the entries in the buffer-selection window.
+  + Note: q closes the window, other keys are shown in the Buffer Selection section.
 *** =C-x 4 b= - =switch-to-buffer-other-window=
   + Description: Swap to buffer in other window, creating a new window (and perhaps buffer) if necessary
 *** Buffer selection window
@@ -364,31 +372,36 @@ Info link: [[info:emacs#Dired][Dired]]
 These are some of the commands that can be used in a dired buffer. For all intents, you can do nearly
 everything in here that you could do from a commandline—deletion, moving or renaming. Of course, creation
 is done by simply opening a new buffer and saving it to a location that you enter when you type
-=C-x s=. You can move using the usual cursor motion commands, either Up/Down/Left/Right or C-n C-p.
+=C-x s=. You can move using the usual cursor motion commands, either Up/Down/Left/Right or C-n/C-p.
 
 With regard to moving by "pages", you can insert the content of subdirectories in each dired buffer with
 the command M-x dired-insert-subdir. That content will appear below the content of the top directory, with each
 subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move between those pages.
 
-|-------------------+------+----------------------------------------------------|
-| Command           | Keys | Notes                                              |
-|-------------------+------+----------------------------------------------------|
-| mark for deletion | d    | Once you've marked files, use x to delete them all |
-| Delete now        | D    | Will ask for confirmation                          |
-| Unmark one/all    | u    |                                                    |
-| Mark by extension | *.   | Requests an extension to apply marks with          |
-| Kill              | k    | Remove marked files from listing                   |
-| Toggle marks      | t    | Invert whatever marks are present                  |
-|-------------------+------+----------------------------------------------------|
+|--------------------+------+----------------------------------------------------|
+| Command            | Keys | Notes                                              |
+|--------------------+------+----------------------------------------------------|
+| mark for deletion  | d    | Once you've marked files, use x to delete them all |
+| Delete now         | D    | Will ask for confirmation                          |
+| Unmark one entry   | u    | Only unmarks if marked already                     |
+| Unmark all entries | U    | Removes all marks in the dired buffer              |
+| Mark by extension  | *.   | Requests an extension to apply marks with          |
+| Kill               | k    | Remove marked files from listing                   |
+| Toggle marks       | t    | Invert whatever marks are present                  |
+|--------------------+------+----------------------------------------------------|
 
-To remove certain files from the listing (this does not delete them from the disk), mark them first, then
-select k. You can also remove file patterns by first selecting by regexp as follows: 
+To remove certain files from the listing (this does not delete them from the disk), mark them first with
+=u=, then select =k=. You can also remove file patterns by first selecting by regexp as follows: 
 #+BEGIN_SRC emacs-lisp
 M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
 #+END_SRC
 This marks everything that matches the =*.xml= pattern. Then hit =k= to remove the xml files from the listing. 
 The same thing can be done (if you wish to remove files with a matching extension) with =*.= as follows:
 =*.xml=
+
+Deletion marks are different from normal marks, in that when you go k, you erase those marked files from disk.
+To remove files from the disk, mark them each with =d=, then once you have selected the files, use =k= to remove them.
+This cannot be undone, much like on any UNIX/Linux/BSD shell.
 ** Org Mode
 :PROPERTIES:
 :CUSTOM_ID: org-mode-1
