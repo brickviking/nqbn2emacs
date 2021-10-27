@@ -1,4 +1,5 @@
 # nqbn2emacs - Not Quite Brand New to Emacs
+#### (or perhaps vim)
 
 #### Hints and aids for when you just want to know some stuff.
 
