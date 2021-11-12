@@ -765,6 +765,10 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
 [16:53:09]<Viking667> I'm not sure if it's applicable in other places too.
           Nice thing about it is that only the image gets resized, not the buffer text.
 #+END_SRC
+*** Turn a file listing from ls (for example, from Ctl-U M-!) into a dired listing
+if the buffer content is like the output from ls -l or rpm -qvl , =M-x dired-virtual-mode RET=. I use this for turning linux package listings into
+browsable dired buffers. bpalmer from #emacs notes that you may need to (require 'dired-x)  first, as it doesn't seem to set up an autoload.
+
 ** Other useful links, channels and the like
 *** Mike Zamansky - Using Emacs
 https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
