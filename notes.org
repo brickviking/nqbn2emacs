@@ -943,6 +943,8 @@ Check :help exiting
     + [[https://www.youtube.com/watch?v=yOmxJbZjTnU][Using MySQL Databases With Python Course (1:10:09)]]
     
 ** FreeCodeCamp.org  [[https://youtube.com/c/freecodecamp][Youtube Channel]]
+*** Basic (Visual Basic)
+    + [[https://www.youtube.com/watch?v=HFWQdGn5DaU][Visual Basic for beginners]]
 *** C++
     + [[https://www.youtube.com/watch?v=vLnPwxZdW4Y][C++ Tutorial for beginners - Full Course (4:01:19)]]
 *** C#
