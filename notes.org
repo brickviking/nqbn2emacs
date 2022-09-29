@@ -277,7 +277,9 @@ irc:#emacs@chat.freenode.org, I can't personally vouch for these plugins, I have
 Info link: [[info:Emacs#Windows][Window commands]]
 
 These commands all work with windows within a frame. A frame is a collection of one or more buffers,
-displayed in one or more windows. A window is a "division" of the frame into one or more sections,
+displayed in one or more windows.
+
+A window is a "division" of the frame into one or more sections,
 each one usually showing the contents of a buffer. Not all buffers have to be visible, but loaded
 buffers can usually be displayed in a window. Don't confuse buffers with windows, they are different,
 but windows effectively contain buffers.
@@ -387,17 +389,19 @@ With regard to moving by "pages", you can insert the content of subdirectories i
 the command M-x dired-insert-subdir. That content will appear below the content of the top directory, with each
 subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move between those pages.
 
-|--------------------+------+----------------------------------------------------|
-| Command            | Keys | Notes                                              |
-|--------------------+------+----------------------------------------------------|
-| mark for deletion  | d    | Once you've marked files, use x to delete them all |
-| Delete now         | D    | Will ask for confirmation                          |
-| Unmark one entry   | u    | Only unmarks if marked already                     |
-| Unmark all entries | U    | Removes all marks in the dired buffer              |
-| Mark by extension  | *.   | Requests an extension to apply marks with          |
-| Kill               | k    | Remove marked files from listing                   |
-| Toggle marks       | t    | Invert whatever marks are present                  |
-|--------------------+------+----------------------------------------------------|
+|----------------------+------+-------------------------------------------------------|
+| Command              | Keys | Notes                                                 |
+|----------------------+------+-------------------------------------------------------|
+| mark for deletion    | d    | Once you've marked files, use x to delete them all    |
+| Delete now           | D    | Will ask for confirmation                             |
+| Unmark one entry     | u    | Only unmarks if marked already                        |
+| Unmark all entries   | U    | Removes all marks in the dired buffer                 |
+| Mark by extension    | *.   | Requests an extension to apply marks with             |
+| Kill                 | k    | Remove marked files from listing                      |
+| Toggle marks         | t    | Invert whatever marks are present                     |
+| Query/replace-regexp | Q    | Asks for regexp to replace, then asks for replacement |
+|                      |      | It then proceeds through all matches asking y/n       |
+|----------------------+------+-------------------------------------------------------|
 
 To remove certain files from the listing (this does not delete them from the disk), mark them first with
 =u=, then select =k=. You can also remove file patterns by first selecting by regexp as follows: 
@@ -407,6 +411,13 @@ M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
 This marks everything that matches the =*.xml= pattern. Then hit =k= to remove the xml files from the listing. 
 The same thing can be done (if you wish to remove files with a matching extension) with =*.= as follows:
 =*.xml=
+
+You can instead remove all the uninteresting files from your dired listing by using =M-x dired-omit-mode=, then
+=M-x dired-omit-expunge= followed by a filepattern to match. For example, let's say you previously ran =% g= in
+the dired window (similar to dired-mark-files-regexp but for their contents instead) and got several files marked,
+you could then do =M-x dired-omit-expunge= followed by a period to specify all files not already marked. This will
+prune all other files from being shown in the listing. They're still there on disk, they just don't show up until
+you toggle dired-omit-mode again.
 
 Deletion marks are different from normal marks, in that when you go k, you erase those marked files from disk.
 To remove files from the disk, mark them each with =d=, then once you have selected the files, use =k= to remove them.
@@ -840,6 +851,8 @@ I don't describe more detailed vimscript here, basically because I don't know ho
 | left-word         | b     |              | Back to the first alpha-numeric character of the word |
 | Beginning of line | 0     |              |                                                       |
 | End of line       | $     |              |                                                       |
+| Top of file       | gg    |              |                                                       |
+| Bottom of file    | G     |              |                                                       |
 |-------------------+-------+--------------+-------------------------------------------------------|
 
 ** Help
