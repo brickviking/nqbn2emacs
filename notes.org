@@ -276,13 +276,10 @@ irc:#emacs@chat.freenode.org, I can't personally vouch for these plugins, I have
 ** Windows
 Info link: [[info:Emacs#Windows][Window commands]]
 
-These commands all work with windows within a frame. A frame is a collection of one or more buffers,
-displayed in one or more windows.
+These commands all work with windows within a frame. A frame is a collection of one or more windows;
+each window displays the contents of a buffer.  Not all buffers have to be visible, but are available
+to display at any time.
 
-A window is a "division" of the frame into one or more sections,
-each one usually showing the contents of a buffer. Not all buffers have to be visible, but loaded
-buffers can usually be displayed in a window. Don't confuse buffers with windows, they are different,
-but windows effectively contain buffers.
    |----------------------------------------+------------------------|
    | Command                                | Key                    |
    |----------------------------------------+------------------------|
