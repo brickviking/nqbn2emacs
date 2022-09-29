@@ -7,7 +7,7 @@
 #+STARTUP: showeverything inlineimages
 
 #+BEGIN_abstract
-Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. Addresses Emacs and Vim.
+Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. Addresses Emacs and Vim, and also provides some other distractions for when you're in need of them.
 #+END_abstract
 
 * Introduction
@@ -215,7 +215,7 @@ complete details are available from the info manual.
 
 *** =C-h C-h=
 Metahelp: a front page to other help pages.
-*** =C-h C-C= - Copyright notice
+*** =C-h C-c= - Copyright notice
 Displays the copyright notice for Emacs, in this case, the GNU General Public License version 3.
 *** =C-h r=
 The front page for the Emacs manual.
@@ -233,6 +233,15 @@ Describe key, mode-sensitive.
 Describe function.
 *** =C-h h=
 Hello in multiple languages and scripts, needs good fonts with wide glyph coverage.
+
+*** The long way around
+If you need help on a whole key sequence you can't normally get from C-h k then evaluate this in emacs:
+#+BEGIN_SRC emacs-lisp
+(describe-key (kbd "C-h"))
+#+END_SRC
+
+This will give you help on what function =C-h= calls up. The same is true for most other key sequences that you can type in that form such as "C-g", "M-x" and so on.
+
 ** Recommended Plugins
 These are plugins I use a lot of the time. They're either already built into Emacs,
 or they can be installed from ELPA/MELPA.
