@@ -976,6 +976,8 @@ Check :help exiting
     + [[https://www.youtube.com/watch?v=grEKMHGYyns][Learn Java 8 - Full tutorial for beginners (9:32:32)]]
 *** Javascript
     + [[https://www.youtube.com/watch?v=PkZNo7MFNFg][Learn Javascript - Full course for beginners, (3:26:43)]]
+*** LaTeX
+    + [[https://www.youtube.com/watch?v=ydOTMQC7np0][LaTeX - Full Tutorial for Beginners (4:28:43)]]
 *** Penetration Testing
     + [[https://www.youtube.com/watch?v=3Kq1MIfTWCE][Full Ethical Hacking course (14:51:14)]]
 *** Python
