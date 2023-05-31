@@ -800,7 +800,7 @@ https://www.emacswiki.org/emacs/EmacsScreencasts
     + [[https://emacslife.com/][An Emacs Life]]
 *** Mastering Emacs
 https://www.masteringemacs.org/
-    If you think you know Emacs from this little bit I've explained here, then go read this book. It will revolutionise your emacs usage if you read it through and implement some of the things Mikey Petersen talks about. This is one of the few ebooks I've bought, and is reasonably priced for what it is. At the time I write this, it comes in at $49.95 in greenbacks, with the possibility that it may go up in the future.
+    If you think you know Emacs from this little bit I've explained here, then go read this book. It will revolutionise your emacs usage if you read it through and implement some of the things Mickey Petersen talks about. This is one of the few ebooks I've bought, and is reasonably priced for what it is. At the time I write this, it comes in at $49.95 in greenbacks, with the possibility that it may go up in the future.
 ** Things to find out about
 *** org-pdfview and pdftools
 Looks like org-pdfview has been replaced by org-pdftools. I had warnings when I loaded that package.
