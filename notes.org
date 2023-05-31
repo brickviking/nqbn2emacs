@@ -798,6 +798,9 @@ https://www.emacswiki.org/emacs/EmacsScreencasts
     + [[https://sachachua.com/blog/wp-content/uploads/2013/05/How-to-Learn-Emacs-v2-Large.png][How to learn Emacs]] - a one-page image great for people completely new to Emacs who want to learn the basics.
     + [[https://sachachua.org/blog][Blog articles by a long-time Emacs user]]
     + [[https://emacslife.com/][An Emacs Life]]
+*** Mastering Emacs
+https://www.masteringemacs.org/
+    If you think you know Emacs from this little bit I've explained here, then go read this book. It will revolutionise your emacs usage if you read it through and implement some of the things Mikey Petersen talks about. This is one of the few ebooks I've bought, and is reasonably priced for what it is. At the time I write this, it comes in at $49.95 in greenbacks, with the possibility that it may go up in the future.
 ** Things to find out about
 *** org-pdfview and pdftools
 Looks like org-pdfview has been replaced by org-pdftools. I had warnings when I loaded that package.
