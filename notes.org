@@ -921,18 +921,50 @@ the Vim help.
    |---------+-----+-------|
    |         |     |       |
 ** Window commands
-Check :help window
-  |-----------------------------------+--------------------------------+---------------------------------------------------|
-  | Commands                          | Keys                           | Variables                                         |
-  |-----------------------------------+--------------------------------+---------------------------------------------------|
-  | Split window below                | :sp                            | :splitbelow                                       |
-  | Split window beside               | :vsp                           | :splitright                                       |
-  | Switch windows down/up/left/right | C-w <down>/<Up>/<Left>/<Right> |                                                   |
-  | Swap windows                      | C-w C-w                        |                                                   |
-  | Grow window                       | C-w +                          | Can take a numeric prefix                         |
-  | Shrink window                     | C-w -                          | Can take a numeric prefix                         |
-  | Maximise window                   | C-w _                          | With numeric prefix, sets the window to that size |
-  |-----------------------------------+--------------------------------+---------------------------------------------------|
+Window commands operate to open/close or move between existing windows. In essence, a vim window is like a emacs buffer, in
+that they both hold the contents of a file, but work slightly differently.
+
+This table very quickly summarises what I believe to be the most important commands that apply to windows.
+  |------------------------------------+--------------------------------+---------------------------------------------------|
+  | Commands                           | Keys                           | Variables                                         |
+  |------------------------------------+--------------------------------+---------------------------------------------------|
+  | Split window below                 | :sp                            | :splitbelow                                       |
+  | Split window beside                | :vsp                           | :splitright                                       |
+  | Switch windows down/up/left/right  | C-w <Down>/<Up>/<Left>/<Right> |                                                   |
+  | Swap windows                       | C-w C-w                        |                                                   |
+  | Grow window                        | [N]C-w +                       | Can take a numeric prefix N                       |
+  | Shrink window                      | [N]C-w -                       | Can take a numeric prefix N                       |
+  | Maximize window                    | C-w _                          | With numeric prefix, sets the window to that size |
+  | Reorient window split horizontally | C-w K                          | Rotate windows to top/bottom                      |
+  | Reorient window split vertically   | C-w H                          | Rotate windows to left/right                      |
+  |------------------------------------+--------------------------------+---------------------------------------------------|
+
+Check :help window for the full details, however a short description for most of these follows:
+
+*** Split window below/right: =:sp= /  =:vsp=
+This splits the existing window in half so that you have 
+  + a top and bottom half or 
+  + a left/right half
+Your cursor will then end up in the newly opened window.
+
+When =:splitbelow= is set, your "new" window will be created below your existing window, otherwise it will be created above
+your existing window. The same holds for =:splitright= - if that is set, your new window is created to the right of the existing
+window, otherwise your new window appears to the left.
+
+*** Switch to direction: =C-w <Down>=/=C-w <Up>=/=C-w <Left>=/=C-w <Right>=
+In the event you have more than two windows open, you can cycle easily between them all in any direction using the
+Ctl-W <direction> keys, making it easier to navigate than using =C-w C-w= continuously.
+
+*** Swap windows: =C-w C-w=
+Best command if you have two windows, split either vertically or horizontally. =C-w C-w= just swaps between the two. Simple.
+
+*** Grow/Shrink: =C-w +=/=C-w -=
+This increases/decreases the window height by one, or by more with a numeric prefix.
+
+*** Maximize window vertically - =C-w _=
+The maximum size appears to be two less than the vertical room available, and leaves one line of text in each other window plus
+the status bar for each window.
+
 ** Macro commands
 Check :help macro
 Key mapping is used to change the meaning of typed keys.  The most common use
