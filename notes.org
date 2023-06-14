@@ -200,20 +200,22 @@ words. This makes these long lines a bit more readable. Visual-line-mode is a mi
 with =M-x visual-line-mode=. Ordinary line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 
 ** Registers
-Registers are slots to store stuff in, whether it's a string or a file position. This section would
-benefit from being filled in further, though it's well described in info documentation
-(=C-h i=, =m=, =Emacs=, =m=, =Registers=).
+Registers are slots to store stuff in, whether it's a string, a file
+position, a rectangle or a region. This section would benefit from
+being filled in further, though it's well described in info
+documentation (=C-h i=, =m=, =Emacs=, =m=, =Registers=).
 
 *** Storing current file position (=C-x r <SPC> <x>=)
 When your "point" or cursor, is at the position you want to remember for later, set the point's
 current position into register <x> (alphanumeric single characters, most other keyboard combinations
 except for =C-g= and a few others). Your current point position will be stored.
 
-For example, let's say I notice an error on the word "troibles" in the following quote:
+For example, let's say I notice an error on the word "troibles" in the following quote. I'm where
+the asterisk is:
 #+BEGIN_EXAMPLE
 To be or not to bi, that is the question.
 Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune,
-Or to take arms against a sea of troibles,
+Or to take arms against a sea of troibles,*
 And by opposing end them.
 #+END_EXAMPLE
 
@@ -224,7 +226,16 @@ off to fix the other error up on the top line. To get back, you then put in
 =C-x r j R= and your cursor should be back at the end of troibles.
 
 *** Returning to stored position (=C-x r j <x>=)
-As stated above, this jumps you back to a previously-stored position in register <x>. Your previous position before jumping will also be stored, so if you need to get there, you can get back with =C-x C-x=.
+As stated above, this jumps you back to a previously-stored position in register <x>. Your previous
+position before jumping will also be stored, so if you need to get there, you can get back there
+with =C-x C-x= (exchange-point-and-mark).
+
+*** Saving (=C-x r s <x>=) and restoring (=C-x r i <x>=) text
+The two commands above will respectively store what's in a region (previously defined with 
+=C-space= up to and including your point) into or restore from the register <x>.
+Restoring text from a register doesn't wipe the register contents, which can be useful if you want
+to repeat the insert multiple times. The only time a register's contents will be wiped is if you
+insert new content or delete the register.
 
 ** Cock-ups
 These are some of the few things I've found out so far that tend to break without obvious reasons, or
