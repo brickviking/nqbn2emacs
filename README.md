@@ -1,10 +1,14 @@
 # nqbn2emacs - Not Quite Brand New to Emacs
 #### (or perhaps vim)
 
+#### Abstract
+
+Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. Addresses Emacs and Vim, and also provides some other distractions for when you're in need of them.
+
 #### Hints and aids for when you just want to know some stuff.
 
 The notes.org file is a condensing of some of the information available from Vim help and Emacs info documents;
-other information came from the irc://freenode#emacs channel. And when you just want to chill out,
+other information came from the irc://freenode#emacs and irc://liberachat#emacs channel. I've also added some tips from stuff I've learned along the way. And when you just want to chill out,
 I've added some of the soundtracks I've come across. There's even some programming tips for
 plenty of other computer languages. Other information (in one instance) came from [the emacs wiki](https://emacswiki.org/).
 
