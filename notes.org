@@ -411,6 +411,38 @@ inputs with =M-x list-input-methods=.
 
 Examples of input include chinese-py (Simplified Chinese using pinyin), japanese-hiragana (hiragana using romaji), and greek
 (Greek characters). There are many more variants as well.
+** Paragraphs
+Paragraphs are sections of text, usually separated from each other by either a blank line, or
+terminated by a period. The default width for paragraphs is a hangover from the dim dark times when
+output used to be on printer paper, and most printers would only print a maximum of 80 normal
+characters (or 96 squashed ones) on a sheet of A4 paper before running out of room and having to
+drop down to the next line. Letter sized paper was a little different, but was prevalent in America.
+
+These days, most monitors are far wider than that, even though smartphone screens aren't.
+Additionally, we've had proportional fonts for a very long time now, and that can't easily be
+counted the same way as a fixed-width font, as each character from i to m can be significantly
+different from each other. But as Emacs dates from the very late 'seventies and 'eighties, we're
+dealing with some of the hangover decisions made when they made more sense back in those days.
+
+**** Setting paragraph width (=C-x f=)
+There's multiple ways to set the width of paragraphs within a buffer to format later with =M-q=, but
+this has to be one of the shortest to get there: simply use =C-x f= and feed it a number. Don't make
+it too huge though. If you don't set a number here (or leave it at 0), the default paragraph width
+is 70 characters.
+
+**** Reformatting paragraph to width (=M-q=)
+Stick your cursor (point) into the paragraph you want to format, hit =M-q=. Done.
+
+**** Setting default width on startup
+You can set a default width in your =init.el= file with the fragment:
+
+#+BEGIN_SRC elisp
+(setq fill-column 100)
+#+END_SRC
+
+or any other relevant width. This applies when you reformat the paragraph manually, but you can have
+emacs do the reformatting for you in the current buffer (=M-x auto-fill-mode=) as you go.
+
 ** Dired
 Info link: [[info:emacs#Dired][Dired]]
 
@@ -647,6 +679,7 @@ works, by the way. If you want to copy stuff from a vterm buffer, toggle vterm-c
 make your selection, copy it to the killring (or is it yank ring?), then toggle vterm-copy-mode back off
 again. Toggling it back off allows commands such as M-w to be passed through to the program you're
 running inside vterm—for example, the vim editor.
+** Snippets
 ** Snippets from freenode#emacs
 These are all questions that have turned up in the #Emacs channel, they've had varying responses. In
 some cases I've left the discussions mostly unaltered, sometimes I've compacted the conversation to
