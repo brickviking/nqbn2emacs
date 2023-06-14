@@ -200,9 +200,8 @@ words. This makes these long lines a bit more readable. Visual-line-mode is a mi
 with =M-x visual-line-mode=. Ordinary line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 
 ** Registers
-Registers are slots to store stuff in, whether it's a string, a file
-position, a rectangle or a region. This section would benefit from
-being filled in further, though it's well described in info
+Registers are slots to store stuff in, whether it's a string, a file position, a rectangle or a
+region. This section would benefit from being filled in further, though it's well described in info
 documentation (=C-h i=, =m=, =Emacs=, =m=, =Registers=).
 
 *** Storing current file position (=C-x r <SPC> <x>=)
