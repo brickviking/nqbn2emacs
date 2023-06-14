@@ -255,19 +255,23 @@ Metahelp: a front page to other help pages.
 *** =C-h C-c= - Copyright notice
 Displays the copyright notice for Emacs, in this case, the GNU General Public License version 3.
 *** =C-h r=
-The front page for the Emacs manual.
+The front page for the Emacs manual in info format.
 *** =C-h i=
 The front page for all info documents shown in the infodir.
 *** =C-h d=
 Info Doc Search: this will request a search term and look through all of the info documents on your system.
 *** =C-h m=
-Describe current major mode, and shows what keys are bound to Emacs commands. Also shows other minor modes in effect.
+Describe the current major mode, and shows what keys are currently bound to Emacs commands. This
+also shows any other minor modes in effect in your current buffer.
 *** =C-h b=
 Describe binding, mode-sensitive.
 *** =C-h c=
-Describe key, mode-sensitive.
+Briefly describe key, mode-sensitive. The output appears in the mini-buffer as one or more lines.
+*** =C-h k=
+This describes a key in more detail than the above command, and the docstring output appears in a
+split buffer usually to the right of your current buffer.
 *** =C-h f=
-Describe function.
+Describe function. Input the name of a function such as =find-file=.
 *** =C-h h=
 Hello in multiple languages and scripts, needs good fonts with wide glyph coverage.
 
