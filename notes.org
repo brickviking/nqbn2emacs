@@ -199,6 +199,33 @@ continue on the next line. Visual line mode is like line-wrapping, but with the 
 words. This makes these long lines a bit more readable. Visual-line-mode is a minor mode, so it's toggled
 with =M-x visual-line-mode=. Ordinary line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 
+** Registers
+Registers are slots to store stuff in, whether it's a string or a file position. This section would
+benefit from being filled in further, though it's well described in info documentation
+(=C-h i=, =m=, =Emacs=, =m=, =Registers=).
+
+*** Storing current file position (=C-x r <SPC> <x>=)
+When your "point" or cursor, is at the position you want to remember for later, set the point's
+current position into register <x> (alphanumeric single characters, most other keyboard combinations
+except for =C-g= and a few others). Your current point position will be stored.
+
+For example, let's say I notice an error on the word "troibles" in the following quote:
+#+BEGIN_EXAMPLE
+To be or not to bi, that is the question.
+Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune,
+Or to take arms against a sea of troibles,
+And by opposing end them.
+#+END_EXAMPLE
+
+I know there's a mistake up in the first line (to bi), but I want to remember my current position
+so I can jump back and fix this error too. So, let's use Register R as our example register, but
+any will do. With the point at the comma after "troibles,", put in =C-x r <SPACE> R=, then jump
+off to fix the other error up on the top line. To get back, you then put in
+=C-x r j R= and your cursor should be back at the end of troibles.
+
+*** Returning to stored position (=C-x r j <x>=)
+As stated above, this jumps you back to a previously-stored position in register <x>. Your previous position before jumping will also be stored, so if you need to get there, you can get back with =C-x C-x=.
+
 ** Cock-ups
 These are some of the few things I've found out so far that tend to break without obvious reasons, or
 not be obvious to the really new Emacs user.
@@ -809,6 +836,9 @@ I think pdftools is the debian or fedora package texlive-pdftools.
 I seem to have run into a bit of a bug when exporting to PDF. I have a TOC header, but no list of
 headers in that TOC. Strange thing is, the HTML works and shows a full Contents list. Thankfully
 they don't have numbers.
+*** Learn about how to use registers
+I already know about save and insert (=C-x r s <x>= and =C-x r i <x>=), but I'm not sure about
+other register commands.
 * Vim
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
