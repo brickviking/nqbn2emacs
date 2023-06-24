@@ -860,6 +860,18 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
 if the buffer content is like the output from ls -l or rpm -qvl , =M-x dired-virtual-mode RET=. I use this for turning linux package listings into
 browsable dired buffers. bpalmer from #emacs notes that you may need to (require 'dired-x)  first, as it doesn't seem to set up an autoload.
 
+*** Preserve indentation in org mode source blocks such as =#+BEGIN_SRC=
+I had a problem recently where org mode would reindent my source code when I saved it back after a
+=C-c '= episode. I'd head off into (org-edit-src-code), make the changes I needed, but afterwards,
+org mode just indented my source code back to the nearest relevant header. I believe it might have
+removed tabs from the block too. Anyhow, the fix is simple, at least for me. There's a param to add
+to the =#+BEGIN_SRC= param, =-i=. It should end up looking a bit like this:
+#+BEGIN_EXAMPLE
+#+BEGIN_SRC c -i
+.....
+#+END_SRC
+#+END_EXAMPLE
+
 ** Other useful links, channels and the like
 *** Mike Zamansky - Using Emacs
 https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
