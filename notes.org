@@ -861,8 +861,8 @@ if the buffer content is like the output from ls -l or rpm -qvl , =M-x dired-vir
 browsable dired buffers. bpalmer from #emacs notes that you may need to (require 'dired-x)  first, as it doesn't seem to set up an autoload.
 
 *** Preserve indentation in org mode source blocks such as =#+BEGIN_SRC=
-I had a problem recently where org mode would reindent my source code when I saved it back after a
-=C-c '= episode. I'd head off into (org-edit-src-code), make the changes I needed, but afterwards,
+I had a problem recently where org mode would reindent my source code when I saved it back after
+a =C-c '= episode. I'd head off into (org-edit-src-code), make the changes I needed, but afterwards,
 org mode just indented my source code back to the nearest relevant header. I believe it might have
 removed tabs from the block too. Anyhow, the fix is simple, at least for me. There's a param to add
 to the =#+BEGIN_SRC= param, =-i=. It should end up looking a bit like this:
