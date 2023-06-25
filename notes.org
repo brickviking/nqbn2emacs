@@ -867,9 +867,9 @@ org mode just indented my source code back to the nearest relevant header. I bel
 removed tabs from the block too. Anyhow, the fix is simple, at least for me. There's a param to add
 to the =#+BEGIN_SRC= param, =-i=. It should end up looking a bit like this:
 #+BEGIN_EXAMPLE
-#+BEGIN_SRC c -i
+,#+BEGIN_SRC c -i
 .....
-#+END_SRC
+,#+END_SRC
 #+END_EXAMPLE
 
 ** Other useful links, channels and the like
