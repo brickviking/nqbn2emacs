@@ -255,39 +255,63 @@ macros back, then you can cycle around the "ring" with =C-x C-k C-n= (kmacro-cyc
 Here's a quick summary so far of the keyboard commands we've used, along with
 their respective emacs functions that get called.
 
-|---------------------+---------------+--------------------------------------|
-| *Name*              | *Shortcut*    | *Emacs function*                     |
-|---------------------+---------------+--------------------------------------|
-| Start macro         | =C-x (=       | kmacro-start-macro                   |
-|                     | =F3=          | kmacro-start-macro-or-insert-counter |
-|---------------------+---------------+--------------------------------------|
-| Stop macro          | =C-x )=       | kmacro-end-macro                     |
-|                     | =F4=          | kmacro-end-or-call-macro             |
-|---------------------+---------------+--------------------------------------|
-| Call (or run) the   | =C-x e=       | kmacro-end-and-call-macro            |
-| last-defined macro  |               |                                      |
-|---------------------+---------------+--------------------------------------|
-| Step to next macro  | =C-x C-k C-n= | kmacro-cycle-ring-next               |
-|---------------------+---------------+--------------------------------------|
-| Step to prior macro | =C-x C-k C-n= | kmacro-cycle-ring-prev               |
-|---------------------+---------------+--------------------------------------|
+|-----------------------+------------------------+--------------------------------------|
+| *Name*                | *Shortcut*             | *Emacs function*                     |
+|-----------------------+------------------------+--------------------------------------|
+| Start macro           | =C-x (=                | kmacro-start-macro                   |
+|                       | =F3=                   | kmacro-start-macro-or-insert-counter |
+|-----------------------+------------------------+--------------------------------------|
+| Stop macro            | =C-x )=                | kmacro-end-macro                     |
+|                       | =F4=                   | kmacro-end-or-call-macro             |
+|-----------------------+------------------------+--------------------------------------|
+| Call (or run) the     | =C-x e=                | kmacro-end-and-call-macro            |
+| last-defined macro    |                        |                                      |
+|-----------------------+------------------------+--------------------------------------|
+| Step to next macro    | =C-x C-k C-n=          | kmacro-cycle-ring-next               |
+|-----------------------+------------------------+--------------------------------------|
+| Step to prior macro   | =C-x C-k C-n=          | kmacro-cycle-ring-prev               |
+|-----------------------+------------------------+--------------------------------------|
+| Name macro for later  | =C-x C-k n=            | kmacro-name-last-macro               |
+|-----------------------+------------------------+--------------------------------------|
+| Insert keyboard macro | =M-x insert-kbd-macro= | insert-kbd-macro                     |
+|-----------------------+------------------------+--------------------------------------|
 
-If you had looked at the table and wondered why the functions called differ between =C-x (= and
+If you had looked at the table and wondered why the function names differ between =C-x (= and
 =F3=, it's because the Emacs developers overloaded the functions onto the same keystroke, so that
 a choice is made at the time of the keystroke, depending on where you are. 
 
 If you're not in a macro-defining session, then =F3= will start recording a macro, just like =C-x (=
 does. If, however, you're inside a macro-recording, then =F3= will increment an internal counter,
-and insert that counter's value at the point your cursor is.
+and insert that counter's value at the point your cursor is. The counter will be explained in a
+later section, but doesn't usually get used for the most basic macros, i.e. you only use it if you
+need it.
+
+There's also a difference between the =C-x )= and =F4= calls, in that =C-x )= just finishes
+recording the macro, if you're inside a macro recording session. If you're not, and you use this,
+it'll generally sulk and say "Not defining kbd macro".
+
+*** Naming
+Of course, you're going to want your macros to last beyond the current editing session. To do this,
+simply save the macro with a name with =C-x C-k n=, and then insert it into your =init.el= or other
+suitable file with =M-x insert-kbd-macro=. I generally insert the macros I use into the files I'm
+working with so that I can change the macros for each project if they need a little tweaking for
+small differences. The last command turns the keyboard commands into their corresponding elisp
+functions, and inserts the sequence of commands into the file.
+
+Note that you can't actually call this keyboard macro from lisp directly as it's not actually a lisp
+function, it's merely a sequence of keystroke commands. You can however call most lisp functions
+from within the macro, and I've used it to stitch together footnotes into a text simply by doing
+some of the donkey work within the macro as it's the same search each time, but with the text
+differing between runs. You can also call this keyboard macro by binding it to an unused key on
+your keyboard, but I'll save that for later.
 
 *** Wrinkles
-There's also a difference between the =C-x )= and =F4= calls, in that =C-x )= just finishes recording the macro, if you're inside a macro recording session. If you're not, and you use this, it'll generally sulk and say "Not defining kbd macro".
-
 If you're old-school, you'll be aware of this one, but if you're currently in the middle of defining
 a macro, you'll notice that =C-x e= will not only finish recording the macro, but will also re-run
-that macro just like =F4= does. That's useful in a few circumstances, but users that are new will
-probably want to make sure they finish recording the macro without invoking it again.  Don't be
-tempted to simply shortcut the process if you don't want that macro called as you exit it.
+that macro just like =F4= does after recording has finished. That's useful in a few circumstances,
+but users that are new will probably want to make sure they finish recording the macro without
+invoking it again.  Don't be tempted to simply shortcut the process if you don't want that macro
+executed as you finish defining the macro.
 
 ** Cock-ups
 These are some of the few things I've found out so far that tend to break without obvious reasons, or
