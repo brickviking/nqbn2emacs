@@ -238,6 +238,8 @@ insert new content or delete the register.
 
 ** Macros
 *** Basic commands
+Info link: [[info:emacs#Keyboard Macros][Keyboard Macros]]
+
 If you need to store sequences of keyboard commands in particular, you can generally record these in
 what's called a keyboard macro. There's a few different ways to start the process off, but generally
 the old school way that most long-time emacs users use, is =C-x (= and the modern iteration on this
@@ -313,6 +315,13 @@ but users that are new will probably want to make sure they finish recording the
 invoking it again.  Don't be tempted to simply shortcut the process if you don't want that macro
 executed as you finish defining the macro.
 
+*** Further discussion points
+Items from this list will get gradually shuffled up into the main body of the Macros section as I
+learn more about them.
+
+**** Editing existing macros
+**** Recursion (recursion (recursion...))
+**** Keyboard macro counters
 ** Cock-ups
 These are some of the few things I've found out so far that tend to break without obvious reasons, or
 not be obvious to the really new Emacs user.
