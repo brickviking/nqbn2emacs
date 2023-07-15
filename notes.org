@@ -662,6 +662,9 @@ URL is anything supported by the Org internals, this can include:
 #+END_SRC
 
 Other link formats are described in Org [[info:org#External links][External links]]
+
+You can generally edit existing links by putting your point somewhere into the link you want to edit, and using =C-c C-l=. This allows you to fiddle with the separate parts of the link if you need to change them for any reason.
+
 *** inline images
 + Inline images in org mode: toggle visibility with C-c C-x C-v
 + Change size of inline org images
