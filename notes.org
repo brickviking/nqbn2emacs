@@ -972,7 +972,7 @@ I think pdftools is the debian or fedora package texlive-pdftools.
 I seem to have run into a bit of a bug when exporting to PDF. I have a TOC header, but no list of
 headers in that TOC. Strange thing is, the HTML works and shows a full Contents list. Thankfully
 they don't have numbers.
-*** Learn about how to use registers
+*** Learn more about how to use registers
 I already know about save and insert (=C-x r s <x>= and =C-x r i <x>=), but I'm not sure about
 other register commands.
 * Vim
