@@ -300,6 +300,8 @@ working with so that I can change the macros for each project if they need a lit
 small differences. The last command turns the keyboard commands into their corresponding elisp
 functions, and inserts the sequence of commands into the file.
 
+You can now execute this sequence of commands just by going =M-x yourmacroname=, in short if you called the macro hihi, and you do =M-x hihi=, then that sequence of commands will be repeated once you hit =RET=.
+
 Note that you can't actually call this keyboard macro from lisp directly as it's not actually a lisp
 function, it's merely a sequence of keystroke commands. You can however call most lisp functions
 from within the macro, and I've used it to stitch together footnotes into a text simply by doing
