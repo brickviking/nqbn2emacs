@@ -16,8 +16,8 @@ Brand new to Emacs? Here's some hints and aids for when you just want to know so
        :END:
 I was brand new to Emacs, once. Now I'm not quite so brand new, but there's still a lot I don't
 know about. The notes.org file is a condensing of some of the information available from Vim
-help and Emacs info documents; other information came from the [[irc://freenode#emacs][Freenode #emacs channel]], which
-requires an IRC client to connect to. Other information (in one instance) came from [[https://emacswiki.org/][the emacs wiki]].
+help and Emacs info documents; other information came from the [[irc://irc.freenode.org#emacs][Freenode #emacs channel]], more recently
+the [[irc://irc.libera.chat#emacs][Libera #emacs channel]], which requires an IRC client to connect to. Other information (in one instance) came from [[https://emacswiki.org/][the emacs wiki]]. Some of the rest has been my own experience, gathered slowly over time.
 
 There's even some programming tips for plenty of other computer languages. 
 And if you just want to chill out, I've added some of the soundtracks I've come across. 
@@ -397,7 +397,7 @@ programs that use the screen like they expect to own it. It isn't perfect, but i
 what it does. Check the vterm section below for the few hints I have.
 ** Plugins recommended by others
 On the other hand, these are some plugins that come as a recommendation from someone in
-irc:#emacs@chat.freenode.org, I can't personally vouch for these plugins, I haven't used them myself.
+[[irc://chat.freenode.org/#emacs][Freenode #Emacs channel]] (which has since converted to [[irc://irc.libera.chat/#emacs][irc.libera.chat]]), I can't personally vouch for these plugins, I haven't used them myself.
   + flyspell - expensive on computation
   + wc-mode
   + writegood
@@ -780,7 +780,7 @@ have magit installed.
 Info Link: [[info:erc#Top][Erc manual]]
 
 Erc is an Internet Relay Client that comes as delivered with Emacs. It allows access to any IRC
-server with suitable defaults set up for freenode. The #emacs community on irc://chat.libera.org is
+server with suitable defaults set up for freenode. The #emacs community on [[irc://chat.libera.org/#emacs]] is
 quite active, and will help you out with most of your questions. Be prepared to also do some
 reading.
    |---------------------------------+-------------|
