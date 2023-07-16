@@ -776,21 +776,23 @@ The usual =n= and =p= keys move the cursor up and down between sections.
 There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
 have magit installed.
 
-** erc
+** erc (or erc-tls)
 Info Link: [[info:erc#Top][Erc manual]]
 
-Erc is an Internet Relay Client that comes as delivered with Emacs. It allows access to any IRC server
-with suitable defaults set up for freenode. The #emacs community on Freenode is quite active, and will
-help you out with most of your questions. Be prepared to also do some reading.
+Erc is an Internet Relay Client that comes as delivered with Emacs. It allows access to any IRC
+server with suitable defaults set up for freenode. The #emacs community on irc://chat.libera.org is
+quite active, and will help you out with most of your questions. Be prepared to also do some
+reading.
    |---------------------------------+-------------|
-   | Command                         | Key         |
+   | *Command*                       | *Key*       |
    |---------------------------------+-------------|
    | quit server                     | C-c C-x     |
    | Join channel                    | C-c C-j     |
    | Change to channel with activity | C-c C-Space |
+   | Part channel with message       | C-c C-p     |
    |---------------------------------+-------------|
 ** EXWM
-EXWM is an X window manager, that uses Emacs to control placement of frames or application windows.
+EXWM is an X window manager that uses Emacs to control placement of frames or application windows.
 This needs to be expanded further, though I haven't had this in operation yet. Here's a snippet 
 from IRC log:
 #+BEGIN_QUOTE
