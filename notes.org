@@ -108,13 +108,13 @@ the Alt flag.
   + Alternative: No modern equivalent
   + Note: Sometimes bound to Fn or Menu
 ** And the mouse buttons:
-   |-------+---------------------+----------------------------------|
-   | *Key* | *Long name*         | *Notes*                          |
-   |-------+---------------------+----------------------------------|
-   | LMB   | Left Mouse Button   |                                  |
-   | RMB   | Right Mouse Button  |                                  |
-   | MMB   | Middle Mouse Button | Often Scrollwheel on modern mice |
-   |-------+---------------------+----------------------------------|
+   |-------+---------------------+------------------------------------------|
+   | *Key* | *Long name*         | *Notes*                                  |
+   |-------+---------------------+------------------------------------------|
+   | LMB   | Left Mouse Button   |                                          |
+   | RMB   | Right Mouse Button  |                                          |
+   | MMB   | Middle Mouse Button | Often a Scrollwheel click on modern mice |
+   |-------+---------------------+------------------------------------------|
 
 ** Movement keys
 Info link: [[info:emacs#Moving point][Moving point]]
