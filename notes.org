@@ -801,14 +801,13 @@ from IRC log:
 [18:53:36]<jamzattack> oni-on-ion: C-c C-t C-f runs the command exwm-floating-toggle-floating
 #+END_QUOTE
 ** vterm
-Doesn't come as standard with emacs, but is well worth the install. Running other programs inside vterm
-can come with a couple of pitfalls though, especially if you're expecting to run vim, which actually
-works, by the way. If you want to copy stuff from a vterm buffer, toggle vterm-copy-mode with C-c C-t,
-make your selection, copy it to the killring (or is it yank ring?), then toggle vterm-copy-mode back off
-again. Toggling it back off allows commands such as M-w to be passed through to the program you're
-running inside vterm—for example, the vim editor.
-** Snippets
-** Snippets from freenode#emacs
+This doesn't come standard with emacs, but is well worth the install. Running other programs inside
+vterm can come with a couple of pitfalls though, especially if you're expecting to run vim, which
+actually works, by the way. If you want to copy stuff from a vterm buffer, toggle vterm-copy-mode
+with C-c C-t, make your selection, copy it to the killring (or is it yank ring?), then toggle
+vterm-copy-mode back off again. Toggling it back off allows commands such as M-w to be passed
+through to the program you're running inside vterm—for example, the vim editor.
+** Snippets from freenode#emacs and libera#emacs
 These are all questions that have turned up in the #Emacs channel, they've had varying responses. In
 some cases I've left the discussions mostly unaltered, sometimes I've compacted the conversation to
 address just the subject being discussed.
