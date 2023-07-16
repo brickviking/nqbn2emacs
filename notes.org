@@ -108,13 +108,13 @@ the Alt flag.
   + Alternative: No modern equivalent
   + Note: Sometimes bound to Fn or Menu
 ** And the mouse buttons:
-   |-----+---------------------+----------------------------------|
-   | Key | Long name           | Notes                            |
-   |-----+---------------------+----------------------------------|
-   | LMB | Left Mouse Button   |                                  |
-   | RMB | Right Mouse Button  |                                  |
-   | MMB | Middle Mouse Button | Often Scrollwheel on modern mice |
-   |-----+---------------------+----------------------------------|
+   |-------+---------------------+----------------------------------|
+   | *Key* | *Long name*         | *Notes*                          |
+   |-------+---------------------+----------------------------------|
+   | LMB   | Left Mouse Button   |                                  |
+   | RMB   | Right Mouse Button  |                                  |
+   | MMB   | Middle Mouse Button | Often Scrollwheel on modern mice |
+   |-------+---------------------+----------------------------------|
 
 ** Movement keys
 Info link: [[info:emacs#Moving point][Moving point]]
@@ -414,7 +414,7 @@ window takes up the entire frame, or to split the frame into multiple divisions,
 a window.
 
    |----------------------------------------+------------------------|
-   | Command                                | Key                    |
+   | *Command*                              | *Key*                  |
    |----------------------------------------+------------------------|
    | Cycle through visible windows          | C-x o                  |
    | Remove focussed window                 | C-x 0                  |
@@ -466,7 +466,7 @@ Most of these commands rely on a graphical display being present (either of Xorg
 as opposed to a purely textual display (as in a terminal emulator). 
 
    |-----------------------------------+---------|
-   | Command                           | Key     |
+   | *Command*                         | *Key*   |
    |-----------------------------------+---------|
    | Create new frame                  | C-x 5 2 |
    | Cycle between available frames    | C-x 5 o |
@@ -498,23 +498,23 @@ They are also great mates with the Window and Frame commands mentioned previousl
 *** Buffer selection window
 These are keys that are only active when your cursor is in the buffer selection window:
 #+CAPTION: Buffer Selection Window keys
-   |----------------------+-----+-----------------------------------------------|
-   | Command              | Key | Notes                                         |
-   |----------------------+-----+-----------------------------------------------|
-   | Mark                 | m   | Mark file for future commands                 |
-   | Mark for deletion    | k   |                                               |
-   | Delete marked        | x   | Asks for confirmation if buffer is not saved  |
-   | Undo mark            | u   |                                               |
-   | Undo all marks       | U   |                                               |
-   | Open in window       | 1   | Removes buffer selection window, opens buffer |
-   | Open in other window | o   | Opens buffer in other window beside list      |
-   | Quit buffer list     | q   | Closes (quit-window) the buffer list window   |
-   |----------------------+-----+-----------------------------------------------|
+   |----------------------+-------+-----------------------------------------------|
+   | *Command*            | *Key* | *Notes*                                       |
+   |----------------------+-------+-----------------------------------------------|
+   | Mark                 | m     | Mark file for future commands                 |
+   | Mark for deletion    | k     |                                               |
+   | Delete marked        | x     | Asks for confirmation if buffer is not saved  |
+   | Undo mark            | u     |                                               |
+   | Undo all marks       | U     |                                               |
+   | Open in window       | 1     | Removes buffer selection window, opens buffer |
+   | Open in other window | o     | Opens buffer in other window beside list      |
+   | Quit buffer list     | q     | Closes (quit-window) the buffer list window   |
+   |----------------------+-------+-----------------------------------------------|
 
 *** Buffer encoding
 Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     |------------+-------------------------------|
-    | Modeline   | Encoding                      |
+    | *Modeline* | *Encoding*                    |
     |------------+-------------------------------|
     | -:@---     | UNIX (LF 0x0A)                |
     | -(DOS)@--- | Dos encoding (CRLF 0x0D 0x0A) |
@@ -578,19 +578,19 @@ With regard to moving by "pages", you can insert the content of subdirectories i
 the command M-x dired-insert-subdir. That content will appear below the content of the top directory, with each
 subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move between those pages.
 
-|----------------------+------+-------------------------------------------------------|
-| Command              | Keys | Notes                                                 |
-|----------------------+------+-------------------------------------------------------|
-| mark for deletion    | d    | Once you've marked files, use x to delete them all    |
-| Delete now           | D    | Will ask for confirmation                             |
-| Unmark one entry     | u    | Only unmarks if marked already                        |
-| Unmark all entries   | U    | Removes all marks in the dired buffer                 |
-| Mark by extension    | *.   | Requests an extension to apply marks with             |
-| Kill                 | k    | Remove marked files from listing                      |
-| Toggle marks         | t    | Invert whatever marks are present                     |
-| Query/replace-regexp | Q    | Asks for regexp to replace, then asks for replacement |
-|                      |      | It then proceeds through all matches asking y/n       |
-|----------------------+------+-------------------------------------------------------|
+|----------------------+--------+-------------------------------------------------------|
+| *Command*            | *Keys* | *Notes*                                               |
+|----------------------+--------+-------------------------------------------------------|
+| mark for deletion    | d      | Once you've marked files, use x to delete them all    |
+| Delete now           | D      | Will ask for confirmation                             |
+| Unmark one entry     | u      | Only unmarks if marked already                        |
+| Unmark all entries   | U      | Removes all marks in the dired buffer                 |
+| Mark by extension    | *.     | Requests an extension to apply marks with             |
+| Kill                 | k      | Remove marked files from listing                      |
+| Toggle marks         | t      | Invert whatever marks are present                     |
+| Query/replace-regexp | Q      | Asks for regexp to replace, then asks for replacement |
+|                      |        | It then proceeds through all matches asking y/n       |
+|----------------------+--------+-------------------------------------------------------|
 
 To remove certain files from the listing (this does not delete them from the disk), mark them first with
 =u=, then select =k=. You can also remove file patterns by first selecting by regexp as follows: 
@@ -662,7 +662,7 @@ manual depending on the syntax at point.
 #+END_SRC
 *** header_tags
   |---------------+------------------------+--------------------------------------|
-  | Name          | Type                   | Description                          |
+  | *Name*        | *Type*                 | *Description*                        |
   |---------------+------------------------+--------------------------------------|
   | #+TITLE       | <string>               | Title of document                    |
   | #+AUTHOR      | <string>               | Who wrote this originally            |
@@ -674,17 +674,17 @@ manual depending on the syntax at point.
   |               |                        | After pipe, completed colour         |
   
 *** tags
-  |---------------+-------------+-------------------------------------|
-  | Name          | Description |                                     |
-  |---------------+-------------+-------------------------------------|
-  | #+BEGIN_SRC   | [lang]      | Source code block - can be tangled  |
-  | #+END_SRC     |             | Closes it                           |
-  | #+SCHEDULED   | <timestamp> | When is this meant to be started    |
-  | #+COMPLETED   | <timestamp> | When this actually got completed    |
-  | #+DEADLINE    | <timestamp> | When it's absolutely got to be done |
-  | #+BEGIN_QUOTE |             | An inline quote                     |
-  | #+END_QUOTE   |             | Closes inline quote                 |
-  |---------------+-------------+-------------------------------------|
+  |---------------+---------------+-------------------------------------|
+  | *Name*        | *Description* |                                     |
+  |---------------+---------------+-------------------------------------|
+  | #+BEGIN_SRC   | [lang]        | Source code block - can be tangled  |
+  | #+END_SRC     |               | Closes it                           |
+  | #+SCHEDULED   | <timestamp>   | When is this meant to be started    |
+  | #+COMPLETED   | <timestamp>   | When this actually got completed    |
+  | #+DEADLINE    | <timestamp>   | When it's absolutely got to be done |
+  | #+BEGIN_QUOTE |               | An inline quote                     |
+  | #+END_QUOTE   |               | Closes inline quote                 |
+  |---------------+---------------+-------------------------------------|
 *** Link syntax
 Generally, links work well within org mode, and don't quite work so well outside once you
 try to export the org document to other formats.  Links look like this:
@@ -900,7 +900,7 @@ are parsed with =shr= are replaced with the clean version.
 [17:24:25]<grym> leaving myself breadcrumbs has saved my ass more than i can count so i tend to do it reflexively now 
 #+END_SRC
 |----------------------------------+--------------------------------+-------------------------+------------|
-| effect                           | key                            | function                | source     |
+| *Effect*                         | *Key*                          | *Function*              | *Source*   |
 |----------------------------------+--------------------------------+-------------------------+------------|
 | delete entire buffer             | C-x h <delete>                 |                         | [[https://stackoverflow.com/questions/4886745/emacs-what-is-the-shortcut-key-to-clear-buffer][SO]]         |
 | open project in magit            | C-c p w F3                     |                         |            |
@@ -1034,16 +1034,18 @@ even the same size.
 ma013yy41j14p`a  (15 characters)
 #+END_SRC
 This does the following:
-| Keys | Description                                              |
-|------+----------------------------------------------------------|
-| ma   | :mark, using the a letter. :help mark for more details.  |
-| 0    | step to column 0, the left hand side of the screen.      |
-| 13yy | copy 13 lines to the copy buffer, check :help yank       |
-| 41j  | step forward 41 lines                                    |
-| 14p  | paste 14 copies of the 13 lines each, giving you a total |
-|      | of 182 new lines                                         |
-| `a   | Go back to where you were                                |
-|------+----------------------------------------------------------|
+
+|--------+----------------------------------------------------------|
+| *Keys* | *Description*                                            |
+|--------+----------------------------------------------------------|
+| ma     | :mark, using the a letter. :help mark for more details.  |
+| 0      | step to column 0, the left hand side of the screen.      |
+| 13yy   | copy 13 lines to the copy buffer, check :help yank       |
+| 41j    | step forward 41 lines                                    |
+| 14p    | paste 14 copies of the 13 lines each, giving you a total |
+|        | of 182 new lines                                         |
+| `a     | Go back to where you were                                |
+|--------+----------------------------------------------------------|
 
 And that's just one example. It's only 15 characters long, with quite a kick in its tail. And if you
 don't find what you want just in vimscript, it even has a plugin system that rocks. I don't tend to
@@ -1077,7 +1079,7 @@ I don't describe more detailed vimscript here, basically because I don't know ho
 ** Opening files
 Check :help edit
    |---------------------------------+---------------+--------------------------------------------|
-   | Commands                        | Keys          | Notes                                      |
+   | *Commands*                      | *Keys*        | *Notes*                                    |
    |---------------------------------+---------------+--------------------------------------------|
    | Edit new file in buffer         | :e <filename> | Will fail if existing buffer isn't written |
    | Insert file at cursor           | :r <filename> |                                            |
@@ -1092,21 +1094,23 @@ There are two ways to diff files with vimdiff.
 #+END_SRC
   + and within vim (side-by-side):
   |-------------------------------+------------------------+----------------------------+-------------------------------------|
-  | Commands                      | Keys                   | Long form                  | Notes                               |
+  | *Commands*                    | *Keys*                 | *Long form*                | *Notes*                             |
   |-------------------------------+------------------------+----------------------------+-------------------------------------|
   | Show two files side by side   | :vert diffs other-file | :vert diffsplit other-file | Quote the filename if it has spaces |
   | Show two files top and bottom | :diffs other-file      | :diffsplit other-file      | Quote the filename if it has spaces |
   |-------------------------------+------------------------+----------------------------+-------------------------------------|
   + Within vim, you can also use these commands
-  |-------------------------+------+-------|
-  | Commands                | Keys | Notes |
-  |-------------------------+------+-------|
-  | jump to next change     | [c   |       |
-  | jump to previous change | ]c   |       |
+  |-------------------------+--------+---------|
+  | *Commands*              | *Keys* | *Notes* |
+  |-------------------------+--------+---------|
+  | jump to next change     | [c     |         |
+  | jump to previous change | ]c     |         |
+  |-------------------------+--------+---------|
+
 ** Copying commands
 Check out :help copy
 |-----------------------------------------+----------|
-| Command                                 | Key(s)   |
+| *Command*                               | *Key(s)* |
 |-----------------------------------------+----------|
 | Copy line                               | yy       |
 | Copy multiple lines (6 in this example) | 6yy      |
@@ -1127,10 +1131,6 @@ it's simply for n times, repeat x item. A special note about the =y<Space>=, mea
 the =y= key, followed by the =Spacebar=. You may often see special notes about keys in <> throughout
 the Vim help.
 
-** Movement keys
-   | Command | Key | Notes |
-   |---------+-----+-------|
-   |         |     |       |
 ** Window commands
 Window commands operate to open/close or move between existing windows. In essence, a vim window is like a emacs buffer, in
 that they both hold the contents of a file, but work slightly differently.
