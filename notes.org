@@ -7,17 +7,21 @@
 #+STARTUP: showeverything inlineimages
 
 #+BEGIN_abstract
-Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. Addresses Emacs and Vim, and also provides some other distractions for when you're in need of them.
+Brand new to Emacs? Here's some hints and aids for when you just want to know some stuff. It
+addresses the Emacs and Vim editors, and also provides some other distractions for when you're in
+need of them.
 #+END_abstract
 
 * Introduction
        :PROPERTIES:
        :UNNUMBERED: notoc
        :END:
-I was brand new to Emacs, once. Now I'm not quite so brand new, but there's still a lot I don't
-know about. The notes.org file is a condensing of some of the information available from Vim
-help and Emacs info documents; other information came from the [[irc://irc.freenode.org#emacs][Freenode #emacs channel]], more recently
-the [[irc://irc.libera.chat#emacs][Libera #emacs channel]], which requires an IRC client to connect to. Other information (in one instance) came from [[https://emacswiki.org/][the emacs wiki]]. Some of the rest has been my own experience, gathered slowly over time.
+I was brand new to Emacs, once. Now I'm not quite so brand new, but there's still a lot I don't know
+about. The notes.org file is a condensing of some of the information available from Vim help and
+Emacs info documents; other information came from the [[irc://irc.freenode.org#emacs][Freenode #emacs channel]], more recently the
+[[irc://irc.libera.chat#emacs][Libera #emacs channel]], which requires an IRC client to connect to. Other information (in one
+instance) came from [[https://emacswiki.org/][the emacs wiki]]. Some of the rest has been my own experience, gathered slowly
+over time.
 
 There's even some programming tips for plenty of other computer languages. 
 And if you just want to chill out, I've added some of the soundtracks I've come across. 
