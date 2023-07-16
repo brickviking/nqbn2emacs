@@ -409,10 +409,15 @@ These commands all work with windows within a frame. A frame is a collection of 
 each window displays the contents of a buffer.  Not all buffers have to be visible, but are available
 to display at any time.
 
+In addition, you can also change the number of windows displayed in your frame, so that the selected
+window takes up the entire frame, or to split the frame into multiple divisions, each containing
+a window.
+
    |----------------------------------------+------------------------|
    | Command                                | Key                    |
    |----------------------------------------+------------------------|
    | Cycle through visible windows          | C-x o                  |
+   | Remove focussed window                 | C-x 0                  |
    | Focus buffer to single window in frame | C-x 1                  |
    | Split window Top/Bottom                | C-x 2                  |
    | Split window Left/Right                | C-x 3                  |
@@ -420,10 +425,36 @@ to display at any time.
    | clone-indirect-buffer-other-window     | C-x 4 c                |
    | Scroll other window                    | down C-M-v, up C-M-S-v |
    |----------------------------------------+------------------------|
-Note on the clone-indirect-buffer-other-window: this is a way to get a new buffer with its own separate
-point and mark. This is useful if you want to show another section of the same file without scrolling
-the other buffer in the process. Changes in the content of the buffer will be duplicated in any other
-buffer pointing to that same content.
+Note on the clone-indirect-buffer-other-window: this is a way to get a new buffer with its own
+separate point and mark. This is useful if you want to show another section of the same file without
+scrolling the other buffer in the process. Changes in the content of the buffer will be duplicated
+in any other buffer pointing to that same content.
+
+*** Resizing or deleting windows
+Info link: [[info:emacs#Change Window][Changing Windows]]
+
+Just like some other environments (vim being one) you can also change the amount of space the window
+takes up on your frame, within certain limitations. If your single window already fills your frame,
+then there's not much you can do except to split the window in some fashion. But if you have
+multiple windows displayed in your frame, then you're able to resize the window to allocate more or
+less space to that window.
+
+   |------------------------------+-------------------|
+   | *Command*                    | *Key*             |
+   |------------------------------+-------------------|
+   | Shrink window                | M-x shrink-window |
+   | Shrink window to buffer size | C-x -             |
+   | Expand vertically            | C-x ^             |
+   | Expand to right              | C-x }             |
+   | Expand to left               | C-x {             |
+   |                              |                   |
+   |------------------------------+-------------------|
+
+A note about about shrinking the window; there is a command to make a window shrink to just the size
+of your buffer, if your buffer happens to take up less lines than it's given. This works well for
+files that only have four or five short lines in them, but if the buffer is larger than the current
+window, then the =C-x -= won't do anything.
+
 ** Frames
 Info link: [[info:Emacs#Frames][Frame commands]]
 
