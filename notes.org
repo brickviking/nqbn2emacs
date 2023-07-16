@@ -310,7 +310,9 @@ working with so that I can change the macros for each project if they need a lit
 small differences. The last command turns the keyboard commands into their corresponding elisp
 functions, and inserts the sequence of commands into the file.
 
-You can now execute this sequence of commands just by going =M-x yourmacroname=, in short if you called the macro hihi, and you do =M-x hihi=, then that sequence of commands will be repeated once you hit =RET=.
+You can now execute this sequence of commands just by going =M-x yourmacroname=, in short if you
+called the macro hihi, and you do =M-x hihi=, then that sequence of commands will be repeated once
+you hit =RET=.
 
 Note that you can't actually call this keyboard macro from lisp directly as it's not actually a lisp
 function, it's merely a sequence of keystroke commands. You can however call most lisp functions
@@ -335,11 +337,11 @@ learn more about them.
 **** Recursion (recursion (recursion...))
 **** Keyboard macro counters
 ** Cock-ups
-These are some of the few things I've found out so far that tend to break without obvious reasons, or
-not be obvious to the really new Emacs user.
+These are some of the few things I've found out so far that tend to break without obvious reasons,
+or not be obvious to the really new Emacs user.
    * When starting a remote file access, don't run M-x tramp first. Things will break.
-   * A docstring is not info documentation. =C-h f= gives you docstrings, but go to relevant info manual
-     for details.
+   * A docstring is not info documentation. =C-h f= gives you docstrings, but go to relevant info 
+     manual for details.
    * Don't blindly accept local variable exec sections when loading a file, Emacs could break when 
      trying to save or quit. I once got to the stage where I couldn't close Emacs down legitimately.
 ** Help
@@ -357,7 +359,8 @@ The front page for the Emacs manual in info format.
 *** =C-h i=
 The front page for all info documents shown in the infodir.
 *** =C-h d=
-Info Doc Search: this will request a search term and look through all of the info documents on your system.
+Info Doc Search: this will request a search term and look through all of the info documents on your
+system.
 *** =C-h m=
 Describe the current major mode, and shows what keys are currently bound to Emacs commands. This
 also shows any other minor modes in effect in your current buffer.
@@ -374,31 +377,33 @@ Describe function. Input the name of a function such as =find-file=.
 Hello in multiple languages and scripts, needs good fonts with wide glyph coverage.
 
 *** The long way around
-If you need help on a whole key sequence you can't normally get from C-h k then evaluate this in emacs:
+If you need help on a whole key sequence you can't normally get from C-h k then evaluate this in
+emacs:
 #+BEGIN_SRC emacs-lisp
 (describe-key (kbd "C-h"))
 #+END_SRC
 
-This will give you help on what function =C-h= calls up. The same is true for most other key sequences that you can type in that form such as "C-g", "M-x" and so on.
+This will give you help on what function =C-h= calls up. The same is true for most other key
+sequences that you can type in that form such as "C-g", "M-x" and so on.
 
 ** Recommended Plugins
 These are plugins I use a lot of the time. They're either already built into Emacs,
 or they can be installed from ELPA/MELPA.
 *** magit
-This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info documents
-for this is a really good idea, to make better use of magit.
+This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info
+documents for this is a really good idea, to make better use of magit.
 *** erc
-This IRC client comes native with Emacs. It can be quite powerful, although there are alternatives that
-I haven't used yet such as ircle.
+This IRC client comes native with Emacs. It can be quite powerful, although there are alternatives
+that I haven't used yet such as ircle.
 *** Org mode
-One of the most highly recommended things that Emacs offers, there are a lot of things you can do with it,
-including literate programming. If you want to avoid the loaded-with-emacs version and go with the
-absolutely latest version of org mode, there are instructions at https://orgmode.org
+One of the most highly recommended things that Emacs offers, there are a lot of things you can do
+with it, including literate programming. If you want to avoid the loaded-with-emacs version and go
+with the absolutely latest version of org mode, there are instructions at https://orgmode.org
 
-I tend to use it for literate configuration of emacs, as I can "tangle" the source sections into a config
-file that emacs can use directly. The non-source sections describe the rest of it. I won't go into
-the whole literate programming idea, but it started with Donald Knuth in his seminal work
-The Art of Computer Programming.
+I tend to use it for literate configuration of emacs, as I can "tangle" the source sections into a
+config file that emacs can use directly. The non-source sections describe the rest of it. I won't go
+into the whole literate programming idea, but it started with Donald Knuth in his seminal work The
+Art of Computer Programming.
 
 I describe further things down in the [[#org-mode-1][Org Mode]] section.
 *** vterm
@@ -406,8 +411,9 @@ Again, this isn't native, but is a more powerful (in some ways) terminal, offeri
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
 ** Plugins recommended by others
-On the other hand, these are some plugins that come as a recommendation from someone in
-[[irc://chat.freenode.org/#emacs][Freenode #Emacs channel]] (which has since converted to [[irc://irc.libera.chat/#emacs][irc.libera.chat]]), I can't personally vouch for these plugins, I haven't used them myself.
+On the other hand, these are some plugins that come as a recommendation from someone in [[irc://chat.freenode.org/#emacs][Freenode
+#Emacs channel]] (which has since converted to [[irc://irc.libera.chat/#emacs][irc.libera.chat]]), I can't personally vouch for these
+plugins, I haven't used them myself.
   + flyspell - expensive on computation
   + wc-mode
   + writegood
@@ -468,12 +474,12 @@ window, then the =C-x -= won't do anything.
 ** Frames
 Info link: [[info:Emacs#Frames][Frame commands]]
 
-These commands all relate to working with frames, as opposed to windows or buffers. As described above,
-a frame is what most people would call a "window" in most other contexts. Frames are collections of
-buffers organised amongst one or more windows per frame.
+These commands all relate to working with frames, as opposed to windows or buffers. As described
+above, a frame is what most people would call a "window" in most other contexts. Frames are
+collections of buffers organised amongst one or more windows per frame.
 
-Most of these commands rely on a graphical display being present (either of Xorg/Wayland/Aqua/Windows)
-as opposed to a purely textual display (as in a terminal emulator). 
+Most of these commands rely on a graphical display being present (either of
+Xorg/Wayland/Aqua/Windows) as opposed to a purely textual display (as in a terminal emulator).
 
    |-----------------------------------+---------|
    | *Command*                         | *Key*   |
@@ -499,12 +505,13 @@ They are also great mates with the Window and Frame commands mentioned previousl
   + Description: Switch to named buffer, creating it if needed.
   + Note: there's no requirement to have a physical disk file providing the contents for the buffer.
 *** =C-x C-b= - =list-buffers=
-  + Description: Splits the current window into two and displays the buffer selection window containing a
-    list of open buffers in the newly-created window.
-    Change to the window (=C-x o=) to work with the entries in the buffer-selection window.
+  + Description: Splits the current window into two and displays the buffer selection window
+    containing a list of open buffers in the newly-created window.  Change to the window (=C-x o=)
+    to work with the entries in the buffer-selection window.
   + Note: q closes the window, other keys are shown in the Buffer Selection section.
 *** =C-x 4 b= - =switch-to-buffer-other-window=
-  + Description: Swap to buffer in other window, creating a new window (and perhaps buffer) if necessary
+  + Description: Swap to buffer in other window, creating a new window (and perhaps buffer) if
+    necessary
 *** Buffer selection window
 These are keys that are only active when your cursor is in the buffer selection window:
 #+CAPTION: Buffer Selection Window keys
@@ -535,15 +542,16 @@ Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
 Info link: [[info:emacs#Selecting Input Methods][Selecting input methods]]
 
 *** Changing input language character set.
-    Sometimes you have to change what language you input characters with, even if you only have a US keyboard and layout.
-Emacs supports input of multiple character sets, to change between them, use =C-x RET C-\=, which will then prompt you for an input method.
-Hitting =Tab= at this point will supply you with a list of everything that Emacs knows how to input. You will of course
-also need font support to display any of the characters you wish to input. A good Unicode font will help here. For normal use
-(inputting English or other latin-based text), a lot of people tend to use TeX input. You can also get a list of supported
-inputs with =M-x list-input-methods=.
+    Sometimes you have to change what language you input characters with, even if you only have a US
+keyboard and layout.  Emacs supports input of multiple character sets, to change between them, use
+=C-x RET C-\=, which will then prompt you for an input method.  Hitting =Tab= at this point will
+supply you with a list of everything that Emacs knows how to input. You will of course also need
+font support to display any of the characters you wish to input. A good Unicode font will help
+here. For normal use (inputting English or other latin-based text), a lot of people tend to use TeX
+input. You can also get a list of supported inputs with =M-x list-input-methods=.
 
-Examples of input include chinese-py (Simplified Chinese using pinyin), japanese-hiragana (hiragana using romaji), and greek
-(Greek characters). There are many more variants as well.
+Examples of input include chinese-py (Simplified Chinese using pinyin), japanese-hiragana (hiragana
+using romaji), and greek (Greek characters). There are many more variants as well.
 ** Paragraphs
 Paragraphs are sections of text, usually separated from each other by either a blank line, or
 terminated by a period. The default width for paragraphs is a hangover from the dim dark times when
@@ -579,14 +587,16 @@ emacs do the reformatting for you in the current buffer (=M-x auto-fill-mode=) a
 ** Dired
 Info link: [[info:emacs#Dired][Dired]]
 
-These are some of the commands that can be used in a dired buffer. For all intents, you can do nearly
-everything in here that you could do from a commandline—deletion, moving or renaming. Of course, creation
-is done by simply opening a new buffer and saving it to a location that you enter when you type
-=C-x s=. You can move using the usual cursor motion commands, either Up/Down/Left/Right or C-n/C-p.
+These are some of the commands that can be used in a dired buffer. For all intents, you can do
+nearly everything in here that you could do from a commandline—deletion, moving or renaming. Of
+course, creation is done by simply opening a new buffer and saving it to a location that you enter
+when you type =C-x s=. You can move using the usual cursor motion commands, either
+Up/Down/Left/Right or C-n/C-p.
 
-With regard to moving by "pages", you can insert the content of subdirectories in each dired buffer with
-the command M-x dired-insert-subdir. That content will appear below the content of the top directory, with each
-subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move between those pages.
+With regard to moving by "pages", you can insert the content of subdirectories in each dired buffer
+with the command M-x dired-insert-subdir. That content will appear below the content of the top
+directory, with each subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move
+between those pages.
 
 |----------------------+--------+-------------------------------------------------------|
 | *Command*            | *Keys* | *Notes*                                               |
@@ -602,25 +612,27 @@ subdirectory that you insert becoming a new page. Use C-x [ and C-x ] to move be
 |                      |        | It then proceeds through all matches asking y/n       |
 |----------------------+--------+-------------------------------------------------------|
 
-To remove certain files from the listing (this does not delete them from the disk), mark them first with
-=u=, then select =k=. You can also remove file patterns by first selecting by regexp as follows: 
+To remove certain files from the listing (this does not delete them from the disk), mark them first
+with =u=, then select =k=. You can also remove file patterns by first selecting by regexp as
+follows:
 #+BEGIN_SRC emacs-lisp
 M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
 #+END_SRC
-This marks everything that matches the =*.xml= pattern. Then hit =k= to remove the xml files from the listing. 
-The same thing can be done (if you wish to remove files with a matching extension) with =*.= as follows:
-=*.xml=
+This marks everything that matches the =*.xml= pattern. Then hit =k= to remove the xml files from
+the listing.  The same thing can be done (if you wish to remove files with a matching extension)
+with =*.= as follows: =*.xml=
 
-You can instead remove all the uninteresting files from your dired listing by using =M-x dired-omit-mode=, then
-=M-x dired-omit-expunge= followed by a filepattern to match. For example, let's say you previously ran =% g= in
-the dired window (similar to dired-mark-files-regexp but for their contents instead) and got several files marked,
-you could then do =M-x dired-omit-expunge= followed by a period to specify all files not already marked. This will
-prune all other files from being shown in the listing. They're still there on disk, they just don't show up until
-you toggle dired-omit-mode again.
+You can instead remove all the uninteresting files from your dired listing by using =M-x
+dired-omit-mode=, then =M-x dired-omit-expunge= followed by a filepattern to match. For example,
+let's say you previously ran =% g= in the dired window (similar to dired-mark-files-regexp but for
+their contents instead) and got several files marked, you could then do =M-x dired-omit-expunge=
+followed by a period to specify all files not already marked. This will prune all other files from
+being shown in the listing. They're still there on disk, they just don't show up until you toggle
+dired-omit-mode again.
 
-Deletion marks are different from normal marks, in that when you go k, you erase those marked files from disk.
-To remove files from the disk, mark them each with =d=, then once you have selected the files, use =k= to remove them.
-This cannot be undone, much like on any UNIX/Linux/BSD shell.
+Deletion marks are different from normal marks, in that when you go k, you erase those marked files
+from disk.  To remove files from the disk, mark them each with =d=, then once you have selected the
+files, use =k= to remove them.  This cannot be undone, much like on any UNIX/Linux/BSD shell.
 ** Org Mode
 :PROPERTIES:
 :CUSTOM_ID: org-mode-1
@@ -651,12 +663,11 @@ manual depending on the syntax at point.
 + =M-S-Left/Right= Promote/demote heading and everything below
 + Some tags don't appear to work except for export/archive mode, including #+TAGS
 + Checkboxes [ ] [X]
-+ demarcate block (wrap it in =#+BEGIN_SRC ... #+END_SRC=)   =C-c C-v d=	(org-babel-demarcate-block)
-+ =C-c C-v C-t=  Tangle source code blocks to relevant file.
-    This means different things depending on how you've demarcated your source blocks. I use it
-    to generate =.emacs.el= from a =.emacs.org= file, with all the bits I want to fire out to there
-    inside =#+BEGIN_SRC emacs-lisp ... #+END_SRC= markers, and I use surrounding text to describe the
-    source blocks.
++ demarcate block (wrap it in =#+BEGIN_SRC ... #+END_SRC=) =C-c C-v d= (org-babel-demarcate-block)
++ =C-c C-v C-t= Tangle source code blocks to relevant file.  This means different things depending
+  on how you've demarcated your source blocks. I use it to generate =.emacs.el= from a =.emacs.org=
+  file, with all the bits I want to fire out to there inside =#+BEGIN_SRC emacs-lisp ... #+END_SRC=
+  markers, and I use surrounding text to describe the source blocks.
 + =C-c C-e=  Export, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
      or \LaTeX.
 + =C-c C-w= (after having saved the file), Refile heading somewhere else.
