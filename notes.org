@@ -1028,7 +1028,8 @@ Because the editor is focussed so tightly on editing text, it has a wide command
 you can do some really compact and powerful commands in just a few keys.
 
 One example I like to quote so often, because I haven't found an equivalent that's any shorter, or
-even the same size.
+even the same size. I do this with a good number of lines in a file, definitely more than 14 lines,
+but you could tailor it to suit.
 
 #+BEGIN_SRC vim
 ma013yy41j14p`a  (15 characters)
