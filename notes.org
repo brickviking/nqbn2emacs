@@ -174,16 +174,15 @@ not mouse buttons. Buttons will be indicated as RMB/LMB. Lines look like this:
 ** Editing keys
 Info link: [[info:emacs#Basic Undo][Basic Undo]]
 
-These are some of the keys responsible for deleting or copying text to a "kill-ring" to restore later. 
-Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at Fundamental
-mode, though a lot of it is also relevant for most other modes that aren't org-mode.
+These are some of the keys responsible for deleting or copying text to a "kill-ring" to restore
+later.  Some of these bindings change behaviour slightly in org mode, the table is aimed mostly at
+Fundamental mode, though a lot of it is also relevant for most other modes that aren't org-mode.
 
 *** =C-x u= - =undo=
   + Description: Undoes the last action, whether that was text insertion or deletion.
   + Alternatives: =C-/=, =C-_=
-  + Note: can use a numeric prefix =C-u <number> C-x u=, which undoes <number> of actions. Can also undo
-only in a region.
-
+  + Note: can use a numeric prefix =C-u <number> C-x u=, which undoes <number> of actions. Can also
+    undo only in a region.
 *** =C-k= - =kill-line=
   + Description: Removes from point until the end of the current line.
 *** =C-u 0 C-k=
@@ -198,15 +197,17 @@ only in a region.
   + Alternative: M-BACKSPACE
   + Note: Kill back to the beginning of the previous word (backward-kill-word).
 *** =C-y= - =yank=
-  + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= will restore earlier points on the kill-ring instead of the most recent entry.
+  + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= 
+will restore earlier points on the kill-ring instead of the most recent entry.
 ** Display of long lines
 Info link: [[info:emacs#Continuation Lines][Continuation Lines]]
 
-Emacs will display lines for text files in one of three ways, either line-truncated, with a symbol on the end to
-let you know there's more, or line-wrapped, with an arrow in the fringe (or a $ for text terminals) for lines that
-continue on the next line. Visual line mode is like line-wrapping, but with the break for the next line happening between
-words. This makes these long lines a bit more readable. Visual-line-mode is a minor mode, so it's toggled
-with =M-x visual-line-mode=. Ordinary line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
+Emacs will display lines for text files in one of three ways, either line-truncated, with a symbol
+on the end to let you know there's more, or line-wrapped, with an arrow in the fringe (or a $ for
+text terminals) for lines that continue on the next line. Visual line mode is like line-wrapping,
+but with the break for the next line happening between words. This makes these long lines a bit more
+readable. Visual-line-mode is a minor mode, so it's toggled with =M-x visual-line-mode=. Ordinary
+line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 
 ** Registers
 Registers are slots to store stuff in, whether it's a string, a file position, a rectangle or a
