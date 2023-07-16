@@ -157,11 +157,11 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
 *** =C-Home= - =beginning-of-buffer=
   + Moves the cursor to the beginning of the buffer
   + With optional arg between 0 and 10, (=C-u arg C-Home=) positions cursor arg*10 percent
-    from the beginning of the buffer
+    from the beginning of the buffer. An alternative keybinding is =M-S-<=.
 *** =C-End= - =end-of-buffer=
   + Moves the cursor to the beginning of the buffer
   + With optional arg between 0 and 10, (=C-u arg C-End=) positions cursor arg*10 percent
-    from the end of the buffer
+    from the end of the buffer. An alternative keybinding is =M-S->=.
 ** Editing keys
 Info link: [[info:emacs#Basic Undo][Basic Undo]]
 
