@@ -491,7 +491,7 @@ They are also great mates with the Window and Frame commands mentioned previousl
 *** =C-x C-b= - =list-buffers=
   + Description: Splits the current window into two and displays the buffer selection window containing a
     list of open buffers in the newly-created window.
-    Change to the window to work with the entries in the buffer-selection window.
+    Change to the window (=C-x o=) to work with the entries in the buffer-selection window.
   + Note: q closes the window, other keys are shown in the Buffer Selection section.
 *** =C-x 4 b= - =switch-to-buffer-other-window=
   + Description: Swap to buffer in other window, creating a new window (and perhaps buffer) if necessary
