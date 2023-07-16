@@ -53,19 +53,20 @@ Throughout this documentation, and indeed most Emacs documents that I've read, k
 abbreviated according to the following list. This was basically cribbed from the following
 [[info:Emacs#Modifier Keys][listing of modifier keys]] in the manual.
 
-If a key is shown as <F2> that means to hit the =F2= keyboard at the top of the keyboard, not the two keys F and 2.
-<Tab> means the =Tab= key on the left hand side, not the three characters T, a and b. <RET> is simply the =Return=
-key, or =Enter= on most modern keyboards. 
+If a key is shown as <F2> that means to hit the =F2= keyboard at the top of the keyboard, not the
+two keys F and 2. Occasionally you'll need to use a =Fn= key in combination with another key to get
+the <F2> key. <Tab> means the =Tab= key on the left hand side, not the three characters T, a
+and b. <RET> is simply the =Return= key, or =Enter= on most modern keyboards.
 
-This means that instead of having to type the words Control-Meta-V, Emacs will do what you want
-as long as you hold down the =Control= and =Alt= keys and then tap the =V= key (and let everything go).
-In the minibuffer (the blank section right at the bottom of the Emacs program), the keystrokes will show
-up in their abbreviated form.
+This means that instead of having to type the words Control-Meta-V, Emacs will do what you want as
+long as you hold down the =Control= and =Alt= keys and then tap the =V= key (and let everything go).
+In the minibuffer (the blank section right at the bottom of the Emacs program), the keystrokes will
+show up in their abbreviated form.
 
-In addition, all letters (aside from prefixes) are usually shown in their lowercase form, even though most
-keyboards show the uppercase letters on their keycaps. In most cases, unless you specify otherwise,
-Emacs will assume that the uppercase letters from A..Z are the same as lowercase when combined with any
-of the prefix keys.
+In addition, all letters (aside from prefixes) are usually shown in their lowercase form, even
+though most keyboards show the uppercase letters on their keycaps. In most cases, unless you specify
+otherwise, Emacs will assume that the uppercase letters from A..Z are the same as lowercase when
+combined with any of the prefix keys.
 
 *** Key: =C-=
  + Long name: Control
@@ -86,16 +87,18 @@ of the prefix keys.
   + Long name: Return
   + Other long name: =<return>=
   + Alternatives: Enter/Ent
-  + Note: In emacs docs, shown as RET. =RET= is the same as =C-m= (or =C-j=).  The actual =<return>= key can only be
-    accessed in a graphical environment and is translated to =RET= but can be bound independently. (Thanks to
-    Jamie Beardslee for the extra information).
+  + Note: In emacs docs, shown as RET. =RET= is the same as =C-m= (or =C-j=).  The actual =<return>=
+    key can only be accessed in a graphical environment and is translated to =RET= but can be bound
+    independently. (Thanks to Jamie Beardslee for the extra information).
 ** Rare modifier keys
-These keys aren't used very often, and in the case of Super and Hyper, aren't used at all in default Emacs.
-If you don't have the modifier keys (or you haven't already bound them to existing keys on your keyboard),
-you can enter each using =C-x @= followed by one of =a=, =h= or =s=.
+These keys aren't used very often, and in the case of Super and Hyper, aren't used at all in default
+Emacs. 
 
-=C-x @ h= adds the Hyper flag to the next character, =C-x @ s= adds the Super flag, and =C-x @ a= adds 
-the Alt flag. 
+If you don't have the modifier keys (or you haven't already bound them to existing keys on your
+keyboard), you can enter each using =C-x @= followed by one of =a=, =s= or =h=.
+
+=C-x @ a= adds the Alt flag to the next character, =C-x @ s= adds the Super flag, and =C-x @ h= adds
+the Hyper flag.
 
 *** Key: =A-=
   + Long name: Alt
@@ -123,9 +126,10 @@ the Alt flag.
 ** Movement keys
 Info link: [[info:emacs#Moving point][Moving point]]
 
-Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both have far richer ways of moving the
-cursor around a text file, by either a character (or multiple characters at once), a word or a line. In the table
-below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will be indicated as RMB/LMB. Lines look like this:
+Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both
+have far richer ways of moving the cursor around a text file, by either a character (or multiple
+characters at once), a word or a line. In the table below, Left/Right refer to keys on the keyboard,
+not mouse buttons. Buttons will be indicated as RMB/LMB. Lines look like this:
 
 =Key= - =what-it-will-do= 
  + Description of the Emacs command that the key will trigger.
@@ -151,7 +155,8 @@ below, Left/Right refer to keys on the keyboard, not mouse buttons. Buttons will
 *** =C-a= - =beginning-of-line=
   + Puts the cursor at the left-most position of the current line.
 *** =C-e= - =end-of-line=
-  + Puts the cursor at the right-most position of the current line, usually the last character even if that is a space.
+  + Puts the cursor at the right-most position of the current line, usually the last character even
+    if that is a space.
 *** =C-Down= - =forward-paragraph=
   + Steps the cursor forward to the first character of the next paragraph
 *** =C-Up= - =backward-paragraph=
