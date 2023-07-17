@@ -694,6 +694,7 @@ manual depending on the syntax at point.
   | #+DESCRIPTION | <string>               | Short precis of what it is           |
   | #+SEQ_TODO    | <string> [<string>]... | Before pipe, uncompleted colour.     |
   |               |                        | After pipe, completed colour         |
+  |---------------+------------------------+--------------------------------------|
   
 *** tags
   |---------------+---------------+-------------------------------------|
@@ -727,7 +728,9 @@ URL is anything supported by the Org internals, this can include:
 
 Other link formats are described in Org [[info:org#External links][External links]]
 
-You can generally edit existing links by putting your point somewhere into the link you want to edit, and using =C-c C-l=. This allows you to fiddle with the separate parts of the link if you need to change them for any reason.
+You can generally edit existing links by putting your point somewhere into the link you want to
+edit, and using =C-c C-l=. This allows you to fiddle with the separate parts of the link if you need
+to change them for any reason.
 
 *** inline images
 + Inline images in org mode: toggle visibility with C-c C-x C-v
@@ -742,9 +745,9 @@ collapsed org-mode document behaves slightly differently.
 ** magit
 *** Requirements
 First, install and enable magit if you haven't already. These following instructions assume that
-you've done so, and will also presume you have a working knowledge of common git commands.
-If a file you're editing is in a git repo, then =M-x magit= will open up a second
-window beside your file, and will show you some categories related to the repo. A shortcut is =C-x g=.
+you've done so, and will also presume you have a working knowledge of common git commands.  If a
+file you're editing is in a git repo, then =M-x magit= will open up a second window beside your
+file, and will show you some categories related to the repo. A shortcut is =C-x g=.
 
 *** Magit buffer commands
 From the magit buffer, you can do the following things. Most of them will prompt for other
@@ -754,57 +757,63 @@ all files in that category.
 
 NB: the section header often has a > in the fringe, but this is not visible in textmode.
 **** Adding untracked file:        =s= (=M-x magit-stage-file=)
- Simply put your cursor on the file you want to stage, hit s. The file should then shift into "Staged
- changes", ready for you to commit. This roughly duplicates "git add file.blah".
+Simply put your cursor on the file you want to stage, hit s. The file should then shift into "Staged
+changes", ready for you to commit. This roughly duplicates "git add file.blah".
 
- TODO: No idea how to add a directory from magit yet.
+TODO: No idea how to add a directory from magit yet.
 **** Staging changes in an unstaged file:     =s= (=M-x magit-stage-file=)
- Same as above, except for a file that's already part of the git repository.
+Same as above, except for a file that's already part of the git repository.
 **** Committing changes in staged files:      =c= (=M-x magit-commit=)
- Will request how you want to commit, hit =c= again to bring up an editor window. Provide a single line
- commit message. If you want to add more lines, leave a blank line after the single line as follows:
- #+BEGIN_EXAMPLE diff -n
- Initial commit message
+Will request how you want to commit, hit =c= again to bring up an editor window. Provide a single
+line commit message. If you want to add more lines, leave a blank line after the single line as
+follows:
+#+BEGIN_EXAMPLE diff -n
+Initial commit message
 
- This is the next line for a multi-line comment.
- # Please enter the commit message for your changes. Lines starting
- # with '#' will be ignored, and an empty message aborts the commit.
- #
- # On branch master
- # Your branch is up to date with 'origin/master'.
- #
- # Changes to be committed:
- #	modified:   notes.org
- #
- # Untracked files:
- #	notes.org~
- #
- #+END_EXAMPLE
+This is the next line for a multi-line comment.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   notes.org
+#
+# Untracked files:
+#	notes.org~
+#
+#+END_EXAMPLE
 **** Show diff against files:      =d= (diff)
 
 **** Refresh magit buffer:         =g= (magit-refresh)
- This refreshes the magit status buffer once you've made some changes within the project and saved those changes to disk. Installing =magit-filenotify= and enabling =magit-filenotify-mode= in the status window will automate this somewhat.
+This refreshes the magit status buffer once you've made some changes within the project and saved
+those changes to disk. Installing =magit-filenotify= and enabling =magit-filenotify-mode= in the
+status window will automate this somewhat.
 **** Expand/hide section:          =<TAB>=
- Type TAB to expand or hide the section at point.
+Type TAB to expand or hide the section at point.
 **** Visit change/commit:          =<RET>=
- Type RET to visit the change or commit at point.
+Type RET to visit the change or commit at point.
 **** Push changes to remote:       =P u=
-This takes any changes you have in your current repo and can push them to a remote repository if you have commit privileges there. I usually like to use =P u= (that's a P followed by a u, not a P-u), but there are other options available.
+This takes any changes you have in your current repo and can push them to a remote repository if you 
+have commit privileges there. I usually like to use =P u= (that's a P followed by a u, not a P-u), 
+but there are other options available.
 **** Configure repo variables:     =P C=
-This seems to allow you to configure certain things about your current git repository, such as descriptions, further remotes, and some other details.
+This seems to allow you to configure certain things about your current git repository, such as 
+descriptions, further remotes, and some other details.
 **** Other movement keys
 The usual =n= and =p= keys move the cursor up and down between sections.
 *** Wrap up
-There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you
-have magit installed.
+There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you have
+magit installed.
 
 ** erc (or erc-tls)
 Info Link: [[info:erc#Top][Erc manual]]
 
 Erc is an Internet Relay Client that comes as delivered with Emacs. It allows access to any IRC
-server with suitable defaults set up for freenode. The #emacs community on [[irc://chat.libera.org/#emacs]] is
-quite active, and will help you out with most of your questions. Be prepared to also do some
-reading.
+server with suitable defaults set up for freenode. The #emacs community on
+[[irc://chat.libera.org/#emacs]] is quite active, and will help you out with most of your questions. Be
+prepared to also do some reading.
    |---------------------------------+-------------|
    | *Command*                       | *Key*       |
    |---------------------------------+-------------|
