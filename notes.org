@@ -1090,23 +1090,23 @@ Moving the cursor around involves a few keys, and depends upon whether you're in
 in insert mode. These initial keys are used in command mode, and move around between characters
 and lines. Most of these commands will also take an integer as a prefix, meaning "do this n times".
 
-|-------------------+-------+----------------+----------------------------------------------------------|
-| *Command*         | *Key* | *Alternatives* | *Notes*                                                  |
-|-------------------+-------+----------------+----------------------------------------------------------|
-| right-char        | Right | l              |                                                          |
-| left-char         | Left  | h              |                                                          |
-| next-line         | Down  | k/C-n          | (Control-n)                                              |
-| Jump down n lines | nC-n  |                |                                                          |
-| previous-line     | Up    | j/C-p          | (Control-p)                                              |
-| Jump up n lines   | nC-p  |                |                                                          |
-| right-word        | w     |                | Forward to the beginning of the next word                |
-| left-word         | b     |                | Back to the first alpha-numeric character of the word    |
-| Beginning of line | 0     |                |                                                          |
-| End of line       | $     |                | The end of the actual line, not just the screen line (*) |
-| Top of file       | gg    |                |                                                          |
-| Bottom of file    | G     |                |                                                          |
-| Jump to line n    | nG    |                | Simply type integer in, then hit G                       |
-|-------------------+-------+----------------+----------------------------------------------------------|
+|-------------------+-------+----------------+---------------------------------------------------|
+| *Command*         | *Key* | *Alternatives* | *Notes*                                           |
+|-------------------+-------+----------------+---------------------------------------------------|
+| right-char        | Right | l              |                                                   |
+| left-char         | Left  | h              |                                                   |
+| next-line         | Down  | k/C-n          | (Control-n)                                       |
+| Jump down n lines | nC-n  |                |                                                   |
+| previous-line     | Up    | j/C-p          | (Control-p)                                       |
+| Jump up n lines   | nC-p  |                |                                                   |
+| right-word        | w     |                | Forward to the beginning of the next word         |
+| left-word         | b     |                | Back to the first alpha-numeric char of the word  |
+| Beginning of line | 0     |                |                                                   |
+| End of line       | $     |                | The end of the file line, not the screen line (*) |
+| Top of file       | gg    |                |                                                   |
+| Bottom of file    | G     |                |                                                   |
+| Jump to line n    | nG    |                | Simply type integer in, then hit G                |
+|-------------------+-------+----------------+---------------------------------------------------|
 
 (*) As with Emacs, there's a difference between a file line and a screen line. A file line starts
 after the last CR, CR/LF or LF (depending on platform of file) and continues until the next
