@@ -666,7 +666,7 @@ manual depending on the syntax at point.
 + demarcate block (wrap it in =#+BEGIN_SRC ... #+END_SRC=) =C-c C-v d= (org-babel-demarcate-block)
 + =C-c C-v C-t= (or simply, C-c C-v t) Tangle source code blocks to relevant file.  This means
   different things depending on how you've demarcated your source blocks. I use it to generate
-  =.emacs.el= from a =.emacs.org= file, with all the bits I want to fire out to there inside
+  =init.el= from a =.emacs.org= file, with all the bits I want to fire out to there inside
   =#+BEGIN_SRC emacs-lisp ... #+END_SRC= markers, and I use surrounding text to describe the source
   blocks.
 + =C-c C-e=  Export, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
