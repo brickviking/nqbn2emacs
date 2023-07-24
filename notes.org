@@ -697,17 +697,19 @@ manual depending on the syntax at point.
   |---------------+------------------------+--------------------------------------|
   
 *** tags
-  |---------------+---------------+-------------------------------------|
-  | *Name*        | *Description* |                                     |
-  |---------------+---------------+-------------------------------------|
-  | #+BEGIN_SRC   | [lang]        | Source code block - can be tangled  |
-  | #+END_SRC     |               | Closes it                           |
-  | #+SCHEDULED   | <timestamp>   | When is this meant to be started    |
-  | #+COMPLETED   | <timestamp>   | When this actually got completed    |
-  | #+DEADLINE    | <timestamp>   | When it's absolutely got to be done |
-  | #+BEGIN_QUOTE |               | An inline quote                     |
-  | #+END_QUOTE   |               | Closes inline quote                 |
-  |---------------+---------------+-------------------------------------|
+  |-----------------+---------------+------------------------------------------|
+  | *Name*          | *Description* |                                          |
+  |-----------------+---------------+------------------------------------------|
+  | #+BEGIN_SRC     | [lang]        | Source code block - can be tangled       |
+  | #+END_SRC       |               | Closes it                                |
+  | #+SCHEDULED     | <timestamp>   | When is this meant to be started         |
+  | #+COMPLETED     | <timestamp>   | When this actually got completed         |
+  | #+DEADLINE      | <timestamp>   | When it's absolutely got to be done      |
+  | #+BEGIN_QUOTE   |               | An inline quote                          |
+  | #+END_QUOTE     |               | Closes inline quote                      |
+  | #+BEGIN_COMMENT |               | Comment block, will generally be ignored |
+  | #+END_COMMENT   |               | Ends block                               |
+  |-----------------+---------------+------------------------------------------|
 *** Link syntax
 Generally, links work well within org mode, and don't quite work so well outside once you
 try to export the org document to other formats.  Links look like this:
