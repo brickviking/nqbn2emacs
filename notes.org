@@ -816,8 +816,8 @@ magit installed.
 Info Link: [[info:erc#Top][Erc manual]]
 
 Erc is an Internet Relay Client that comes as delivered with Emacs. It allows access to any IRC
-server with suitable defaults set up for freenode. The #emacs community on
-[[irc://chat.libera.org/#emacs]] is quite active, and will help you out with most of your questions. Be
+server with suitable defaults set up for libera. The #emacs community on
+[[irc://irc.libera.chat/#emacs]] is quite active, and will help you out with most of your questions. Be
 prepared to also do some reading.
    |---------------------------------+-------------|
    | *Command*                       | *Key*       |
