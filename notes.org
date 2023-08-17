@@ -1005,6 +1005,31 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
 #+END_SRC
 *** How to access the menubar from terminal
     + Either of the following: <F10> or  <ESC> `
+*** Here's a way to put ediff into windows in the frame instead of hanging outside as a separate frame
+[21:55:16]<Viking667> ... as ediff here just behaves really weirdly. like it can't decide what size
+[21:56:12] the actual diff command window should be, so lines overflow, causing all SORTS of bother.
+[21:57:29]<habamax> just make it a regular window not a frame -- way more convenient
+[21:58:00]<habamax> http://ix.io/4DKn
+#+BEGIN_EXAMPLE elisp -i
+(use-package ediff
+  :ensure nil
+  :config
+  (setq ediff-split-window-function 'split-window-horizontally)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain))
+#+END_EXAMPLE
+[22:00:48]<habamax> https://i.imgur.com/ygwgS8w.png - control window is the bottom one
+
+Alternatively, the last two lines can be included into custom.el as follows: 
+#+BEGIN_EXAMPLE elisp -i
+(custom-set-variables
+;; ...
+         '(ediff-split-window-function 'split-window-horizontally)
+         '(ediff-window-setup-function 'ediff-setup-windows-plain)
+;; ...
+)
+#+END_EXAMPLE
+
+Just make sure you don't rearrange the other lines inside custom-set-variables or you'll have trouble.
 ** tias moments (Try It And See)
 *** Resize images dynamically
 #+BEGIN_SRC
