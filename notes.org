@@ -212,7 +212,7 @@ line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 ** Registers
 Registers are slots to store stuff in, whether it's a string, a file position, a rectangle or a
 region. This section would benefit from being filled in further, though it's well described in info
-documentation (=C-h i=, =m=, =Emacs=, =m=, =Registers=).
+documentation (=C-h i=, =m=, =Emacs= <RET>, =m=, =Registers= RET).
 
 *** Storing current file position (=C-x r <SPC> <x>=)
 When your "point" or cursor, is at the position you want to remember for later, set the point's
