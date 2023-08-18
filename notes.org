@@ -85,6 +85,7 @@ combined with any of the prefix keys, which are as follows:
  + Long name: Meta
  + Alternative: Alt
  + Note: Left alt differs from right alt, which is often AltGr on non-US keyboards
+ + Note: On a Mac keyboard, the key is usually labeled as Option, and /may/ also be labeled with Alt.
 *** Key: =Esc=
  + Long name: Escape
  + Note: Can be used in place of Alt, but you hit this and then let it go before using the next key
