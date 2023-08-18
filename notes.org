@@ -397,8 +397,8 @@ This IRC client comes native with Emacs. It can be quite powerful, although ther
 that I haven't used yet such as ircle.
 *** Org mode
 One of the most highly recommended things that Emacs offers, there are a lot of things you can do
-with it, including literate programming. If you want to avoid the loaded-with-emacs version and go
-with the absolutely latest version of org mode, there are instructions at https://orgmode.org
+with it, including literate programming. If you really really want to avoid the loaded-with-emacs version and go
+with the absolutely latest version of org mode, there are instructions at https://orgmode.org, but these days, the bundled version of org-mode will get you just about everything, depending on the version of emacs you've installed.
 
 I tend to use it for literate configuration of emacs, as I can "tangle" the source sections into a
 config file that emacs can use directly. The non-source sections describe the rest of it. I won't go
