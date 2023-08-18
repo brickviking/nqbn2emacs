@@ -58,15 +58,20 @@ two keys F and 2. Occasionally you'll need to use a =Fn= key in combination with
 the <F2> key. <Tab> means the =Tab= key on the left hand side, not the three characters T, a
 and b. <RET> is simply the =Return= key, or =Enter= on most modern keyboards.
 
+One really important note up front: The =Alt= key on most modernish desktop computers and laptops
+is commonly called =Meta= by Emacs, and will be used as such througout this guide. So instead of
+showing you =Control=-=Alt=-something, it'll be shown here as =Control=-=Meta=-something, or the
+short version, =C-M-something=.
+
 This means that instead of having to type the words Control-Meta-V, Emacs will do what you want as
 long as you hold down the =Control= and =Alt= keys and then tap the =V= key (and let everything go).
 In the minibuffer (the blank section right at the bottom of the Emacs program), the keystrokes will
-show up in their abbreviated form.
+show up in their abbreviated form, such as =C-M-v=.
 
 In addition, all letters (aside from prefixes) are usually shown in their lowercase form, even
 though most keyboards show the uppercase letters on their keycaps. In most cases, unless you specify
 otherwise, Emacs will assume that the uppercase letters from A..Z are the same as lowercase when
-combined with any of the prefix keys.
+combined with any of the prefix keys, which are as follows:
 
 *** Key: =C-=
  + Long name: Control
