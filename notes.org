@@ -31,7 +31,7 @@ I haven't really explored exotic topics such as Tramp, gnus/mu4e, or the whole E
 ecosystem that Emacs lives on. I also don't address Emacs variants such as XEmacs, spacemacs or
 Doom Emacs.
 
-This document was originally created in a development version of emacs (at this date, 28.0.50); as
+This document was originally created in a development version of emacs (at this date, 29.1.50); as
 such it may have some items in here that haven't turned up in earlier versions of Emacs. I also
 don't discuss the differences between Emacs text mode and graphical mode much, as most of the things
 you can do in Emacs don't /require/ the graphical client except for details of the fringe. I've also
