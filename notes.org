@@ -1038,6 +1038,10 @@ Alternatively, the last two lines can be included into custom.el as follows:
 #+END_EXAMPLE
 
 Just make sure you don't rearrange the other lines inside custom-set-variables or you'll have trouble.
+*** Sorts lines within a region
+This uses the =sort-lines= function, and should be used with a region. Select the region with the
+lines you want to sort, then do =M-x sort-lines=. Use =C-u M-x sort-lines= if you want to
+sort the lines in reverse order. Thanks to parsnip from [[irc://irc.libera.chat#emacs][Libera #emacs channel]] for this one.
 ** tias moments (Try It And See)
 *** Resize images dynamically
 #+BEGIN_SRC
