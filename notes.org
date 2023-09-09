@@ -830,7 +830,12 @@ prepared to also do some reading. The list of help keys (=C-h m=) can help out f
 usage.
 
 First off, if you wish to join a server, start off with =M-x erc=. It'll ask you some questions
-about what server you want to join, the port to join on, what nickname you want to use, and a password if you wish to register your nickname with the server's NickServ (if it has one). As mentioned before, Libera is specified as a default, but if you're a member of any other server, you're able to join those other servers just by changing the details asked for. If you wish to use a secure TLS connection instead then use =M-x erc-tls=. There may be some other requirements for this that I don't remember currently.
+about what server you want to join, the port to join on, what nickname you want to use, and a
+password if you wish to register your nickname with the server's NickServ (if it has one). As
+mentioned before, Libera is specified as a default, but if you're a member of any other server,
+you're able to join those other servers just by changing the details asked for. If you wish to use a
+secure TLS connection instead then use =M-x erc-tls=. There may be some other requirements for this
+that I don't remember currently.
 
 After you've joined, there are some simple commands you can use while you're in the ERC window.
    |----------------------------------+---------------+---------------------------|
@@ -843,13 +848,22 @@ After you've joined, there are some simple commands you can use while you're in 
    | quit server                      | =C-c C-x=     | =erc-quit-server=         |
    |----------------------------------+---------------+---------------------------|
 
-+ Join channel :: This asks you for the name of a channel you want to join (they generally begin with a # for archaic reasons), and then attempts to join your nick to that channel, subject to whatever modes are active. It's the equivalent of the /join command.
-+ Get list of names :: This retrieves the list of people joined to that channel at the time the /names command is executed.
-+ Change to channel with activity :: This will toggle the buffer to one that's had activity more recent than the buffer you're currently in.
-+ Part channel :: You don't have to leave the server outright for this one, just leave the channel. This gets used where you don't want too many channels active at once. It's the equivalent of the /part command.
-+ Quit Server :: Quitting does what you think it does, and leaves the server. It acts like the /disconnect command. Afterwards, you'll need to re-run the =M-x erc= command to reconnect or to join another server.
++ Join channel :: This asks you for the name of a channel you want to join (they generally begin
+  with a # for archaic reasons), and then attempts to join your nick to that channel, subject to
+  whatever modes are active. It's the equivalent of the /join command.
++ Get list of names :: This retrieves the list of people joined to that channel at the time the
+  /names command is executed.
++ Change to channel with activity :: This will toggle the buffer to one that's had activity more
+  recent than the buffer you're currently in.
++ Part channel :: You don't have to leave the server outright for this one, just leave the
+  channel. This gets used where you don't want too many channels active at once. It's the equivalent
+  of the /part command.
++ Quit Server :: Quitting does what you think it does, and leaves the server. It acts like the
+  /disconnect command. Afterwards, you'll need to re-run the =M-x erc= command to reconnect or to
+  join another server.
 
-Some of the conventional IRC commands can also be used at the ERC> input line, so if you're used to clients like irssi, you won't get too confused though there are obviously some differences. 
+Some of the conventional IRC commands can also be used at the ERC> input line, so if you're used to
+clients like irssi, you won't get too confused though there are obviously some differences.
 
 ** EXWM
 EXWM is an X window manager that uses Emacs to control placement of frames or application windows.
