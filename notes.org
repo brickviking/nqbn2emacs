@@ -27,6 +27,9 @@ There's even some programming tips for plenty of other computer languages.
 And if you just want to chill out, I've added some of the soundtracks I've come across. 
 
 ** Disclaimer
+:PROPERTIES:
+:TOC:      :include all :depth 3
+:END:
 I haven't really explored exotic topics such as Tramp, gnus/mu4e, or the whole Elisp
 ecosystem that Emacs lives on. I also don't address Emacs variants such as XEmacs, spacemacs or
 Doom Emacs.
@@ -41,7 +44,57 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 \newpage
 #+END_EXPORT
 
-#+TOC: headlines 2
+:CONTENTS:
+- [[#emacs][Emacs]]
+  - [[#what-different-keys-mean][What different keys mean]]
+  - [[#rare-modifier-keys][Rare modifier keys]]
+  - [[#and-the-mouse-buttons][And the mouse buttons:]]
+  - [[#movement-keys][Movement keys]]
+  - [[#editing-keys][Editing keys]]
+  - [[#display-of-long-lines][Display of long lines]]
+  - [[#registers][Registers]]
+  - [[#macros][Macros]]
+  - [[#cock-ups][Cock-ups]]
+  - [[#help][Help]]
+  - [[#recommended-plugins][Recommended Plugins]]
+  - [[#plugins-recommended-by-others][Plugins recommended by others]]
+  - [[#windows][Windows]]
+  - [[#frames][Frames]]
+  - [[#buffers][Buffers]]
+  - [[#input][Input]]
+  - [[#paragraphs][Paragraphs]]
+  - [[#dired][Dired]]
+  - [[#org-mode][Org Mode]]
+  - [[#magit][magit]]
+  - [[#erc-or-erc-tls][erc (or erc-tls)]]
+  - [[#exwm][EXWM]]
+  - [[#vterm][vterm]]
+  - [[#snippets-from-freenodeemacs-and-liberaemacs][Snippets from freenode#emacs and libera#emacs]]
+  - [[#tias-moments-try-it-and-see][tias moments (Try It And See)]]
+  - [[#other-useful-links-channels-and-the-like][Other useful links, channels and the like]]
+  - [[#things-to-find-out-about][Things to find out about]]
+- [[#vim][Vim]]
+  - [[#movement-keys][Movement keys]]
+  - [[#help][Help]]
+  - [[#opening-files][Opening files]]
+  - [[#diffing-files][Diffing files]]
+  - [[#copying-commands][Copying commands]]
+  - [[#window-commands][Window commands]]
+  - [[#macro-commands][Macro commands]]
+  - [[#exit-commands][Exit commands]]
+- [[#programming][Programming]]
+  - [[#codemy-normally-payware][Codemy (normally payware)]]
+  - [[#freecodecamporg--youtube-channel][FreeCodeCamp.org]]
+  - [[#other][Other]]
+- [[#music][Music]]
+  - [[#classical][Classical]]
+  - [[#atmosphericambientdark][Atmospheric/ambient/Dark]]
+  - [[#programming-music][Programming music]]
+  - [[#soundtracks][Soundtracks]]
+  - [[#weird-stuff][Weird stuff]]
+  - [[#social][Social]]
+:END:
+
 
 #+BEGIN_EXPORT latex
 \newpage
