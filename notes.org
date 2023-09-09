@@ -817,8 +817,8 @@ descriptions, further remotes, and some other details.
 **** Other movement keys
 The usual =n= and =p= keys move the cursor up and down between sections.
 *** Wrap up
-There's a lot more that I haven't added, perhaps (info "(magit)Top") will help out if you have
-magit installed.
+There's a lot more that I haven't added, perhaps [[info:magit#Top][this link to the magit info docs]] will help out if
+you have magit installed. (=C-c C-o= to follow that link within Org mode).
 
 ** erc (or erc-tls)
 Info Link: [[info:erc#Top][Erc manual]]
