@@ -494,26 +494,11 @@ sequences that you can type in that form such as "C-g", "M-x" and so on.
 
 These are plugins I use a lot of the time. They're either already built into Emacs,
 or they can be installed from ELPA/MELPA.
-*** magit
-  :PROPERTIES:
-  :CUSTOM_ID: magit-plugins
-  :END:
-
-This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info
++ magit :: This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info
 documents for this is a really good idea, to make better use of magit.
-*** erc
-  :PROPERTIES:
-  :CUSTOM_ID: erc-plugins
-  :END:
-
-This IRC client comes native with Emacs. It can be quite powerful, although there are alternatives
++ erc :: This IRC client comes native with Emacs. It can be quite powerful, although there are alternatives
 that I haven't used yet such as ircle.
-*** Org mode
-  :PROPERTIES:
-  :CUSTOM_ID: org-mode-plugins
-  :END:
-
-One of the most highly recommended things that Emacs offers, there are a lot of things you can do
++ Org mode :: One of the most highly recommended things that Emacs offers, there are a lot of things you can do
 with it, including literate programming. If you really really want to avoid the loaded-with-emacs
 version and go with the absolutely latest version of org mode, there are instructions at
 https://orgmode.org, but these days, the bundled version of org-mode will get you just about
@@ -525,8 +510,7 @@ into the whole literate programming idea, but it started with Donald Knuth in hi
 Art of Computer Programming.
 
 I describe further things down in the [[#org-mode-1][Org Mode]] section.
-*** vterm
-Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
++ vterm :: Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
 ** Plugins recommended by others
