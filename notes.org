@@ -49,49 +49,49 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   - [[#what-different-keys-mean][What different keys mean]]
   - [[#rare-modifier-keys][Rare modifier keys]]
   - [[#and-the-mouse-buttons][And the mouse buttons:]]
-  - [[#movement-keys][Movement keys]]
+  - [[#movement-keys-emacs][Movement keys]]
   - [[#editing-keys][Editing keys]]
   - [[#display-of-long-lines][Display of long lines]]
   - [[#registers][Registers]]
-  - [[#macros][Macros]]
+  - [[#macro-commands-emacs][Macros]]
   - [[#cock-ups][Cock-ups]]
-  - [[#help][Help]]
+  - [[#help-emacs][Help]]
   - [[#recommended-plugins][Recommended Plugins]]
   - [[#plugins-recommended-by-others][Plugins recommended by others]]
   - [[#windows][Windows]]
   - [[#frames][Frames]]
-  - [[#buffers][Buffers]]
-  - [[#input][Input]]
+  - [[#buffers-emacs][Buffers]]
+  - [[#input-emacs][Input]]
   - [[#paragraphs][Paragraphs]]
   - [[#dired][Dired]]
-  - [[#org-mode][Org Mode]]
+  - [[#org-mode-emacs][Org Mode]]
   - [[#magit][magit]]
-  - [[#erc-or-erc-tls][erc (or erc-tls)]]
+  - [[#erc][erc (or erc-tls)]]
   - [[#exwm][EXWM]]
   - [[#vterm][vterm]]
-  - [[#snippets-from-freenodeemacs-and-liberaemacs][Snippets from freenode#emacs and libera#emacs]]
-  - [[#tias-moments-try-it-and-see][tias moments (Try It And See)]]
-  - [[#other-useful-links-channels-and-the-like][Other useful links, channels and the like]]
+  - [[#snippets_1][Snippets from freenode#emacs and libera#emacs]]
+  - [[#tias][tias moments (Try It And See)]]
+  - [[#other-useful-links][Other useful links, channels and the like]]
   - [[#things-to-find-out-about][Things to find out about]]
 - [[#vim][Vim]]
-  - [[#movement-keys][Movement keys]]
-  - [[#help][Help]]
-  - [[#opening-files][Opening files]]
-  - [[#diffing-files][Diffing files]]
-  - [[#copying-commands][Copying commands]]
-  - [[#window-commands][Window commands]]
-  - [[#macro-commands][Macro commands]]
-  - [[#exit-commands][Exit commands]]
+  - [[#movement-keys-vim][Movement keys]]
+  - [[#help-vim][Help]]
+  - [[#opening-files-vim][Opening files]]
+  - [[#diffing-files-vim][Diffing files]]
+  - [[#copying-commands-vim][Copying commands]]
+  - [[#window-commands-vim][Window commands]]
+  - [[#macro-commands-vim][Macro commands]]
+  - [[#exit-commands-vim][Exit commands]]
 - [[#programming][Programming]]
-  - [[#codemy-normally-payware][Codemy (normally payware)]]
-  - [[#freecodecamporg--youtube-channel][FreeCodeCamp.org]]
-  - [[#other][Other]]
+  - [[#codemy-videos][Codemy (normally payware) video]]
+  - [[#freecodecamp-org-videos][FreeCodeCamp.org Videos]]
+  - [[#other-programming-videos][Other Videos]]
 - [[#music][Music]]
-  - [[#classical][Classical]]
-  - [[#atmosphericambientdark][Atmospheric/ambient/Dark]]
-  - [[#programming-music][Programming music]]
-  - [[#soundtracks][Soundtracks]]
-  - [[#weird-stuff][Weird stuff]]
+  - [[#music-classical][Classical]]
+  - [[#music-atmospheric][Atmospheric/ambient/Dark]]
+  - [[#music-programming][Programming music]]
+  - [[#music-soundtracks][Game Soundtracks]]
+  - [[#music-weird][Weird stuff]]
   - [[#social][Social]]
 :END:
 
@@ -101,7 +101,13 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 #+END_EXPORT
 
 * Emacs
+  :PROPERTIES:
+  :CUSTOM_ID: emacs
+  :END:
 ** What different keys mean
+  :PROPERTIES:
+  :CUSTOM_ID: what-different-keys-mean
+  :END:
 Throughout this documentation, and indeed most Emacs documents that I've read, key prefixes are
 abbreviated according to the following list. This was basically cribbed from the following
 [[info:Emacs#Modifier Keys][listing of modifier keys]] in the manual.
@@ -150,6 +156,10 @@ combined with any of the prefix keys, which are as follows:
     key can only be accessed in a graphical environment and is translated to =RET= but can be bound
     independently. (Thanks to Jamie Beardslee for the extra information).
 ** Rare modifier keys
+  :PROPERTIES:
+  :CUSTOM_ID: rare-modifier-keys
+  :END:
+
 These keys aren't used very often, and in the case of Super and Hyper, aren't used at all in default
 Emacs. 
 
@@ -174,6 +184,10 @@ the Hyper flag.
   + Alternative: No modern equivalent
   + Note: Sometimes bound to Fn or Menu
 ** And the mouse buttons:
+  :PROPERTIES:
+  :CUSTOM_ID: and-the-mouse-buttons
+  :END:
+
    |-------+---------------------+------------------------------------------|
    | *Key* | *Long name*         | *Notes*                                  |
    |-------+---------------------+------------------------------------------|
@@ -183,6 +197,10 @@ the Hyper flag.
    |-------+---------------------+------------------------------------------|
 
 ** Movement keys
+  :PROPERTIES:
+  :CUSTOM_ID: movement-keys-emacs
+  :END:
+
 Info link: [[info:emacs#Moving point][Moving point]]
 
 Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both
@@ -231,6 +249,10 @@ not mouse buttons. Buttons will be indicated as RMB/LMB. Lines look like this:
   + With optional arg between 0 and 10, (=C-u arg C-End=) positions cursor arg*10 percent
     from the end of the buffer. An alternative keybinding is =M-S->=.
 ** Editing keys
+  :PROPERTIES:
+  :CUSTOM_ID: editing-keys
+  :END:
+
 Info link: [[info:emacs#Basic Undo][Basic Undo]]
 
 These are some of the keys responsible for deleting or copying text to a "kill-ring" to restore
@@ -259,6 +281,10 @@ Fundamental mode, though a lot of it is also relevant for most other modes that 
   + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= 
 will restore earlier points on the kill-ring instead of the most recent entry.
 ** Display of long lines
+  :PROPERTIES:
+  :CUSTOM_ID: display-of-long-lines
+  :END:
+
 Info link: [[info:emacs#Continuation Lines][Continuation Lines]]
 
 Emacs will display lines for text files in one of three ways, either line-truncated, with a symbol
@@ -269,6 +295,10 @@ readable. Visual-line-mode is a minor mode, so it's toggled with =M-x visual-lin
 line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 
 ** Registers
+  :PROPERTIES:
+  :CUSTOM_ID: registers
+  :END:
+
 Registers are slots to store stuff in, whether it's a string, a file position, a rectangle or a
 region. This section would benefit from being filled in further, though it's well described in info
 documentation (=C-h i=, =m=, =Emacs= <RET>, =m=, =Registers= RET).
@@ -306,6 +336,10 @@ to repeat the insert multiple times. The only time a register's contents will be
 insert new content or delete the register.
 
 ** Macros
+  :PROPERTIES:
+  :CUSTOM_ID: macro-commands-emacs
+  :END:
+
 *** Basic commands
 Info link: [[info:emacs#Keyboard Macros][Keyboard Macros]]
 
@@ -396,6 +430,10 @@ learn more about them.
 **** Recursion (recursion (recursion...))
 **** Keyboard macro counters
 ** Cock-ups
+  :PROPERTIES:
+  :CUSTOM_ID: cock-ups
+  :END:
+
 These are some of the few things I've found out so far that tend to break without obvious reasons,
 or not be obvious to the really new Emacs user.
    * When starting a remote file access, don't run M-x tramp first. Things will break.
@@ -404,6 +442,10 @@ or not be obvious to the really new Emacs user.
    * Don't blindly accept local variable exec sections when loading a file, Emacs could break when 
      trying to save or quit. I once got to the stage where I couldn't close Emacs down legitimately.
 ** Help
+  :PROPERTIES:
+  :CUSTOM_ID: help-emacs
+  :END:
+
 Info link: [[info:emacs#Help][Help]]
 
 What follows is a rough summary of the available help commands. The first is pretty important. More
@@ -446,6 +488,10 @@ This will give you help on what function =C-h= calls up. The same is true for mo
 sequences that you can type in that form such as "C-g", "M-x" and so on.
 
 ** Recommended Plugins
+  :PROPERTIES:
+  :CUSTOM_ID: recommended-plugins
+  :END:
+
 These are plugins I use a lot of the time. They're either already built into Emacs,
 or they can be installed from ELPA/MELPA.
 *** magit
@@ -472,6 +518,10 @@ Again, this isn't native, but is a more powerful (in some ways) terminal, offeri
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
 ** Plugins recommended by others
+  :PROPERTIES:
+  :CUSTOM_ID: plugins-recommended-by-others
+  :END:
+
 On the other hand, these are some plugins that come as a recommendation from someone in [[irc://chat.freenode.org/#emacs][Freenode
 #Emacs channel]] (which has since converted to [[irc://irc.libera.chat/#emacs][irc.libera.chat]]), I can't personally vouch for these
 plugins, I haven't used them myself.
@@ -480,6 +530,10 @@ plugins, I haven't used them myself.
   + writegood
 
 ** Windows
+  :PROPERTIES:
+  :CUSTOM_ID: windows
+  :END:
+
 Info link: [[info:Emacs#Windows][Window commands]]
 
 These commands all work with windows within a frame. A frame is a collection of one or more windows;
@@ -533,6 +587,10 @@ files that only have four or five short lines in them, but if the buffer is larg
 window, then the =C-x -= won't do anything.
 
 ** Frames
+  :PROPERTIES:
+  :CUSTOM_ID: frames
+  :END:
+
 Info link: [[info:Emacs#Frames][Frame commands]]
 
 These commands all relate to working with frames, as opposed to windows or buffers. As described
@@ -552,6 +610,10 @@ Xorg/Wayland/Aqua/Windows) as opposed to a purely textual display (as in a termi
    |                                   |         |
    |-----------------------------------+---------|
 ** Buffers
+  :PROPERTIES:
+  :CUSTOM_ID: buffers-emacs
+  :END:
+
 Info link: [[info:Emacs#Buffers][Buffer commands]]
 
 A buffer holds either:
@@ -600,6 +662,10 @@ Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     |------------+-------------------------------|
     Also check [[#how-to-set-a-buffers-line-encoding-from-text-mode][How to set a buffer’s line-encoding from text mode]]
 ** Input
+  :PROPERTIES:
+  :CUSTOM_ID: input-emacs
+  :END:
+
 Info link: [[info:emacs#Selecting Input Methods][Selecting input methods]]
 
 *** Changing input language character set.
@@ -614,6 +680,10 @@ input. You can also get a list of supported inputs with =M-x list-input-methods=
 Examples of input include chinese-py (Simplified Chinese using pinyin), japanese-hiragana (hiragana
 using romaji), and greek (Greek characters). There are many more variants as well.
 ** Paragraphs
+  :PROPERTIES:
+  :CUSTOM_ID: paragraphs
+  :END:
+
 Paragraphs are sections of text, usually separated from each other by either a blank line, or
 terminated by a period. The default width for paragraphs is a hangover from the dim dark times when
 output used to be on printer paper, and most printers would only print a maximum of 80 normal
@@ -646,6 +716,10 @@ or any other relevant width. This applies when you reformat the paragraph manual
 emacs do the reformatting for you in the current buffer (=M-x auto-fill-mode=) as you go.
 
 ** Dired
+  :PROPERTIES:
+  :CUSTOM_ID: dired
+  :END:
+
 Info link: [[info:emacs#Dired][Dired]]
 
 These are some of the commands that can be used in a dired buffer. For all intents, you can do
@@ -696,7 +770,7 @@ from disk.  To remove files from the disk, mark them each with =d=, then once yo
 files, use =k= to remove them.  This cannot be undone, much like on any UNIX/Linux/BSD shell.
 ** Org Mode
 :PROPERTIES:
-:CUSTOM_ID: org-mode-1
+:CUSTOM_ID: org-mode-emacs
 :END:
 [[http://orgmode.org/][Org mode home page]]
 
@@ -809,6 +883,10 @@ generally take you to where the link points to, depending upon the type of link.
     If you turn on—or you have defined in emacs startup—scroll-lock-mode, cursor movement within a
 collapsed org-mode document behaves slightly differently. 
 ** magit
+  :PROPERTIES:
+  :CUSTOM_ID: magit
+  :END:
+
 *** Requirements
 First, install and enable magit if you haven't already. These following instructions assume that
 you've done so, and will also presume you have a working knowledge of common git commands.  If a
@@ -874,6 +952,10 @@ There's a lot more that I haven't added, perhaps [[info:magit#Top][this link to 
 you have magit installed. (=C-c C-o= to follow that link within Org mode).
 
 ** erc (or erc-tls)
+  :PROPERTIES:
+  :CUSTOM_ID: erc
+  :END:
+
 Info Link: [[info:erc#Top][Erc manual]]
 
 Erc is an Internet Relay Client that comes as delivered with Emacs. It allows access to any IRC
@@ -919,6 +1001,10 @@ Some of the conventional IRC commands can also be used at the ERC> input line, s
 clients like irssi, you won't get too confused though there are obviously some differences.
 
 ** EXWM
+  :PROPERTIES:
+  :CUSTOM_ID: exwm
+  :END:
+
 EXWM is an X window manager that uses Emacs to control placement of frames or application windows.
 This needs to be expanded further, though I haven't had this in operation yet. Here's a snippet 
 from IRC log:
@@ -928,6 +1014,10 @@ from IRC log:
 [18:53:36]<jamzattack> oni-on-ion: C-c C-t C-f runs the command exwm-floating-toggle-floating
 #+END_QUOTE
 ** vterm
+  :PROPERTIES:
+  :CUSTOM_ID: vterm
+  :END:
+
 This doesn't come standard with emacs, but is well worth the install. Running other programs inside
 vterm can come with a couple of pitfalls though, especially if you're expecting to run vim, which
 actually works, by the way. If you want to copy stuff from a vterm buffer, toggle vterm-copy-mode
@@ -935,6 +1025,10 @@ with C-c C-t, make your selection, copy it to the killring (or is it yank ring?)
 vterm-copy-mode back off again. Toggling it back off allows commands such as M-w to be passed
 through to the program you're running inside vterm—for example, the vim editor.
 ** Snippets from freenode#emacs and libera#emacs
+  :PROPERTIES:
+  :CUSTOM_ID: snippets_1
+  :END:
+
 These are all questions that have turned up in the #Emacs channel, they've had varying responses. In
 some cases I've left the discussions mostly unaltered, sometimes I've compacted the conversation to
 address just the subject being discussed.
@@ -1126,6 +1220,10 @@ This uses the =sort-lines= function, and should be used with a region. Select th
 lines you want to sort, then do =M-x sort-lines=. Use =C-u M-x sort-lines= if you want to
 sort the lines in reverse order. Thanks to parsnip from [[irc://irc.libera.chat#emacs][Libera #emacs channel]] for this one.
 ** tias moments (Try It And See)
+  :PROPERTIES:
+  :CUSTOM_ID: tias
+  :END:
+
 *** Resize images dynamically
 #+BEGIN_SRC
 [16:52:32]<Viking667> Hm. I stumbled across something nice in org-mode,
@@ -1152,6 +1250,10 @@ to the =#+BEGIN_SRC= param, =-i=. It should end up looking a bit like this:
 #+END_EXAMPLE
 
 ** Other useful links, channels and the like
+  :PROPERTIES:
+  :CUSTOM_ID: other-useful-links
+  :END:
+
 *** Mike Zamansky - Using Emacs
 https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1
 That has a complete list of all the "Using Emacs" videos so far. It seems to be regularly updated, so
@@ -1167,6 +1269,10 @@ https://www.emacswiki.org/emacs/EmacsScreencasts
 https://www.masteringemacs.org/
     If you think you know Emacs from this little bit I've explained here, then go read this book. It will revolutionise your emacs usage if you read it through and implement some of the things Mickey Petersen talks about. This is one of the few ebooks I've bought, and is reasonably priced for what it is. At the time I write this, it comes in at $49.95 in greenbacks, with the possibility that it may go up in the future.
 ** Things to find out about
+  :PROPERTIES:
+  :CUSTOM_ID: things-to-find-out-about
+  :END:
+
 *** org-pdfview and pdftools
 Looks like org-pdfview has been replaced by org-pdftools. I had warnings when I loaded that package.
 I think pdftools is the debian or fedora package texlive-pdftools.
@@ -1178,6 +1284,10 @@ they don't have numbers.
 I already know about save and insert (=C-x r s <x>= and =C-x r i <x>=), but I'm not sure about
 other register commands.
 * Vim
+  :PROPERTIES:
+  :CUSTOM_ID: vim
+  :END:
+
 You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
 try to be anything else. However, even it has a scripting language underneath, called vimscript.
@@ -1211,6 +1321,10 @@ use them, so I don't include much here about it.
 
 I don't describe more detailed vimscript here, basically because I don't know how to use it myself.
 ** Movement keys
+  :PROPERTIES:
+  :CUSTOM_ID: movement-keys-vim
+  :END:
+
 Moving the cursor around involves a few keys, and depends upon whether you're in command mode or
 in insert mode. These initial keys are used in command mode, and move around between characters
 and lines. Most of these commands will also take an integer as a prefix, meaning "do this n times".
@@ -1241,6 +1355,10 @@ line, and an 80-character screen, the file line would take up five screen lines 
 "end-of-line" command goes to the end of the file line.
 
 ** Help
+  :PROPERTIES:
+  :CUSTOM_ID: help-vim
+  :END:
+
   |-----------------+--------------------+---------------------------------------------------------|
   | *Commands*      | *Keys*             | *Notes*                                                 |
   |-----------------+--------------------+---------------------------------------------------------|
@@ -1249,6 +1367,10 @@ line, and an 80-character screen, the file line would take up five screen lines 
   | Help section    | :help usr_08       | Jump to usr_08.txt                                      |
   |-----------------+--------------------+---------------------------------------------------------|
 ** Opening files
+  :PROPERTIES:
+  :CUSTOM_ID: opening-files-vim
+  :END:
+
 Check :help edit
    |---------------------------------+---------------+--------------------------------------------|
    | *Commands*                      | *Keys*        | *Notes*                                    |
@@ -1258,6 +1380,10 @@ Check :help edit
    | Insert command output at cursor | :r !command   | (won't take input)                         |
    |---------------------------------+---------------+--------------------------------------------|
 ** Diffing files
+  :PROPERTIES:
+  :CUSTOM_ID: diffing-files-vim
+  :END:
+
 Check :help diff
 There are two ways to diff files with vimdiff. 
   + First, from commandline: 
@@ -1280,6 +1406,10 @@ There are two ways to diff files with vimdiff.
   |-------------------------+--------+---------|
 
 ** Copying commands
+  :PROPERTIES:
+  :CUSTOM_ID: copying-commands-vim
+  :END:
+
 Check out :help copy
 |-----------------------------------------+----------|
 | *Command*                               | *Key(s)* |
@@ -1304,6 +1434,10 @@ the =y= key, followed by the =Spacebar=. You may often see special notes about k
 the Vim help.
 
 ** Window commands
+  :PROPERTIES:
+  :CUSTOM_ID: window-commands-vim
+  :END:
+
 Window commands operate to open/close or move between existing windows. In essence, a vim window is like a emacs buffer, in
 that they both hold the contents of a file, but work slightly differently.
 
@@ -1349,6 +1483,10 @@ The maximum size appears to be two less than the vertical room available, and le
 the status bar for each window.
 
 ** Macro commands
+  :PROPERTIES:
+  :CUSTOM_ID: macro-commands-vim
+  :END:
+
 Check :help macro
 Key mapping is used to change the meaning of typed keys.  The most common use
 is to define a sequence of commands for a function key.  Example:
@@ -1366,6 +1504,10 @@ Picking this apart, you have the command :map. This command takes two (or more) 
 + The second argument is what you want to type when you hit F2. In this case, it's generally vim
   commands in command mode. You can bind keys in insert mode, but that comes with a bit more to do.
 ** Exit commands
+  :PROPERTIES:
+  :CUSTOM_ID: exit-commands-vim
+  :END:
+
 Check :help exiting
   |--------------------------------+--------+-------------+-------------------------------------|
   | *Commands*                     | *Keys* | *Long form* | *Notes*                             |
@@ -1378,10 +1520,22 @@ Check :help exiting
   |--------------------------------+--------+-------------+-------------------------------------|
 
 * Programming
-** Codemy (normally payware)
+  :PROPERTIES:
+  :CUSTOM_ID: programming
+  :END:
+
+** Codemy (normally payware) Video
+  :PROPERTIES:
+  :CUSTOM_ID: codemy-videos
+  :END:
+
     + [[https://www.youtube.com/watch?v=yOmxJbZjTnU][Using MySQL Databases With Python Course (1:10:09)]]
     
-** FreeCodeCamp.org  [[https://youtube.com/c/freecodecamp][Youtube Channel]]
+** FreeCodeCamp.org Videos  [[https://youtube.com/c/freecodecamp][Youtube Channel]]
+  :PROPERTIES:
+  :CUSTOM_ID: freecodecamp-org-videos
+  :END:
+
 *** Basic (Visual Basic)
     + [[https://www.youtube.com/watch?v=HFWQdGn5DaU][Visual Basic for beginners]]
 *** C++
@@ -1407,13 +1561,25 @@ Check :help exiting
     + [[https://www.youtube.com/watch?v=HXV3zeQKqGY][SQL tutorial - Full database course for beginners (4:20:39)]]
 **** Postgresql
      + [[https://www.youtube.com/watch?v=qw--VYLpxG4][Learn PostGreSQL Tutorial (4:19:34)]]
-** Other
+** Other Videos
+  :PROPERTIES:
+  :CUSTOM_ID: other-programming-videos
+  :END:
+
 *** Javascript
     + Java Swing GUI Full course—Bro Code (4:48:34)
     https://www.youtube.com/watch?v=Kmgo00avvEw
 
 * Music
+  :PROPERTIES:
+  :CUSTOM_ID: music
+  :END:
+
 ** Classical
+  :PROPERTIES:
+  :CUSTOM_ID: music-classical
+  :END:
+
   + Erik Satie: Gymnopedies, gnossiennes et sarabandes (1:05:19)
   https://www.youtube.com/watch?v=5pyhBJzuixM
     + [P Tracklist:
@@ -1441,6 +1607,10 @@ Check :help exiting
       + 01:03:47 Petite ouverture à danser (1900)
       ]
 ** Atmospheric/ambient/Dark
+  :PROPERTIES:
+  :CUSTOM_ID: music-atmospheric
+  :END:
+
   + Outer Darkness (10+ Hours Dark Ambient-1:04:41 looped) (10:46:47)
    + https://www.youtube.com/watch?v=rc-XgxwIMFM
   + 'Afterglow' Ambient mix (2:02:33)
@@ -1454,6 +1624,10 @@ Check :help exiting
   + It wears a human face - (10 hours of dark ambient music)
     + https://www.youtube.com/watch?v=cHf3aitzSCE
 ** Programming music
+  :PROPERTIES:
+  :CUSTOM_ID: music-programming
+  :END:
+
 *** Fil Far
   + [[https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g][Fil Far channel]]
   + [[https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5][List of videos]]
@@ -1466,7 +1640,11 @@ Check :help exiting
   https://www.youtube.com/watch?v=do7Jl_4_d5w
 *** Other channels
   + [[https://www.youtube.com/watch?v=nPM_teVT07Y][Starterra - Celestial (Space Ambient) [Full Album]]]
-** Soundtracks
+** Game Soundtracks
+  :PROPERTIES:
+  :CUSTOM_ID: music-soundtracks
+  :END:
+
   + [[https://www.youtube.com/watch?v=TGXwvLupP5A][Age of Mythology soundtrack (46:32)]]
   + [[https://www.youtube.com/watch?v=T6OZrUbLJ1M][Factorio complete soundtrack (1:00:53)]]
   + [[https://www.youtube.com/watch?v=bq7a_ktfYck][Hyper Light Drifter - complete OST (2:19:21)]]
@@ -1553,6 +1731,14 @@ Check :help exiting
     + Tentacle Exploration 2 - 6:22:10
     + Constellation 1 (8 different versions) - 6:25:16
 ** Weird stuff
+  :PROPERTIES:
+  :CUSTOM_ID: music-weird
+  :END:
+
   + [[https://www.youtube.com/watch?v=heu9tD0dzkY][Philip Glass - Music From The Hours (42:44)]]
 ** Social
+  :PROPERTIES:
+  :CUSTOM_ID: social
+  :END:
+
   + [[https://www.youtube.com/watch?v=pM-HpZQWKT4][Uncomfortable conversations with a black man - Petuma Police Force (22:32)]]
