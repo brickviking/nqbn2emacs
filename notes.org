@@ -64,7 +64,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   - [[#input-emacs][Input]]
   - [[#paragraphs][Paragraphs]]
   - [[#dired][Dired]]
-  - [[#org-mode][Org Mode]]
+  - [[#org-mode-emacs][Org Mode]]
   - [[#magit][magit]]
   - [[#erc][erc (or erc-tls)]]
   - [[#exwm][EXWM]]
@@ -495,12 +495,24 @@ sequences that you can type in that form such as "C-g", "M-x" and so on.
 These are plugins I use a lot of the time. They're either already built into Emacs,
 or they can be installed from ELPA/MELPA.
 *** magit
+  :PROPERTIES:
+  :CUSTOM_ID: magit-plugins
+  :END:
+
 This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info
 documents for this is a really good idea, to make better use of magit.
 *** erc
+  :PROPERTIES:
+  :CUSTOM_ID: erc-plugins
+  :END:
+
 This IRC client comes native with Emacs. It can be quite powerful, although there are alternatives
 that I haven't used yet such as ircle.
 *** Org mode
+  :PROPERTIES:
+  :CUSTOM_ID: org-mode-plugins
+  :END:
+
 One of the most highly recommended things that Emacs offers, there are a lot of things you can do
 with it, including literate programming. If you really really want to avoid the loaded-with-emacs
 version and go with the absolutely latest version of org mode, there are instructions at
@@ -770,7 +782,7 @@ from disk.  To remove files from the disk, mark them each with =d=, then once yo
 files, use =k= to remove them.  This cannot be undone, much like on any UNIX/Linux/BSD shell.
 ** Org Mode
 :PROPERTIES:
-:CUSTOM_ID: org-mode
+:CUSTOM_ID: org-mode-emacs
 :END:
 [[http://orgmode.org/][Org mode home page]]
 
