@@ -64,7 +64,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   - [[#input-emacs][Input]]
   - [[#paragraphs][Paragraphs]]
   - [[#dired][Dired]]
-  - [[#org-mode-emacs][Org Mode]]
+  - [[#org-mode][Org Mode]]
   - [[#magit][magit]]
   - [[#erc][erc (or erc-tls)]]
   - [[#exwm][EXWM]]
@@ -766,7 +766,7 @@ from disk.  To remove files from the disk, mark them each with =d=, then once yo
 files, use =k= to remove them.  This cannot be undone, much like on any UNIX/Linux/BSD shell.
 ** Org Mode
 :PROPERTIES:
-:CUSTOM_ID: org-mode-emacs
+:CUSTOM_ID: org-mode
 :END:
 [[http://orgmode.org/][Org mode home page]]
 
