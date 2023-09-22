@@ -51,6 +51,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   - [[#and-the-mouse-buttons][And the mouse buttons:]]
   - [[#movement-keys-emacs][Movement keys]]
   - [[#editing-keys][Editing keys]]
+  - [[indenting][Indenting]]
   - [[#display-of-long-lines][Display of long lines]]
   - [[#registers][Registers]]
   - [[#macro-commands-emacs][Macros]]
@@ -280,6 +281,31 @@ Fundamental mode, though a lot of it is also relevant for most other modes that 
 *** =C-y= - =yank=
   + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= 
 will restore earlier points on the kill-ring instead of the most recent entry.
+** Indenting
+  :PROPERTIES:
+  :CUSTOM_ID: indenting
+  :END:
+
+Info link: [[info:emacs#Indentation][Indentation]]
+
+This is intentionally a very simple explanation as the official docs explain the details far better
+than I can in this simple outline. Indenting (or outdenting if you go the other way) means shifting
+a region inwards/outwards a set number of spaces, and filling the gap in with tabs if spaces should
+be converted into tabs when you have enough of them. There's a setting that relates to this that I
+generally leave off unless I have to have it turned on, for example, makefiles and python.
+
+First, select a region so you can see the area being effected. Then, use =C-x TAB=, or
+alternatively, =C-x C-i=. You can then shift the region left or right by using the respective arrow
+keys. If you use =S-<Left>= or =S-<Right>=, that will shift the region in that direction by eight
+spaces or fills out to the next tab setting. Once you have the region indented where you want it,
+use any other keyboard movement (=C-n/p=, =Up/Down=) or deselect the region with =C-space C-space=.
+
+Indenting can also be handled on a line-by-line basis, instead of selecting a region. There is a
+note in the info docs about the =TAB= key being handled specially by different modes. This generally
+means that handling of indenting differs between prose such as this, and source code such as C or
+Python source file lines. As each major mode normally sets acceptable behaviour for the handling of
+the TAB key, look to those major modes and their documentation.
+
 ** Display of long lines
   :PROPERTIES:
   :CUSTOM_ID: display-of-long-lines
