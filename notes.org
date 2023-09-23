@@ -298,7 +298,8 @@ First, select a region so you can see the area being effected. Then, use =C-x TA
 alternatively, =C-x C-i=. You can then shift the region left or right by using the respective arrow
 keys. If you use =S-<Left>= or =S-<Right>=, that will shift the region in that direction by eight
 spaces or fills out to the next tab setting. Once you have the region indented where you want it,
-use any other keyboard movement (=C-n/p=, =Up/Down=) or deselect the region with =C-space C-space=.
+use any other keyboard movement (=C-n/p=, =Up/Down=) or deselect the region with =C-space C-space=,
+or simply use cancel (=C-g=).
 
 Indenting can also be handled on a line-by-line basis, instead of selecting a region. There is a
 note in the info docs about the =TAB= key being handled specially by different modes. This generally
