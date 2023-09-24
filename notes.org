@@ -1242,6 +1242,18 @@ Just make sure you don't rearrange the other lines inside custom-set-variables o
 This uses the =sort-lines= function, and should be used with a region. Select the region with the
 lines you want to sort, then do =M-x sort-lines=. Use =C-u M-x sort-lines= if you want to
 sort the lines in reverse order. Thanks to parsnip from [[irc://irc.libera.chat#emacs][Libera #emacs channel]] for this one.
+*** Open a ssh file on another computer
+I always forget how to open a file over ssh, so I'm including this file after the fact.
+One of the help files I stumbled across in Google said that tramp access uses urls that look like
+the following: tramp /access:user@host:/path/to/file.
+
+This would mean (at least for accessing a file remotely over ssh) a link that looks like this:
+#+BEGIN_EXAMPLE
+tramp /ssh:madman@tencity:/home/madman/quicknote.txt
+#+END_EXAMPLE
+
+There are other access methods tramp knows how to use, but this is all I really needed for my use.
+
 ** tias moments (Try It And See)
   :PROPERTIES:
   :CUSTOM_ID: tias
