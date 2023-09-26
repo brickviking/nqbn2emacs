@@ -65,6 +65,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   - [[#input-emacs][Input]]
   - [[#paragraphs][Paragraphs]]
   - [[#dired][Dired]]
+  - [[#tramp][Tramp]]
   - [[#org-mode][Org Mode]]
   - [[#magit][magit]]
   - [[#erc][erc (or erc-tls)]]
@@ -791,6 +792,35 @@ dired-omit-mode again.
 Deletion marks are different from normal marks, in that when you go k, you erase those marked files
 from disk.  To remove files from the disk, mark them each with =d=, then once you have selected the
 files, use =k= to remove them.  This cannot be undone, much like on any UNIX/Linux/BSD shell.
+** Tramp
+  :PROPERTIES:
+  :CUSTOM_ID: tramp
+  :END:
+
+Info links: 
++ [[info:emacs#Remote Files][Remote Files]]. :: (Emacs)Remote Files
++ [[info:Tramp#Top][Tramp manual]]. :: (Tramp)Top
+
+Tramp is used to locally edit files that are on a remote machine. It's used with the normal
+=C-x C-f= keys, but with a little extra juice than simply =/path/to/file.txt=. Tramp access uses
+URLS that usually look like the following:
+
+#+BEGIN_EXAMPLE
+C-x C-f /method:user@host:/path/to/file
+#+END_EXAMPLE
+
++ method :: One of ssh, scp, ftp, or very rarely, rsync or telnet.
++ user :: Should be whatever user you'll use on remote end at the remote host. For FTP, this can
+          simply be the ftp user or anonymous user. For other methods, this will be your real
+          username. The remote machine will also ask for a password for that user.
++ host :: the machine you're logging into as the above user.
++ path :: The usual :/first/second/dir/file, don't forget the separating colon,that's important.
+
+This would mean (at least for accessing a file remotely over ssh) a link that looks like this:
+#+BEGIN_EXAMPLE
+C-x C-f /ssh:madman@farmland.tencity.example:/home/madman/quicknote.txt
+#+END_EXAMPLE
+
 ** Org Mode
 :PROPERTIES:
 :CUSTOM_ID: org-mode
@@ -1242,18 +1272,6 @@ Just make sure you don't rearrange the other lines inside custom-set-variables o
 This uses the =sort-lines= function, and should be used with a region. Select the region with the
 lines you want to sort, then do =M-x sort-lines=. Use =C-u M-x sort-lines= if you want to
 sort the lines in reverse order. Thanks to parsnip from [[irc://irc.libera.chat#emacs][Libera #emacs channel]] for this one.
-*** Open a ssh file on another computer
-I always forget how to open a file over ssh, so I'm including this file after the fact.
-One of the help files I stumbled across in Google said that tramp access uses urls that look like
-the following: tramp /access:user@host:/path/to/file.
-
-This would mean (at least for accessing a file remotely over ssh) a link that looks like this:
-#+BEGIN_EXAMPLE
-tramp /ssh:madman@tencity:/home/madman/quicknote.txt
-#+END_EXAMPLE
-
-There are other access methods tramp knows how to use, but this is all I really needed for my use.
-
 ** tias moments (Try It And See)
   :PROPERTIES:
   :CUSTOM_ID: tias
