@@ -51,7 +51,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   - [[#and-the-mouse-buttons][And the mouse buttons:]]
   - [[#movement-keys-emacs][Movement keys]]
   - [[#editing-keys][Editing keys]]
-  - [[indenting][Indenting]]
+  - [[#indenting][Indenting]]
   - [[#display-of-long-lines][Display of long lines]]
   - [[#registers][Registers]]
   - [[#macro-commands-emacs][Macros]]
@@ -537,7 +537,7 @@ config file that emacs can use directly. The non-source sections describe the re
 into the whole literate programming idea, but it started with Donald Knuth in his seminal work The
 Art of Computer Programming.
 
-I describe further things down in the [[#org-mode-1][Org Mode]] section.
+I describe further things down in the [[#org-mode][Org Mode]] section.
 + vterm :: Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
