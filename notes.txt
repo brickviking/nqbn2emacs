@@ -1,0 +1,2753 @@
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             NOT QUITE BRAND NEW TO EMACS—OR VIM
+                     Notes for anything I think of
+
+                         brickviking (yes, me!)
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Brand new to Emacs? Here's some hints and aids for when you just want to
+know some stuff. It addresses the Emacs and Vim editors, and also
+provides some other distractions for when you're in need of them.
+
+This is a UTF-8 export of the original file. Stuff in [brackets} leads
+to local footnotes.
+
+[brackets] <text link to web/info resources>
+
+
+Introduction
+════════════
+
+  I was brand new to Emacs, once. Now I'm not quite so brand new, but
+  there's still a lot I don't know about. The notes.org file is a
+  condensing of some of the information available from Vim help and
+  Emacs info documents; other information came from the [Freenode #emacs
+  channel], more recently the [Libera #emacs channel], which requires an
+  IRC client to connect to. Other information (in one instance) came
+  from [the emacs wiki]. Some of the rest has been my own experience,
+  gathered slowly over time.
+
+  There's even some programming tips for plenty of other computer
+  languages.  And if you just want to chill out, I've added some of the
+  soundtracks I've come across.
+
+
+[Freenode #emacs channel] <irc://irc.freenode.org#emacs>
+
+[Libera #emacs channel] <irc://irc.libera.chat#emacs>
+
+[the emacs wiki] <https://emacswiki.org/>
+
+Disclaimer
+──────────
+
+  I haven't really explored exotic topics such as Tramp, gnus/mu4e, or
+  the whole Elisp ecosystem that Emacs lives on. I also don't address
+  Emacs variants such as XEmacs, spacemacs or Doom Emacs.
+
+  This document was originally created in a development version of emacs
+  (at this date, 29.1.50); as such it may have some items in here that
+  haven't turned up in earlier versions of Emacs. I also don't discuss
+  the differences between Emacs text mode and graphical mode much, as
+  most of the things you can do in Emacs don't /require/ the graphical
+  client except for details of the fringe. I've also used a reasonably
+  recent version of vim (8.1) but not as up-to-date as Emacs.
+
+  • [Emacs]
+    • [What different keys mean]
+    • [Rare modifier keys]
+    • [And the mouse buttons:]
+    • [Movement keys]
+    • [Editing keys]
+    • [Indenting]
+    • [Display of long lines]
+    • [Registers]
+    • [Macros]
+    • [Cock-ups]
+    • [Help]
+    • [Recommended Plugins]
+    • [Plugins recommended by others]
+    • [Windows]
+    • [Frames]
+    • [Buffers]
+    • [Input]
+    • [Paragraphs]
+    • [Dired]
+    • [Tramp]
+    • [Org Mode]
+    • [magit]
+    • [erc (or erc-tls)]
+    • [EXWM]
+    • [vterm]
+    • [Snippets from freenode#emacs and libera#emacs]
+    • [tias moments (Try It And See)]
+    • [Other useful links, channels and the like]
+    • [Things to find out about]
+  • [Vim]
+    • [Movement keys]
+    • [Help]
+    • [Opening files]
+    • [Diffing files]
+    • [Copying commands]
+    • [Window commands]
+    • [Macro commands]
+    • [Exit commands]
+  • [Programming]
+    • [Codemy (normally payware) video]
+    • [FreeCodeCamp.org Videos]
+    • [Other Videos]
+  • [Music]
+    • [Classical]
+    • [Atmospheric/ambient/Dark]
+    • [Programming music]
+    • [Game Soundtracks]
+    • [Weird stuff]
+    • [Social]
+
+
+[Emacs] See section Emacs
+
+[What different keys mean] See section What different keys mean
+
+[Rare modifier keys] See section Rare modifier keys
+
+[And the mouse buttons:] See section And the mouse buttons:
+
+[Movement keys] See section Movement keys
+
+[Editing keys] See section Editing keys
+
+[Indenting] See section Indenting
+
+[Display of long lines] See section Display of long lines
+
+[Registers] See section Registers
+
+[Macros] See section Macros
+
+[Cock-ups] See section Cock-ups
+
+[Help] See section Help
+
+[Recommended Plugins] See section Recommended Plugins
+
+[Plugins recommended by others] See section Plugins recommended by
+others
+
+[Windows] See section Windows
+
+[Frames] See section Frames
+
+[Buffers] See section Buffers
+
+[Input] See section Input
+
+[Paragraphs] See section Paragraphs
+
+[Dired] See section Dired
+
+[Tramp] See section Tramp
+
+[Org Mode] See section Org Mode
+
+[magit] See section magit
+
+[erc (or erc-tls)] See section erc (or erc-tls)
+
+[EXWM] See section EXWM
+
+[vterm] See section vterm
+
+[Snippets from freenode#emacs and libera#emacs] See section Snippets
+from freenode#emacs and libera#emacs
+
+[tias moments (Try It And See)] See section tias moments (Try It And
+See)
+
+[Other useful links, channels and the like] See section Other useful
+links, channels and the like
+
+[Things to find out about] See section Things to find out about
+
+[Vim] See section Vim
+
+[Movement keys] See section Movement keys
+
+[Help] See section Help
+
+[Opening files] See section Opening files
+
+[Diffing files] See section Diffing files
+
+[Copying commands] See section Copying commands
+
+[Window commands] See section Window commands
+
+[Macro commands] See section Macro commands
+
+[Exit commands] See section Exit commands
+
+[Programming] See section Programming
+
+[Codemy (normally payware) video] See section Codemy (normally payware)
+Video
+
+[FreeCodeCamp.org Videos] See section FreeCodeCamp.org Videos [Youtube
+Channel]
+
+[Other Videos] See section Other Videos
+
+[Music] See section Music
+
+[Classical] See section Classical
+
+[Atmospheric/ambient/Dark] See section Atmospheric/ambient/Dark
+
+[Programming music] See section Programming music
+
+[Game Soundtracks] See section Game Soundtracks
+
+[Weird stuff] See section Weird stuff
+
+[Social] See section Social
+
+
+Emacs
+═════
+
+What different keys mean
+────────────────────────
+
+  Throughout this documentation, and indeed most Emacs documents that
+  I've read, key prefixes are abbreviated according to the following
+  list. This was basically cribbed from the following [listing of
+  modifier keys] in the manual.
+
+  If a key is shown as <F2> that means to hit the `F2' keyboard at the
+  top of the keyboard, not the two keys F and 2. Occasionally you'll
+  need to use a `Fn' key in combination with another key to get the <F2>
+  key. <Tab> means the `Tab' key on the left hand side, not the three
+  characters T, a and b. <RET> is simply the `Return' key, or `Enter' on
+  most modern keyboards.
+
+  One really important note up front: The `Alt' key on most modernish
+  desktop computers and laptops is commonly called `Meta' by Emacs, and
+  will be used as such througout this guide. So instead of showing you
+  `Control'-`Alt'-something, it'll be shown here as
+  `Control'-`Meta'-something, or the short version, `C-M-something'.
+
+  This means that instead of having to type the words Control-Meta-V,
+  Emacs will do what you want as long as you hold down the `Control' and
+  `Alt' keys and then tap the `V' key (and let everything go).  In the
+  minibuffer (the blank section right at the bottom of the Emacs
+  program), the keystrokes will show up in their abbreviated form, such
+  as `C-M-v'.
+
+  In addition, all letters (aside from prefixes) are usually shown in
+  their lowercase form, even though most keyboards show the uppercase
+  letters on their keycaps. In most cases, unless you specify otherwise,
+  Emacs will assume that the uppercase letters from A..Z are the same as
+  lowercase when combined with any of the prefix keys, which are as
+  follows:
+
+
+[listing of modifier keys] <info:Emacs#Modifier Keys>
+
+Key: `C-'
+╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Control
+  ⁃ Alternatives: Ctl-/Ctrl
+  ⁃ Notes: Both usable, and generally mean the same thing
+
+
+Key: `S-'
+╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Shift
+  ⁃ Alternative: Sh-
+  ⁃ Note: Both shift keys usable
+
+
+Key: `M-'
+╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Meta
+  ⁃ Alternative: Alt
+  ⁃ Note: Left alt differs from right alt, which is often AltGr on
+    non-US keyboards
+  ⁃ Note: On a Mac keyboard, the key is usually labeled as Option, and
+    /may/ also be labeled with Alt.
+
+
+Key: `Esc'
+╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Escape
+  ⁃ Note: Can be used in place of Alt, but you hit this and then let it
+    go before using the next key
+
+
+Key: `<RET>'
+╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Return
+  ⁃ Other long name: `<return>'
+  ⁃ Alternatives: Enter/Ent
+  ⁃ Note: In emacs docs, shown as RET. `RET' is the same as `C-m' (or
+    `C-j').  The actual `<return>' key can only be accessed in a
+    graphical environment and is translated to `RET' but can be bound
+    independently. (Thanks to Jamie Beardslee for the extra
+    information).
+
+
+Rare modifier keys
+──────────────────
+
+  These keys aren't used very often, and in the case of Super and Hyper,
+  aren't used at all in default Emacs.
+
+  If you don't have the modifier keys (or you haven't already bound them
+  to existing keys on your keyboard), you can enter each using `C-x @'
+  followed by one of `a', `s' or `h'.
+
+  `C-x @ a' adds the Alt flag to the next character, `C-x @ s' adds the
+  Super flag, and `C-x @ h' adds the Hyper flag.
+
+
+Key: `A-'
+╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Alt
+  ⁃ Note: This key on the keyboard actually issues `Meta' keystroke, not
+    an Emacs `Alt' keystroke.  As a result, there aren't many Emacs
+    keybindings that use Alt-something, and most commands use
+    Meta-something.
+
+
+Key: `s-'
+╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Super
+  ⁃ Alternative: Windows
+  ⁃ Note: Often used by the operating system especially on Windows
+  ⁃ This is not the uppercase S used for Shift keys, but a lowercase s.
+
+
+Key: `H-'
+╌╌╌╌╌╌╌╌╌
+
+  ⁃ Long name: Hyper
+  ⁃ Alternative: No modern equivalent
+  ⁃ Note: Sometimes bound to Fn or Menu
+
+
+And the mouse buttons:
+──────────────────────
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Key*  *Long name*          *Notes*                                  
+  ──────────────────────────────────────────────────────────────────────
+   LMB    Left Mouse Button                                             
+   RMB    Right Mouse Button                                            
+   MMB    Middle Mouse Button  Often a Scrollwheel click on modern mice 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Movement keys
+─────────────
+
+  Info link: [Moving point]
+
+  Vim has them. Most modern editors have Up/Down/Left/Right and
+  C-right/left, but emacs and vim both have far richer ways of moving
+  the cursor around a text file, by either a character (or multiple
+  characters at once), a word or a line. In the table below, Left/Right
+  refer to keys on the keyboard, not mouse buttons. Buttons will be
+  indicated as RMB/LMB. Lines look like this:
+
+  `Key' - `what-it-will-do'
+  ⁃ Description of the Emacs command that the key will trigger.
+  ⁃ Alternate binding: `other-key'
+
+
+[Moving point] <info:emacs#Moving point>
+
+`Right' - `right-char'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Moves the cursor to the right of its previous position on the line.
+
+
+`Left' - `left-char'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Moves the cursor to the left of its previous position on the line.
+
+
+`Down' - `next-line'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Steps to the next line and the same character position, if possible,
+    otherwise it will step to the last character on that line.
+  ⁃ Alternate binding: `C-n'
+
+
+`Up' - `previous-line'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Steps to the previous line and the same character position, if
+    possible, otherwise it will step to the last character on that line.
+  ⁃ Alternate binding: `C-p'
+
+
+`M-f' - `right-word'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Step forward to the next non-alphanumeric character.
+  ⁃ Alternate binding: `C-<Right>'
+
+
+`M-b' - `left-word'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Back to the first alpha-numeric character of the word.
+  ⁃ Alternate binding: `C-<Left>'
+
+
+`C-a' - `beginning-of-line'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Puts the cursor at the left-most position of the current line.
+
+
+`C-e' - `end-of-line'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Puts the cursor at the right-most position of the current line,
+    usually the last character even if that is a space.
+
+
+`C-Down' - `forward-paragraph'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Steps the cursor forward to the first character of the next
+    paragraph
+
+
+`C-Up' - `backward-paragraph'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Step the cursor backward to the first character of the previous
+    paragraph
+
+
+`M-g c <num>'  `goto-char'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Step the cursor to the offset specified, i.e. `M-g c 2304' moves
+    point to character 2304.
+
+
+`C-Home' - `beginning-of-buffer'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Moves the cursor to the beginning of the buffer
+  ⁃ With optional arg between 0 and 10, (`C-u arg C-Home') positions
+    cursor arg*10 percent from the beginning of the buffer. An
+    alternative keybinding is `M-S-<'.
+
+
+`C-End' - `end-of-buffer'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Moves the cursor to the beginning of the buffer
+  ⁃ With optional arg between 0 and 10, (`C-u arg C-End') positions
+    cursor arg*10 percent from the end of the buffer. An alternative
+    keybinding is `M-S->'.
+
+
+Editing keys
+────────────
+
+  Info link: [Basic Undo]
+
+  These are some of the keys responsible for deleting or copying text to
+  a "kill-ring" to restore later.  Some of these bindings change
+  behaviour slightly in org mode, the table is aimed mostly at
+  Fundamental mode, though a lot of it is also relevant for most other
+  modes that aren't org-mode.
+
+
+[Basic Undo] <info:emacs#Basic Undo>
+
+`C-x u' - `undo'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Undoes the last action, whether that was text insertion
+    or deletion.
+  ⁃ Alternatives: `C-/', `C-_'
+  ⁃ Note: can use a numeric prefix `C-u <number> C-x u', which undoes
+    <number> of actions. Can also undo only in a region.
+
+
+`C-k' - `kill-line'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Removes from point until the end of the current line.
+
+
+`C-u 0 C-k'
+╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Removes from point until the beginning of the current
+    line.
+
+
+`Del' - `delete-char'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Removes single character.
+  ⁃ Alternative: `C-d'.
+  ⁃ Note: This does not store to the kill-ring.
+
+
+`M-d' - `kill-word'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Deletes forward to the beginning of the next word.
+
+
+`M-Del' - `backward-kill-word'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Alternative: M-BACKSPACE
+  ⁃ Note: Kill back to the beginning of the previous word
+    (backward-kill-word).
+
+
+`C-y' - `yank'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Copies the most recent entry on the kill-ring into the
+    buffer. After that, `M-y'
+  will restore earlier points on the kill-ring instead of the most
+  recent entry.
+
+
+Indenting
+─────────
+
+  Info link: [Indentation]
+
+  This is intentionally a very simple explanation as the official docs
+  explain the details far better than I can in this simple
+  outline. Indenting (or outdenting if you go the other way) means
+  shifting a region inwards/outwards a set number of spaces, and filling
+  the gap in with tabs if spaces should be converted into tabs when you
+  have enough of them. There's a setting that relates to this that I
+  generally leave off unless I have to have it turned on, for example,
+  makefiles and python.
+
+  First, select a region. This isn't strictly mandatory, but it's a good
+  idea so you can see the area being effected. Then, use `C-x TAB', or
+  alternatively, `C-x C-i'. You can then shift the region left or right
+  by using the respective arrow keys. If you use `S-<Left>' or
+  `S-<Right>', that will shift the region in that direction by eight
+  spaces or fills out to the next tab setting. Once you have the region
+  indented where you want it, use any other keyboard movement (`C-n/p',
+  `Up/Down') or simply use cancel (`C-g').
+
+  Indenting can also be handled on a line-by-line basis, instead of
+  selecting a region. There is a note in the info docs about the `TAB'
+  key being handled specially by different modes. This generally means
+  that handling of indenting differs between prose such as this, and
+  source code such as C or Python source file lines. As each major mode
+  normally sets acceptable behaviour for the handling of the TAB key,
+  look to those major modes and their documentation.
+
+
+[Indentation] <info:emacs#Indentation>
+
+
+Display of long lines
+─────────────────────
+
+  Info link: [Continuation Lines]
+
+  Emacs will display lines for text files in one of three ways, either
+  line-truncated, with a symbol on the end to let you know there's more,
+  or line-wrapped, with an arrow in the fringe (or a $ for text
+  terminals) for lines that continue on the next line. Visual line mode
+  is like line-wrapping, but with the break for the next line happening
+  between words. This makes these long lines a bit more
+  readable. Visual-line-mode is a minor mode, so it's toggled with `M-x
+  visual-line-mode'. Ordinary line wrapping is toggled on and off with
+  `M-x toggle-truncate-lines'.
+
+
+[Continuation Lines] <info:emacs#Continuation Lines>
+
+
+Registers
+─────────
+
+  Registers are slots to store stuff in, whether it's a string, a file
+  position, a rectangle or a region. This section would benefit from
+  being filled in further, though it's well described in info
+  documentation (`C-h i', `m', `Emacs' <RET>, `m', `Registers' RET).
+
+
+Storing current file position (`C-x r <SPC> <x>')
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  When your "point" or cursor, is at the position you want to remember
+  for later, set the point's current position into register <x>
+  (alphanumeric single characters, most other keyboard combinations
+  except for `C-g' and a few others). Your current point position will
+  be stored.
+
+  For example, let's say I notice an error on the word "troibles" in the
+  following quote. I'm where the asterisk is:
+  ┌────
+  │ To be or not to bi, that is the question.
+  │ Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune,
+  │ Or to take arms against a sea of troibles,*
+  │ And by opposing end them.
+  └────
+
+  I know there's a mistake up in the first line (to bi), but I want to
+  remember my current position so I can jump back and fix this error
+  too. So, let's use Register R as our example register, but any will
+  do. With the point at the comma after "troibles,", put in `C-x r
+  <SPACE> R', then jump off to fix the other error up on the top
+  line. To get back, you then put in `C-x r j R' and your cursor should
+  be back at the end of troibles.
+
+
+Returning to stored position (`C-x r j <x>')
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  As stated above, this jumps you back to a previously-stored position
+  in register <x>. Your previous position before jumping will also be
+  stored, so if you need to get there, you can get back there with `C-x
+  C-x' (exchange-point-and-mark).
+
+
+Saving (`C-x r s <x>') and restoring (`C-x r i <x>') text
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  The two commands above will respectively store what's in a region
+  (previously defined with `C-space' up to and including your point)
+  into or restore from the register <x>.  Restoring text from a register
+  doesn't wipe the register contents, which can be useful if you want to
+  repeat the insert multiple times. The only time a register's contents
+  will be wiped is if you insert new content or delete the register.
+
+
+Macros
+──────
+
+Basic commands
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Info link: [Keyboard Macros]
+
+  If you need to store sequences of keyboard commands in particular, you
+  can generally record these in what's called a keyboard macro. There's
+  a few different ways to start the process off, but generally the old
+  school way that most long-time emacs users use, is `C-x (' and the
+  modern iteration on this is `F3'. Once you have your sequence of keys,
+  use `C-x )' to finish, or `F4'. No good keyboard macro is complete
+  without the ability to invoke that macro. `C-x e' executes all the
+  commands in that sequence, as will `F4'.
+
+  If you want to create another keyboard macro afterwards, just repeat
+  the same steps, with `F3' to start it off, and `F4' to stop (or the
+  older commands if you're on a really old Emacs version). If you're
+  wondering whether the originally defined macro goes away, it doesn't,
+  but it goes onto a Keyboard Macro Ring, just like the yank ring for
+  deleted objects. If you need one of those earlier macros back, then
+  you can cycle around the "ring" with `C-x C-k C-n'
+  (kmacro-cycle-ring-next) or `C-x C-k C-p'
+  (kmacro-cycle-ring-previous).
+
+  Here's a quick summary so far of the keyboard commands we've used,
+  along with their respective emacs functions that get called.
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Name*                 *Shortcut*              *Emacs function*                     
+  ─────────────────────────────────────────────────────────────────────────────────────
+   Start macro            `C-x ('                 kmacro-start-macro                   
+                          `F3'                    kmacro-start-macro-or-insert-counter 
+  ─────────────────────────────────────────────────────────────────────────────────────
+   Stop macro             `C-x )'                 kmacro-end-macro                     
+                          `F4'                    kmacro-end-or-call-macro             
+  ─────────────────────────────────────────────────────────────────────────────────────
+   Call (or run) the      `C-x e'                 kmacro-end-and-call-macro            
+   last-defined macro                                                                  
+  ─────────────────────────────────────────────────────────────────────────────────────
+   Step to next macro     `C-x C-k C-n'           kmacro-cycle-ring-next               
+  ─────────────────────────────────────────────────────────────────────────────────────
+   Step to prior macro    `C-x C-k C-n'           kmacro-cycle-ring-prev               
+  ─────────────────────────────────────────────────────────────────────────────────────
+   Name macro for later   `C-x C-k n'             kmacro-name-last-macro               
+  ─────────────────────────────────────────────────────────────────────────────────────
+   Insert keyboard macro  `M-x insert-kbd-macro'  insert-kbd-macro                     
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  If you had looked at the table and wondered why the function names
+  differ between `C-x (' and `F3', it's because the Emacs developers
+  overloaded the functions onto the same keystroke, so that a choice is
+  made at the time of the keystroke, depending on where you are.
+
+  If you're not in a macro-defining session, then `F3' will start
+  recording a macro, just like `C-x (' does. If, however, you're inside
+  a macro-recording, then `F3' will increment an internal counter, and
+  insert that counter's value at the point your cursor is. The counter
+  will be explained in a later section, but doesn't usually get used for
+  the most basic macros, i.e. you only use it if you need it.
+
+  There's also a difference between the `C-x )' and `F4' calls, in that
+  `C-x )' just finishes recording the macro, if you're inside a macro
+  recording session. If you're not, and you use this, it'll generally
+  sulk and say "Not defining kbd macro".
+
+
+[Keyboard Macros] <info:emacs#Keyboard Macros>
+
+
+Naming
+╌╌╌╌╌╌
+
+  Of course, you're going to want your macros to last beyond the current
+  editing session. To do this, simply save the macro with a name with
+  `C-x C-k n', and then insert it into your `init.el' or other suitable
+  file with `M-x insert-kbd-macro'. I generally insert the macros I use
+  into the files I'm working with so that I can change the macros for
+  each project if they need a little tweaking for small differences. The
+  last command turns the keyboard commands into their corresponding
+  elisp functions, and inserts the sequence of commands into the file.
+
+  You can now execute this sequence of commands just by going `M-x
+  yourmacroname', in short if you called the macro hihi, and you do `M-x
+  hihi', then that sequence of commands will be repeated once you hit
+  `RET'.
+
+  Note that you can't actually call this keyboard macro from lisp
+  directly as it's not actually a lisp function, it's merely a sequence
+  of keystroke commands. You can however call most lisp functions from
+  within the macro, and I've used it to stitch together footnotes into a
+  text simply by doing some of the donkey work within the macro as it's
+  the same search each time, but with the text differing between
+  runs. You can also call this keyboard macro by binding it to an unused
+  key on your keyboard, but I'll save that for later.
+
+
+Wrinkles
+╌╌╌╌╌╌╌╌
+
+  If you're old-school, you'll be aware of this one, but if you're
+  currently in the middle of defining a macro, you'll notice that `C-x
+  e' will not only finish recording the macro, but will also re-run that
+  macro just like `F4' does after recording has finished. That's useful
+  in a few circumstances, but users that are new will probably want to
+  make sure they finish recording the macro without invoking it again.
+  Don't be tempted to simply shortcut the process if you don't want that
+  macro executed as you finish defining the macro.
+
+
+Further discussion points
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Items from this list will get gradually shuffled up into the main body
+  of the Macros section as I learn more about them.
+
+
+◊ Editing existing macros
+
+
+◊ Recursion (recursion (recursion…))
+
+
+◊ Keyboard macro counters
+
+
+Cock-ups
+────────
+
+  These are some of the few things I've found out so far that tend to
+  break without obvious reasons, or not be obvious to the really new
+  Emacs user.
+  ‣ When starting a remote file access, don't run M-x tramp
+    first. Things will break.
+  ‣ A docstring is not info documentation. `C-h f' gives you docstrings,
+    but go to relevant info manual for details.
+  ‣ Don't blindly accept local variable exec sections when loading a
+    file, Emacs could break when trying to save or quit. I once got to
+    the stage where I couldn't close Emacs down legitimately.
+
+
+Help
+────
+
+  Info link: [Help]
+
+  What follows is a rough summary of the available help commands. The
+  first is pretty important. More complete details are available from
+  the info manual.
+
+
+[Help] <info:emacs#Help>
+
+`C-h C-h'
+╌╌╌╌╌╌╌╌╌
+
+  Metahelp: a front page to other help pages.
+
+
+`C-h C-c' - Copyright notice
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Displays the copyright notice for Emacs, in this case, the GNU General
+  Public License version 3.
+
+
+`C-h r'
+╌╌╌╌╌╌╌
+
+  The front page for the Emacs manual in info format.
+
+
+`C-h i'
+╌╌╌╌╌╌╌
+
+  The front page for all info documents shown in the infodir.
+
+
+`C-h d'
+╌╌╌╌╌╌╌
+
+  Info Doc Search: this will request a search term and look through all
+  of the info documents on your system.
+
+
+`C-h m'
+╌╌╌╌╌╌╌
+
+  Describe the current major mode, and shows what keys are currently
+  bound to Emacs commands. This also shows any other minor modes in
+  effect in your current buffer.
+
+
+`C-h b'
+╌╌╌╌╌╌╌
+
+  Describe binding, mode-sensitive.
+
+
+`C-h c'
+╌╌╌╌╌╌╌
+
+  Briefly describe key, mode-sensitive. The output appears in the
+  mini-buffer as one or more lines.
+
+
+`C-h k'
+╌╌╌╌╌╌╌
+
+  This describes a key in more detail than the above command, and the
+  docstring output appears in a split buffer usually to the right of
+  your current buffer.
+
+
+`C-h f'
+╌╌╌╌╌╌╌
+
+  Describe function. Input the name of a function such as `find-file'.
+
+
+`C-h h'
+╌╌╌╌╌╌╌
+
+  Hello in multiple languages and scripts, needs good fonts with wide
+  glyph coverage.
+
+
+The long way around
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  If you need help on a whole key sequence you can't normally get from
+  C-h k then evaluate this in emacs:
+  ┌────
+  │ (describe-key (kbd "C-h"))
+  └────
+
+  This will give you help on what function `C-h' calls up. The same is
+  true for most other key sequences that you can type in that form such
+  as "C-g", "M-x" and so on.
+
+
+Recommended Plugins
+───────────────────
+
+  These are plugins I use a lot of the time. They're either already
+  built into Emacs, or they can be installed from ELPA/MELPA.
+  magit
+        This isn't native to vanilla emacs, but is a great front end for
+        git commands. Reading the info
+  documents for this is a really good idea, to make better use of magit.
+  erc
+        This IRC client comes native with Emacs. It can be quite
+        powerful, although there are alternatives
+  that I haven't used yet such as ircle.
+  Org mode
+        One of the most highly recommended things that Emacs offers,
+        there are a lot of things you can do
+  with it, including literate programming. If you really really want to
+  avoid the loaded-with-emacs version and go with the absolutely latest
+  version of org mode, there are instructions at <https://orgmode.org>,
+  but these days, the bundled version of org-mode will get you just
+  about everything, depending on the version of emacs you've installed.
+
+  I tend to use it for literate configuration of emacs, as I can
+  "tangle" the source sections into a config file that emacs can use
+  directly. The non-source sections describe the rest of it. I won't go
+  into the whole literate programming idea, but it started with Donald
+  Knuth in his seminal work The Art of Computer Programming.
+
+  I describe further things down in the [Org Mode] section.
+  vterm
+        Again, this isn't native, but is a more powerful (in some ways)
+        terminal, offering more support for
+  programs that use the screen like they expect to own it. It isn't
+  perfect, but it's quite good at what it does. Check the vterm section
+  below for the few hints I have.
+
+
+[Org Mode] See section Org Mode
+
+
+Plugins recommended by others
+─────────────────────────────
+
+  On the other hand, these are some plugins that come as a
+  recommendation from someone in [Freenode #Emacs channel] (which has
+  since converted to [irc.libera.chat]), I can't personally vouch for
+  these plugins, I haven't used them myself.
+  ⁃ flyspell - expensive on computation
+  ⁃ wc-mode
+  ⁃ writegood
+
+
+[Freenode #Emacs channel] <irc://chat.freenode.org/#emacs>
+
+[irc.libera.chat] <irc://irc.libera.chat/#emacs>
+
+
+Windows
+───────
+
+  Info link: [Window commands]
+
+  These commands all work with windows within a frame. A frame is a
+  collection of one or more windows; each window displays the contents
+  of a buffer.  Not all buffers have to be visible, but are available to
+  display at any time.
+
+  In addition, you can also change the number of windows displayed in
+  your frame, so that the selected window takes up the entire frame, or
+  to split the frame into multiple divisions, each containing a window.
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*                               *Key*                  
+  ────────────────────────────────────────────────────────────────
+   Cycle through visible windows           C-x o                  
+   Remove focussed window                  C-x 0                  
+   Focus buffer to single window in frame  C-x 1                  
+   Split window Top/Bottom                 C-x 2                  
+   Split window Left/Right                 C-x 3                  
+   Open new file in another window         C-x 4 f                
+   clone-indirect-buffer-other-window      C-x 4 c                
+   Scroll other window                     down C-M-v, up C-M-S-v 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Note on the clone-indirect-buffer-other-window: this is a way to get a
+  new buffer with its own separate point and mark. This is useful if you
+  want to show another section of the same file without scrolling the
+  other buffer in the process. Changes in the content of the buffer will
+  be duplicated in any other buffer pointing to that same content.
+
+
+[Window commands] <info:Emacs#Windows>
+
+Resizing or deleting windows
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Info link: [Changing Windows]
+
+  Just like some other environments (vim being one) you can also change
+  the amount of space the window takes up on your frame, within certain
+  limitations. If your single window already fills your frame, then
+  there's not much you can do except to split the window in some
+  fashion. But if you have multiple windows displayed in your frame,
+  then you're able to resize the window to allocate more or less space
+  to that window.
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*                     *Key*             
+  ─────────────────────────────────────────────────
+   Shrink window                 M-x shrink-window 
+   Shrink window to buffer size  C-x -             
+   Expand vertically             C-x ^             
+   Expand to right               C-x }             
+   Expand to left                C-x {             
+                                                 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  A note about about shrinking the window; there is a command to make a
+  window shrink to just the size of your buffer, if your buffer happens
+  to take up less lines than it's given. This works well for files that
+  only have four or five short lines in them, but if the buffer is
+  larger than the current window, then the `C-x -' won't do anything.
+
+
+[Changing Windows] <info:emacs#Change Window>
+
+
+Frames
+──────
+
+  Info link: [Frame commands]
+
+  These commands all relate to working with frames, as opposed to
+  windows or buffers. As described above, a frame is what most people
+  would call a "window" in most other contexts. Frames are collections
+  of buffers organised amongst one or more windows per frame.
+
+  Most of these commands rely on a graphical display being present
+  (either of Xorg/Wayland/Aqua/Windows) as opposed to a purely textual
+  display (as in a terminal emulator).
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*                          *Key*   
+  ────────────────────────────────────────────
+   Create new frame                   C-x 5 2 
+   Cycle between available frames     C-x 5 o 
+   Minimize currently focussed frame  C-z     
+   Close frame altogether             C-x 5 0 
+                                            
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+[Frame commands] <info:Emacs#Frames>
+
+
+Buffers
+───────
+
+  Info link: [Buffer commands]
+
+  A buffer holds either:
+  ⁃ the contents of a file, perhaps an on-disk file,
+  ⁃ or an on-the-fly buffer perhaps containing a command's output or
+    output from an emacs function.
+
+  Examples of the latter include the *Messages* buffer, the
+  *Completions* buffer, or the *Help* buffer.  These keys work with open
+  buffers and allow you to change between them or even create new ones.
+  They are also great mates with the Window and Frame commands mentioned
+  previously.
+
+
+[Buffer commands] <info:Emacs#Buffers>
+
+`C-x b' - `switch-to-buffer'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Switch to named buffer, creating it if needed.
+  ⁃ Note: there's no requirement to have a physical disk file providing
+    the contents for the buffer.
+
+
+`C-x C-b' - `list-buffers'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Splits the current window into two and displays the
+    buffer selection window containing a list of open buffers in the
+    newly-created window.  Change to the window (`C-x o') to work with
+    the entries in the buffer-selection window.
+  ⁃ Note: q closes the window, other keys are shown in the Buffer
+    Selection section.
+
+
+`C-x 4 b' - `switch-to-buffer-other-window'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Description: Swap to buffer in other window, creating a new window
+    (and perhaps buffer) if necessary
+
+
+Buffer selection window
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  These are keys that are only active when your cursor is in the buffer
+  selection window:
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*             *Key*  *Notes*                                       
+  ────────────────────────────────────────────────────────────────────────────
+   Mark                  m      Mark file for future commands                 
+   Mark for deletion     k                                                    
+   Delete marked         x      Asks for confirmation if buffer is not saved  
+   Undo mark             u                                                    
+   Undo all marks        U                                                    
+   Open in window        1      Removes buffer selection window, opens buffer 
+   Open in other window  o      Opens buffer in other window beside list      
+   Quit buffer list      q      Closes (quit-window) the buffer list window   
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Table 1: Buffer Selection Window keys
+
+
+Buffer encoding
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Change encoding (GUI) by clicking mouse-1 on colon or encoding in
+  headerline
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Modeline*  *Encoding*                    
+  ───────────────────────────────────────────
+   -:@—        UNIX (LF 0x0A)                
+   -(DOS)@—    Dos encoding (CRLF 0x0D 0x0A) 
+   -(Mac)@—    Mac OS X encoding (CR  0x0D)  
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Also check [How to set a buffer’s line-encoding from text
+  mode]
+
+
+[How to set a buffer’s line-encoding from text mode] See
+section How to set a buffer's line-encoding from text mode
+
+
+Input
+─────
+
+  Info link: [Selecting input methods]
+
+
+[Selecting input methods] <info:emacs#Selecting Input Methods>
+
+Changing input language character set.
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+      Sometimes you have to change what language you input characters
+  with, even if you only have a US keyboard and layout.  Emacs supports
+  input of multiple character sets, to change between them, use `C-x RET
+  C-\', which will then prompt you for an input method.  Hitting `Tab'
+  at this point will supply you with a list of everything that Emacs
+  knows how to input. You will of course also need font support to
+  display any of the characters you wish to input. A good Unicode font
+  will help here. For normal use (inputting English or other latin-based
+  text), a lot of people tend to use TeX input. You can also get a list
+  of supported inputs with `M-x list-input-methods'.
+
+  Examples of input include chinese-py (Simplified Chinese using
+  pinyin), japanese-hiragana (hiragana using romaji), and greek (Greek
+  characters). There are many more variants as well.
+
+
+Paragraphs
+──────────
+
+  Paragraphs are sections of text with one or more sentences, usually
+  separated from each other by a blank line. The default width for
+  paragraphs is a hangover from the dim dark times when output used to
+  be on printer paper. Most printers would only print a maximum of 80
+  normal characters (or 96 squashed ones) across a sheet of A4 paper
+  before dropping down to the next line. The letter-sized paper
+  prevalent in America was a little different, but had many of the same
+  problems.
+
+  These days, most monitors are far wider than that, even though
+  smartphone screens aren't.  Additionally, we've had proportional fonts
+  for a very long time, and text width can't easily be counted the same
+  way as a fixed-width font, as each character from i to m can be
+  significantly different from each other. But as Emacs dates from the
+  very late 'seventies and 'eighties, we're dealing with some of the
+  hangover decisions made when they made more sense back in those days.
+
+
+◊ Setting paragraph width (`C-x f')
+
+  There's multiple ways to set the width of paragraphs within a buffer
+  to format later with `M-q', but this has to be one of the shortest to
+  get there: simply use `C-x f' and feed it a number. Don't make it too
+  huge though. If you don't set a number here (or leave it at 0), the
+  default paragraph width is 70 characters.
+
+
+◊ Reformatting paragraph to width (`M-q')
+
+  Stick your cursor (point) into the paragraph you want to format, hit
+  `M-q'. Done.
+
+
+◊ Setting default width on startup
+
+  You can set a default width in your `init.el' file with the fragment:
+
+  ┌────
+  │ (setq fill-column 100)
+  └────
+
+  or any other relevant width. This applies when you reformat the
+  paragraph manually, but you can have emacs do the reformatting for you
+  in the current buffer (`M-x auto-fill-mode') as you go.
+
+
+Dired
+─────
+
+  Info link: [Dired]
+
+  These are some of the commands that can be used in a dired buffer. For
+  all intents, you can do nearly everything in here that you could do
+  from a commandline—deletion, moving or renaming. Of course,
+  creation is done by simply opening a new buffer and saving it to a
+  location that you enter when you type `C-x s'. You can move using the
+  usual cursor motion commands, either Up/Down/Left/Right or C-n/C-p.
+
+  With regard to moving by "pages", you can insert the content of
+  subdirectories in each dired buffer with the command M-x
+  dired-insert-subdir. That content will appear below the content of the
+  top directory, with each subdirectory that you insert becoming a new
+  page. Use C-x [ and C-x ] to move between those pages.
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*             *Keys*  *Notes*                                               
+  ─────────────────────────────────────────────────────────────────────────────────────
+   mark for deletion     d       Once you've marked files, use x to delete them all    
+   Delete now            D       Will ask for confirmation                             
+   Unmark one entry      u       Only unmarks if marked already                        
+   Unmark all entries    U       Removes all marks in the dired buffer                 
+   Mark by extension     *.      Requests an extension to apply marks with             
+   Kill                  k       Remove marked files from listing                      
+   Toggle marks          t       Invert whatever marks are present                     
+   Query/replace-regexp  Q       Asks for regexp to replace, then asks for replacement 
+                                 It then proceeds through all matches asking y/n       
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  To remove certain files from the listing (this does not delete them
+  from the disk), mark them first with `u', then select `k'. You can
+  also remove file patterns by first selecting by regexp as follows:
+  ┌────
+  │ M-x dired-mark-files-regexp <RET> .*\.xml$ <RET>
+  └────
+  This marks everything that matches the `*.xml' pattern. Then hit `k'
+  to remove the xml files from the listing.  The same thing can be done
+  (if you wish to remove files with a matching extension) with `*.' as
+  follows: `*.xml'
+
+  You can instead remove all the uninteresting files from your dired
+  listing by using `M-x dired-omit-mode', then `M-x dired-omit-expunge'
+  followed by a filepattern to match. For example, let's say you
+  previously ran `% g' in the dired window (similar to
+  dired-mark-files-regexp but for their contents instead) and got
+  several files marked, you could then do `M-x dired-omit-expunge'
+  followed by a period to specify all files not already marked. This
+  will prune all other files from being shown in the listing. They're
+  still there on disk, they just don't show up until you toggle
+  dired-omit-mode again.
+
+  Deletion marks are different from normal marks, in that when you go k,
+  you erase those marked files from disk.  To remove files from the
+  disk, mark them each with `d', then once you have selected the files,
+  use `k' to remove them.  This cannot be undone, much like on any
+  UNIX/Linux/BSD shell.
+
+
+[Dired] <info:emacs#Dired>
+
+
+Tramp
+─────
+
+  Info links:
+  [Remote Files].
+        (Emacs)Remote Files
+  [Tramp manual].
+        (Tramp)Top
+
+  Tramp is used to locally edit files that are on a remote machine. It's
+  used with the normal `C-x C-f' keys, but with a little extra juice
+  than simply `/path/to/file.txt'. Tramp access uses URLS that usually
+  look like the following:
+
+  ┌────
+  │ C-x C-f /method:user@host:/path/to/file
+  └────
+
+  method
+        One of ssh, scp, ftp, or very rarely, rsync or telnet.
+  user
+        Should be whatever user you'll use on remote end at the remote
+        host. For FTP, this can simply be the ftp user or anonymous
+        user. For other methods, this will be your real username. The
+        remote machine will also ask for a password for that user.
+  host
+        the machine you're logging into as the above user.
+  path
+        The usual :/first/second/dir/file, don't forget the separating
+        colon,that's important.
+
+  This would mean (at least for accessing a file remotely over ssh) a
+  link that looks like this:
+  ┌────
+  │ C-x C-f /ssh:madman@farmland.tencity.example:/home/madman/quicknote.txt
+  └────
+
+
+[Remote Files] <info:emacs#Remote Files>
+
+[Tramp manual] <info:Tramp#Top>
+
+
+Org Mode
+────────
+
+  [Org mode home page]
+
+  [Online manual]
+
+  Info link: [local org-mode manual].  `C-c C-x I' in an Org file tries
+  to open a suitable section of the Org manual depending on the syntax
+  at point.
+
+  ⁃ `Tab' on */+/-/1 line expands/compacts tree (if present):
+    1) First time: expand one level below point without exposing text.
+    2) Second time: expand all levels below point including text.
+    3) Third time: compact all levels below point back to heading.  NB:
+       if you put your cursor AFTER the … of an unexpanded heading and
+       then hit Tab then you'll perhaps see "EMPTY ENTRY" in the
+       minibuffer.
+  ⁃ `S-tab' global expansion:
+    1) expand all headings without exposing text.
+    2) expand entire document (headings, text, etc).
+    3) compact entire document to top headings.
+  ⁃ `S-Right/Left' on list cycles between bullet settings: +/*/1./1)/-
+  ⁃ `S-Right/Left' (on header) Cycle through TODO/DONE/nothing or
+    defined tags, see header_tags
+  ⁃ `S-Up/Down' on header (change priority #A/#B/#C, to customize this:
+    #+PRIORITIES A E E)
+  ⁃ `M-Up/Down' Shift line above/below
+  ⁃ `M-Left/Right' Promote/demote entry for headings and list members
+  ⁃ `M-S-Left/Right' Promote/demote heading and everything below
+  ⁃ Some tags don't appear to work except for export/archive mode,
+    including #+TAGS
+  ⁃ Checkboxes [ ] [X]
+  ⁃ demarcate block (wrap it in `#+BEGIN_SRC ... #+END_SRC') `C-c C-v d'
+    (org-babel-demarcate-block)
+  ⁃ `C-c C-v C-t' (or simply, C-c C-v t) Tangle source code blocks to
+    relevant file.  This means different things depending on how you've
+    demarcated your source blocks. I use it to generate `init.el' from a
+    `.emacs.org' file, with all the bits I want to fire out to there
+    inside `#+BEGIN_SRC emacs-lisp ... #+END_SRC' markers, and I use
+    surrounding text to describe the source blocks.
+  ⁃ `C-c C-e' Export, will ask for format, usually one of HTML,
+    Markdown, text, ODT (OpenOffice/LibreOffice), or \LaTeX.
+  ⁃ `C-c C-w' (after having saved the file), Refile heading somewhere
+    else.
+    ⁃ thanks to [Mike Zamansky's Org-mode video.]
+
+
+[Org mode home page] <http://orgmode.org/>
+
+[Online manual] <https://orgmode.org/manual/>
+
+[local org-mode manual] <info:org#Top>
+
+[Mike Zamansky's Org-mode video.]
+<https://www.youtube.com/watch?v=LFO2UbzbZhA>
+
+Table syntax
+╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+  │ |--------------+-------------------|  <-- divider line, start with |- and hit tab
+  │ | First Header | Second header ... |
+  │ |--------------+-------------------|  <-- divider line
+  │ | First cell   | Second cell       |  <-- hit Tab at cursor location, creates new
+  │ | . . .        | . . .             |      table row if there isn't one
+  │ | nth cell     | nth cell          |  <-- Continue as needed, or finish table.
+  └────
+
+
+header_tags
+╌╌╌╌╌╌╌╌╌╌╌
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Name*         *Type*                *Description*                        
+  ───────────────────────────────────────────────────────────────────────────
+   #+TITLE        <string>              Title of document                    
+   #+AUTHOR       <string>              Who wrote this originally            
+   #+CREATOR      <string>              No idea why this differs from AUTHOR 
+   #+TAGS         <words>{1,}           tag categories                       
+   #+DATE         <timestamp>           date of document                     
+   #+DESCRIPTION  <string>              Short precis of what it is           
+   #+SEQ_TODO     <string> [<string>]…  Before pipe, uncompleted colour.     
+                                        After pipe, completed colour         
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+tags
+╌╌╌╌
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Name*           *Description*                                           
+  ──────────────────────────────────────────────────────────────────────────
+   #+BEGIN_SRC      [lang]         Source code block - can be tangled       
+   #+END_SRC                       Closes it                                
+   #+SCHEDULED      <timestamp>    When is this meant to be started         
+   #+COMPLETED      <timestamp>    When this actually got completed         
+   #+DEADLINE       <timestamp>    When it's absolutely got to be done      
+   #+BEGIN_QUOTE                   An inline quote                          
+   #+END_QUOTE                     Closes inline quote                      
+   #+BEGIN_COMMENT                 Comment block, will generally be ignored 
+   #+END_COMMENT                   Ends block                               
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Link syntax
+╌╌╌╌╌╌╌╌╌╌╌
+
+  Generally, links work well within org mode, and don't quite work so
+  well outside once you try to export the org document to other formats.
+  Links look like this:
+  ┌────
+  │ [[URL][Description]]
+  └────
+  or alternatively simply
+  ┌────
+  │ [[URL]]
+  └────
+  Description (if you provide it) should be short, no more than perhaps
+  five words.  URL is anything supported by the Org internals, this can
+  include:
+  ┌────
+  │ + http links: http://example.com/
+  │ + info links: [[info:org#Top]]
+  │ + internal org-mode links [[magit]]
+  └────
+
+  Other link formats are described in the Org manual in [External links]
+
+  You can generally edit existing links by putting your point somewhere
+  into the link you want to edit, and using `C-c C-l'. This allows you
+  to fiddle with the separate parts of the link if you need to change
+  them for any reason.
+
+  Following links is as easy as putting your cursor on the link text and
+  using `C-c C-o'. This will generally take you to where the link points
+  to, depending upon the type of link.
+
+
+[External links] <info:org#External links>
+
+
+inline images
+╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Inline images in org mode: toggle visibility with C-c C-x C-v
+  ⁃ Change size of inline org images
+    ⁃ Don't forget to eval (setq org-image-actual-width nil)
+    ⁃ with #+ATTR_ORG: :height … :width …
+
+
+Turn region into list:        `C-c -'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+
+Turn region into headers:     `C-c *'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+
+Oddities
+╌╌╌╌╌╌╌╌
+
+      If you turn on—or you have defined in emacs
+  startup—scroll-lock-mode, cursor movement within a
+  collapsed org-mode document behaves slightly differently.
+
+
+magit
+─────
+
+Requirements
+╌╌╌╌╌╌╌╌╌╌╌╌
+
+  First, install and enable magit if you haven't already. These
+  following instructions assume that you've done so, and will also
+  presume you have a working knowledge of common git commands.  If a
+  file you're editing is in a git repo, then `M-x magit' will open up a
+  second window beside your file, and will show you some categories
+  related to the repo. A shortcut is `C-x g'.
+
+
+Magit buffer commands
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  From the magit buffer, you can do the following things. Most of them
+  will prompt for other things if they need them. Usually you put your
+  cursor on the object you want to affect, or on the section header
+  (usually indicated by a font of different colour) if you wish to
+  affect all files in that category.
+
+  NB: the section header often has a > in the fringe, but this is not
+  visible in textmode.
+
+
+◊ Adding untracked file:        `s' (`M-x magit-stage-file')
+
+  Simply put your cursor on the file you want to stage, hit s. The file
+  should then shift into "Staged changes", ready for you to commit. This
+  roughly duplicates "git add file.blah".
+
+  TODO: No idea how to add a directory from magit yet.
+
+
+◊ Staging changes in an unstaged file:     `s' (`M-x magit-stage-file')
+
+  Same as above, except for a file that's already part of the git
+  repository.
+
+
+◊ Committing changes in staged files:      `c' (`M-x magit-commit')
+
+  Will request how you want to commit, hit `c' again to bring up an
+  editor window. Provide a single line commit message. If you want to
+  add more lines, leave a blank line after the single line as follows:
+  ┌────
+  │  1  Initial commit message
+  │  2  
+  │  3  This is the next line for a multi-line comment.
+  │  4  # Please enter the commit message for your changes. Lines starting
+  │  5  # with '#' will be ignored, and an empty message aborts the commit.
+  │  6  #
+  │  7  # On branch master
+  │  8  # Your branch is up to date with 'origin/master'.
+  │  9  #
+  │ 10  # Changes to be committed:
+  │ 11  #	modified:   notes.org
+  │ 12  #
+  │ 13  # Untracked files:
+  │ 14  #	notes.org~
+  │ 15  #
+  └────
+
+
+◊ Show diff against files:      `d' (diff)
+
+
+◊ Refresh magit buffer:         `g' (magit-refresh)
+
+  This refreshes the magit status buffer once you've made some changes
+  within the project and saved those changes to disk. Installing
+  `magit-filenotify' and enabling `magit-filenotify-mode' in the status
+  window will automate this somewhat.
+
+
+◊ Expand/hide section:          `<TAB>'
+
+  Type TAB to expand or hide the section at point.
+
+
+◊ Visit change/commit:          `<RET>'
+
+  Type RET to visit the change or commit at point.
+
+
+◊ Push changes to remote:       `P u'
+
+  This takes any changes you have in your current repo and can push them
+  to a remote repository if you have commit privileges there. I usually
+  like to use `P u' (that's a P followed by a u, not a P-u), but there
+  are other options available.
+
+
+◊ Configure repo variables:     `P C'
+
+  This seems to allow you to configure certain things about your current
+  git repository, such as descriptions, further remotes, and some other
+  details.
+
+
+◊ Other movement keys
+
+  The usual `n' and `p' keys move the cursor up and down between
+  sections.
+
+
+Wrap up
+╌╌╌╌╌╌╌
+
+  There's a lot more that I haven't added, perhaps [this link to the
+  magit info docs] will help out if you have magit installed. (`C-c C-o'
+  to follow that link within Org mode).
+
+
+[this link to the magit info docs] <info:magit#Top>
+
+
+erc (or erc-tls)
+────────────────
+
+  Info Link: [Erc manual]
+
+  Erc is an Internet Relay Client that comes as delivered with Emacs. It
+  allows access to any IRC server with suitable defaults set up for the
+  Libera IRC network. The #emacs community on
+  <irc://irc.libera.chat/#emacs> is quite active, and will help you out
+  with most of your questions. Be prepared to also do some reading. The
+  list of help keys (`C-h m') can help out for basic keystroke usage.
+
+  First off, if you wish to join a server, start off with `M-x
+  erc'. It'll ask you some questions about what server you want to join,
+  the port to join on, what nickname you want to use, and a password if
+  you wish to register your nickname with the server's NickServ (if it
+  has one). As mentioned before, Libera is specified as a default, but
+  if you're a member of any other server, you're able to join those
+  other servers just by changing the details asked for. If you wish to
+  use a secure TLS connection instead then use `M-x erc-tls'. There may
+  be some other requirements for this that I don't remember currently.
+
+  After you've joined, there are some simple commands you can use while
+  you're in the ERC window.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*                         *Key*          *Binding*                 
+  ────────────────────────────────────────────────────────────────────────────
+   Join channel                      `C-c C-j'      `erc-join-channel'        
+   Get list of channel participants  `C-c C-n'      `erc-channel-names'       
+   Change to channel with activity   `C-c C-Space'  `erc-track-switch-buffer' 
+   Part channel with message         `C-c C-p'      `erc-part-from-channel'   
+   quit server                       `C-c C-x'      `erc-quit-server'         
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Join channel
+        This asks you for the name of a channel you want to join (they
+        generally begin with a # for archaic reasons), and then attempts
+        to join your nick to that channel, subject to whatever modes are
+        active. It's the equivalent of the /join command.
+  Get list of names
+        This retrieves the list of people joined to that channel at the
+        time the /names command is executed.
+  Change to channel with activity
+        This will toggle the buffer to one that's had activity more
+        recent than the buffer you're currently in.
+  Part channel
+        You don't have to leave the server outright for this one, just
+        leave the channel. This gets used where you don't want too many
+        channels active at once. It's the equivalent of the /part
+        command.
+  Quit Server
+        Quitting does what you think it does, and leaves the server. It
+        acts like the /disconnect command. Afterwards, you'll need to
+        re-run the `M-x erc' command to reconnect or to join another
+        server.
+
+  Some of the conventional IRC commands can also be used at the ERC>
+  input line, so if you're used to clients like irssi, you won't get too
+  confused though there are obviously some differences.
+
+
+[Erc manual] <info:erc#Top>
+
+
+EXWM
+────
+
+  EXWM is an X window manager that uses Emacs to control placement of
+  frames or application windows.  This needs to be expanded further,
+  though I haven't had this in operation yet. Here's a snippet from IRC
+  log:
+        [18:51:34]<oni-on-ion> for EXWM, does anyone know how to
+        "unfloat" a window ?  [18:52:18]<oni-on-ion> i am using an
+        external API that throws the window right in the middle of
+        the screen over top of everything =/
+        [18:53:36]<jamzattack> oni-on-ion: C-c C-t C-f runs the
+        command exwm-floating-toggle-floating
+
+
+vterm
+─────
+
+  This doesn't come standard with emacs, but is well worth the
+  install. Running other programs inside vterm can come with a couple of
+  pitfalls though, especially if you're expecting to run vim, which
+  actually works, by the way. If you want to copy stuff from a vterm
+  buffer, toggle vterm-copy-mode with C-c C-t, make your selection, copy
+  it to the killring (or is it yank ring?), then toggle vterm-copy-mode
+  back off again. Toggling it back off allows commands such as M-w to be
+  passed through to the program you're running inside
+  vterm—for example, the vim editor.
+
+
+Snippets from freenode#emacs and libera#emacs
+─────────────────────────────────────────────
+
+  These are all questions that have turned up in the #Emacs channel,
+  they've had varying responses. In some cases I've left the discussions
+  mostly unaltered, sometimes I've compacted the conversation to address
+  just the subject being discussed.
+
+
+How to search/replace all * at B.O.L. with the same number of #
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+  │ <laertus> i need some search and replace help...  [19:53]
+  │ <laertus> i'd like to replace all the leading *'s in a buffer with the same number of #'s
+  │ <laertus> so if a line starts with *** i'd like to replace that part of the line with ###
+  │ <laertus> and if it starts with ** i'd like to replace the ** with ## etc
+  │ <laertus> i can write a function to do this, but was hoping there'd be an easier way  [19:54]
+  │ <Viking667> not really sure. I'd have done it in vim with :%s/***/###/cg  [19:55]
+  │ <Viking667> but that's not the emacs way, and that's not taking account of the escaping too.
+  │ <laertus> yeah, that'll only work for exactly 3 ***'s and it can be done exactly that way in evil
+  │ <laertus> i'm looking for a more general solution that'll work for any number of leading *'s
+  │ <dale> laertus: How about: M-x query-replace-regexp RET ^\*+ RET \,(make-string (length (match-string 0)) ?#) RET  [20:08]
+  │ <Qudit314159> It works here  [20:13]
+  │ <Viking667> I'll have to check that on my buffer.
+  │ <laertus> someone gave me a vim solution on #vim:  %s/^\*\+/\=substitute(submatch(0), '*', '#', 'g')  [20:14]
+  │ <laertus> unfortunately, i don't think that'll work with evil, as evil doesn't implement vim's regex engine, and instead just uses emacs' regex engine  [20:15]
+  │ <Qudit314159> Well, dale's should work. If it doesn't, something else is wrong I'd say
+  │ <dale> laertus: Yeah, I tested mine here, it works.  Point was before the text you wanted to replace, right?
+  │ <laertus> it's probably something to do with my emacs config  [20:17]
+  │ <Viking667> and it works fine for me (I'm pretty much vanilla emacs)
+  │ <dale> laertus: I can't think of another way to do it with Emacs regexps.
+  │ <laertus> well, thank you, dale, it's a good solution
+  │ <dale> You... might be able to do it if you had PCRE and a look-behind assertion, but I'm not sure since I can't remember if PCRE does variable-width look-behind.  [20:19]
+  │ <Viking667> i.e. copy query-replace-regexp, paste it into M-x, type in ^\*+, hit RET, copy the last long bit, paste it in etc etc.
+  │ <piyo> in elisp: (query-replace-regexp "^\\*+" '(replace-eval-replacement replace-quote (make-string (length (match-string 0)) 35)) nil nil nil nil nil)  [20:23]
+  │ <piyo> also, works for me if I turn off pcre-mode and on, as well. yeah  [20:25]
+  │ <Viking667> I might snip that and stuff it into my notes.org  [20:26]
+  │ <laertus> piyo: that works for me but it prompts me to confirm every replacement  [20:27]
+  │ <piyo> press ! to confirm all
+  │ <laertus> ah, ok.. thanks  [20:28]
+  │ <piyo> press ? for more info in the query-replace-regexp
+  │ <laertus> this vim solution:  :g/^\*/norm! vt r#  [20:29]
+  │ <piyo> to me, doing that (make-string...) thing in the minibuffer makes me want more guided help.
+  │ <laertus> makes me realize that this could be done with a macro
+  │ <laertus> just search for a * at the beginning of the line, and then replace all *'s until the first space with #'s  [20:30]
+  │ <laertus> and repeat the macro until done
+  │ <piyo> the same thing with tramp, can't remember the incantation. Can't you just transient/dialog box the url for me?
+  └────
+
+
+How to split frame into four, don't forget to keybind this, say to C-x 4 w
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+  │ (defun window-split-four ()
+  │  " Splits frame into four equal sized windows"
+  │   (interactive)
+  │   (delete-other-windows)
+  │   (with-selected-window (split-window-right)
+  │     (split-window))
+  │   (split-window))
+  └────
+
+
+How to set a buffer's line-encoding from text mode
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+        • <spudpnds> C-x RET f {unix,mac,dos} M-x
+          set-buffer-file-coding-system
+        • <spudpnds>
+          <https://www.emacswiki.org/emacs/EndOfLineTips>
+
+
+How to clean up a referred URL from duckduckgo - jamzattack from #emacs@freenode
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Duckduckgo does a very sinful thing – instead of linking to
+  `https://url.com', it links to:
+  ┌────
+  │ https://duckduckgo.com/l/?kh=-1&uddg=https%3A%2F%2Furl.com
+  └────
+
+
+  Here, I define a function that removes all this junk, and use [advice]
+  to filter the arguments given to [shr-urlify].  Because this is
+  relatively low-level, all occurrences of duckduckgo's redirects that
+  are parsed with `shr' are replaced with the clean version.
+
+  ┌────
+  │ (defun un-duckduckgo-url (args)
+  │   "Cleanse a url from duckduckgo's janky redirect.
+  │ This takes the same args as `shr-urlify', passed as a list."
+  │   (let ((start (nth 0 args))
+  │         (url (nth 1 args))
+  │         (title (nth 2 args)))
+  │     (list start
+  │           (let ((unhexed (url-unhex-string url)))
+  │             (if (string-match "\\`.*[&\\?]uddg=" unhexed)
+  │                 (replace-match "" nil nil unhexed)
+  │               url))
+  │           title)))
+  │ 
+  │ (advice-add 'shr-urlify :filter-args #'un-duckduckgo-url)
+  └────
+
+
+[advice] <info:elisp#Advising Named Functions>
+
+[shr-urlify] <help:shr-urlify>
+
+
+#emacs@freenode:grym's head-of-file
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+  │ [17:20:44]<grym> Viking667: i have a little orgtbl at the top of my notes.org e.g. "ugh how did i..."
+  │ [17:24:25]<grym> leaving myself breadcrumbs has saved my ass more than i can count so i tend to do it reflexively now 
+  └────
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Effect*                          *Key*                           *Function*               *Source*   
+  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+   delete entire buffer              C-x h <delete>                                           [SO]       
+   open project in magit             C-c p w F3                                                          
+   convert org list to headings      C-c *                                                    [SO]       
+   cycle org list styles             C-c -                                                    ibid       
+   split view on same buffer         C-x 4 c                                                  irc        
+   org convert block to list         C-c - on region                                          [SO]       
+   view and interact with kill ring  C-c y                           helm-show-kill-ring                 
+   redo selection i just lost        C-x C-x                         exchange-point-and-mark  [SO]       
+   select paragraph dwim             M-h                             mark-paragraph           org manual 
+   interactively replace             ESC C-s (regex) ESC % \1 RET                                        
+   open in magit                     C-c p p [select project] M-o v                                      
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  SO = StackOverflow
+
+
+[SO]
+<https://stackoverflow.com/questions/4886745/emacs-what-is-the-shortcut-key-to-clear-buffer>
+
+[SO]
+<https://emacs.stackexchange.com/questions/7856/how-to-turn-a-heading-into-a-list-item-in-org-mode>
+
+[SO] <https://stackoverflow.com/a/3850846>
+
+[SO] <https://stackoverflow.com/a/11479725>
+
+
+How to create a second buffer on the same file with a separate point/mark
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+  │ [11:41:32]<Viking667> Hi all. Wanted to know if I could have a second buffer on a file with its own point/mark? (Normally if I split the window to make two buffers) I notice that if I move the point in the first buffer, that'll be mirrored in the second buffer. That's not quite what I want.
+  │ [11:41:58]<jamzattack> Viking667: C-x 4 c runs the command clone-indirect-buffer-other-window
+  └────
+
+
+How to get exwm working (temporary, remove when tested)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  mplsCorwin says: maybe add? 09:47 <momoninja> angrybacon: mplsCorwin:
+  this did it for me:
+  ┌────
+  │ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name . "notmuch"))' --display $DISPLAY
+  └────
+
+
+How to grab an org-mode link to an info document
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+  │ [14:51:19]<Viking667> If I'm in an emacs info window, how do I grab the "link
+  │           to that info page" for use somewhere else? for example, to include
+  │           in an org-mode document?
+  │ [14:51:49]<grym> Viking667: org-store-link maaaybe
+  │ [14:51:52]<Viking667> Ordinarily in a web browser I'd go C-l C-c, and then
+  │           paste the link from the address.
+  │ [14:52:02]<TRS-80> Viking667: yes what grym said
+  │ [14:52:29]<TRS-80> I have that command bound globally, because I use it
+  │           everywhere all the time
+  │ [14:52:46]<shoshin> yeah org-store-link works in everything emacs afaik
+  │ [14:53:10]<shoshin> iirc i had to use bookmarks for specific places in a
+  │           pdf tho?
+  │ [14:53:17]<TRS-80> pretty much, and you can also write your own custom
+  │           link types if needed
+  │ [14:53:24]<shoshin> then i made a link to the bookmark or something
+  │ [14:53:31]<Viking667> Right. how do I retrieve that link?
+  │ [14:53:46]<Viking667> (without grubbing through the *Messages* window?
+  │ [14:53:48]<shoshin> org-insert-link should have it
+  │ [14:54:02]<grym> Viking667: C-c C-l and it'll be in the minibuffer, probably
+  │           the default selection
+  │ [14:54:51]<shoshin> lol org-store-link does *not* work in *scratch*
+  │ [14:56:13]<wgreenhouse> Viking667: M-0 c in *Info* also grabs the location
+  │           as an elisp sexp
+  │ [15:04:55]<ryouma> Viking667:
+  └────
+  ┌────
+  │ (with-no-warnings
+  │     (add-hook 'Info-mode-hook (lambda ()
+  │                          (define-key Info-mode-map (kbd "c") 'my-Info-copy-current-node-name)))
+  │     (defun my-Info-copy-current-node-name () "produce sexp so that the recipient can just eval it."
+  │     (interactive) (Info-copy-current-node-name 0)))
+  └────
+  ┌────
+  │ [15:05:43]<ryouma> org-store-link perhaps does not do this, at least if the recipient doe snot run org-link-minor-mode [[info:dir#Top][info:dir#Top]]
+  │ [15:08:29]<ryouma> it does work in org though
+  │ [15:09:04]<ryouma> kinda redundant there isn't it where org puts label same as url
+  └────
+
+
+How to access the menubar from terminal
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Either of the following: <F10> or <ESC> `
+
+
+Here's a way to put ediff into windows in the frame instead of hanging outside as a separate frame
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  [21:55:16]<Viking667> … as ediff here just behaves really
+  weirdly. like it can't decide what size [21:56:12] the actual diff
+  command window should be, so lines overflow, causing all SORTS of
+  bother.  [21:57:29]<habamax> just make it a regular window not a frame
+  – way more convenient [21:58:00]<habamax> <http://ix.io/4DKn>
+  ┌────
+  │ (use-package ediff
+  │   :ensure nil
+  │   :config
+  │   (setq ediff-split-window-function 'split-window-horizontally)
+  │   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
+  └────
+  [22:00:48]<habamax> <https://i.imgur.com/ygwgS8w.png> - control window
+  is the bottom one
+
+  Alternatively, the last two lines can be included into custom.el as
+  follows:
+  ┌────
+  │ (custom-set-variables
+  │ ;; ...
+  │          '(ediff-split-window-function 'split-window-horizontally)
+  │          '(ediff-window-setup-function 'ediff-setup-windows-plain)
+  │ ;; ...
+  │ )
+  └────
+
+  Just make sure you don't rearrange the other lines inside
+  custom-set-variables or you'll have trouble.
+
+
+Sorts lines within a region
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This uses the `sort-lines' function, and should be used with a
+  region. Select the region with the lines you want to sort, then do
+  `M-x sort-lines'. Use `C-u M-x sort-lines' if you want to sort the
+  lines in reverse order. Thanks to parsnip from [Libera #emacs channel]
+  for this one.
+
+
+[Libera #emacs channel] <irc://irc.libera.chat#emacs>
+
+
+tias moments (Try It And See)
+─────────────────────────────
+
+Resize images dynamically
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+  │ [16:52:32]<Viking667> Hm. I stumbled across something nice in org-mode,
+  │            if inline-images are shown and they're all huge, put mouse
+  │            pointer on one, and go Ctl-Scrollwheel-Down. WAIT between
+  │            each resize, it can take a while on older computers.
+  │ [16:53:09]<Viking667> I'm not sure if it's applicable in other places too.
+  │           Nice thing about it is that only the image gets resized, not the buffer text.
+  └────
+
+
+Turn a file listing from ls (for example, from Ctl-U M-!) into a dired listing
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  if the buffer content is like the output from ls -l or rpm -qvl , `M-x
+  dired-virtual-mode RET'. I use this for turning linux package listings
+  into browsable dired buffers. bpalmer from #emacs notes that you may
+  need to (require 'dired-x) first, as it doesn't seem to set up an
+  autoload.
+
+
+Preserve indentation in org mode source blocks such as `#+BEGIN_SRC'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  I had a problem recently where org mode would reindent my source code
+  when I saved it back after a `C-c '' episode. I'd head off into
+  (org-edit-src-code), make the changes I needed, but afterwards, org
+  mode just indented my source code back to the nearest relevant
+  header. I believe it might have removed tabs from the block
+  too. Anyhow, the fix is simple, at least for me. There's a param to
+  add to the `#+BEGIN_SRC' param, `-i'. It should end up looking a bit
+  like this:
+  ┌────
+  │ #+BEGIN_SRC c -i
+  │ .....
+  │ #+END_SRC
+  └────
+
+
+Other useful links, channels and the like
+─────────────────────────────────────────
+
+Mike Zamansky - Using Emacs
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  <https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg&index=1>
+  That has a complete list of all the "Using Emacs" videos so far. It
+  seems to be regularly updated, so check back every so often.
+
+
+EmacsWiki screencasts:
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  <https://www.emacswiki.org/emacs/EmacsScreencasts>
+
+
+Sacha Chua
+╌╌╌╌╌╌╌╌╌╌
+
+  Sacha Chua is a prolific blogger, note taker and Emacs user, also
+  responsible for maintaining a huge list of Emacs-related news
+  articles. I've known of her since the early days, and she's quite a
+  live wire.
+  ⁃ [How to learn Emacs] - a one-page image great for people completely
+    new to Emacs who want to learn the basics.
+  ⁃ [Blog articles by a long-time Emacs user]
+  ⁃ [An Emacs Life]
+
+
+[How to learn Emacs]
+<https://sachachua.com/blog/wp-content/uploads/2013/05/How-to-Learn-Emacs-v2-Large.png>
+
+[Blog articles by a long-time Emacs user] <https://sachachua.org/blog>
+
+[An Emacs Life] <https://emacslife.com/>
+
+
+Mastering Emacs
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  <https://www.masteringemacs.org/> If you think you know Emacs from
+      this little bit I've explained here, then go read this book. It
+      will revolutionise your emacs usage if you read it through and
+      implement some of the things Mickey Petersen talks about. This is
+      one of the few ebooks I've bought, and is reasonably priced for
+      what it is. At the time I write this, it comes in at $49.95 in
+      greenbacks, with the possibility that it may go up in the future.
+
+
+Things to find out about
+────────────────────────
+
+org-pdfview and pdftools
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Looks like org-pdfview has been replaced by org-pdftools. I had
+  warnings when I loaded that package.  I think pdftools is the debian
+  or fedora package texlive-pdftools.
+
+
+How to remove numbers from headers in HTML/PDF exports
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  I seem to have run into a bit of a bug when exporting to PDF. I have a
+  TOC header, but no list of headers in that TOC. Strange thing is, the
+  HTML works and shows a full Contents list. Thankfully they don't have
+  numbers.
+
+
+Learn more about how to use registers
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  I already know about save and insert (`C-x r s <x>' and `C-x r i
+  <x>'), but I'm not sure about other register commands.
+
+
+Vim
+═══
+
+  You know, that other editor. The one that emacs users don't like to
+  admit liking. It has a tighter focus on editing text. That's
+  it. Nothing more. It's not an eco-system like Emacs is, and doesn't
+  try to be anything else. However, even it has a scripting language
+  underneath, called vimscript.  Because the editor is focussed so
+  tightly on editing text, it has a wide commandset for editing, and you
+  can do some really compact and powerful commands in just a few keys.
+
+  One example I like to quote so often, because I haven't found an
+  equivalent that's any shorter, or even the same size. I do this with a
+  good number of lines in a file, definitely more than 14 lines, but you
+  could tailor it to suit.
+
+  ┌────
+  │ ma013yy41j14p`a  (15 characters)
+  └────
+  This does the following:
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Keys*  *Description*                                            
+  ──────────────────────────────────────────────────────────────────
+   ma      :mark, using the a letter. :help mark for more details.  
+   0       step to column 0, the left hand side of the screen.      
+   13yy    copy 13 lines to the copy buffer, check :help yank       
+   41j     step forward 41 lines                                    
+   14p     paste 14 copies of the 13 lines each, giving you a total 
+           of 182 new lines                                         
+   `a      Go back to where you were                                
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  And that's just one example. It's only 15 characters long, with quite
+  a kick in its tail. And if you don't find what you want just in
+  vimscript, it even has a plugin system that rocks. I don't tend to use
+  them, so I don't include much here about it.
+
+  I don't describe more detailed vimscript here, basically because I
+  don't know how to use it myself.
+
+
+Movement keys
+─────────────
+
+  Moving the cursor around involves a few keys, and depends upon whether
+  you're in command mode or in insert mode. These initial keys are used
+  in command mode, and move around between characters and lines. Most of
+  these commands will also take an integer as a prefix, meaning "do this
+  n times".
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*          *Key*  *Alternatives*  *Notes*                                           
+  ─────────────────────────────────────────────────────────────────────────────────────────────
+   right-char         Right  l                                                                 
+   left-char          Left   h                                                                 
+   next-line          Down   k/C-n           (Control-n)                                       
+   Jump down n lines  nC-n                                                                     
+   previous-line      Up     j/C-p           (Control-p)                                       
+   Jump up n lines    nC-p                                                                     
+   right-word         w                      Forward to the beginning of the next word         
+   left-word          b                      Back to the first alpha-numeric char of the word  
+   Beginning of line  0                                                                        
+   End of line        $                      The end of the file line, not the screen line (*) 
+   Top of file        gg                                                                       
+   Bottom of file     G                                                                        
+   Jump to line n     nG                     Simply type integer in, then hit G                
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  (*) As with Emacs, there's a difference between a file line and a
+  screen line. A file line starts after the last CR, CR/LF or LF
+  (depending on platform of file) and continues until the next
+  occurrence of a CR, CR/LF, LF or end of file. A screen line (if the
+  file line is wider than the screen) is just the width of the screen,
+  whether the line's wrapped or not. So for a 349-character line, and an
+  80-character screen, the file line would take up five screen lines on
+  screen, and the "end-of-line" command goes to the end of the file
+  line.
+
+
+Help
+────
+
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Commands*       *Keys*              *Notes*                                                 
+  ──────────────────────────────────────────────────────────────────────────────────────────────
+   Top of help      :help                                                                       
+   Help on a topic  :help "searchterm"  Search term needs to be in quotes if you include spaces 
+   Help section     :help usr_08        Jump to usr_08.txt                                      
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Opening files
+─────────────
+
+  Check :help edit
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Commands*                       *Keys*         *Notes*                                    
+  ────────────────────────────────────────────────────────────────────────────────────────────
+   Edit new file in buffer          :e <filename>  Will fail if existing buffer isn't written 
+   Insert file at cursor            :r <filename>                                             
+   Insert command output at cursor  :r !command    (won't take input)                         
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Diffing files
+─────────────
+
+  Check :help diff There are two ways to diff files with vimdiff.
+  ⁃ First, from commandline:
+  ┌────
+  │ vimdiff firstfile secondfile
+  └────
+  ⁃ and within vim (side-by-side):
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Commands*                     *Keys*                  *Long form*                 *Notes*                             
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   Show two files side by side    :vert diffs other-file  :vert diffsplit other-file  Quote the filename if it has spaces 
+   Show two files top and bottom  :diffs other-file       :diffsplit other-file       Quote the filename if it has spaces 
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⁃ Within vim, you can also use these commands
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Commands*               *Keys*  *Notes* 
+  ──────────────────────────────────────────
+   jump to next change      [c              
+   jump to previous change  ]c              
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Copying commands
+────────────────
+
+  Check out :help copy
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Command*                                *Key(s)* 
+  ───────────────────────────────────────────────────
+   Copy line                                yy       
+   Copy multiple lines (6 in this example)  6yy      
+   Alternative to above                     6Y       
+   Alternative to above                     y6y      
+   Copy word                                yw       
+   Copy char                                y<Space> 
+   Copy to end of line                      y$       
+   Copy to beginning of line                y0       
+   Paste content at cursor location         p        
+   Paste content above cursor location      P        
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  As you can tell, many vim commands take an optional numeric argument,
+  either before in the case of `6yy' or embedded in the command in the
+  case of `y6y'. In this case at least, they both give you the same
+  result. At least one opinion holds that you should probably prefer the
+  6yy form, as it's simply for n times, repeat x item. A special note
+  about the `y<Space>', means literally hit the `y' key, followed by the
+  `Spacebar'. You may often see special notes about keys in <>
+  throughout the Vim help.
+
+
+Window commands
+───────────────
+
+  Window commands operate to open/close or move between existing
+  windows. In essence, a vim window is like a emacs buffer, in that they
+  both hold the contents of a file, but work slightly differently.
+
+  This table very quickly summarises what I believe to be the most
+  important commands that apply to windows.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Commands                            Keys                            Variables                                         
+  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   Split window below                  :sp                             :splitbelow                                       
+   Split window beside                 :vsp                            :splitright                                       
+   Switch windows down/up/left/right   C-w <Down>/<Up>/<Left>/<Right>                                                    
+   Swap windows                        C-w C-w                                                                           
+   Grow window                         [N]C-w +                        Can take a numeric prefix N                       
+   Shrink window                       [N]C-w -                        Can take a numeric prefix N                       
+   Maximize window                     C-w _                           With numeric prefix, sets the window to that size 
+   Reorient window split horizontally  C-w K                           Rotate windows to top/bottom                      
+   Reorient window split vertically    C-w H                           Rotate windows to left/right                      
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Check :help window for the full details, however a short description
+  for most of these follows:
+
+
+Split window below/right: `:sp' /  `:vsp'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This splits the existing window in half so that you have
+  ⁃ a top and bottom half or
+  ⁃ a left/right half
+  Your cursor will then end up in the newly opened window.
+
+  When `:splitbelow' is set, your "new" window will be created below
+  your existing window, otherwise it will be created above your existing
+  window. The same holds for `:splitright' - if that is set, your new
+  window is created to the right of the existing window, otherwise your
+  new window appears to the left.
+
+
+Switch to direction: `C-w <Down>=/=C-w <Up>=/=C-w <Left>=/=C-w <Right>'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  In the event you have more than two windows open, you can cycle easily
+  between them all in any direction using the Ctl-W <direction> keys,
+  making it easier to navigate than using `C-w C-w' continuously.
+
+
+Swap windows: `C-w C-w'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Best command if you have two windows, split either vertically or
+  horizontally. `C-w C-w' just swaps between the two. Simple.
+
+
+Grow/Shrink: `C-w +=/=C-w -'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This increases/decreases the window height by one, or by more with a
+  numeric prefix.
+
+
+Maximize window vertically - `C-w _'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  The maximum size appears to be two less than the vertical room
+  available, and leaves one line of text in each other window plus the
+  status bar for each window.
+
+
+Macro commands
+──────────────
+
+  Check :help macro Key mapping is used to change the meaning of typed
+  keys.  The most common use is to define a sequence of commands for a
+  function key.  Example:
+  ┌────
+  │ :map <F2> a<C-R>=strftime("%c")<CR><Esc>
+  └────
+  This appends the current date and time after the cursor (in <>
+  notation, see :help <> for details).  Picking this apart, you have the
+  command :map. This command takes two (or more) arguments.
+  ⁃ The first argument is the key to bind, delimited by <>, which you
+    may need to specify. If it's just a straight key, such as I, you
+    probably don't need to put that into <>, but you will for things
+    like C-c, F2 and anything where the symbol takes more than 1
+    character to type the whole key definition.
+    ⁃ NB: you can often hit the key itself after typing :map in which
+      case, vim will turn F2 into <F2>.
+    For example, if you want to bind F2 (as in the case above), then you
+    type <F2> as the key.
+  ⁃ The second argument is what you want to type when you hit F2. In
+    this case, it's generally vim commands in command mode. You can bind
+    keys in insert mode, but that comes with a bit more to do.
+
+
+Exit commands
+─────────────
+
+  Check :help exiting
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Commands*                      *Keys*  *Long form*  *Notes*                             
+  ──────────────────────────────────────────────────────────────────────────────────────────
+   Quitting                        :q      :quit        Only works if no changes            
+   Quitting with multiple files    :qa     :qall        Only works if no changes            
+   Write file and quit             :wq                  Will confirm if file exists already 
+   Quitting without writing        :q!                                                      
+   Quit all files without writing  :qa!    :qall!                                           
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Programming
+═══════════
+
+Codemy (normally payware) Video
+───────────────────────────────
+
+  ⁃ [Using MySQL Databases With Python Course (1:10:09)]
+
+
+[Using MySQL Databases With Python Course (1:10:09)]
+<https://www.youtube.com/watch?v=yOmxJbZjTnU>
+
+
+FreeCodeCamp.org Videos  [Youtube Channel]
+──────────────────────────────────────────
+
+
+
+[Youtube Channel] <https://youtube.com/c/freecodecamp>
+
+Basic (Visual Basic)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ [Visual Basic for beginners]
+
+
+[Visual Basic for beginners]
+<https://www.youtube.com/watch?v=HFWQdGn5DaU>
+
+
+C++
+╌╌╌
+
+  ⁃ [C++ Tutorial for beginners - Full Course (4:01:19)]
+
+
+[C++ Tutorial for beginners - Full Course (4:01:19)]
+<https://www.youtube.com/watch?v=vLnPwxZdW4Y>
+
+
+C#
+╌╌
+
+  ⁃ [C# Tutorial - full course for beginners (4:31:09)]
+
+
+[C# Tutorial - full course for beginners (4:31:09)]
+<https://www.youtube.com/watch?v=GhQdlIFylQ8>
+
+
+Git
+╌╌╌
+
+  ⁃ [Git and Github for beginners - crash course (1:08:30)]
+
+
+[Git and Github for beginners - crash course (1:08:30)]
+<https://www.youtube.com/watch?v=RGOj5yH7evk>
+
+
+HTML 5
+╌╌╌╌╌╌
+
+  ⁃ [HTML 5 full course - design website in two hours (2:02:32)]
+
+
+[HTML 5 full course - design website in two hours (2:02:32)]
+<https://www.youtube.com/watch?v=pQN-pnXPaVg>
+
+
+Java
+╌╌╌╌
+
+  ⁃ [Learn Java 8 - Full tutorial for beginners (9:32:32)]
+
+
+[Learn Java 8 - Full tutorial for beginners (9:32:32)]
+<https://www.youtube.com/watch?v=grEKMHGYyns>
+
+
+Javascript
+╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ [Learn Javascript - Full course for beginners, (3:26:43)]
+
+
+[Learn Javascript - Full course for beginners, (3:26:43)]
+<https://www.youtube.com/watch?v=PkZNo7MFNFg>
+
+
+LaTeX
+╌╌╌╌╌
+
+  ⁃ [LaTeX - Full Tutorial for Beginners (4:28:43)]
+
+
+[LaTeX - Full Tutorial for Beginners (4:28:43)]
+<https://www.youtube.com/watch?v=ydOTMQC7np0>
+
+
+Penetration Testing
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ [Full Ethical Hacking course (14:51:14)]
+
+
+[Full Ethical Hacking course (14:51:14)]
+<https://www.youtube.com/watch?v=3Kq1MIfTWCE>
+
+
+Python
+╌╌╌╌╌╌
+
+  ⁃ [Learn Python - Full course for beginners, (4:26:52)]
+  ⁃ [Python for everybody - Full university python course (13:40:10)]
+
+
+[Learn Python - Full course for beginners, (4:26:52)]
+<https://www.youtube.com/watch?v=rfscVS0vtbw>
+
+[Python for everybody - Full university python course (13:40:10)]
+<https://www.youtube.com/watch?v=8DvywoWv6fI>
+
+
+SQL
+╌╌╌
+
+  ⁃ [SQL tutorial - Full database course for beginners (4:20:39)]
+
+
+[SQL tutorial - Full database course for beginners (4:20:39)]
+<https://www.youtube.com/watch?v=HXV3zeQKqGY>
+
+◊ Postgresql
+
+  ⁃ [Learn PostGreSQL Tutorial (4:19:34)]
+
+
+  [Learn PostGreSQL Tutorial (4:19:34)]
+  <https://www.youtube.com/watch?v=qw--VYLpxG4>
+
+
+Other Videos
+────────────
+
+Javascript
+╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Java Swing GUI Full course—Bro Code (4:48:34)
+  <https://www.youtube.com/watch?v=Kmgo00avvEw>
+
+
+Music
+═════
+
+Classical
+─────────
+
+  ⁃ Erik Satie: Gymnopedies, gnossiennes et sarabandes (1:05:19)
+  <https://www.youtube.com/watch?v=5pyhBJzuixM>
+  ⁃ [P Tracklist:
+    ⁃ 00:00:00 3 Sarabandes (1887): No. 1
+    ⁃ 00:05:33 3 Sarabandes (1887): No. 2
+    ⁃ 00:10:33 3 Sarabandes (1887): No. 3
+    ⁃ 00:14:47 3 Gymnopédies (1889): No. 1: Lent et douloureux
+    ⁃ 00:18:27 3 Gymnopédies (1889): No. 2: Lent et triste
+    ⁃ 00:21:45 3 Gymnopédies (1889): No. 3: Lent et grave
+    ⁃ 00:24:38 Gnossiennes 1-3 (1890): No. 1
+    ⁃ 00:28:45 Gnossiennes 1-3 (1890): No. 2
+    ⁃ 00:30:45 Gnossiennes 1-3 (1890): No. 3
+    ⁃ 00:34:11 Gnossiennes 4-6 (1889-1897): No. 4
+    ⁃ 00:37:02 Gnossiennes 4-6 (1889-1897): No. 5
+    ⁃ 00:39:53 Gnossiennes 4-6 (1889-1897): No. 6
+    ⁃ 00:41:27 2 Préludes du nazaréen (1892): No. 1, assez
+      lent
+    ⁃ 00:46:09 2 Préludes du nazaréen (1892): No. 2, assez
+      lent
+    ⁃ 00:49:15 2 Prélude de la porte Héroique du ciel
+      (1894)
+    ⁃ 00:53:00 2 Pièces froides (1897), No. 1: Airs a faire fuir:
+      D’une manière très particulaire
+    ⁃ 00:55:59 2 Pièces froides (1897), No. 1: Airs a faire fuir:
+      Modestemente
+    ⁃ 00:57:42 2 Pièces froides (1897), No. 1: Airs a faire fuir:
+      S’inviter
+    ⁃ 01:00:45 No 2: Danses de travers: En y regardent à deux
+      fois
+    ⁃ 01:01:39 No 2: Danses de travers: Passer
+    ⁃ 01:02:25 No 2: Danses de travers: Encore
+    ⁃ 01:03:47 Petite ouverture à danser (1900)
+    ]
+
+
+Atmospheric/ambient/Dark
+────────────────────────
+
+  ⁃ Outer Darkness (10+ Hours Dark Ambient-1:04:41 looped) (10:46:47)
+    ⁃ <https://www.youtube.com/watch?v=rc-XgxwIMFM>
+  ⁃ 'Afterglow' Ambient mix (2:02:33)
+    ⁃ <https://www.youtube.com/watch?v=MgApT3VHtZY>
+  ⁃ 'Daydream' Ambient mix (2:01:13)
+    ⁃ <https://www.youtube.com/watch?v=xApldi2rbk8>
+  ⁃ Winter Dungeon Music - Cryo Chamber
+    ⁃ <https://www.youtube.com/watch?v=pi8HmR1MEOQ>
+  ⁃ Time to escape - beautiful mix
+    ⁃ <https://www.youtube.com/watch?v=K9mNaZRDhUk>
+  ⁃ It wears a human face - (10 hours of dark ambient music)
+    ⁃ <https://www.youtube.com/watch?v=cHf3aitzSCE>
+
+
+Programming music
+─────────────────
+
+Fil Far
+╌╌╌╌╌╌╌
+
+  ⁃ [Fil Far channel]
+  ⁃ [List of videos]
+  ⁃ [Programming BIOHAZARD edition #14 (1:01:01)]
+  ⁃ [Programming LIQUID edition #21 (56:31)]
+  ⁃ [FOCUS Coding Music #15 (1:13:04)]
+
+
+[Fil Far channel]
+<https://www.youtube.com/channel/UCMXHtrkazQjeCOteE4sof8g>
+
+[List of videos]
+<https://www.youtube.com/playlist?list=PLEM4vOSCprStzppPemEYAF6ZEUrQYj5N5>
+
+[Programming BIOHAZARD edition #14 (1:01:01)]
+<https://www.youtube.com/watch?v=ZzRnX4UNJso>
+
+[Programming LIQUID edition #21 (56:31)]
+<https://www.youtube.com/watch?v=GOaohYSg0m4>
+
+[FOCUS Coding Music #15 (1:13:04)]
+<https://www.youtube.com/watch?v=cQ-a18zEBmI>
+
+
+JimTV
+╌╌╌╌╌
+
+  ⁃ Channel: <https://www.youtube.com/c/JimTVmusic>
+  ⁃ Programming/coding/hacking music #7 - CYBORG CAN NOT DIE (1:01:53)
+  <https://www.youtube.com/watch?v=do7Jl_4_d5w>
+
+
+Other channels
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ [Starterra - Celestial (Space Ambient) [Full Album]]
+
+
+[Starterra - Celestial (Space Ambient) [Full Album]
+<https://www.youtube.com/watch?v=nPM_teVT07Y>
+
+
+Game Soundtracks
+────────────────
+
+  ⁃ [Age of Mythology soundtrack (46:32)]
+  ⁃ [Factorio complete soundtrack (1:00:53)]
+  ⁃ [Hyper Light Drifter - complete OST (2:19:21)]
+  ⁃ [Mirror's Edge - Catalyst (5:13:10)]
+  ⁃ [Ori and the Will of the Wisps (3:02:02)]
+  ⁃ [Rimworld Complete Soundtrack]
+  ⁃ [Rimworld Royalty complete soundtrack]
+  ⁃ [Sid Meier's Civilization 6 Complete Soundtrack (4:21:21)]
+  ⁃ [Sid Meier's Civilization: Beyond Earth (2:59:31)]
+  ⁃ [Sim CITY 3000 Soundtrack (1:02:01)]
+  ⁃ [Complete Sim CITY 3000 Soundtrack (1:52:21)]
+  ⁃ [Sim City 4 Soundtrack (3:15:14)]
+
+
+[Age of Mythology soundtrack (46:32)]
+<https://www.youtube.com/watch?v=TGXwvLupP5A>
+
+[Factorio complete soundtrack (1:00:53)]
+<https://www.youtube.com/watch?v=T6OZrUbLJ1M>
+
+[Hyper Light Drifter - complete OST (2:19:21)]
+<https://www.youtube.com/watch?v=bq7a_ktfYck>
+
+[Mirror's Edge - Catalyst (5:13:10)]
+<https://www.youtube.com/watch?v=2fb5_zVk2gY>
+
+[Ori and the Will of the Wisps (3:02:02)]
+<https://www.youtube.com/watch?v=eCbyqm9jcBA>
+
+[Rimworld Complete Soundtrack]
+<https://www.youtube.com/watch?v=TXQBHblSCIc>
+
+[Rimworld Royalty complete soundtrack]
+<https://www.youtube.com/watch?v=PG-phyoElKU>
+
+[Sid Meier's Civilization 6 Complete Soundtrack (4:21:21)]
+<https://www.youtube.com/watch?v=cb922Sry_DI>
+
+[Sid Meier's Civilization: Beyond Earth (2:59:31)]
+<https://www.youtube.com/watch?v=N4mPA-tPvtc>
+
+[Sim CITY 3000 Soundtrack (1:02:01)]
+<https://www.youtube.com/watch?v=qkXOxLpdMds>
+
+[Complete Sim CITY 3000 Soundtrack (1:52:21)]
+<https://www.youtube.com/watch?v=k3FsVvwbAlw>
+
+[Sim City 4 Soundtrack (3:15:14)]
+<https://www.youtube.com/watch?v=PSv37HwwojU>
+
+Starbound soundtrack
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Tracklist:
+    ⁃ Horsehead Nebula - 0:00
+    ⁃ Stellar Formation - 7:36
+    ⁃ Eridanus Supervoid - 15:25
+    ⁃ Haiku - 7:36 - 0:22:59
+    ⁃ Cygnus X1 - 30:34
+    ⁃ Psyche - 43:57
+    ⁃ Large Magellanic Cloud - 49:22
+    ⁃ Epsilon Indi - 0:55:36
+    ⁃ Hymn to the Stars - 1:06:34
+    ⁃ Europa - 1:11:12
+    ⁃ Atlas - 1:17:16
+    ⁃ Casiopeia - 1:21:23
+    ⁃ Mercury - 1:27:28
+    ⁃ Temple of Kluex - 1:33:54
+    ⁃ Mira - 1:42:30
+    ⁃ Procyon - 2:02:35
+    ⁃ Blue Straggler - 2:11:44
+    ⁃ Nomads (Passacaglia) - 2:17:27
+    ⁃ Accretion Disc - 2:27:35
+    ⁃ Tranquility Base - 2:32:33
+    ⁃ Vast, Immortal Suns - 2:44:28
+    ⁃ The Apex - 2:48:33
+    ⁃ The Deep - 2:55:47
+    ⁃ Drosera - 3:02:56
+    ⁃ Error 0xBFAF000 - 3:11:14
+    ⁃ Event Horizon - 3:14:24
+    ⁃ Gravitational Collapse - 3:21:40
+    ⁃ I Was the Sun (Before it was Cool) - 3:26:12
+    ⁃ Impact Event - 3:31:10
+    ⁃ M54 - 3:38:06
+    ⁃ Starbound - 3:48:44
+    ⁃ Ultramarine - 3:59:14
+    ⁃ Via Aurora - 4:01:48
+    ⁃ Glacial Horizon - 4:04:19
+    ⁃ Scorian Flow - 4:07:55
+    ⁃ Forsaken Grotto - 4:11:00
+    ⁃ Stellar Acclimation - 4:14:27
+    ⁃ Jupiter - 5:56 - 4:17:46
+    ⁃ Arctic Battle 1 - 4:23:42
+    ⁃ Arctic Battle 2 - 4:26:06
+    ⁃ Arctic Battle 3 - 4:28:01
+    ⁃ Arctic Constellation 1 - 4:29:40
+    ⁃ Arctic Constellation 2 - 4:40:44
+    ⁃ Arctic Exploration 1 - 4:50:09
+    ⁃ Arctic Exploration 2 - 4:54:25
+    ⁃ Crystal Battle 1 - 4:58:25
+    ⁃ Crystal Exploration 1 - 5:01:34
+    ⁃ Crystal Exploration 2 - 5:04:38
+    ⁃ Desert Battle 2 - 5:08:59
+    ⁃ Desert Exploration 1 - 5:12:37
+    ⁃ Desert Exploration 2 - 5:15:07
+    ⁃ Forest Battle 1 - 5:18:13
+    ⁃ Forest Battle 2 - 5:20:39
+    ⁃ Forest Battle 2 (alternative) - 5:24:16
+    ⁃ Forest Exploration 1 - 5:27:52
+    ⁃ Forest Exploration 2 - 5:31:52
+    ⁃ Forest - 5:35:49
+    ⁃ Glitch - 5:37:01
+    ⁃ Ice Constellation 2 demo - 5:40:21
+    ⁃ Inviolate - 5:49:46
+    ⁃ Lava Exploration 1 - 5:52:33
+    ⁃ Lava Exploration 2 - 5:55:53
+    ⁃ Ocean Battle 1 - 6:00:41
+    ⁃ Ocean Exploration 1 - 6:02:03
+    ⁃ Ocean Exploration 2 - 6:06:06
+    ⁃ On the Beach at Night - 6:09:29
+    ⁃ Planetarium - 6:13:46
+    ⁃ Tentacle Battle 1 - 6:18:04
+    ⁃ Tentacle Exploration 1 - 6:19:30
+    ⁃ Tentacle Exploration 2 - 6:22:10
+    ⁃ Constellation 1 (8 different versions) - 6:25:16
+
+
+Weird stuff
+───────────
+
+  ⁃ [Philip Glass - Music From The Hours (42:44)]
+
+
+[Philip Glass - Music From The Hours (42:44)]
+<https://www.youtube.com/watch?v=heu9tD0dzkY>
+
+
+Social
+──────
+
+  ⁃ [Uncomfortable conversations with a black man - Petuma Police Force
+    (22:32)]
+
+
+[Uncomfortable conversations with a black man - Petuma Police Force
+(22:32)] <https://www.youtube.com/watch?v=pM-HpZQWKT4>
