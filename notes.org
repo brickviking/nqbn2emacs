@@ -708,14 +708,14 @@ using romaji), and greek (Greek characters). There are many more variants as wel
   :CUSTOM_ID: paragraphs
   :END:
 
-Paragraphs are sections of text, usually separated from each other by either a blank line, or
-terminated by a period. The default width for paragraphs is a hangover from the dim dark times when
-output used to be on printer paper, and most printers would only print a maximum of 80 normal
-characters (or 96 squashed ones) on a sheet of A4 paper before running out of room and having to
-drop down to the next line. Letter sized paper was a little different, but was prevalent in America.
+Paragraphs are sections of text with one or more sentences, usually separated from each other by a
+blank line. The default width for paragraphs is a hangover from the dim dark times when output used
+to be on printer paper. Most printers would only print a maximum of 80 normal characters (or 96
+squashed ones) across a sheet of A4 paper before dropping down to the next line. The letter-sized
+paper prevalent in America was a little different, but had many of the same problems.
 
 These days, most monitors are far wider than that, even though smartphone screens aren't.
-Additionally, we've had proportional fonts for a very long time now, and that can't easily be
+Additionally, we've had proportional fonts for a very long time, and text width can't easily be
 counted the same way as a fixed-width font, as each character from i to m can be significantly
 different from each other. But as Emacs dates from the very late 'seventies and 'eighties, we're
 dealing with some of the hangover decisions made when they made more sense back in those days.
