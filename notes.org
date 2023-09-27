@@ -602,7 +602,6 @@ less space to that window.
    | Expand vertically            | C-x ^             |
    | Expand to right              | C-x }             |
    | Expand to left               | C-x {             |
-   | Shrink vertically            | C-x v             |
    |------------------------------+-------------------|
 
 A note about about shrinking the window; there is a command to make a window shrink to just the size
