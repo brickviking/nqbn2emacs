@@ -1271,6 +1271,42 @@ Just make sure you don't rearrange the other lines inside custom-set-variables o
 This uses the =sort-lines= function, and should be used with a region. Select the region with the
 lines you want to sort, then do =M-x sort-lines=. Use =C-u M-x sort-lines= if you want to
 sort the lines in reverse order. Thanks to parsnip from [[irc://irc.libera.chat#emacs][Libera #emacs channel]] for this one.
+*** How to open file in emacs source-directory
+Here's a new source-find function, that scratches a personal itch of mine. It's most useful if you
+installed the emacs source code into a directory on your own system and compiled/installed from
+there. If you redefine source-directory in your init.el, don't forget to put the / on the end.
+It won't work if you're using an emacs compiled from a Linux distribution's repository
+(Ubuntu/Fedora/etc) because the value in source-directory probably won't exist on your own system.
+
+I was getting sick of having to type a long expression every time I wanted to open a file in the
+emacs source-directory, or use =C-x C-f= and tabcomplete all the way from the filetree root. So I
+tried to write my own, but I ran into some problems that stemmed from my complete inexperience with
+writing lisp.  This function that habamax came up with prompts for a filename, prepends
+source-directory and reads that into a buffer. It's kind of hard to explain, but is an expansion of
+the following where "etc/NEWS" should be a variable:
+
+#+BEGIN_EXAMPLE emacs-lisp
+(find-file (expand-file-name "etc/NEWS" source-directory))
+#+END_EXAMPLE
+
+#+BEGIN_SRC emacs-lisp
+;; Thanks to habamax for this function. It's much better than I had.
+;; Only requires that source-directory's is current for your install.
+(defun source-find ()
+  "Opens provided filename stored in source-directory, takes a relative path"
+  (interactive)
+  (find-file
+     (concat
+      source-directory
+      (completing-read
+       "Open source file: "
+       (directory-files source-directory
+                        nil
+                        directory-files-no-dot-files-regexp)))))
+
+#+END_SRC
+
+
 ** tias moments (Try It And See)
   :PROPERTIES:
   :CUSTOM_ID: tias
@@ -1328,6 +1364,14 @@ https://www.masteringemacs.org/
 *** org-pdfview and pdftools
 Looks like org-pdfview has been replaced by org-pdftools. I had warnings when I loaded that package.
 I think pdftools is the debian or fedora package texlive-pdftools.
+*** vc-mode
+Info link: [[info:emacs#Version Control][Version Control]]
+
+This is a simple mode that provides commands for managing source code revisions. It comes with
+support for CVS, RCS, Git, Bazaar, SCCS/CSSC, Mercurial, Subversion, SRC and even Monotone out of the
+box. Others have expanded this to include fossil, ocs, darcs and others. Once I get some more detail
+in here, I can paste this up as a minor section.
+
 *** How to remove numbers from headers in HTML/PDF exports
 I seem to have run into a bit of a bug when exporting to PDF. I have a TOC header, but no list of
 headers in that TOC. Strange thing is, the HTML works and shows a full Contents list. Thankfully
