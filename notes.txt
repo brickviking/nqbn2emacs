@@ -1002,7 +1002,6 @@ Resizing or deleting windows
    Expand vertically             C-x ^             
    Expand to right               C-x }             
    Expand to left                C-x {             
-                                                 
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   A note about about shrinking the window; there is a command to make a
@@ -1953,6 +1952,72 @@ Sorts lines within a region
 [Libera #emacs channel] <irc://irc.libera.chat#emacs>
 
 
+How to open file in emacs source-directory
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  Here's a new source-find function that scratches a personal itch of
+  mine. It's most useful if you installed the emacs source code into a
+  directory on your own system and compiled/installed from there. If you
+  redefine source-directory in your init.el, don't forget to put the /
+  on the end. It won't work if you're using an emacs compiled from a
+  Linux distribution's repository (Ubuntu/Fedora/etc) because the value
+  stored in source-directory probably won't exist on your own system
+  unless you've redefined it in init.el or some other emacs startup file
+  as mentioned above.
+
+  I was getting sick of having to type a long expression every time I
+  wanted to open a file in the emacs source-directory, or use `C-x C-f'
+  and tabcomplete all the way from the filetree root. So I tried to
+  write my own, but I ran into some problems that stemmed from my
+  complete inexperience with writing lisp.  This function that habamax
+  came up with prompts for a filename, prepends source-directory and
+  reads that into a buffer. It's kind of hard to explain, but is an
+  expansion of the following where "etc/NEWS" should be a variable:
+
+  ┌────
+  │ (find-file (expand-file-name "etc/NEWS" source-directory))
+  └────
+
+  I've modified this a bit so it can be used both from `M-x source-find'
+  and from an elisp buffer like below:
+  ┌────
+  │ (source-find "etc/NEWS")
+  └────
+
+  ┌────
+  │ ;; Thanks to habamax for this function. It's much better than I had.
+  │ ;; Only requires that source-directory's value is current for your install.
+  │ (defun source-find (&optional sf-fn)
+  │   "When called interactively, requests optional relative path/filename stored in source-directory.
+  │ You can provide either a path or a path and filename.
+  │ 
+  │   M-x source-find <RET> path/to/file <RET>
+  │ 
+  │ will open ${SOURCEDIR}/path/to/file in a buffer
+  │ 
+  │   M-x source-find <RET> path <RET>
+  │ 
+  │ will open ${SOURCEDIR}/path in a dired buffer
+  │ 
+  │ 
+  │ When called from inside a lisp buffer (C-x C-e), takes optional relative path to a filename in
+  │ double-quotes."
+  │   (interactive)
+  │   (if (null sf-fn)
+  │   (find-file  ;; t-clause (sf-fn has nothing in it)
+  │      (concat
+  │       source-directory
+  │       (completing-read
+  │        "Open source file: "
+  │        (directory-files source-directory
+  │                         nil
+  │                         directory-files-no-dot-files-regexp))))
+  │    (find-file (concat source-directory sf-fn)) ;; f-clause (sf-fn has a value, even if empty)
+  │ ))
+  │ 
+  └────
+
+
 tias moments (Try It And See)
 ─────────────────────────────
 
@@ -2056,6 +2121,21 @@ org-pdfview and pdftools
   Looks like org-pdfview has been replaced by org-pdftools. I had
   warnings when I loaded that package.  I think pdftools is the debian
   or fedora package texlive-pdftools.
+
+
+vc-mode
+╌╌╌╌╌╌╌
+
+  Info link: [Version Control]
+
+  This is a simple mode that provides commands for managing source code
+  revisions. It comes with support for CVS, RCS, Git, Bazaar, SCCS/CSSC,
+  Mercurial, Subversion, SRC and even Monotone out of the box. Others
+  have expanded this to include fossil, ocs, darcs and others. Once I
+  get some more detail in here, I can paste this up as a minor section.
+
+
+[Version Control] <info:emacs#Version Control>
 
 
 How to remove numbers from headers in HTML/PDF exports

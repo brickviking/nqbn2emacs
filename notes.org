@@ -12,6 +12,7 @@ addresses the Emacs and Vim editors, and also provides some other distractions f
 need of them.
 #+END_abstract
 
+
 * Introduction
        :PROPERTIES:
        :UNNUMBERED: notoc
@@ -1272,11 +1273,13 @@ This uses the =sort-lines= function, and should be used with a region. Select th
 lines you want to sort, then do =M-x sort-lines=. Use =C-u M-x sort-lines= if you want to
 sort the lines in reverse order. Thanks to parsnip from [[irc://irc.libera.chat#emacs][Libera #emacs channel]] for this one.
 *** How to open file in emacs source-directory
-Here's a new source-find function, that scratches a personal itch of mine. It's most useful if you
+Here's a new source-find function that scratches a personal itch of mine. It's most useful if you
 installed the emacs source code into a directory on your own system and compiled/installed from
-there. If you redefine source-directory in your init.el, don't forget to put the / on the end.
-It won't work if you're using an emacs compiled from a Linux distribution's repository
-(Ubuntu/Fedora/etc) because the value in source-directory probably won't exist on your own system.
+there. If you redefine source-directory in your init.el, don't forget to put the / on the end. It
+won't work if you're using an emacs compiled from a Linux distribution's repository
+(Ubuntu/Fedora/etc)
+ because the value stored in source-directory probably won't exist on your own
+system unless you've redefined it in init.el or some other emacs startup file as mentioned above.
 
 I was getting sick of having to type a long expression every time I wanted to open a file in the
 emacs source-directory, or use =C-x C-f= and tabcomplete all the way from the filetree root. So I
@@ -1289,20 +1292,42 @@ the following where "etc/NEWS" should be a variable:
 (find-file (expand-file-name "etc/NEWS" source-directory))
 #+END_EXAMPLE
 
+I've modified this a bit so it can be used both from =M-x source-find= and from an elisp buffer like
+below:
+#+BEGIN_EXAMPLE emacs-lisp
+(source-find "etc/NEWS")
+#+END_EXAMPLE
+
 #+BEGIN_SRC emacs-lisp
 ;; Thanks to habamax for this function. It's much better than I had.
-;; Only requires that source-directory's is current for your install.
-(defun source-find ()
-  "Opens provided filename stored in source-directory, takes a relative path"
+;; Only requires that source-directory's value is current for your install.
+(defun source-find (&optional sf-fn)
+  "When called interactively, requests optional relative path/filename stored in source-directory.
+You can provide either a path or a path and filename.
+
+  M-x source-find <RET> path/to/file <RET>
+
+will open ${SOURCEDIR}/path/to/file in a buffer
+
+  M-x source-find <RET> path <RET>
+
+will open ${SOURCEDIR}/path in a dired buffer
+
+
+When called from inside a lisp buffer (C-x C-e), takes optional relative path to a filename in
+double-quotes."
   (interactive)
-  (find-file
+  (if (null sf-fn)
+  (find-file  ;; t-clause (sf-fn has nothing in it)
      (concat
       source-directory
       (completing-read
        "Open source file: "
        (directory-files source-directory
                         nil
-                        directory-files-no-dot-files-regexp)))))
+                        directory-files-no-dot-files-regexp))))
+   (find-file (concat source-directory sf-fn)) ;; f-clause (sf-fn has a value, even if empty)
+))
 
 #+END_SRC
 
