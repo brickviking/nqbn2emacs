@@ -16,6 +16,8 @@ to local footnotes.
 [brackets] <text link to web/info resources>
 
 
+
+
 Introduction
 ════════════
 
@@ -1988,8 +1990,9 @@ How to open file in emacs source-directory
   │ ;; Thanks to habamax for this function. It's much better than I had.
   │ ;; Only requires that source-directory's value is current for your install.
   │ (defun source-find (&optional sf-fn)
-  │   "When called interactively, requests optional relative path/filename stored in source-directory.
-  │ You can provide either a path or a path and filename.
+  │ "When called interactively, requests optional relative path/filename stored
+  │ in source-directory. You can provide either a path or a path and filename.
+  │ If you redefine source-directory, make sure you terminate it with a /.
   │ 
   │   M-x source-find <RET> path/to/file <RET>
   │ 
@@ -2000,20 +2003,18 @@ How to open file in emacs source-directory
   │ will open ${SOURCEDIR}/path in a dired buffer
   │ 
   │ 
-  │ When called from inside a lisp buffer (C-x C-e), takes optional relative path to a filename in
-  │ double-quotes."
+  │ When called from inside a lisp buffer (C-x C-e), takes optional relative
+  │ path to a filename in double-quotes."
   │   (interactive)
-  │   (if (null sf-fn)
-  │   (find-file  ;; t-clause (sf-fn has nothing in it)
-  │      (concat
+  │   (find-file
+  │     (file-name-concat
   │       source-directory
-  │       (completing-read
-  │        "Open source file: "
-  │        (directory-files source-directory
-  │                         nil
-  │                         directory-files-no-dot-files-regexp))))
-  │    (find-file (concat source-directory sf-fn)) ;; f-clause (sf-fn has a value, even if empty)
-  │ ))
+  │         (or sf-fn            ; t-clause (sf-fn has a value, even if empty)
+  │             (completing-read ; f-clause (sf-fn is undef) 
+  │               "Open source file: "
+  │               (directory-files (file-name-as-directory source-directory)
+  │                            nil
+  │                            directory-files-no-dot-files-regexp))))))
   │ 
   └────
 
