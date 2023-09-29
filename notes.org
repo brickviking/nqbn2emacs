@@ -209,7 +209,8 @@ Info link: [[info:emacs#Moving point][Moving point]]
 Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both
 have far richer ways of moving the cursor around a text file, by either a character (or multiple
 characters at once), a word or a line. In the table below, Left/Right refer to keys on the keyboard,
-not mouse buttons. Buttons will be indicated as RMB/LMB. Lines look like this:
+not mouse buttons. Mouse buttons will be indicated as RMB/LMB/MMB or Scrollwheel up/down/right/left.
+Lines look like this:
 
 =Key= - =what-it-will-do= 
  + Description of the Emacs command that the key will trigger.
