@@ -1744,6 +1744,10 @@ Check :help exiting
     + https://www.youtube.com/watch?v=K9mNaZRDhUk
   + It wears a human face - (10 hours of dark ambient music)
     + https://www.youtube.com/watch?v=cHf3aitzSCE
+  + Carbon Based Lifeforms - Seekers (2023)
+    + https://www.youtube.com/watch?v=JGLzvniLiBg
+  + Carbon Based Lifeforms - Derelicts
+    + https://www.youtube.com/watch?v=5o_uF1L5l6o
 ** Programming music
   :PROPERTIES:
   :CUSTOM_ID: music-programming
