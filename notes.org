@@ -1087,6 +1087,23 @@ These are all questions that have turned up in the #Emacs channel, they've had v
 some cases I've left the discussions mostly unaltered, sometimes I've compacted the conversation to
 address just the subject being discussed.
 
+*** How to get a list of features present in a running Emacs session
+This is one I've recently had use of, though the applications extend outside of the Emacs features
+variable.
+
+Check =C-h v features= to see a complete list of features currently enabled. For a fully-loaded
+system, don't be surprised if this runs to many items. As it is unsorted, you will want to find a
+way to sort this.
+
+I've found that evaluating =(sort features #'string<)= in a scratch buffer with =C-u C-x C-e= does
+give you a list, but it is shown in abbreviated form (member1 member2 ...). You'll need to put your
+cursor on the initial parenthesis and hit Enter, which should expand the list out to its entire
+length.
+
+There is also a system-configuration-features variable too, you can generally view what Emacs was
+compiled with by using =C-h v system-configuration-features=. The help makes note that you should
+not rely on this for deciding whether a feature is /available/, just that it existed at compile time.
+
 *** How to search/replace all * at B.O.L. with the same number of #
 #+BEGIN_SRC
 <laertus> i need some search and replace help...  [19:53]
