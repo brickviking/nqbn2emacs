@@ -1421,6 +1421,9 @@ they don't have numbers.
 *** Learn more about how to use registers
 I already know about save and insert (=C-x r s <x>= and =C-x r i <x>=), but I'm not sure about
 other register commands.
+*** You can use M-x eval =M-:= to display variable's value
+You simply type its name in at the Eval: prompt, without any () around it.
+
 * Vim
   :PROPERTIES:
   :CUSTOM_ID: vim
