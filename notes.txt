@@ -2178,6 +2178,13 @@ Learn more about how to use registers
   <x>'), but I'm not sure about other register commands.
 
 
+You can use M-x eval `M-:' to display variable's value
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  You simply type its name in at the Eval: prompt, without any () around
+  it.
+
+
 Vim
 ═══
 
