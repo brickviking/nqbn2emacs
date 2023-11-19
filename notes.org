@@ -1334,7 +1334,10 @@ will open ${SOURCEDIR}/path in a dired buffer
 
 
 When called from inside a lisp buffer (C-x C-e), takes optional relative
-path to a filename in double-quotes."
+path to a filename in double-quotes.
+
+Note that this function in particular has no filename completion, you
+may want to look at modifying this function further to help with that."
   (interactive)
   (find-file
     (file-name-concat
