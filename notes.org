@@ -1104,6 +1104,29 @@ There is also a system-configuration-features variable too, you can generally vi
 compiled with by using =C-h v system-configuration-features=. The help makes note that you should
 not rely on this for deciding whether a feature is /available/, just that it existed at compile time.
 
+*** How to look up the init.el file's location
+Emacs usually uses an init.el and reads its setup instructions out of that file. It can (these days)
+be in one of three or four locations.
+
+To find the location that Emacs used, check the result from =C-h v user-init-file=. At least on my
+system, i get output that looks much like the below example.
+#+BEGIN_EXAMPLE
+user-init-file is a variable defined in 'C source code'.
+
+Its value is "/home/user/.emacs.d/init.el"
+
+File name, including directory, of user's initialization file.
+If the file loaded had extension '.elc', and the corresponding source file
+exists, this variable contains the name of source file, suitable for use
+by functions like 'custom-save-all' which edit the init file.
+While Emacs loads and evaluates any init file, value is the real name
+of the file, regardless of whether or not it has the '.elc' extension.
+
+  Probably introduced at or before Emacs version 21.1.
+
+[back]
+
+#+END_EXAMPLE
 *** How to search/replace all * at B.O.L. with the same number of #
 #+BEGIN_SRC
 <laertus> i need some search and replace help...  [19:53]
