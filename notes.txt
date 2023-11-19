@@ -1,9 +1,9 @@
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-             NOT QUITE BRAND NEW TO EMACS—OR VIM
+                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                  NOT QUITE BRAND NEW TO EMACS—OR VIM
                      Notes for anything I think of
 
                          brickviking (yes, me!)
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 Brand new to Emacs? Here's some hints and aids for when you just want to
@@ -1120,12 +1120,11 @@ Buffer encoding
    -(DOS)@—    Dos encoding (CRLF 0x0D 0x0A) 
    -(Mac)@—    Mac OS X encoding (CR  0x0D)  
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Also check [How to set a buffer’s line-encoding from text
-  mode]
+  Also check [How to set a buffer’s line-encoding from text mode]
 
 
-[How to set a buffer’s line-encoding from text mode] See
-section How to set a buffer's line-encoding from text mode
+[How to set a buffer’s line-encoding from text mode] See section How to
+set a buffer's line-encoding from text mode
 
 
 Input
@@ -1211,10 +1210,10 @@ Dired
 
   These are some of the commands that can be used in a dired buffer. For
   all intents, you can do nearly everything in here that you could do
-  from a commandline—deletion, moving or renaming. Of course,
-  creation is done by simply opening a new buffer and saving it to a
-  location that you enter when you type `C-x s'. You can move using the
-  usual cursor motion commands, either Up/Down/Left/Right or C-n/C-p.
+  from a commandline—deletion, moving or renaming. Of course, creation
+  is done by simply opening a new buffer and saving it to a location
+  that you enter when you type `C-x s'. You can move using the usual
+  cursor motion commands, either Up/Down/Left/Right or C-n/C-p.
 
   With regard to moving by "pages", you can insert the content of
   subdirectories in each dired buffer with the command M-x
@@ -1474,8 +1473,8 @@ Oddities
 ╌╌╌╌╌╌╌╌
 
       If you turn on—or you have defined in emacs
-  startup—scroll-lock-mode, cursor movement within a
-  collapsed org-mode document behaves slightly differently.
+  startup—scroll-lock-mode, cursor movement within a collapsed org-mode
+  document behaves slightly differently.
 
 
 magit
@@ -1686,8 +1685,8 @@ vterm
   buffer, toggle vterm-copy-mode with C-c C-t, make your selection, copy
   it to the killring (or is it yank ring?), then toggle vterm-copy-mode
   back off again. Toggling it back off allows commands such as M-w to be
-  passed through to the program you're running inside
-  vterm—for example, the vim editor.
+  passed through to the program you're running inside vterm—for example,
+  the vim editor.
 
 
 Snippets from freenode#emacs and libera#emacs
@@ -2660,20 +2659,16 @@ Classical
     ⁃ 00:34:11 Gnossiennes 4-6 (1889-1897): No. 4
     ⁃ 00:37:02 Gnossiennes 4-6 (1889-1897): No. 5
     ⁃ 00:39:53 Gnossiennes 4-6 (1889-1897): No. 6
-    ⁃ 00:41:27 2 Préludes du nazaréen (1892): No. 1, assez
-      lent
-    ⁃ 00:46:09 2 Préludes du nazaréen (1892): No. 2, assez
-      lent
-    ⁃ 00:49:15 2 Prélude de la porte Héroique du ciel
-      (1894)
-    ⁃ 00:53:00 2 Pièces froides (1897), No. 1: Airs a faire fuir:
-      D’une manière très particulaire
+    ⁃ 00:41:27 2 Préludes du nazaréen (1892): No. 1, assez lent
+    ⁃ 00:46:09 2 Préludes du nazaréen (1892): No. 2, assez lent
+    ⁃ 00:49:15 2 Prélude de la porte Héroique du ciel (1894)
+    ⁃ 00:53:00 2 Pièces froides (1897), No. 1: Airs a faire fuir: D’une
+      manière très particulaire
     ⁃ 00:55:59 2 Pièces froides (1897), No. 1: Airs a faire fuir:
       Modestemente
     ⁃ 00:57:42 2 Pièces froides (1897), No. 1: Airs a faire fuir:
       S’inviter
-    ⁃ 01:00:45 No 2: Danses de travers: En y regardent à deux
-      fois
+    ⁃ 01:00:45 No 2: Danses de travers: En y regardent à deux fois
     ⁃ 01:01:39 No 2: Danses de travers: Passer
     ⁃ 01:02:25 No 2: Danses de travers: Encore
     ⁃ 01:03:47 Petite ouverture à danser (1900)
