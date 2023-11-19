@@ -44,7 +44,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 #+BEGIN_EXPORT latex
 \newpage
 #+END_EXPORT
-
+* Table of Contents
 :CONTENTS:
 - [[#emacs][Emacs]]
   - [[#what-different-keys-mean][What different keys mean]]

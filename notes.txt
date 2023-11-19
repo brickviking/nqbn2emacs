@@ -54,6 +54,10 @@ Disclaimer
   client except for details of the fringe. I've also used a reasonably
   recent version of vim (8.1) but not as up-to-date as Emacs.
 
+
+Table of Contents
+═════════════════
+
   • [Emacs]
     • [What different keys mean]
     • [Rare modifier keys]
