@@ -12,6 +12,13 @@ addresses the Emacs and Vim editors, and also provides some other distractions f
 need of them.
 #+END_abstract
 
+#+BEGIN_EXPORT ASCII
+This is a UTF-8 export of the original file. Stuff in [brackets} leads
+to local footnotes.
+
+[brackets] <text link to web/info resources>
+
+#+END_EXPORT
 
 * Introduction
        :PROPERTIES:
@@ -1078,6 +1085,10 @@ actually works, by the way. If you want to copy stuff from a vterm buffer, toggl
 with C-c C-t, make your selection, copy it to the killring (or is it yank ring?), then toggle
 vterm-copy-mode back off again. Toggling it back off allows commands such as M-w to be passed
 through to the program you're running inside vterm—for example, the vim editor.
+#+BEGIN_EXPORT latex
+\newpage
+#+END_EXPORT
+
 ** Snippets from freenode#emacs and libera#emacs
   :PROPERTIES:
   :CUSTOM_ID: snippets_1
@@ -1450,6 +1461,10 @@ other register commands.
 *** You can use M-x eval =M-:= to display variable's value
 You simply type its name in at the Eval: prompt, without any () around it.
 
+#+BEGIN_EXPORT latex
+\newpage
+#+END_EXPORT
+
 * Vim
   :PROPERTIES:
   :CUSTOM_ID: vim
@@ -1686,6 +1701,10 @@ Check :help exiting
   | Quit all files without writing | :qa!   | :qall!      |                                     |
   |--------------------------------+--------+-------------+-------------------------------------|
 
+#+BEGIN_EXPORT latex
+\newpage
+#+END_EXPORT
+
 * Programming
   :PROPERTIES:
   :CUSTOM_ID: programming
@@ -1736,6 +1755,10 @@ Check :help exiting
 *** Javascript
     + Java Swing GUI Full course—Bro Code (4:48:34)
     https://www.youtube.com/watch?v=Kmgo00avvEw
+
+#+BEGIN_EXPORT latex
+\newpage
+#+END_EXPORT
 
 * Music
   :PROPERTIES:
