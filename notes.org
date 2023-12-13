@@ -1398,8 +1398,54 @@ From Scratch that handle frame transparency. Or it ought to, anyhow.
 [00:30:05]<thuna`> (info "(elisp) Font and Color Parameters")
 [00:33:30]<thuna`> For "extending" syntax classes, what characters would best fit 'string content' and 'comment content'?  I am thinking maybe = and %
 [00:36:13]<Viking667> Ahhhh. thanks.
-#+END_SRC
+#+END_QUOTE
 
+An expansion on this theme came from thuna in the #emacs channel, and it involves functions to
+increment or decrement the frame opacity by 5% increments, as well as a utility function to convert
+from float values (0.0 to 1.0) over to integer values (0 to 100).
+
+That looks a bit like this:
+
+#+BEGIN_SRC emacs-lisp -i
+;; This was modified considerably from a post in sachac's config
+;; doesn't work on Mac, but works great on Linux
+(defvar th/inc-alpha-default-increment 10)
+
+(defun th/normalize-alpha (&optional alpha default)
+  (cond
+   ((null alpha) default)
+   ((floatp alpha) (floor (* alpha 100)))
+   ((integerp alpha) alpha)
+   (t (signal 'wrong-type-argument (list '(or integer float null) alpha)))))
+
+(defun th/inc-alpha (&optional increment)
+  (interactive (list
+                (when current-prefix-arg
+                  (prefix-numeric-value current-prefix-arg))))
+  (set-frame-parameter
+   nil 'alpha-background
+   (min 100
+        (max frame-alpha-lower-limit
+             (+ (th/normalize-alpha (frame-parameter nil 'alpha-background) 100)
+                (th/normalize-alpha increment th/inc-alpha-default-increment))))))
+
+(defun th/dec-alpha (&optional increment)
+  (interactive (list
+                (when current-prefix-arg
+                  (prefix-numeric-value current-prefix-arg))))
+  (th/inc-alpha
+    (- (or increment
+        th/inc-alpha-default-increment))))
+
+(global-unset-key (kbd "M-C-8"))
+(global-unset-key (kbd "M-C-9"))
+
+(global-set-key (kbd "M-C-8") (lambda () (interactive) (th/dec-alpha 5)))
+(global-set-key (kbd "M-C-9") (lambda () (interactive) (th/inc-alpha 5)))
+(global-set-key (kbd "M-C-0") (lambda () (interactive) (modify-frame-parameters nil `((alpha-background . 100)))))
+
+
+#+END_SRC
 ** tias moments (Try It And See)
   :PROPERTIES:
   :CUSTOM_ID: tias
