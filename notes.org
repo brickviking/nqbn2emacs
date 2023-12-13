@@ -1385,6 +1385,20 @@ may want to look at modifying this function further to help with that."
 
 #+END_SRC
 
+*** Transparency for Emacs 29.1
+
+I'll need to add to this description some more, but basically there's three lines from Emacs 
+From Scratch that handle frame transparency. Or it ought to, anyhow.
+#+BEGIN_QUOTE
+[00:21:11]<Viking667> habamax or others: I have this:  (defvar efs/frame-transparency '(80 . 100))(set-frame-parameter (selected-frame) 'alpha efs/frame-transparency)     How come that second number doesn't seem to change anything when I eval both statements?
+[00:21:26]<Viking667> (i.e. eval first, then eval second separately)
+[00:27:00]<thuna`> Viking667: You mean you change the value in defvar, eval, and don't see it updated?
+[00:28:42]<Viking667> no, I'm asking what does the second value do?
+[00:29:58]<thuna`> Viking667: car is the frame's alpha value when selected, cdr is when not selected
+[00:30:05]<thuna`> (info "(elisp) Font and Color Parameters")
+[00:33:30]<thuna`> For "extending" syntax classes, what characters would best fit 'string content' and 'comment content'?  I am thinking maybe = and %
+[00:36:13]<Viking667> Ahhhh. thanks.
+#+END_SRC
 
 ** tias moments (Try It And See)
   :PROPERTIES:
