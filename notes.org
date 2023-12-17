@@ -1396,7 +1396,6 @@ From Scratch that handle frame transparency. Or it ought to, anyhow.
 [00:28:42]<Viking667> no, I'm asking what does the second value do?
 [00:29:58]<thuna`> Viking667: car is the frame's alpha value when selected, cdr is when not selected
 [00:30:05]<thuna`> (info "(elisp) Font and Color Parameters")
-[00:33:30]<thuna`> For "extending" syntax classes, what characters would best fit 'string content' and 'comment content'?  I am thinking maybe = and %
 [00:36:13]<Viking667> Ahhhh. thanks.
 #+END_QUOTE
 
