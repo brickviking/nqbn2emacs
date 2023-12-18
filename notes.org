@@ -1628,9 +1628,9 @@ Check :help edit
 Check :help diff
 There are two ways to diff files with vimdiff. 
   + First, from commandline: 
-#+BEGIN_SRC sh
+#+BEGIN_EXAMPLE sh
      vimdiff firstfile secondfile
-#+END_SRC
+#+END_EXAMPLE
   + and within vim (side-by-side):
   |-------------------------------+------------------------+----------------------------+-------------------------------------|
   | *Commands*                    | *Keys*                 | *Long form*                | *Notes*                             |
