@@ -1731,9 +1731,9 @@ the status bar for each window.
 Check :help macro
 Key mapping is used to change the meaning of typed keys.  The most common use
 is to define a sequence of commands for a function key.  Example:
-#+BEGIN_SRC vim
+#+BEGIN_EXAMPLE vim
         :map <F2> a<C-R>=strftime("%c")<CR><Esc>
-#+END_SRC
+#+END_EXAMPLE
 This appends the current date and time after the cursor (in <> notation, see :help <> for details).
 Picking this apart, you have the command :map. This command takes two (or more) arguments. 
 + The first argument is the key to bind, delimited by <>, which you may need to specify. If it's
