@@ -1453,9 +1453,9 @@ First, turn on tab bar mode: =(tab-bar-mode t)=, then set an option for visibili
 This will still let you switch between tab-bar tabs, but the tab-bar line doesn't take up any screen space.
 *** How to group tab-line tabs by mode.
 <Anoncheg> Viking667: Do you group buffers by mode?
-<Anoncheg> Viking667: tab-line-mode with (setopt tab-line-tabs-function 'tab-line-tabs-mode-buffers)
+<Anoncheg> Viking667: tab-line-mode with =(setopt tab-line-tabs-function 'tab-line-tabs-mode-buffers)=
 
-There's more details in C-h f tab-line-tabs-function; that describes the settings allowed.
+There's more details in =C-h f tab-line-tabs-function=; that describes the settings allowed.
 ** tias moments (Try It And See)
   :PROPERTIES:
   :CUSTOM_ID: tias
