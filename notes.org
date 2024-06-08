@@ -223,9 +223,9 @@ Lines look like this:
  + Description of the Emacs command that the key will trigger.
  + Alternate binding: =other-key=
 *** =Right= - =right-char=
-  + Moves the cursor to the right of its previous position on the line.
+  + Moves the cursor to the right of its previous position on the line. If at the end of the line, will drop to the next line and first character if it exists.
 *** =Left= - =left-char=
-  + Moves the cursor to the left of its previous position on the line.
+  + Moves the cursor to the left of its previous position on the line. If already at the beginning of the line, will attempt to jump to the end of the previous line if one exists.
 *** =Down= - =next-line=                                                                   
   + Steps to the next line and the same character position, if possible, otherwise it will step
     to the last character on that line.
