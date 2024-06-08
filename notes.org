@@ -136,7 +136,7 @@ This means that instead of having to type the words Control-Meta-V, Emacs will d
 long as you hold down the =Control= and =Alt= keys and then tap the =V= key (and let everything go).
 In the minibuffer (the blank section right at the bottom of the Emacs program), the keystrokes will
 show up in their abbreviated form, such as =C-M-v=. Where I specify keys separated by spaces, as in
-=C-h h=, this means to hold down =Control=, hit =H=, let both go, then hit =H=.
+=C-h h=, this means to hold down =Control=, tap =H=, let both go, then tap =H=.
 
 In addition, all letters (aside from prefixes) are usually shown in their lowercase form, even
 though most keyboards show the uppercase letters on their keycaps. In most cases, unless you specify
