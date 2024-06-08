@@ -261,6 +261,7 @@ Lines look like this:
   + Moves the cursor to the beginning of the buffer
   + With optional arg between 0 and 10, (=C-u arg C-Home=) positions cursor arg*10 percent
     from the beginning of the buffer. An alternative keybinding is =M-S-<=.
+    For example, =C-u 5 C-Home= would mean to jump to 50% into the file.
 *** =C-End= - =end-of-buffer=
   + Moves the cursor to the end of the buffer
   + With optional arg between 0 and 10, (=C-u arg C-End=) positions cursor arg*10 percent
