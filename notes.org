@@ -247,7 +247,8 @@ Lines look like this:
   + Puts the cursor at the right-most position of the current line, usually the last character even
     if that is a space.
 *** =M-g Tab <num>=
-  + Step the cursor to the offset specified on the line you're on, or to the end of that line. For example, =M-g Tab 32= moves to the 32nd character on that line.
+  + Step the cursor to the offset specified on the line you're on, or to the end of that line. For
+    example, =M-g Tab 32= moves to the 32nd character on that line.
 *** =C-Down= - =forward-paragraph=
   + Steps the cursor forward to the first character of the next paragraph
 *** =C-Up= - =backward-paragraph=
