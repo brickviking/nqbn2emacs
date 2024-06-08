@@ -213,7 +213,7 @@ the Hyper flag.
 
 Info link: [[info:emacs#Moving point][Moving point]]
 
-Vim has them. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both
+Vim has them. Bash even has some of these. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both
 have far richer ways of moving the cursor around a text file, by either a character (or multiple
 characters at once), a word or a line. In the table below, Left/Right refer to keys on the keyboard,
 not mouse buttons. Mouse buttons will be indicated as RMB/LMB/MMB or Scrollwheel up/down/right/left.
