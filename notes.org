@@ -122,13 +122,13 @@ Throughout this documentation, and indeed most Emacs documents that I've read, k
 abbreviated according to the following list. This was basically cribbed from the following
 [[info:Emacs#Modifier Keys][listing of modifier keys]] in the manual.
 
-If a key is shown as <F2> that means to hit the =F2= keyboard at the top of the keyboard, not the
+If a key is shown as <F2> that means to hit the =F2= key at the top of the keyboard, not the
 two keys F and 2. Occasionally you'll need to use a =Fn= key in combination with another key to get
-the <F2> key. <Tab> means the =Tab= key on the left hand side, not the three characters T, a
+the =F2= key. <Tab> means the =Tab= key on the left hand side, not the three characters T, a
 and b. <RET> is simply the =Return= key, or =Enter= on most modern keyboards.
 
 One really important note up front: The =Alt= key on most modernish desktop computers and laptops
-is commonly called =Meta= by Emacs, and will be used as such througout this guide. So instead of
+is commonly called =Meta= by Emacs, and will be used as such throughout this guide. So instead of
 showing you =Control=-=Alt=-something, it'll be shown here as =Control=-=Meta=-something, or the
 short version, =C-M-something=.
 
