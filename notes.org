@@ -256,7 +256,7 @@ Lines look like this:
   + With optional arg between 0 and 10, (=C-u arg C-Home=) positions cursor arg*10 percent
     from the beginning of the buffer. An alternative keybinding is =M-S-<=.
 *** =C-End= - =end-of-buffer=
-  + Moves the cursor to the beginning of the buffer
+  + Moves the cursor to the end of the buffer
   + With optional arg between 0 and 10, (=C-u arg C-End=) positions cursor arg*10 percent
     from the end of the buffer. An alternative keybinding is =M-S->=.
 ** Editing keys
