@@ -129,7 +129,7 @@ and b. <RET> is simply the =Return= key, or =Enter= on most modern keyboards.
 
 One really important note up front: The =Alt= key on most modernish desktop computers and laptops
 is commonly called =Meta= by Emacs, and will be used as such throughout this guide. So instead of
-showing you =Control=-=Alt=-something, it'll be shown here as =Control=-=Meta=-something, or the
+showing you =Control-Alt=-something, it'll be shown here as =Control-Meta=-something, or the
 short version, =C-M-something=.
 
 This means that instead of having to type the words Control-Meta-V, Emacs will do what you want as
