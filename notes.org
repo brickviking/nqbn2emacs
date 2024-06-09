@@ -54,9 +54,10 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 * Table of Contents
 :CONTENTS:
 - [[#emacs][Emacs]]
+  - [[common-terms][Common terms]]
   - [[#what-different-keys-mean][What different keys mean]]
   - [[#rare-modifier-keys][Rare modifier keys]]
-  - [[#and-the-mouse-buttons][And the mouse buttons:]]
+  - [[#mouse-buttons][Mouse buttons]]
   - [[#movement-keys-emacs][Movement keys]]
   - [[#editing-keys][Editing keys]]
   - [[#indenting][Indenting]]
@@ -114,6 +115,30 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   :PROPERTIES:
   :CUSTOM_ID: emacs
   :END:
+** Common Emacs terms
+  :PROPERTIES:
+  :CUSTOM_ID: common-terms
+  :END:
+These are several of the terms in common use inside the Emacs help, and other reference
+material. Most of them have equivalents in other editors. Other terms that I haven't used
+here will be defined later, as we refer to them. This will include terms like window, buffer and
+frame.
+
+*** Point
+You'll have seen mention of the term "point". This simply means the place in the current file where
+your cursor (that blinky or block thing) is right now. In some cases, it's the gap between
+characters, in some other places, it's the character you're sitting on.
+
+*** Mark (=C-Space=)
+It's used frequently along with the point, to create a region (or selection) to use for future stuff
+like cutting, replacing, undoing or other editing tasks. Use the =C-Space= key to set it. You'll
+then see a selection appear when you move the cursor away from that location.
+
+*** Region
+Often called the selection, it's the area of lines between a mark (set by =C-Space= earlier) and
+your current cursor location (point).
+
+
 ** What different keys mean
   :PROPERTIES:
   :CUSTOM_ID: what-different-keys-mean
@@ -125,7 +150,9 @@ abbreviated according to the following list. This was basically cribbed from the
 If a key is shown as <F2> that means to hit the =F2= key at the top of the keyboard, not the
 two keys F and 2. Occasionally you'll need to use a =Fn= key in combination with another key to get
 the =F2= key. <Tab> means the =Tab= key on the left hand side, not the three characters T, a
-and b. <RET> is simply the =Return= key, or =Enter= on most modern keyboards.
+and b. <RET> is simply the =Return= key, or =Enter= on most modern keyboards. It's not usually the
+Enter/Return key on the far right in the number pad section, though that often does the same thing
+for convenience.
 
 One really important note up front: The =Alt= key on most modernish desktop computers and laptops
 is commonly called =Meta= by Emacs, and will be used as such throughout this guide. So instead of
@@ -194,9 +221,9 @@ the Hyper flag.
   + Long name: Hyper
   + Alternative: No modern equivalent
   + Note: Sometimes bound to Fn or Menu
-** And the mouse buttons:
+** Mouse buttons
   :PROPERTIES:
-  :CUSTOM_ID: and-the-mouse-buttons
+  :CUSTOM_ID: mouse-buttons
   :END:
 
    |-------+---------------------+------------------------------------------|
