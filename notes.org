@@ -54,7 +54,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 * Table of Contents
 :CONTENTS:
 - [[#emacs][Emacs]]
-  - [[#common-terms][Common terms]]
+  - [[#common-emacs-terms][Common Emacs terms]]
   - [[#what-different-keys-mean][What different keys mean]]
   - [[#rare-modifier-keys][Rare modifier keys]]
   - [[#mouse-buttons][Mouse buttons]]
@@ -117,7 +117,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   :END:
 ** Common Emacs terms
   :PROPERTIES:
-  :CUSTOM_ID: common-terms
+  :CUSTOM_ID: common-emacs-terms
   :END:
 These are several of the terms in common use inside the Emacs help, and other reference
 material. Most of them have equivalents in other editors. Other terms that I haven't used
