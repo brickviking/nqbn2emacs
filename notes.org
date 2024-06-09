@@ -59,7 +59,7 @@ should work all the way back to perhaps 6.0, though there may be some difference
   - [[#what-different-keys-mean][What different keys mean]]
   - [[#rare-modifier-keys][Rare modifier keys]]
   - [[#mouse-buttons][Mouse buttons]]
-  - [[#movement-keys-emacs][Movement keys]]
+  - [[#emacs-movement-keys][Emacs movement keys]]
   - [[#editing-keys][Editing keys]]
   - [[#indenting][Indenting]]
   - [[#display-of-long-lines][Display of long lines]]
@@ -87,7 +87,7 @@ should work all the way back to perhaps 6.0, though there may be some difference
   - [[#things-to-find-out-about][Things to find out about]]
 - [[#vim][Vim]]
   - [[#vim-short-example][Short example]]
-  - [[#movement-keys-vim][Movement keys]]
+  - [[#vim-movement-keys][Vim movement keys]]
   - [[#help-vim][Help]]
   - [[#opening-files-vim][Opening files]]
   - [[#diffing-files-vim][Diffing files]]
@@ -143,7 +143,7 @@ your current cursor location (point).
 *** info
 This is a help format that's used internally for the help documentation of Emacs. It's a cut-down version
 of TeX called texinfo, which is then compiled to create an info document for use with the standalone info
-command or the internal help (=C-h i=). It contains formatting, links and a syntax for moving the cursor around between sections that's much like the [[#movement-keys][Movement Keys]] section below.
+command or the internal help (=C-h i=). It contains formatting, links and a syntax for moving the cursor around between sections that's much like the [[#emacs-movement-keys][Emacs movement keys]] section below.
 
 ** What different keys mean
   :PROPERTIES:
@@ -240,9 +240,9 @@ the Hyper flag.
    | MMB   | Middle Mouse Button | Often a Scrollwheel click on modern mice |
    |-------+---------------------+------------------------------------------|
 
-** Movement keys
+** Emacs movement keys
   :PROPERTIES:
-  :CUSTOM_ID: movement-keys-emacs
+  :CUSTOM_ID: emacs-movement-keys
   :END:
 
 Info link: [[info:emacs#Moving point][Moving point]]
@@ -1623,9 +1623,9 @@ don't find what you want just in vimscript, it even has a plugin system that roc
 use them, so I don't include much here about plugins. I also don't describe more detailed vimscript
 here, basically because I don't know how to use it myself.
 
-** Movement keys
+** Vim movement keys
   :PROPERTIES:
-  :CUSTOM_ID: movement-keys-vim
+  :CUSTOM_ID: vim-movement-keys
   :END:
 
 Moving the cursor around involves a few keys, and depends upon whether you're in command mode or
