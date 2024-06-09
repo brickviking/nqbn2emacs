@@ -66,7 +66,7 @@ should work all the way back to perhaps 6.0, though there may be some difference
   - [[#registers][Registers]]
   - [[#macro-commands-emacs][Macros]]
   - [[#cock-ups][Cock-ups]]
-  - [[#help-emacs][Help]]
+  - [[#emacs-help][Emacs Help]]
   - [[#recommended-packages][Recommended Packages]]
   - [[#packages-recommended-by-others][Packages recommended by others]]
   - [[#windows][Windows]]
@@ -88,7 +88,7 @@ should work all the way back to perhaps 6.0, though there may be some difference
 - [[#vim][Vim]]
   - [[#vim-short-example][Short example]]
   - [[#vim-movement-keys][Vim movement keys]]
-  - [[#help-vim][Help]]
+  - [[#vim-help][Vim Help]]
   - [[#opening-files-vim][Opening files]]
   - [[#diffing-files-vim][Diffing files]]
   - [[#copying-commands-vim][Copying commands]]
@@ -517,9 +517,10 @@ or not be obvious to the really new Emacs user.
      manual for details.
    * Don't blindly accept local variable exec sections when loading a file, Emacs could break when 
      trying to save or quit. I once got to the stage where I couldn't close Emacs down legitimately.
-** Help
+
+** Emacs help
   :PROPERTIES:
-  :CUSTOM_ID: help-emacs
+  :CUSTOM_ID: emacs-help
   :END:
 
 Info link: [[info:emacs#Help][Help]]
@@ -1657,9 +1658,9 @@ screen) is just the width of the screen, whether the line's wrapped or not. So f
 line, and an 80-character screen, the file line would take up five screen lines on screen, and the
 "end-of-line" command goes to the end of the file line.
 
-** Help
+** Vim help
   :PROPERTIES:
-  :CUSTOM_ID: help-vim
+  :CUSTOM_ID: vim-help
   :END:
 
   |-----------------+--------------------+---------------------------------------------------------|
