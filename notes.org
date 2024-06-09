@@ -46,7 +46,8 @@ This document was originally created in a development version of Emacs (at this 
 such it may have some items in here that haven't turned up in earlier versions of Emacs. I also
 don't discuss the differences between Emacs text mode and graphical mode much, as most of the things
 you can do in Emacs don't /require/ the graphical client except for details of the fringe. I've also
-used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
+used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs. Most of the Vim things
+should work all the way back to perhaps 6.0, though there may be some differences.
 
 #+BEGIN_EXPORT latex
 \newpage
@@ -85,6 +86,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
   - [[#other-useful-links][Other useful links, channels and the like]]
   - [[#things-to-find-out-about][Things to find out about]]
 - [[#vim][Vim]]
+  - [[#vim-short-example][Short example]]
   - [[#movement-keys-vim][Movement keys]]
   - [[#help-vim][Help]]
   - [[#opening-files-vim][Opening files]]
@@ -1587,6 +1589,14 @@ try to be anything else. However, even it has a scripting language underneath, c
 Because the editor is focussed so tightly on editing text, it has a wide commandset for editing, and
 you can do some really compact and powerful commands in just a few keys.
 
+The commands I'll describe are relevant to most available versions of Vim past 6.0, though I've
+focussed on things available in the 8.1 version.
+
+** Short example
+  :PROPERTIES:
+  :CUSTOM_ID: vim-short-example
+  :END:
+
 One example I like to quote so often, because I haven't found an equivalent that's any shorter, or
 even the same size. I do this with a good number of lines in a file, definitely more than 14 lines,
 but you could tailor it to suit.
@@ -1610,9 +1620,9 @@ This does the following:
 
 And that's just one example. It's only 15 characters long, with quite a kick in its tail. And if you
 don't find what you want just in vimscript, it even has a plugin system that rocks. I don't tend to
-use them, so I don't include much here about it.
+use them, so I don't include much here about plugins. I also don't describe more detailed vimscript
+here, basically because I don't know how to use it myself.
 
-I don't describe more detailed vimscript here, basically because I don't know how to use it myself.
 ** Movement keys
   :PROPERTIES:
   :CUSTOM_ID: movement-keys-vim
