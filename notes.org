@@ -444,8 +444,7 @@ their respective Emacs functions that get called.
 | Stop macro            | =C-x )=                | kmacro-end-macro                     |
 |                       | =F4=                   | kmacro-end-or-call-macro             |
 |-----------------------+------------------------+--------------------------------------|
-| Call (or run) the     | =C-x e=                | kmacro-end-and-call-macro            |
-| last-defined macro    |                        |                                      |
+| Call (or run) the last-defined macro    | =C-x e=                | kmacro-end-and-call-macro            |
 |-----------------------+------------------------+--------------------------------------|
 | Step to next macro    | =C-x C-k C-n=          | kmacro-cycle-ring-next               |
 |-----------------------+------------------------+--------------------------------------|
