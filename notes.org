@@ -28,7 +28,7 @@ I was brand new to Emacs, once. Now I'm not quite so brand new, but there's stil
 about. The notes.org file is a condensing of some of the information available from Vim help and
 Emacs info documents; other information came from the [[irc://irc.freenode.org#emacs][Freenode #emacs channel]], more recently the
 [[irc://irc.libera.chat#emacs][Libera #emacs channel]], which requires an IRC client to connect to. Other information (in one
-instance) came from [[https://emacswiki.org/][the emacs wiki]]. Some of the rest has been my own experience, gathered slowly
+instance) came from [[https://emacswiki.org/][the Emacs wiki]]. Some of the rest has been my own experience, gathered slowly
 over time.
 
 There's even some programming tips for plenty of other computer languages. 
@@ -42,7 +42,7 @@ I haven't really explored exotic topics such as Tramp, gnus/mu4e, or the whole E
 ecosystem that Emacs lives on. I also don't address Emacs variants such as XEmacs, spacemacs or
 Doom Emacs.
 
-This document was originally created in a development version of emacs (at this date, 29.1.50); as
+This document was originally created in a development version of Emacs (at this date, 29.1.50); as
 such it may have some items in here that haven't turned up in earlier versions of Emacs. I also
 don't discuss the differences between Emacs text mode and graphical mode much, as most of the things
 you can do in Emacs don't /require/ the graphical client except for details of the fringe. I've also
@@ -190,7 +190,7 @@ combined with any of the prefix keys, which are as follows:
   + Long name: Return
   + Other long name: =<return>=
   + Alternatives: Enter/Ent
-  + Note: In emacs docs, shown as RET. =RET= is the same as =C-m= (or =C-j=).  The actual =<return>=
+  + Note: In Emacs docs, shown as RET. =RET= is the same as =C-m= (or =C-j=).  The actual =<return>=
     key can only be accessed in a graphical environment and is translated to =RET= but can be bound
     independently. (Thanks to Jamie Beardslee for the extra information).
 ** Rare modifier keys
@@ -241,7 +241,7 @@ the Hyper flag.
 
 Info link: [[info:emacs#Moving point][Moving point]]
 
-Vim has them. Bash even has some of these. Most modern editors have Up/Down/Left/Right and C-right/left, but emacs and vim both
+Vim has them. Bash even has some of these. Most modern editors have Up/Down/Left/Right and C-right/left, but Emacs and Vim both
 have far richer ways of moving the cursor around a text file, by either a character (or multiple
 characters at once), a word or a line. In the table below, Left/Right refer to keys on the keyboard,
 not mouse buttons. Mouse buttons will be indicated as RMB/LMB/MMB or Scrollwheel up/down/right/left.
@@ -416,7 +416,7 @@ Info link: [[info:emacs#Keyboard Macros][Keyboard Macros]]
 
 If you need to store sequences of keyboard commands in particular, you can generally record these in
 what's called a keyboard macro. There's a few different ways to start the process off, but generally
-the old school way that most long-time emacs users use, is =C-x (= and the modern iteration on this
+the old school way that most long-time Emacs users use, is =C-x (= and the modern iteration on this
 is =F3=. Once you have your sequence of keys, use =C-x )= to finish, or =F4=. No good keyboard macro
 is complete without the ability to invoke that macro. =C-x e= executes all the commands in that
 sequence, as will =F4=.
@@ -429,7 +429,7 @@ macros back, then you can cycle around the "ring" with =C-x C-k C-n= (kmacro-cyc
 =C-x C-k C-p= (kmacro-cycle-ring-previous).
 
 Here's a quick summary so far of the keyboard commands we've used, along with
-their respective emacs functions that get called.
+their respective Emacs functions that get called.
 
 |-----------------------+------------------------+--------------------------------------|
 | *Name*                | *Shortcut*             | *Emacs function*                     |
@@ -550,7 +550,7 @@ Hello in multiple languages and scripts, needs good fonts with wide glyph covera
 
 *** The long way around
 If you need help on a whole key sequence you can't normally get from C-h k then evaluate this in
-emacs:
+Emacs:
 #+BEGIN_SRC emacs-lisp
 (describe-key (kbd "C-h"))
 #+END_SRC
@@ -565,7 +565,7 @@ sequences that you can type in that form such as "C-g", "M-x" and so on.
 
 These are packages I use a lot of the time. They're either already built into Emacs,
 or they can be installed from ELPA/MELPA.
-+ magit :: This isn't native to vanilla emacs, but is a great front end for git commands. Reading the info
++ magit :: This isn't native to vanilla Emacs, but is a great front end for git commands. Reading the info
 documents for this is a really good idea, to make better use of magit.
 + erc :: This IRC client comes native with Emacs. It can be quite powerful, although there are alternatives
 that I haven't used yet such as ircle.
@@ -573,10 +573,10 @@ that I haven't used yet such as ircle.
 with it, including literate programming. If you really really want to avoid the loaded-with-emacs
 version and go with the absolutely latest version of org mode, there are instructions at
 [[https://orgmode.org]], but these days, the bundled version of org-mode will get you just about
-everything, depending on the version of emacs you've installed.
+everything, depending on the version of Emacs you've installed.
 
-I tend to use it for literate configuration of emacs, as I can "tangle" the source sections into a
-config file that emacs can use directly. The non-source sections describe the rest of it. I won't go
+I tend to use it for literate configuration of Emacs, as I can "tangle" the source sections into a
+config file that Emacs can use directly. The non-source sections describe the rest of it. I won't go
 into the whole literate programming idea, but it started with Donald Knuth in his seminal work The
 Art of Computer Programming.
 
@@ -684,7 +684,7 @@ Info link: [[info:Emacs#Buffers][Buffer commands]]
 
 A buffer holds either:
   + the contents of a file, perhaps an on-disk file,
-  + or an on-the-fly buffer perhaps containing a command's output or output from an emacs function.
+  + or an on-the-fly buffer perhaps containing a command's output or output from an Emacs function.
 
 Examples of the latter include the *Messages* buffer, the *Completions* buffer, or the *Help* buffer.
 These keys work with open buffers and allow you to change between them or even create new ones.
@@ -779,7 +779,7 @@ You can set a default width in your =init.el= file with the fragment:
 #+END_SRC
 
 or any other relevant width. This applies when you reformat the paragraph manually, but you can have
-emacs do the reformatting for you in the current buffer (=M-x auto-fill-mode=) as you go.
+Emacs do the reformatting for you in the current buffer (=M-x auto-fill-mode=) as you go.
 
 ** Dired
   :PROPERTIES:
@@ -898,7 +898,7 @@ manual depending on the syntax at point.
 + demarcate block (wrap it in =#+BEGIN_SRC ... #+END_SRC=) =C-c C-v d= (org-babel-demarcate-block)
 + =C-c C-v C-t= (or simply, C-c C-v t) Tangle source code blocks to relevant file.  This means
   different things depending on how you've demarcated your source blocks. I use it to generate
-  =init.el= from a =.emacs.org= file, with all the bits I want to fire out to there inside
+  =init.el= from an =emacs.org= file, with all the bits I want to fire out to there inside
   =#+BEGIN_SRC emacs-lisp ... #+END_SRC= markers, and I use surrounding text to describe the source
   blocks.
 + =C-c C-e=  Export, will ask for format, usually one of HTML, Markdown, text, ODT (OpenOffice/LibreOffice),
@@ -977,7 +977,7 @@ generally take you to where the link points to, depending upon the type of link.
 *** Turn region into list:        =C-c -=
 *** Turn region into headers:     =C-c *=
 *** Oddities
-    If you turn on—or you have defined in emacs startup—scroll-lock-mode, cursor movement within a
+    If you turn on—or you have defined in Emacs startup—scroll-lock-mode, cursor movement within a
 collapsed org-mode document behaves slightly differently. 
 ** magit
   :PROPERTIES:
@@ -1115,7 +1115,7 @@ from IRC log:
   :CUSTOM_ID: vterm
   :END:
 
-This doesn't come standard with emacs, but is well worth the install. Running other programs inside
+This doesn't come standard with Emacs, but is well worth the install. Running other programs inside
 vterm can come with a couple of pitfalls though, especially if you're expecting to run vim, which
 actually works, by the way. If you want to copy stuff from a vterm buffer, toggle vterm-copy-mode
 with C-c C-t, make your selection, copy it to the killring (or is it yank ring?), then toggle
@@ -1362,15 +1362,15 @@ lines you want to sort, then do =M-x sort-lines=. Use =C-u M-x sort-lines= if yo
 sort the lines in reverse order. Thanks to parsnip from [[irc://irc.libera.chat#emacs][Libera #emacs channel]] for this one.
 *** How to open file in emacs source-directory
 Here's a new source-find function that scratches a personal itch of mine. It's most useful if you
-installed the emacs source code into a directory on your own system and compiled/installed from
+installed the Emacs source code into a directory on your own system and compiled/installed from
 there. If you redefine source-directory in your init.el, don't forget to put the / on the end. It
-won't work if you're using an emacs compiled from a Linux distribution's repository
+won't work if you're using an Emacs compiled from a Linux distribution's repository
 (Ubuntu/Fedora/etc)
  because the value stored in source-directory probably won't exist on your own
-system unless you've redefined it in init.el or some other emacs startup file as mentioned above.
+system unless you've redefined it in init.el or some other Emacs startup file as mentioned above.
 
 I was getting sick of having to type a long expression every time I wanted to open a file in the
-emacs source-directory, or use =C-x C-f= and tabcomplete all the way from the filetree root. So I
+Emacs source-directory, or use =C-x C-f= and tabcomplete all the way from the filetree root. So I
 tried to write my own, but I ran into some problems that stemmed from my complete inexperience with
 writing lisp.  This function that habamax came up with prompts for a filename, prepends
 source-directory and reads that into a buffer. It's kind of hard to explain, but is an expansion of
@@ -1538,7 +1538,7 @@ https://www.emacswiki.org/emacs/EmacsScreencasts
     + [[https://emacslife.com/][An Emacs Life]]
 *** Mastering Emacs
 https://www.masteringemacs.org/
-    If you think you know Emacs from this little bit I've explained here, then go read this book. It will revolutionise your emacs usage if you read it through and implement some of the things Mickey Petersen talks about. This is one of the few ebooks I've bought, and is reasonably priced for what it is. At the time I write this, it comes in at $49.95 in greenbacks, with the possibility that it may go up in the future.
+    If you think you know Emacs from this little bit I've explained here, then go read this book. It will revolutionise your Emacs usage if you read it through and implement some of the things Mickey Petersen talks about. This is one of the few ebooks I've bought, and is reasonably priced for what it is. At the time I write this, it comes in at $49.95 in greenbacks, with the possibility that it may go up in the future.
 ** Things to find out about
   :PROPERTIES:
   :CUSTOM_ID: things-to-find-out-about
@@ -1574,7 +1574,7 @@ You simply type its name in at the Eval: prompt, without any () around it.
   :CUSTOM_ID: vim
   :END:
 
-You know, that other editor. The one that emacs users don't like to admit liking. It has a tighter
+You know, that other editor. The one that Emacs users don't like to admit liking. It has a tighter
 focus on editing text. That's it. Nothing more. It's not an eco-system like Emacs is, and doesn't
 try to be anything else. However, even it has a scripting language underneath, called vimscript.
 Because the editor is focussed so tightly on editing text, it has a wide commandset for editing, and
@@ -1676,14 +1676,14 @@ There are two ways to diff files with vimdiff.
 #+BEGIN_EXAMPLE sh
      vimdiff firstfile secondfile
 #+END_EXAMPLE
-  + and within vim (side-by-side):
+  + and within Vim (side-by-side):
   |-------------------------------+------------------------+----------------------------+-------------------------------------|
   | *Commands*                    | *Keys*                 | *Long form*                | *Notes*                             |
   |-------------------------------+------------------------+----------------------------+-------------------------------------|
   | Show two files side by side   | :vert diffs other-file | :vert diffsplit other-file | Quote the filename if it has spaces |
   | Show two files top and bottom | :diffs other-file      | :diffsplit other-file      | Quote the filename if it has spaces |
   |-------------------------------+------------------------+----------------------------+-------------------------------------|
-  + Within vim, you can also use these commands
+  + Within Vim, you can also use these commands
   |-------------------------+--------+---------|
   | *Commands*              | *Keys* | *Notes* |
   |-------------------------+--------+---------|
@@ -1712,7 +1712,7 @@ Check out :help copy
 | Paste content above cursor location     | P        |
 |-----------------------------------------+----------|
 
-As you can tell, many vim commands take an optional numeric argument, either before in the case
+As you can tell, many Vim commands take an optional numeric argument, either before in the case
 of =6yy= or embedded in the command in the case of =y6y=. In this case at least, they both give
 you the same result. At least one opinion holds that you should probably prefer the 6yy form, as
 it's simply for n times, repeat x item. A special note about the =y<Space>=, means literally hit
@@ -1724,7 +1724,7 @@ the Vim help.
   :CUSTOM_ID: window-commands-vim
   :END:
 
-Window commands operate to open/close or move between existing windows. In essence, a vim window is like a emacs buffer, in
+Window commands operate to open/close or move between existing windows. In essence, a Vim window is like an Emacs buffer, in
 that they both hold the contents of a file, but work slightly differently.
 
 This table very quickly summarises what I believe to be the most important commands that apply to windows.
@@ -1785,9 +1785,9 @@ Picking this apart, you have the command :map. This command takes two (or more) 
   just a straight key, such as I, you probably don't need to put that into <>, but you will for
   things like C-c, F2 and anything where the symbol takes more than 1 character to type the whole
   key definition.
-  + NB: you can often hit the key itself after typing :map in which case, vim will turn F2 into <F2>.
+  + NB: you can often hit the key itself after typing :map in which case, Vim will turn F2 into <F2>.
   For example, if you want to bind F2 (as in the case above), then you type <F2> as the key.
-+ The second argument is what you want to type when you hit F2. In this case, it's generally vim
++ The second argument is what you want to type when you hit F2. In this case, it's generally Vim
   commands in command mode. You can bind keys in insert mode, but that comes with a bit more to do.
 ** Exit commands
   :PROPERTIES:
