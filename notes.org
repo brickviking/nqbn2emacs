@@ -522,33 +522,37 @@ or not be obvious to the really new Emacs user.
 
 Info link: [[info:emacs#Help][Help]]
 
-What follows is a rough summary of the available help commands. The first is pretty important. More
-complete details are available from the info manual.
+What follows is a rough summary of the available help commands with Emacs function names where
+present. The first is pretty important and may help you out even if you don't remember the
+others. More complete details are available from the info manual.
 
-*** =C-h C-h=
+*** =C-h C-h=  (help-for-help)
 Metahelp: a front page to other help pages.
-*** =C-h C-c= - Copyright notice
+*** =C-h C-c= - Copyright notice (describe-copying)
 Displays the copyright notice for Emacs, in this case, the GNU General Public License version 3.
-*** =C-h r=
+*** =C-h C-a= (about-emacs)
+This displays a screen describing this install of Emacs, which usually includes how and when it was
+compiled.
+*** =C-h r= (info-emacs-manual)
 The front page for the Emacs manual in info format.
-*** =C-h i=
+*** =C-h i= (info)
 The front page for all info documents shown in the infodir.
-*** =C-h d=
+*** =C-h d= (apropos-documentation)
 Info Doc Search: this will request a search term and look through all of the info documents on your
 system.
-*** =C-h m=
+*** =C-h m= (describe-mode)
 Describe the current major mode, and shows what keys are currently bound to Emacs commands. This
 also shows any other minor modes in effect in your current buffer.
-*** =C-h b=
+*** =C-h b= (describe-bindings)
 Describe binding, mode-sensitive.
-*** =C-h c=
+*** =C-h c= (describe-key-briefly)
 Briefly describe key, mode-sensitive. The output appears in the mini-buffer as one or more lines.
-*** =C-h k=
+*** =C-h k= (describe-key)
 This describes a key in more detail than the above command, and the docstring output appears in a
-split buffer usually to the right of your current buffer.
-*** =C-h f=
+split buffer usually to the right or below your current buffer.
+*** =C-h f= (describe-function)
 Describe function. Input the name of a function such as =find-file=.
-*** =C-h h=
+*** =C-h h= (view-hello-file)
 Hello in multiple languages and scripts, needs good fonts with wide glyph coverage.
 
 *** The long way around
