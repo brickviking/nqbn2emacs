@@ -54,7 +54,7 @@ used a reasonably recent version of vim (8.1) but not as up-to-date as Emacs.
 * Table of Contents
 :CONTENTS:
 - [[#emacs][Emacs]]
-  - [[common-terms][Common terms]]
+  - [[#common-terms][Common terms]]
   - [[#what-different-keys-mean][What different keys mean]]
   - [[#rare-modifier-keys][Rare modifier keys]]
   - [[#mouse-buttons][Mouse buttons]]
