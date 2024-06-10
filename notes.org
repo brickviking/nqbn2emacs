@@ -144,8 +144,9 @@ your current cursor location (point).
 This is a help format that's used internally for the help documentation of Emacs, as well as for
 system information on UNIX and Unix-like systems. It's written in a cut-down version of TeX called
 texinfo, which is then compiled to create an info document for use with the standalone info command
-or the internal help (=C-h i=). It uses [[#emacs-movement-keys][Emacs movement keys]] to move
-around, and supports various ways to format text. An info document can also contain links to other content, both within the same document, or to other documents in info format.
+or the internal help (=C-h i=). It uses [[#emacs-movement-keys][Emacs movement keys]] to move around, and supports various
+ways to format text. An info document can also contain links to other content, both within the same
+document, or to other documents in info format.
 
 ** What different keys mean
   :PROPERTIES:
