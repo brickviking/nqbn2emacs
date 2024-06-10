@@ -140,7 +140,7 @@ then see a selection appear when you move the cursor away from that location.
 Often called the selection, it's the area of lines between a mark (set by =C-Space= earlier) and
 your current cursor location (point).
 
-*** info
+*** Info
 This is a help format that's used internally for the help documentation of Emacs, as well as for
 system information on UNIX and Unix-like systems. It's written in a cut-down version of TeX called
 texinfo, which is then compiled to create an info document for use with the standalone info command
