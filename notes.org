@@ -148,6 +148,21 @@ or the internal help (=C-h i=). It uses [[#emacs-movement-keys][Emacs movement k
 ways to format text. An info document can also contain links to other content, both within the same
 document, or to other documents in info format.
 
+*** Mode
+Info link: [[info:emacs#Modes][Modes]]
+
+At least for me, the term "mode" is used rather loosely to mean a way to present information to the
+user (yes, that's you) that's specific to the file you're currently looking at. In the case of
+programming languages, there's usually a "major" mode in control that may colour certain keywords
+differently from the rest of the text. Examples usually include keywords, comments or other things
+related to the language family the mode covers. You can have one major mode per type of file.
+
+In addition, you can also add minor modes by toggling them on or off. These can include simple
+things like toggling line wrapping, highlighting all searches in a document, or many other things.
+
+There are far better ways to describe what "mode" means, at least in the context of the Emacs
+editor, and the best description can probably be found in the Info docs supplied with Emacs.
+
 ** What different keys mean
   :PROPERTIES:
   :CUSTOM_ID: what-different-keys-mean
