@@ -141,9 +141,11 @@ Often called the selection, it's the area of lines between a mark (set by =C-Spa
 your current cursor location (point).
 
 *** info
-This is a help format that's used internally for the help documentation of Emacs. It's a cut-down version
-of TeX called texinfo, which is then compiled to create an info document for use with the standalone info
-command or the internal help (=C-h i=). It contains formatting, links and a syntax for moving the cursor around between sections that's much like the [[#emacs-movement-keys][Emacs movement keys]] section below.
+This is a help format that's used internally for the help documentation of Emacs. It's written in a
+cut-down version of TeX called texinfo, which is then compiled to create an info document for use
+with the standalone info command or the internal help (=C-h i=). It contains formatting, links and a
+syntax for moving the cursor around between sections that's much like the [[#emacs-movement-keys][Emacs movement keys]]
+section below.
 
 ** What different keys mean
   :PROPERTIES:
