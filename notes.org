@@ -82,6 +82,7 @@ should work all the way back to perhaps 6.0, though there may be some difference
   - [[#exwm][EXWM]]
   - [[#vterm][vterm]]
   - [[#snippets_1][Snippets from freenode#emacs and libera#emacs]]
+  - [[#snippets_2][Additional things I've looked up]]
   - [[#tias][tias moments (Try It And See)]]
   - [[#other-useful-links][Other useful links, channels and the like]]
   - [[#things-to-find-out-about][Things to find out about]]
@@ -1518,6 +1519,17 @@ This will still let you switch between tab-bar tabs, but the tab-bar line doesn'
 <Anoncheg> Viking667: tab-line-mode with =(setopt tab-line-tabs-function 'tab-line-tabs-mode-buffers)=
 
 There's more details in =C-h f tab-line-tabs-function=; that describes the settings allowed.
+** Additional things I've looked up
+  :PROPERTIES:
+  :CUSTOM_ID: snippets_2
+  :END:
+
+*** How to insert output from a shell command into a buffer.
+This seems to be a question asked a few times at stackoverflow, so I've grabbed one of the most
+common examples here: =C-u M-! <shell-command>=
+
+Thanks for this reply from https://stackoverflow.com/users/347380/anupam.
+
 ** tias moments (Try It And See)
   :PROPERTIES:
   :CUSTOM_ID: tias
