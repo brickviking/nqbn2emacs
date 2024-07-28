@@ -1963,6 +1963,8 @@ Check :help exiting
     + https://www.youtube.com/watch?v=JGLzvniLiBg
   + Carbon Based Lifeforms - Derelicts
     + https://www.youtube.com/watch?v=5o_uF1L5l6o
+  + Nils Frahm - Live concert at the Philharmonie de Paris, March 2024
+    + https://www.youtube.com/watch?v=HPPzQgTaLbo
 ** Programming music
   :PROPERTIES:
   :CUSTOM_ID: music-programming
