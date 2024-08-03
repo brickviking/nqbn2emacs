@@ -1523,6 +1523,9 @@ There's more details in =C-h f tab-line-tabs-function=; that describes the setti
   :PROPERTIES:
   :CUSTOM_ID: snippets_2
   :END:
+These are some other things that I've added to the list of tips that I've thought would be really
+useful for others to know about, as they may not have come across them yet. This list will be
+modified as I find more useful things.
 
 *** How to insert output from a shell command into a buffer.
 This seems to be a question asked a few times at stackoverflow, so I've grabbed one of the most
