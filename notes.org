@@ -1529,7 +1529,12 @@ This seems to be a question asked a few times at stackoverflow, so I've grabbed 
 common examples here: =C-u M-! <shell-command>=
 
 Thanks for this reply from https://stackoverflow.com/users/347380/anupam.
-
+*** How to toggle a buffer's read-only state (=C-x C-q=)
+This is useful for making sure that a buffer doesn't get modified by accident, at least until
+you reverse the read-only setting. If a buffer was read-only when you opened it, it's probably
+not a good idea to change that, as it's likely to be a buffer that Emacs will overwrite for itself
+such as the Messages window or Emacs sourcetree files, which are normally compressed and
+won't take kindly to being changed.
 ** tias moments (Try It And See)
   :PROPERTIES:
   :CUSTOM_ID: tias
