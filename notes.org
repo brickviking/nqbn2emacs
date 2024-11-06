@@ -13,7 +13,7 @@ need of them.
 #+END_abstract
 
 #+BEGIN_EXPORT ASCII
-This is a UTF-8 export of the original file. Stuff in [brackets} leads
+This is a UTF-8 export of the original file. Stuff in [brackets] leads
 to local footnotes.
 
 [brackets] <text link to web/info resources>
