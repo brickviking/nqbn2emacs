@@ -576,7 +576,8 @@ split buffer usually to the right or below your current buffer.
 Describe function. Input the name of a function such as =find-file=.
 *** =C-h h= (view-hello-file)
 Hello in multiple languages and scripts, needs good fonts with wide glyph coverage.
-
+This shortcut may be rebound if you ever load the Hyperbole package, so use
+=M-x view-hello-file= if that is the case.
 *** The long way around
 If you need help on a whole key sequence you can't normally get from C-h k then evaluate this in
 Emacs:
