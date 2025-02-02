@@ -10,7 +10,7 @@ Brand new to Emacs? Here's some hints and aids for when you just want to
 know some stuff. It addresses the Emacs and Vim editors, and also
 provides some other distractions for when you're in need of them.
 
-This is a UTF-8 export of the original file. Stuff in [brackets} leads
+This is a UTF-8 export of the original file. Stuff in [brackets] leads
 to local footnotes.
 
 [brackets] <text link to web/info resources>
@@ -25,7 +25,7 @@ Introduction
   Emacs info documents; other information came from the [Freenode #emacs
   channel], more recently the [Libera #emacs channel], which requires an
   IRC client to connect to. Other information (in one instance) came
-  from [the emacs wiki]. Some of the rest has been my own experience,
+  from [the Emacs wiki]. Some of the rest has been my own experience,
   gathered slowly over time.
 
   There's even some programming tips for plenty of other computer
@@ -37,7 +37,7 @@ Introduction
 
 [Libera #emacs channel] <irc://irc.libera.chat#emacs>
 
-[the emacs wiki] <https://emacswiki.org/>
+[the Emacs wiki] <https://emacswiki.org/>
 
 Disclaimer
 ──────────
@@ -46,32 +46,35 @@ Disclaimer
   the whole Elisp ecosystem that Emacs lives on. I also don't address
   Emacs variants such as XEmacs, spacemacs or Doom Emacs.
 
-  This document was originally created in a development version of emacs
+  This document was originally created in a development version of Emacs
   (at this date, 29.1.50); as such it may have some items in here that
   haven't turned up in earlier versions of Emacs. I also don't discuss
   the differences between Emacs text mode and graphical mode much, as
   most of the things you can do in Emacs don't /require/ the graphical
   client except for details of the fringe. I've also used a reasonably
-  recent version of vim (8.1) but not as up-to-date as Emacs.
+  recent version of vim (8.1) but not as up-to-date as Emacs. Most of
+  the Vim things should work all the way back to perhaps 6.0, though
+  there may be some differences.
 
 
 Table of Contents
 ═════════════════
 
   • [Emacs]
+    • [Common Emacs terms]
     • [What different keys mean]
     • [Rare modifier keys]
-    • [And the mouse buttons:]
-    • [Movement keys]
+    • [Mouse buttons]
+    • [Emacs movement keys]
     • [Editing keys]
     • [Indenting]
     • [Display of long lines]
     • [Registers]
     • [Macros]
     • [Cock-ups]
-    • [Help]
-    • [Recommended Plugins]
-    • [Plugins recommended by others]
+    • [Emacs Help]
+    • [Recommended Packages]
+    • [Packages recommended by others]
     • [Windows]
     • [Frames]
     • [Buffers]
@@ -85,12 +88,14 @@ Table of Contents
     • [EXWM]
     • [vterm]
     • [Snippets from freenode#emacs and libera#emacs]
+    • [Additional things I've looked up]
     • [tias moments (Try It And See)]
     • [Other useful links, channels and the like]
     • [Things to find out about]
   • [Vim]
-    • [Movement keys]
-    • [Help]
+    • [Short example]
+    • [Vim movement keys]
+    • [Vim Help]
     • [Opening files]
     • [Diffing files]
     • [Copying commands]
@@ -112,13 +117,15 @@ Table of Contents
 
 [Emacs] See section Emacs
 
+[Common Emacs terms] See section Common Emacs terms
+
 [What different keys mean] See section What different keys mean
 
 [Rare modifier keys] See section Rare modifier keys
 
-[And the mouse buttons:] See section And the mouse buttons:
+[Mouse buttons] See section Mouse buttons
 
-[Movement keys] See section Movement keys
+[Emacs movement keys] See section Emacs movement keys
 
 [Editing keys] See section Editing keys
 
@@ -132,11 +139,11 @@ Table of Contents
 
 [Cock-ups] See section Cock-ups
 
-[Help] See section Help
+[Emacs Help] See section Emacs help
 
-[Recommended Plugins] See section Recommended Plugins
+[Recommended Packages] See section Recommended Packages
 
-[Plugins recommended by others] See section Plugins recommended by
+[Packages recommended by others] See section Packages recommended by
 others
 
 [Windows] See section Windows
@@ -166,6 +173,9 @@ others
 [Snippets from freenode#emacs and libera#emacs] See section Snippets
 from freenode#emacs and libera#emacs
 
+[Additional things I've looked up] See section Additional things I've
+looked up
+
 [tias moments (Try It And See)] See section tias moments (Try It And
 See)
 
@@ -176,9 +186,11 @@ links, channels and the like
 
 [Vim] See section Vim
 
-[Movement keys] See section Movement keys
+[Short example] See section Short example
 
-[Help] See section Help
+[Vim movement keys] See section Vim movement keys
+
+[Vim Help] See section Vim help
 
 [Opening files] See section Opening files
 
@@ -220,6 +232,84 @@ Channel]
 Emacs
 ═════
 
+Common Emacs terms
+──────────────────
+
+  These are several of the terms in common use inside the Emacs help,
+  and other reference material. Most of them have equivalents in other
+  editors. Other terms that I haven't used here will be defined later,
+  as we refer to them. This will include terms like window, buffer and
+  frame.
+
+
+Point
+╌╌╌╌╌
+
+  You'll have seen mention of the term "point". This simply means the
+  place in the current file where your cursor (that blinky or block
+  thing) is right now. In some cases, it's the gap between characters,
+  in some other places, it's the character you're sitting on.
+
+
+Mark (`C-Space')
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  It's used frequently along with the point, to create a region (or
+  selection) to use for future stuff like cutting, replacing, undoing or
+  other editing tasks. Use the `C-Space' key to set it. You'll then see
+  a selection appear when you move the cursor away from that location.
+
+
+Region
+╌╌╌╌╌╌
+
+  Often called the selection, it's the area of lines between a mark (set
+  by `C-Space' earlier) and your current cursor location (point).
+
+
+Info
+╌╌╌╌
+
+  This is a help format that's used internally for the help
+  documentation of Emacs, as well as for system information on UNIX and
+  Unix-like systems. It's written in a cut-down version of TeX called
+  texinfo, which is then compiled to create an info document for use
+  with the standalone info command or the internal help (`C-h i'). It
+  uses [Emacs movement keys] to move around, and supports various ways
+  to format text. An info document can also contain links to other
+  content, both within the same document, or to other documents in info
+  format.
+
+
+[Emacs movement keys] See section Emacs movement keys
+
+
+Mode
+╌╌╌╌
+
+  Info link: [Modes]
+
+  At least for me, the term "mode" is used rather loosely to mean a way
+  to present information to the user (yes, that's you) that's specific
+  to the file you're currently looking at. In the case of programming
+  languages, there's usually a "major" mode in control that may colour
+  certain keywords differently from the rest of the text. Examples
+  usually include keywords, comments or other things related to the
+  language family the mode covers. You can have one major mode per type
+  of file.
+
+  In addition, you can also add minor modes by toggling them on or
+  off. These can include simple things like toggling line wrapping,
+  highlighting all searches in a document, or many other things.
+
+  There are far better ways to describe what "mode" means, at least in
+  the context of the Emacs editor, and the best description can probably
+  be found in the Info docs supplied with Emacs.
+
+
+[Modes] <info:emacs#Modes>
+
+
 What different keys mean
 ────────────────────────
 
@@ -228,25 +318,28 @@ What different keys mean
   list. This was basically cribbed from the following [listing of
   modifier keys] in the manual.
 
-  If a key is shown as <F2> that means to hit the `F2' keyboard at the
-  top of the keyboard, not the two keys F and 2. Occasionally you'll
-  need to use a `Fn' key in combination with another key to get the <F2>
+  If a key is shown as <F2> that means to hit the `F2' key at the top of
+  the keyboard, not the two keys F and 2. Occasionally you'll need to
+  use a `Fn' key in combination with another key to get the `F2'
   key. <Tab> means the `Tab' key on the left hand side, not the three
   characters T, a and b. <RET> is simply the `Return' key, or `Enter' on
-  most modern keyboards.
+  most modern keyboards. It's not usually the Enter/Return key on the
+  far right in the number pad section, though that often does the same
+  thing for convenience.
 
   One really important note up front: The `Alt' key on most modernish
   desktop computers and laptops is commonly called `Meta' by Emacs, and
-  will be used as such througout this guide. So instead of showing you
-  `Control'-`Alt'-something, it'll be shown here as
-  `Control'-`Meta'-something, or the short version, `C-M-something'.
+  will be used as such throughout this guide. So instead of showing you
+  `Control-Alt'-something, it'll be shown here as
+  `Control-Meta'-something, or the short version, `C-M-something'.
 
   This means that instead of having to type the words Control-Meta-V,
   Emacs will do what you want as long as you hold down the `Control' and
   `Alt' keys and then tap the `V' key (and let everything go).  In the
   minibuffer (the blank section right at the bottom of the Emacs
   program), the keystrokes will show up in their abbreviated form, such
-  as `C-M-v'.
+  as `C-M-v'. Where I specify keys separated by spaces, as in `C-h h',
+  this means to hold down `Control', tap `H', let both go, then tap `H'.
 
   In addition, all letters (aside from prefixes) are usually shown in
   their lowercase form, even though most keyboards show the uppercase
@@ -299,7 +392,7 @@ Key: `<RET>'
   ⁃ Long name: Return
   ⁃ Other long name: `<return>'
   ⁃ Alternatives: Enter/Ent
-  ⁃ Note: In emacs docs, shown as RET. `RET' is the same as `C-m' (or
+  ⁃ Note: In Emacs docs, shown as RET. `RET' is the same as `C-m' (or
     `C-j').  The actual `<return>' key can only be accessed in a
     graphical environment and is translated to `RET' but can be bound
     independently. (Thanks to Jamie Beardslee for the extra
@@ -347,8 +440,8 @@ Key: `H-'
   ⁃ Note: Sometimes bound to Fn or Menu
 
 
-And the mouse buttons:
-──────────────────────
+Mouse buttons
+─────────────
 
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    *Key*  *Long name*          *Notes*                                  
@@ -359,18 +452,18 @@ And the mouse buttons:
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-Movement keys
-─────────────
+Emacs movement keys
+───────────────────
 
   Info link: [Moving point]
 
-  Vim has them. Most modern editors have Up/Down/Left/Right and
-  C-right/left, but emacs and vim both have far richer ways of moving
-  the cursor around a text file, by either a character (or multiple
-  characters at once), a word or a line. In the table below, Left/Right
-  refer to keys on the keyboard, not mouse buttons. Mouse buttons will
-  be indicated as RMB/LMB/MMB or Scrollwheel up/down/right/left.  Lines
-  look like this:
+  Vim has them. Bash even has some of these. Most modern editors have
+  Up/Down/Left/Right and C-right/left, but Emacs and Vim both have far
+  richer ways of moving the cursor around a text file, by either a
+  character (or multiple characters at once), a word or a line. In the
+  table below, Left/Right refer to keys on the keyboard, not mouse
+  buttons. Mouse buttons will be indicated as RMB/LMB/MMB or Scrollwheel
+  up/down/right/left.  Lines look like this:
 
   `Key' - `what-it-will-do'
   ⁃ Description of the Emacs command that the key will trigger.
@@ -382,13 +475,17 @@ Movement keys
 `Right' - `right-char'
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
-  ⁃ Moves the cursor to the right of its previous position on the line.
+  ⁃ Moves the cursor to the right of its previous position on the
+    line. If at the end of the line, will drop to the next line and
+    first character if it exists.
 
 
 `Left' - `left-char'
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
-  ⁃ Moves the cursor to the left of its previous position on the line.
+  ⁃ Moves the cursor to the left of its previous position on the
+    line. If already at the beginning of the line, will attempt to jump
+    to the end of the previous line if one exists.
 
 
 `Down' - `next-line'
@@ -434,6 +531,14 @@ Movement keys
     usually the last character even if that is a space.
 
 
+`M-g Tab <num>'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Step the cursor to the offset specified on the line you're on, or to
+    the end of that line. For example, `M-g Tab 32' moves to the 32nd
+    character on that line.
+
+
 `C-Down' - `forward-paragraph'
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
@@ -455,19 +560,27 @@ Movement keys
     point to character 2304.
 
 
+`M-g g <num>' `goto-line'
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ⁃ Step the cursor to the line specified, i.e. `M-g g 335' moves point
+    to line 335.
+
+
 `C-Home' - `beginning-of-buffer'
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   ⁃ Moves the cursor to the beginning of the buffer
   ⁃ With optional arg between 0 and 10, (`C-u arg C-Home') positions
     cursor arg*10 percent from the beginning of the buffer. An
-    alternative keybinding is `M-S-<'.
+    alternative keybinding is `M-S-<'.  For example, `C-u 5 C-Home'
+    would mean to jump to 50% into the file.
 
 
 `C-End' - `end-of-buffer'
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
-  ⁃ Moves the cursor to the beginning of the buffer
+  ⁃ Moves the cursor to the end of the buffer
   ⁃ With optional arg between 0 and 10, (`C-u arg C-End') positions
     cursor arg*10 percent from the end of the buffer. An alternative
     keybinding is `M-S->'.
@@ -662,7 +775,7 @@ Basic commands
   If you need to store sequences of keyboard commands in particular, you
   can generally record these in what's called a keyboard macro. There's
   a few different ways to start the process off, but generally the old
-  school way that most long-time emacs users use, is `C-x (' and the
+  school way that most long-time Emacs users use, is `C-x (' and the
   modern iteration on this is `F3'. Once you have your sequence of keys,
   use `C-x )' to finish, or `F4'. No good keyboard macro is complete
   without the ability to invoke that macro. `C-x e' executes all the
@@ -679,28 +792,27 @@ Basic commands
   (kmacro-cycle-ring-previous).
 
   Here's a quick summary so far of the keyboard commands we've used,
-  along with their respective emacs functions that get called.
+  along with their respective Emacs functions that get called.
 
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   *Name*                 *Shortcut*              *Emacs function*                     
-  ─────────────────────────────────────────────────────────────────────────────────────
-   Start macro            `C-x ('                 kmacro-start-macro                   
-                          `F3'                    kmacro-start-macro-or-insert-counter 
-  ─────────────────────────────────────────────────────────────────────────────────────
-   Stop macro             `C-x )'                 kmacro-end-macro                     
-                          `F4'                    kmacro-end-or-call-macro             
-  ─────────────────────────────────────────────────────────────────────────────────────
-   Call (or run) the      `C-x e'                 kmacro-end-and-call-macro            
-   last-defined macro                                                                  
-  ─────────────────────────────────────────────────────────────────────────────────────
-   Step to next macro     `C-x C-k C-n'           kmacro-cycle-ring-next               
-  ─────────────────────────────────────────────────────────────────────────────────────
-   Step to prior macro    `C-x C-k C-n'           kmacro-cycle-ring-prev               
-  ─────────────────────────────────────────────────────────────────────────────────────
-   Name macro for later   `C-x C-k n'             kmacro-name-last-macro               
-  ─────────────────────────────────────────────────────────────────────────────────────
-   Insert keyboard macro  `M-x insert-kbd-macro'  insert-kbd-macro                     
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   *Name*                                *Shortcut*              *Emacs function*                     
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+   Start macro                           `C-x ('                 kmacro-start-macro                   
+                                         `F3'                    kmacro-start-macro-or-insert-counter 
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+   Stop macro                            `C-x )'                 kmacro-end-macro                     
+                                         `F4'                    kmacro-end-or-call-macro             
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+   Call (or run) the last-defined macro  `C-x e'                 kmacro-end-and-call-macro            
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+   Step to next macro                    `C-x C-k C-n'           kmacro-cycle-ring-next               
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+   Step to prior macro                   `C-x C-k C-n'           kmacro-cycle-ring-prev               
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+   Name macro for later                  `C-x C-k n'             kmacro-name-last-macro               
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+   Insert keyboard macro                 `M-x insert-kbd-macro'  insert-kbd-macro                     
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   If you had looked at the table and wondered why the function names
   differ between `C-x (' and `F3', it's because the Emacs developers
@@ -794,97 +906,106 @@ Cock-ups
     the stage where I couldn't close Emacs down legitimately.
 
 
-Help
-────
+Emacs help
+──────────
 
   Info link: [Help]
 
-  What follows is a rough summary of the available help commands. The
-  first is pretty important. More complete details are available from
-  the info manual.
+  What follows is a rough summary of the available help commands with
+  Emacs function names where present. The first is pretty important and
+  may help you out even if you don't remember the others. More complete
+  details are available from the info manual.
 
 
 [Help] <info:emacs#Help>
 
-`C-h C-h'
-╌╌╌╌╌╌╌╌╌
+`C-h C-h'  (help-for-help)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Metahelp: a front page to other help pages.
 
 
-`C-h C-c' - Copyright notice
-╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+`C-h C-c' - Copyright notice (describe-copying)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Displays the copyright notice for Emacs, in this case, the GNU General
   Public License version 3.
 
 
-`C-h r'
-╌╌╌╌╌╌╌
+`C-h C-a' (about-emacs)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This displays a screen describing this install of Emacs, which usually
+  includes how and when it was compiled.
+
+
+`C-h r' (info-emacs-manual)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   The front page for the Emacs manual in info format.
 
 
-`C-h i'
-╌╌╌╌╌╌╌
+`C-h i' (info)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   The front page for all info documents shown in the infodir.
 
 
-`C-h d'
-╌╌╌╌╌╌╌
+`C-h d' (apropos-documentation)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Info Doc Search: this will request a search term and look through all
   of the info documents on your system.
 
 
-`C-h m'
-╌╌╌╌╌╌╌
+`C-h m' (describe-mode)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Describe the current major mode, and shows what keys are currently
   bound to Emacs commands. This also shows any other minor modes in
   effect in your current buffer.
 
 
-`C-h b'
-╌╌╌╌╌╌╌
+`C-h b' (describe-bindings)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Describe binding, mode-sensitive.
 
 
-`C-h c'
-╌╌╌╌╌╌╌
+`C-h c' (describe-key-briefly)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Briefly describe key, mode-sensitive. The output appears in the
   mini-buffer as one or more lines.
 
 
-`C-h k'
-╌╌╌╌╌╌╌
+`C-h k' (describe-key)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   This describes a key in more detail than the above command, and the
-  docstring output appears in a split buffer usually to the right of
-  your current buffer.
+  docstring output appears in a split buffer usually to the right or
+  below your current buffer.
 
 
-`C-h f'
-╌╌╌╌╌╌╌
+`C-h f' (describe-function)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Describe function. Input the name of a function such as `find-file'.
 
 
-`C-h h'
-╌╌╌╌╌╌╌
+`C-h h' (view-hello-file)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Hello in multiple languages and scripts, needs good fonts with wide
-  glyph coverage.
+  glyph coverage.  This shortcut may be rebound if you ever load the
+  Hyperbole package, so use `M-x view-hello-file' if that is the case.
 
 
 The long way around
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   If you need help on a whole key sequence you can't normally get from
-  C-h k then evaluate this in emacs:
+  C-h k then evaluate this in Emacs:
   ┌────
   │ (describe-key (kbd "C-h"))
   └────
@@ -894,13 +1015,13 @@ The long way around
   as "C-g", "M-x" and so on.
 
 
-Recommended Plugins
-───────────────────
+Recommended Packages
+────────────────────
 
-  These are plugins I use a lot of the time. They're either already
+  These are packages I use a lot of the time. They're either already
   built into Emacs, or they can be installed from ELPA/MELPA.
   magit
-        This isn't native to vanilla emacs, but is a great front end for
+        This isn't native to vanilla Emacs, but is a great front end for
         git commands. Reading the info
   documents for this is a really good idea, to make better use of magit.
   erc
@@ -914,10 +1035,10 @@ Recommended Plugins
   avoid the loaded-with-emacs version and go with the absolutely latest
   version of org mode, there are instructions at <https://orgmode.org>,
   but these days, the bundled version of org-mode will get you just
-  about everything, depending on the version of emacs you've installed.
+  about everything, depending on the version of Emacs you've installed.
 
-  I tend to use it for literate configuration of emacs, as I can
-  "tangle" the source sections into a config file that emacs can use
+  I tend to use it for literate configuration of Emacs, as I can
+  "tangle" the source sections into a config file that Emacs can use
   directly. The non-source sections describe the rest of it. I won't go
   into the whole literate programming idea, but it started with Donald
   Knuth in his seminal work The Art of Computer Programming.
@@ -934,16 +1055,19 @@ Recommended Plugins
 [Org Mode] See section Org Mode
 
 
-Plugins recommended by others
-─────────────────────────────
+Packages recommended by others
+──────────────────────────────
 
-  On the other hand, these are some plugins that come as a
+  On the other hand, these are some packages that come as a
   recommendation from someone in [Freenode #Emacs channel] (which has
   since converted to [irc.libera.chat]), I can't personally vouch for
-  these plugins, I haven't used them myself.
-  ⁃ flyspell - expensive on computation
-  ⁃ wc-mode
-  ⁃ writegood
+  these packages, I haven't used them myself.
+  flyspell
+        corrects spelling as you go, reportedly expensive on computation
+  wc-mode
+        Running word count with goals
+  writegood
+        Polish up poor writing on the fly
 
 
 [Freenode #Emacs channel] <irc://chat.freenode.org/#emacs>
@@ -1055,7 +1179,7 @@ Buffers
   A buffer holds either:
   ⁃ the contents of a file, perhaps an on-disk file,
   ⁃ or an on-the-fly buffer perhaps containing a command's output or
-    output from an emacs function.
+    output from an Emacs function.
 
   Examples of the latter include the *Messages* buffer, the
   *Completions* buffer, or the *Help* buffer.  These keys work with open
@@ -1203,7 +1327,7 @@ Paragraphs
   └────
 
   or any other relevant width. This applies when you reformat the
-  paragraph manually, but you can have emacs do the reformatting for you
+  paragraph manually, but you can have Emacs do the reformatting for you
   in the current buffer (`M-x auto-fill-mode') as you go.
 
 
@@ -1214,10 +1338,12 @@ Dired
 
   These are some of the commands that can be used in a dired buffer. For
   all intents, you can do nearly everything in here that you could do
-  from a commandline—deletion, moving or renaming. Of course, creation
-  is done by simply opening a new buffer and saving it to a location
-  that you enter when you type `C-x s'. You can move using the usual
-  cursor motion commands, either Up/Down/Left/Right or C-n/C-p.
+  from a commandline—deletion, moving or renaming. Of course, file
+  creation is done by simply opening a new buffer (`C-x b') or file
+  (`C-x f') and saving it to a location that you enter when you type
+  `C-x s'. You can move using the usual cursor motion commands, either
+  Up/Down/Left/Right or C-n/C-p. Directory creation uses `C-x +', simply
+  feed that a new name.
 
   With regard to moving by "pages", you can insert the content of
   subdirectories in each dired buffer with the command M-x
@@ -1237,6 +1363,7 @@ Dired
    Toggle marks          t       Invert whatever marks are present                     
    Query/replace-regexp  Q       Asks for regexp to replace, then asks for replacement 
                                  It then proceeds through all matches asking y/n       
+   Create new directory  +       Choose new name that isn't already taken              
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   To remove certain files from the listing (this does not delete them
@@ -1351,8 +1478,8 @@ Org Mode
     (org-babel-demarcate-block)
   ⁃ `C-c C-v C-t' (or simply, C-c C-v t) Tangle source code blocks to
     relevant file.  This means different things depending on how you've
-    demarcated your source blocks. I use it to generate `init.el' from a
-    `.emacs.org' file, with all the bits I want to fire out to there
+    demarcated your source blocks. I use it to generate `init.el' from
+    an `emacs.org' file, with all the bits I want to fire out to there
     inside `#+BEGIN_SRC emacs-lisp ... #+END_SRC' markers, and I use
     surrounding text to describe the source blocks.
   ⁃ `C-c C-e' Export, will ask for format, usually one of HTML,
@@ -1476,7 +1603,7 @@ Turn region into headers:     `C-c *'
 Oddities
 ╌╌╌╌╌╌╌╌
 
-      If you turn on—or you have defined in emacs
+      If you turn on—or you have defined in Emacs
   startup—scroll-lock-mode, cursor movement within a collapsed org-mode
   document behaves slightly differently.
 
@@ -1682,7 +1809,7 @@ EXWM
 vterm
 ─────
 
-  This doesn't come standard with emacs, but is well worth the
+  This doesn't come standard with Emacs, but is well worth the
   install. Running other programs inside vterm can come with a couple of
   pitfalls though, especially if you're expecting to run vim, which
   actually works, by the way. If you want to copy stuff from a vterm
@@ -2012,17 +2139,17 @@ How to open file in emacs source-directory
 ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
 
   Here's a new source-find function that scratches a personal itch of
-  mine. It's most useful if you installed the emacs source code into a
+  mine. It's most useful if you installed the Emacs source code into a
   directory on your own system and compiled/installed from there. If you
   redefine source-directory in your init.el, don't forget to put the /
-  on the end. It won't work if you're using an emacs compiled from a
+  on the end. It won't work if you're using an Emacs compiled from a
   Linux distribution's repository (Ubuntu/Fedora/etc) because the value
   stored in source-directory probably won't exist on your own system
-  unless you've redefined it in init.el or some other emacs startup file
+  unless you've redefined it in init.el or some other Emacs startup file
   as mentioned above.
 
   I was getting sick of having to type a long expression every time I
-  wanted to open a file in the emacs source-directory, or use `C-x C-f'
+  wanted to open a file in the Emacs source-directory, or use `C-x C-f'
   and tabcomplete all the way from the filetree root. So I tried to
   write my own, but I ran into some problems that stemmed from my
   complete inexperience with writing lisp.  This function that habamax
@@ -2145,6 +2272,58 @@ Transparency for Emacs 29.1
   └────
 
 
+How to hide tab-bar but keep its functionality
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  First, turn on tab bar mode: `(tab-bar-mode t)', then set an option
+  for visibility: `(setopt tab-bar-show nil)'.  This will still let you
+  switch between tab-bar tabs, but the tab-bar line doesn't take up any
+  screen space.
+
+
+How to group tab-line tabs by mode.
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  <Anoncheg> Viking667: Do you group buffers by mode?  <Anoncheg>
+  Viking667: tab-line-mode with `(setopt tab-line-tabs-function
+  'tab-line-tabs-mode-buffers)'
+
+  There's more details in `C-h f tab-line-tabs-function'; that describes
+  the settings allowed.
+
+
+Additional things I've looked up
+────────────────────────────────
+
+  These are some other things that I've added to the list of tips that
+  I've thought would be really useful for others to know about, as they
+  may not have come across them yet. This list will be modified as I
+  find more useful things.
+
+
+How to insert output from a shell command into a buffer.
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This seems to be a question asked a few times at stackoverflow, so
+  I've grabbed one of the most common examples here: `C-u M-!
+  <shell-command>'
+
+  Thanks for this reply from
+  <https://stackoverflow.com/users/347380/anupam>.
+
+
+How to toggle a buffer's read-only state (`C-x C-q')
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This is useful for making sure that a buffer doesn't get modified by
+  accident, at least until you reverse the read-only setting. If a
+  buffer was read-only when you opened it, it's probably not a good idea
+  to change that, as it's likely to be a buffer that Emacs will
+  overwrite for itself such as the Messages window or Emacs sourcetree
+  files, which are normally compressed and won't take kindly to being
+  changed.
+
+
 tias moments (Try It And See)
 ─────────────────────────────
 
@@ -2232,7 +2411,7 @@ Mastering Emacs
 
   <https://www.masteringemacs.org/> If you think you know Emacs from
       this little bit I've explained here, then go read this book. It
-      will revolutionise your emacs usage if you read it through and
+      will revolutionise your Emacs usage if you read it through and
       implement some of the things Mickey Petersen talks about. This is
       one of the few ebooks I've bought, and is reasonably priced for
       what it is. At the time I write this, it comes in at $49.95 in
@@ -2291,13 +2470,21 @@ You can use M-x eval (or `M-:' ) to display variable's value
 Vim
 ═══
 
-  You know, that other editor. The one that emacs users don't like to
+  You know, that other editor. The one that Emacs users don't like to
   admit liking. It has a tighter focus on editing text. That's
   it. Nothing more. It's not an eco-system like Emacs is, and doesn't
   try to be anything else. However, even it has a scripting language
   underneath, called vimscript.  Because the editor is focussed so
   tightly on editing text, it has a wide commandset for editing, and you
   can do some really compact and powerful commands in just a few keys.
+
+  The commands I'll describe are relevant to most available versions of
+  Vim past 6.0, though I've focussed on things available in the 8.1
+  version.
+
+
+Short example
+─────────────
 
   One example I like to quote so often, because I haven't found an
   equivalent that's any shorter, or even the same size. I do this with a
@@ -2324,14 +2511,13 @@ Vim
   And that's just one example. It's only 15 characters long, with quite
   a kick in its tail. And if you don't find what you want just in
   vimscript, it even has a plugin system that rocks. I don't tend to use
-  them, so I don't include much here about it.
+  them, so I don't include much here about plugins. I also don't
+  describe more detailed vimscript here, basically because I don't know
+  how to use it myself.
 
-  I don't describe more detailed vimscript here, basically because I
-  don't know how to use it myself.
 
-
-Movement keys
-─────────────
+Vim movement keys
+─────────────────
 
   Moving the cursor around involves a few keys, and depends upon whether
   you're in command mode or in insert mode. These initial keys are used
@@ -2368,8 +2554,8 @@ Movement keys
   line.
 
 
-Help
-────
+Vim help
+────────
 
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    *Commands*       *Keys*              *Notes*                                                 
@@ -2401,14 +2587,14 @@ Diffing files
   ┌────
   │ vimdiff firstfile secondfile
   └────
-  ⁃ and within vim (side-by-side):
+  ⁃ and within Vim (side-by-side):
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    *Commands*                     *Keys*                  *Long form*                 *Notes*                             
   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
    Show two files side by side    :vert diffs other-file  :vert diffsplit other-file  Quote the filename if it has spaces 
    Show two files top and bottom  :diffs other-file       :diffsplit other-file       Quote the filename if it has spaces 
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ⁃ Within vim, you can also use these commands
+  ⁃ Within Vim, you can also use these commands
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    *Commands*               *Keys*  *Notes* 
   ──────────────────────────────────────────
@@ -2436,7 +2622,7 @@ Copying commands
    Paste content above cursor location      P        
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  As you can tell, many vim commands take an optional numeric argument,
+  As you can tell, many Vim commands take an optional numeric argument,
   either before in the case of `6yy' or embedded in the command in the
   case of `y6y'. In this case at least, they both give you the same
   result. At least one opinion holds that you should probably prefer the
@@ -2450,8 +2636,8 @@ Window commands
 ───────────────
 
   Window commands operate to open/close or move between existing
-  windows. In essence, a vim window is like a emacs buffer, in that they
-  both hold the contents of a file, but work slightly differently.
+  windows. In essence, a Vim window is like an Emacs buffer, in that
+  they both hold the contents of a file, but work slightly differently.
 
   This table very quickly summarises what I believe to be the most
   important commands that apply to windows.
@@ -2536,11 +2722,11 @@ Macro commands
     like C-c, F2 and anything where the symbol takes more than 1
     character to type the whole key definition.
     ⁃ NB: you can often hit the key itself after typing :map in which
-      case, vim will turn F2 into <F2>.
+      case, Vim will turn F2 into <F2>.
     For example, if you want to bind F2 (as in the case above), then you
     type <F2> as the key.
   ⁃ The second argument is what you want to type when you hit F2. In
-    this case, it's generally vim commands in command mode. You can bind
+    this case, it's generally Vim commands in command mode. You can bind
     keys in insert mode, but that comes with a bit more to do.
 
 
@@ -2772,6 +2958,8 @@ Atmospheric/ambient/Dark
     ⁃ <https://www.youtube.com/watch?v=JGLzvniLiBg>
   ⁃ Carbon Based Lifeforms - Derelicts
     ⁃ <https://www.youtube.com/watch?v=5o_uF1L5l6o>
+  ⁃ Nils Frahm - Live concert at the Philharmonie de Paris, March 2024
+    ⁃ <https://www.youtube.com/watch?v=HPPzQgTaLbo>
 
 
 Programming music
