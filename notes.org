@@ -1906,6 +1906,7 @@ Check :help exiting
     + [[https://www.youtube.com/watch?v=8DvywoWv6fI][Python for everybody - Full university python course (13:40:10)]]
 *** SQL
     + [[https://www.youtube.com/watch?v=HXV3zeQKqGY][SQL tutorial - Full database course for beginners (4:20:39)]]
+    + [[https://www.youtube.com/watch?v=xh4gy1lbL2k][NoSQL overview - full course for beginners (2:54:52)]]
 **** Postgresql
      + [[https://www.youtube.com/watch?v=qw--VYLpxG4][Learn PostGreSQL Tutorial (4:19:34)]]
 ** Other Videos

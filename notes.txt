@@ -2873,10 +2873,14 @@ SQL
 ╌╌╌
 
   ⁃ [SQL tutorial - Full database course for beginners (4:20:39)]
+  ⁃ [NoSQL overview - full course for beginners (2:54:52)]
 
 
 [SQL tutorial - Full database course for beginners (4:20:39)]
 <https://www.youtube.com/watch?v=HXV3zeQKqGY>
+
+[NoSQL overview - full course for beginners (2:54:52)]
+<https://www.youtube.com/watch?v=xh4gy1lbL2k>
 
 ◊ Postgresql
 
