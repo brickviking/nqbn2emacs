@@ -1373,7 +1373,7 @@ emacsclient --create-frame --eval '(notmuch)' --frame-parameters='(quote (name .
   (setq ediff-split-window-function 'split-window-horizontally)
   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
 #+END_EXAMPLE
-[22:00:48]<habamax> https://i.imgur.com/ygwgS8w.png - control window is the bottom one
+[22:00:48]<habamax> =https://i.imgur.com/ygwgS8w.png= - control window is the bottom one
 
 Alternatively, the last two lines can be included into custom.el as follows: 
 #+BEGIN_EXAMPLE elisp -i
