@@ -1922,6 +1922,10 @@ Check :help exiting
 \newpage
 #+END_EXPORT
 
+* Useful sites
+** A note about transience
+Here's a small discussion I found about deliberate transience of working state as a mindset.
+https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/transience/
 * Music
   :PROPERTIES:
   :CUSTOM_ID: music
