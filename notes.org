@@ -56,11 +56,11 @@ should work all the way back to perhaps 6.0, though there may be some difference
 :CONTENTS:
 - [[#emacs][Emacs]]
   - [[#common-emacs-terms][Common Emacs terms]]
-  - [[#what-different-keys-mean][What different keys mean]]
+  - [[#emacs-key-definitions][Emacs keyboard definitions]]
   - [[#rare-modifier-keys][Rare modifier keys]]
   - [[#mouse-buttons][Mouse buttons]]
   - [[#emacs-movement-keys][Emacs movement keys]]
-  - [[#editing-keys][Editing keys]]
+  - [[#emacs-editing-keys][Editing keys]]
   - [[#indenting][Indenting]]
   - [[#display-of-long-lines][Display of long lines]]
   - [[#registers][Registers]]
@@ -114,11 +114,11 @@ should work all the way back to perhaps 6.0, though there may be some difference
 \newpage
 #+END_EXPORT
 
-* Emacs
+* Emacs                                                               :emacs:
   :PROPERTIES:
   :CUSTOM_ID: emacs
   :END:
-** Common Emacs terms
+** Common Emacs terms                                    :common_emacs_terms:
   :PROPERTIES:
   :CUSTOM_ID: common-emacs-terms
   :END:
@@ -164,9 +164,9 @@ things like toggling line wrapping, highlighting all searches in a document, or 
 There are far better ways to describe what "mode" means, at least in the context of the Emacs
 editor, and the best description can probably be found in the Info docs supplied with Emacs.
 
-** What different keys mean
+** What different keys mean                        :emacs-key-definitions:
   :PROPERTIES:
-  :CUSTOM_ID: what-different-keys-mean
+  :CUSTOM_ID: emacs-key-definitions
   :END:
 Throughout this documentation, and indeed most Emacs documents that I've read, key prefixes are
 abbreviated according to the following list. This was basically cribbed from the following
@@ -218,7 +218,8 @@ combined with any of the prefix keys, which are as follows:
   + Note: In Emacs docs, shown as RET. =RET= is the same as =C-m= (or =C-j=).  The actual =<return>=
     key can only be accessed in a graphical environment and is translated to =RET= but can be bound
     independently. (Thanks to Jamie Beardslee for the extra information).
-** Rare modifier keys
+
+** Rare modifier keys                                    :rare_modifier_keys:
   :PROPERTIES:
   :CUSTOM_ID: rare-modifier-keys
   :END:
@@ -234,19 +235,21 @@ the Hyper flag.
 
 *** Key: =A-=
   + Long name: Alt
-  + Note: This key on the keyboard actually issues =Meta= keystroke, not an Emacs =Alt= keystroke.
+  + Note: On almost every modern keyboard, the key with this name actually issues the =Meta= keystroke,
+     not an Emacs =Alt= keystroke.
     As a result, there aren't many Emacs keybindings that use Alt-something, and most commands use
     Meta-something.
 *** Key: =s-=
   + Long name: Super
   + Alternative: Windows
-  + Note: Often used by the operating system especially on Windows
-  + This is not the uppercase S used for Shift keys, but a lowercase s.
+  + Alternative: Command (MacOS X)
+  + Note: Often used by the operating system especially on Windows and Mac OS X
+  + This is not represented with the uppercase S used for Shift keys, but a lowercase s.
 *** Key: =H-=
   + Long name: Hyper
   + Alternative: No modern equivalent
   + Note: Sometimes bound to Fn or Menu
-** Mouse buttons
+** Mouse buttons                                              :mouse_buttons:
   :PROPERTIES:
   :CUSTOM_ID: mouse-buttons
   :END:
@@ -259,14 +262,15 @@ the Hyper flag.
    | MMB   | Middle Mouse Button | Often a Scrollwheel click on modern mice |
    |-------+---------------------+------------------------------------------|
 
-** Emacs movement keys
+** Emacs movement keys                                  :emacs_movement_keys:
   :PROPERTIES:
   :CUSTOM_ID: emacs-movement-keys
   :END:
 
 Info link: [[info:emacs#Moving point][Moving point]]
 
-Vim has them. Bash even has some of these. Most modern editors have Up/Down/Left/Right and C-right/left, but Emacs and Vim both
+Vim has them. Bash even has some of these. Most modern editors have Up/Down/Left/Right to move by
+individual lines and characters, and C-right/left to move forward/backwards by word, but Emacs and Vim both
 have far richer ways of moving the cursor around a text file, by either a character (or multiple
 characters at once), a word or a line. In the table below, Left/Right refer to keys on the keyboard,
 not mouse buttons. Mouse buttons will be indicated as RMB/LMB/MMB or Scrollwheel up/down/right/left.
@@ -281,11 +285,11 @@ Lines look like this:
   + Moves the cursor to the left of its previous position on the line. If already at the beginning of the line, will attempt to jump to the end of the previous line if one exists.
 *** =Down= - =next-line=                                                                   
   + Steps to the next line and the same character position, if possible, otherwise it will step
-    to the last character on that line.
+    to the last available character position on that next line.
   + Alternate binding: =C-n=
 *** =Up= - =previous-line=
   + Steps to the previous line and the same character position, if possible, otherwise it will step
-    to the last character on that line.
+    to the last character position on the previous line.
   + Alternate binding: =C-p=
 *** =M-f= - =right-word=
   + Step forward to the next non-alphanumeric character.
@@ -308,7 +312,7 @@ Lines look like this:
 *** =M-g c <num>=  =goto-char=
   + Step the cursor to the offset specified, i.e. =M-g c 2304= moves point to character 2304.
 *** =M-g g <num>= =goto-line=
-  + Step the cursor to the line specified, i.e. =M-g g 335= moves point to line 335.
+  + Step the cursor to the line specified, i.e. =M-g g 335= moves point to line 335 if available.
 *** =C-Home= - =beginning-of-buffer=
   + Moves the cursor to the beginning of the buffer
   + With optional arg between 0 and 10, (=C-u arg C-Home=) positions cursor arg*10 percent
@@ -318,9 +322,11 @@ Lines look like this:
   + Moves the cursor to the end of the buffer
   + With optional arg between 0 and 10, (=C-u arg C-End=) positions cursor arg*10 percent
     from the end of the buffer. An alternative keybinding is =M-S->=.
-** Editing keys
+    For example, =C-u 3 C-End= would mean to jump to 30% from the end of the file.
+
+** Editing keys                                                :emacs_editing_keys:
   :PROPERTIES:
-  :CUSTOM_ID: editing-keys
+  :CUSTOM_ID: emacs-editing-keys
   :END:
 
 Info link: [[info:emacs#Basic Undo][Basic Undo]]
@@ -350,7 +356,7 @@ Fundamental mode, though a lot of it is also relevant for most other modes that 
 *** =C-y= - =yank=
   + Description: Copies the most recent entry on the kill-ring into the buffer. After that, =M-y= 
 will restore earlier points on the kill-ring instead of the most recent entry.
-** Indenting
+** Indenting                                                      :indenting:
   :PROPERTIES:
   :CUSTOM_ID: indenting
   :END:
@@ -376,7 +382,7 @@ means that handling of indenting differs between prose such as this, and source 
 Python source file lines. As each major mode normally sets acceptable behaviour for the handling of
 the TAB key, look to those major modes and their documentation.
 
-** Display of long lines
+** Display of long lines                              :display_of_long_lines:
   :PROPERTIES:
   :CUSTOM_ID: display-of-long-lines
   :END:
@@ -390,7 +396,7 @@ but with the break for the next line happening between words. This makes these l
 readable. Visual-line-mode is a minor mode, so it's toggled with =M-x visual-line-mode=. Ordinary
 line wrapping is toggled on and off with =M-x toggle-truncate-lines=.
 
-** Registers
+** Registers                                                      :registers:
   :PROPERTIES:
   :CUSTOM_ID: registers
   :END:
@@ -431,7 +437,7 @@ Restoring text from a register doesn't wipe the register contents, which can be 
 to repeat the insert multiple times. The only time a register's contents will be wiped is if you
 insert new content or delete the register.
 
-** Macros
+** Macros                                              :macro_commands_emacs:
   :PROPERTIES:
   :CUSTOM_ID: macro-commands-emacs
   :END:
@@ -524,7 +530,7 @@ learn more about them.
 **** Editing existing macros
 **** Recursion (recursion (recursion...))
 **** Keyboard macro counters
-** Cock-ups
+** Cock-ups                                                        :cock_ups:
   :PROPERTIES:
   :CUSTOM_ID: cock-ups
   :END:
@@ -537,7 +543,7 @@ or not be obvious to the really new Emacs user.
    * Don't blindly accept local variable exec sections when loading a file, Emacs could break when 
      trying to save or quit. I once got to the stage where I couldn't close Emacs down legitimately.
 
-** Emacs help
+** Emacs help                                                    :emacs_help:
   :PROPERTIES:
   :CUSTOM_ID: emacs-help
   :END:
@@ -588,7 +594,7 @@ Emacs:
 This will give you help on what function =C-h= calls up. The same is true for most other key
 sequences that you can type in that form such as "C-g", "M-x" and so on.
 
-** Recommended Packages
+** Recommended Packages                                :recommended_packages:
   :PROPERTIES:
   :CUSTOM_ID: recommended-packages
   :END:
@@ -614,7 +620,7 @@ I describe further things down in the [[#org-mode][Org Mode]] section.
 + vterm :: Again, this isn't native, but is a more powerful (in some ways) terminal, offering more support for
 programs that use the screen like they expect to own it. It isn't perfect, but it's quite good at
 what it does. Check the vterm section below for the few hints I have.
-** Packages recommended by others
+** Packages recommended by others            :packages_recommended_by_others:
   :PROPERTIES:
   :CUSTOM_ID: packages-recommended-by-others
   :END:
@@ -626,7 +632,7 @@ packages, I haven't used them myself.
   + wc-mode :: Running word count with goals
   + writegood :: Polish up poor writing on the fly
 
-** Windows
+** Windows                                                          :windows:
   :PROPERTIES:
   :CUSTOM_ID: windows
   :END:
@@ -682,7 +688,7 @@ of your buffer, if your buffer happens to take up less lines than it's given. Th
 files that only have four or five short lines in them, but if the buffer is larger than the current
 window, then the =C-x -= won't do anything.
 
-** Frames
+** Frames                                                            :frames:
   :PROPERTIES:
   :CUSTOM_ID: frames
   :END:
@@ -705,7 +711,7 @@ Xorg/Wayland/Aqua/Windows) as opposed to a purely textual display (as in a termi
    | Close frame altogether            | C-x 5 0 |
    |                                   |         |
    |-----------------------------------+---------|
-** Buffers
+** Buffers                                                    :buffers_emacs:
   :PROPERTIES:
   :CUSTOM_ID: buffers-emacs
   :END:
@@ -757,7 +763,7 @@ Change encoding (GUI) by clicking mouse-1 on colon or encoding in headerline
     | -(Mac)@--- | Mac OS X encoding (CR  0x0D)  |
     |------------+-------------------------------|
     Also check [[#how-to-set-a-buffers-line-encoding-from-text-mode][How to set a buffer’s line-encoding from text mode]]
-** Input
+** Input                                                        :input_emacs:
   :PROPERTIES:
   :CUSTOM_ID: input-emacs
   :END:
@@ -775,7 +781,7 @@ input. You can also get a list of supported inputs with =M-x list-input-methods=
 
 Examples of input include chinese-py (Simplified Chinese using pinyin), japanese-hiragana (hiragana
 using romaji), and greek (Greek characters). There are many more variants as well.
-** Paragraphs
+** Paragraphs                                                    :paragraphs:
   :PROPERTIES:
   :CUSTOM_ID: paragraphs
   :END:
@@ -811,7 +817,7 @@ You can set a default width in your =init.el= file with the fragment:
 or any other relevant width. This applies when you reformat the paragraph manually, but you can have
 Emacs do the reformatting for you in the current buffer (=M-x auto-fill-mode=) as you go.
 
-** Dired
+** Dired                                                              :dired:
   :PROPERTIES:
   :CUSTOM_ID: dired
   :END:
@@ -866,7 +872,7 @@ dired-omit-mode again.
 Deletion marks are different from normal marks, in that when you go k, you erase those marked files
 from disk.  To remove files from the disk, mark them each with =d=, then once you have selected the
 files, use =k= to remove them.  This cannot be undone, much like on any UNIX/Linux/BSD shell.
-** Tramp
+** Tramp                                                              :tramp:
   :PROPERTIES:
   :CUSTOM_ID: tramp
   :END:
@@ -895,7 +901,7 @@ This would mean (at least for accessing a file remotely over ssh) a link that lo
 C-x C-f /ssh:madman@farmland.tencity.example:/home/madman/quicknote.txt
 #+END_EXAMPLE
 
-** Org Mode
+** Org Mode                                                        :org_mode:
 :PROPERTIES:
 :CUSTOM_ID: org-mode
 :END:
@@ -1009,7 +1015,7 @@ generally take you to where the link points to, depending upon the type of link.
 *** Oddities
     If you turn on—or you have defined in Emacs startup—scroll-lock-mode, cursor movement within a
 collapsed org-mode document behaves slightly differently. 
-** magit
+** magit                                                              :magit:
   :PROPERTIES:
   :CUSTOM_ID: magit
   :END:
@@ -1078,7 +1084,7 @@ The usual =n= and =p= keys move the cursor up and down between sections.
 There's a lot more that I haven't added, perhaps [[info:magit#Top][this link to the magit info docs]] will help out if
 you have magit installed. (=C-c C-o= to follow that link within Org mode).
 
-** erc (or erc-tls)
+** erc (or erc-tls)                                                     :erc:
   :PROPERTIES:
   :CUSTOM_ID: erc
   :END:
@@ -1127,7 +1133,7 @@ After you've joined, there are some simple commands you can use while you're in 
 Some of the conventional IRC commands can also be used at the ERC> input line, so if you're used to
 clients like irssi, you won't get too confused though there are obviously some differences.
 
-** EXWM
+** EXWM                                                                :exwm:
   :PROPERTIES:
   :CUSTOM_ID: exwm
   :END:
@@ -1140,7 +1146,7 @@ from IRC log:
 [18:52:18]<oni-on-ion> i am using an external API that throws the window right in the middle of the screen over top of everything =/
 [18:53:36]<jamzattack> oni-on-ion: C-c C-t C-f runs the command exwm-floating-toggle-floating
 #+END_QUOTE
-** vterm
+** vterm                                                              :vterm:
   :PROPERTIES:
   :CUSTOM_ID: vterm
   :END:
@@ -1155,7 +1161,7 @@ through to the program you're running inside vterm—for example, the vim editor
 \newpage
 #+END_EXPORT
 
-** Snippets from freenode#emacs and libera#emacs
+** Snippets from freenode#emacs and libera#emacs                 :snippets_1:
   :PROPERTIES:
   :CUSTOM_ID: snippets_1
   :END:
@@ -1252,7 +1258,7 @@ of the file, regardless of whether or not it has the '.elc' extension.
     (split-window))
   (split-window))
 #+END_SRC
-*** How to set a buffer's line-encoding from text mode
+*** How to set a buffer's line-encoding from text mode :how_to_set_a_buffers_line_encoding_from_text_mode:
 :PROPERTIES:
 :CUSTOM_ID: how-to-set-a-buffers-line-encoding-from-text-mode
 :END:
@@ -1520,7 +1526,7 @@ This will still let you switch between tab-bar tabs, but the tab-bar line doesn'
 <Anoncheg> Viking667: tab-line-mode with =(setopt tab-line-tabs-function 'tab-line-tabs-mode-buffers)=
 
 There's more details in =C-h f tab-line-tabs-function=; that describes the settings allowed.
-** Additional things I've looked up
+** Additional things I've looked up                              :snippets_2:
   :PROPERTIES:
   :CUSTOM_ID: snippets_2
   :END:
@@ -1539,7 +1545,7 @@ you reverse the read-only setting. If a buffer was read-only when you opened it,
 not a good idea to change that, as it's likely to be a buffer that Emacs will overwrite for itself
 such as the Messages window or Emacs sourcetree files, which are normally compressed and
 won't take kindly to being changed.
-** tias moments (Try It And See)
+** tias moments (Try It And See)                                       :tias:
   :PROPERTIES:
   :CUSTOM_ID: tias
   :END:
@@ -1569,7 +1575,7 @@ to the =#+BEGIN_SRC= param, =-i=. It should end up looking a bit like this:
 ,#+END_SRC
 #+END_EXAMPLE
 
-** Other useful links, channels and the like
+** Other useful links, channels and the like             :other_useful_links:
   :PROPERTIES:
   :CUSTOM_ID: other-useful-links
   :END:
@@ -1588,7 +1594,7 @@ https://www.emacswiki.org/emacs/EmacsScreencasts
 *** Mastering Emacs
 https://www.masteringemacs.org/
     If you think you know Emacs from this little bit I've explained here, then go read this book. It will revolutionise your Emacs usage if you read it through and implement some of the things Mickey Petersen talks about. This is one of the few ebooks I've bought, and is reasonably priced for what it is. At the time I write this, it comes in at $49.95 in greenbacks, with the possibility that it may go up in the future.
-** Things to find out about
+** Things to find out about                        :things_to_find_out_about:
   :PROPERTIES:
   :CUSTOM_ID: things-to-find-out-about
   :END:
@@ -1618,7 +1624,7 @@ You simply type its name in at the Eval: prompt, without any () around it.
 \newpage
 #+END_EXPORT
 
-* Vim
+* Vim                                                                   :vim:
   :PROPERTIES:
   :CUSTOM_ID: vim
   :END:
@@ -1632,7 +1638,7 @@ you can do some really compact and powerful commands in just a few keys.
 The commands I'll describe are relevant to most available versions of Vim past 6.0, though I've
 focussed on things available in the 8.1 version.
 
-** Short example
+** Short example                                          :vim_short_example:
   :PROPERTIES:
   :CUSTOM_ID: vim-short-example
   :END:
@@ -1663,7 +1669,7 @@ don't find what you want just in vimscript, it even has a plugin system that roc
 use them, so I don't include much here about plugins. I also don't describe more detailed vimscript
 here, basically because I don't know how to use it myself.
 
-** Vim movement keys
+** Vim movement keys                                      :vim_movement_keys:
   :PROPERTIES:
   :CUSTOM_ID: vim-movement-keys
   :END:
@@ -1697,7 +1703,7 @@ screen) is just the width of the screen, whether the line's wrapped or not. So f
 line, and an 80-character screen, the file line would take up five screen lines on screen, and the
 "end-of-line" command goes to the end of the file line.
 
-** Vim help
+** Vim help                                                        :vim_help:
   :PROPERTIES:
   :CUSTOM_ID: vim-help
   :END:
@@ -1709,7 +1715,7 @@ line, and an 80-character screen, the file line would take up five screen lines 
   | Help on a topic | :help "searchterm" | Search term needs to be in quotes if you include spaces |
   | Help section    | :help usr_08       | Jump to usr_08.txt                                      |
   |-----------------+--------------------+---------------------------------------------------------|
-** Opening files
+** Opening files                                          :opening_files_vim:
   :PROPERTIES:
   :CUSTOM_ID: opening-files-vim
   :END:
@@ -1722,7 +1728,7 @@ Check :help edit
    | Insert file at cursor           | :r <filename> |                                            |
    | Insert command output at cursor | :r !command   | (won't take input)                         |
    |---------------------------------+---------------+--------------------------------------------|
-** Diffing files
+** Diffing files                                          :diffing_files_vim:
   :PROPERTIES:
   :CUSTOM_ID: diffing-files-vim
   :END:
@@ -1748,7 +1754,7 @@ There are two ways to diff files with vimdiff.
   | jump to previous change | ]c     |         |
   |-------------------------+--------+---------|
 
-** Copying commands
+** Copying commands                                    :copying_commands_vim:
   :PROPERTIES:
   :CUSTOM_ID: copying-commands-vim
   :END:
@@ -1776,7 +1782,7 @@ it's simply for n times, repeat x item. A special note about the =y<Space>=, mea
 the =y= key, followed by the =Spacebar=. You may often see special notes about keys in <> throughout
 the Vim help.
 
-** Window commands
+** Window commands                                      :window_commands_vim:
   :PROPERTIES:
   :CUSTOM_ID: window-commands-vim
   :END:
@@ -1825,7 +1831,7 @@ This increases/decreases the window height by one, or by more with a numeric pre
 The maximum size appears to be two less than the vertical room available, and leaves one line of text in each other window plus
 the status bar for each window.
 
-** Macro commands
+** Macro commands                                        :macro_commands_vim:
   :PROPERTIES:
   :CUSTOM_ID: macro-commands-vim
   :END:
@@ -1846,7 +1852,7 @@ Picking this apart, you have the command :map. This command takes two (or more) 
   For example, if you want to bind F2 (as in the case above), then you type <F2> as the key.
 + The second argument is what you want to type when you hit F2. In this case, it's generally Vim
   commands in command mode. You can bind keys in insert mode, but that comes with a bit more to do.
-** Exit commands
+** Exit commands                                          :exit_commands_vim:
   :PROPERTIES:
   :CUSTOM_ID: exit-commands-vim
   :END:
@@ -1866,19 +1872,19 @@ Check :help exiting
 \newpage
 #+END_EXPORT
 
-* Programming
+* Programming                                                   :programming:
   :PROPERTIES:
   :CUSTOM_ID: programming
   :END:
 
-** Codemy (normally payware) Video
+** Codemy (normally payware) Video                            :codemy_videos:
   :PROPERTIES:
   :CUSTOM_ID: codemy-videos
   :END:
 
     + [[https://www.youtube.com/watch?v=yOmxJbZjTnU][Using MySQL Databases With Python Course (1:10:09)]]
     
-** FreeCodeCamp.org Videos  [[https://youtube.com/c/freecodecamp][Youtube Channel]]
+** FreeCodeCamp.org Videos  [[https://youtube.com/c/freecodecamp][Youtube Channel]] :freecodecamp_org_videos:
   :PROPERTIES:
   :CUSTOM_ID: freecodecamp-org-videos
   :END:
@@ -1909,7 +1915,7 @@ Check :help exiting
     + [[https://www.youtube.com/watch?v=xh4gy1lbL2k][NoSQL overview - full course for beginners (2:54:52)]]
 **** Postgresql
      + [[https://www.youtube.com/watch?v=qw--VYLpxG4][Learn PostGreSQL Tutorial (4:19:34)]]
-** Other Videos
+** Other Videos                                    :other_programming_videos:
   :PROPERTIES:
   :CUSTOM_ID: other-programming-videos
   :END:
@@ -1926,12 +1932,12 @@ Check :help exiting
 ** A note about transience
 Here's a small discussion I found about deliberate transience of working state as a mindset.
 https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/transience/
-* Music
+* Music                                                               :music:
   :PROPERTIES:
   :CUSTOM_ID: music
   :END:
 
-** Classical
+** Classical                                                :music_classical:
   :PROPERTIES:
   :CUSTOM_ID: music-classical
   :END:
@@ -1968,7 +1974,7 @@ https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/transience/
     + 2. Molto adagio 8:35–16:00
     + 3. Molto allegro come prima 16:03–18:22
 
-** Atmospheric/ambient/Dark
+** Atmospheric/ambient/Dark                               :music_atmospheric:
   :PROPERTIES:
   :CUSTOM_ID: music-atmospheric
   :END:
@@ -1991,7 +1997,7 @@ https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/transience/
     + https://www.youtube.com/watch?v=5o_uF1L5l6o
   + Nils Frahm - Live concert at the Philharmonie de Paris, March 2024
     + https://www.youtube.com/watch?v=HPPzQgTaLbo
-** Programming music
+** Programming music                                      :music_programming:
   :PROPERTIES:
   :CUSTOM_ID: music-programming
   :END:
@@ -2008,7 +2014,7 @@ https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/transience/
   https://www.youtube.com/watch?v=do7Jl_4_d5w
 *** Other channels
   + [[https://www.youtube.com/watch?v=nPM_teVT07Y][Starterra - Celestial (Space Ambient) [Full Album]]]
-** Game Soundtracks
+** Game Soundtracks                                       :music_soundtracks:
   :PROPERTIES:
   :CUSTOM_ID: music-soundtracks
   :END:
@@ -2098,13 +2104,13 @@ https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/transience/
     + Tentacle Exploration 1 - 6:19:30
     + Tentacle Exploration 2 - 6:22:10
     + Constellation 1 (8 different versions) - 6:25:16
-** Weird stuff
+** Weird stuff                                                  :music_weird:
   :PROPERTIES:
   :CUSTOM_ID: music-weird
   :END:
 
   + [[https://www.youtube.com/watch?v=heu9tD0dzkY][Philip Glass - Music From The Hours (42:44)]]
-** Social
+** Social                                                            :social:
   :PROPERTIES:
   :CUSTOM_ID: social
   :END:
